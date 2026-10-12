@@ -74,7 +74,7 @@ const EMBED_OPTS = { actions: false, config: CONFIG };
 
 // ---------------------------------------------------------------------------
 // Per-page size overrides.
-// The specs in js/specs are sized for index.html (12-column grid).
+// The specs in js/specs are sized for three_col.html (12-column grid).
 // A page can set <body data-layout="..."> to resize charts for its own layout
 // without touching the spec files. "container" = fill the chart's column.
 // ---------------------------------------------------------------------------
