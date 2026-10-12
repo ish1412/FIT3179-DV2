@@ -1,0 +1,116 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+        "text": {
+            "expr": "'The gap grows with distance · ' + (domain === 'All' ? 'average of 5 subjects' : (domain === 'Grammar and Punctuation' ? 'Grammar & Punctuation' : domain))"
+        },
+        "subtitle": ["% at Strong or above, 2026 (Australia)", "Indigenous vs non-Indigenous students"]
+    },
+    "width": 210,
+    "height": 190,
+    "params": [{"name": "domain", "value": "Reading"}, {"name": "yearLevel", "value": 5}],
+    "data": {
+        "url": "data/naplan_2023_2026_subgroups_aus.csv",
+        "format": {
+            "type": "csv",
+            "parse": {"year": "number", "year_level": "number", "pct_strong_or_above": "number", "enrolled": "number"}
+        }
+    },
+    "transform": [
+        {
+            "filter": "datum.year === 2026 && datum.attribute === 'Indigeneity by ABS remoteness' && (domain === 'All' || datum.domain === domain) && datum.year_level === yearLevel"
+        },
+        {
+            "aggregate": [
+                {"op": "mean", "field": "pct_strong_or_above", "as": "pct_strong_or_above"},
+                {"op": "mean", "field": "enrolled", "as": "enrolled"}
+            ],
+            "groupby": ["subgroup"]
+        },
+        {
+            "calculate": "indexof(datum.subgroup, 'Non-Indigenous') === 0 ? 'Non-Indigenous' : 'Indigenous'",
+            "as": "group"
+        },
+        {"calculate": "substring(datum.subgroup, length(datum.group) + 1)", "as": "rawRemoteness"},
+        {
+            "calculate": "upper(substring(datum.rawRemoteness, 0, 1)) + substring(datum.rawRemoteness, 1)",
+            "as": "remoteness"
+        },
+        {
+            "joinaggregate": [
+                {"op": "max", "field": "pct_strong_or_above", "as": "hi"},
+                {"op": "min", "field": "pct_strong_or_above", "as": "lo"}
+            ],
+            "groupby": ["remoteness"]
+        },
+        {"calculate": "datum.hi - datum.lo", "as": "gap"}
+    ],
+    "encoding": {
+        "y": {
+            "field": "remoteness",
+            "type": "nominal",
+            "title": null,
+            "sort": {"field": "gap", "order": "ascending"},
+            "axis": {"domain": false, "ticks": false, "labelPadding": 6}
+        }
+    },
+    "layer": [
+        {
+            "transform": [{"filter": "datum.group === 'Indigenous'"}],
+            "mark": {"type": "rule", "color": "#BDB6A8", "strokeWidth": 3},
+            "encoding": {"x": {"field": "lo", "type": "quantitative"}, "x2": {"field": "hi"}}
+        },
+        {
+            "mark": {"type": "circle", "size": 110, "opacity": 1},
+            "encoding": {
+                "x": {
+                    "field": "pct_strong_or_above",
+                    "type": "quantitative",
+                    "title": "% at Strong or above",
+                    "scale": {"domain": [0, 100]}
+                },
+                "color": {
+                    "field": "group",
+                    "type": "nominal",
+                    "title": null,
+                    "scale": {"domain": ["Indigenous", "Non-Indigenous"], "range": ["#C8652B", "#2F5D8A"]},
+                    "legend": {"orient": "top", "direction": "horizontal"}
+                },
+                "tooltip": [
+                    {"field": "remoteness", "title": "Remoteness"},
+                    {"field": "group", "title": "Students"},
+                    {"field": "pct_strong_or_above", "title": "% Strong or above", "format": ".1f"},
+                    {"field": "enrolled", "title": "Students enrolled"},
+                    {"field": "gap", "title": "Gap (pts)", "format": ".1f"}
+                ]
+            }
+        },
+        {
+            "transform": [{"filter": "datum.group === 'Non-Indigenous'"}],
+            "mark": {
+                "type": "text",
+                "align": "left",
+                "dx": 9,
+                "fontSize": 10,
+                "color": "#6B675F",
+                "fontWeight": "bold"
+            },
+            "encoding": {
+                "x": {"field": "hi", "type": "quantitative"},
+                "text": {"field": "gap", "type": "quantitative", "format": ".0f"}
+            }
+        },
+        {
+            "data": {"values": [{"t": "number = gap in points"}]},
+            "mark": {
+                "type": "text",
+                "align": "right",
+                "baseline": "bottom",
+                "fontSize": 9,
+                "fontStyle": "italic",
+                "color": "#6B675F"
+            },
+            "encoding": {"x": {"value": 210}, "y": {"value": -4}, "text": {"field": "t"}}
+        }
+    ]
+}

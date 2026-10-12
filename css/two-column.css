@@ -1,0 +1,41 @@
+/* ==========================================================
+   Two-column variant (two-column.html)
+   Loads after style.css and swaps the 12-column grid for
+   two equal columns. Wide charts (C2, C8 group) span both.
+   ========================================================== */
+
+.grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 32px;
+  row-gap: 36px;
+}
+
+.half { grid-column: span 1; }
+.full { grid-column: 1 / -1; }
+
+/* text that spans both columns keeps a readable line length */
+.full.text p { max-width: 68ch; }
+
+/* two narrow items side by side inside one column */
+.pair {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 24px;
+  align-items: stretch;
+  min-width: 0;
+}
+
+/* source list and about block sit side by side in the footer row */
+.footer-cols {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 32px;
+}
+
+/* shrink-wrap the C8 + C9 + C10 group so its toggle lines up under the C10 map */
+#c08.vega-embed { display: inline-block; width: auto; }
+
+@media (max-width: 900px) {
+  .grid > .half, .grid > .full { grid-column: 1 / -1; }
+  .pair, .footer-cols { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,416 @@
+/* ==========================================================
+   Same Test, Different Starting Lines: FIT3179 DV2
+   12-column grid, 24px gutter, max-width 1100px
+   ========================================================== */
+
+:root {
+    --paper: #FBF8F1;
+    --ink: #2B2A28;
+    --ink-soft: #6B675F;
+    --rule: #E2DCCF;
+    --deep-blue: #1E3F60;
+    /* proficiency palette (used everywhere) */
+    --needs: #C8652B;
+    --developing: #E8B48F;
+    --strong: #9DB8D3;
+    --exceeding: #2F5D8A;
+    --font-head: Arial, Helvetica, sans-serif;  /* one family for the whole page, matching nap.edu.au */
+    --font-body: Arial, Helvetica, sans-serif;
+    --max: 1100px;
+    --gap: 24px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 17px;
+    line-height: 1.6;
+    text-align: left;
+}
+
+
+/* ---------- grid ---------- */
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: var(--gap);
+    row-gap: 40px;
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 0 16px;
+    align-items: stretch;
+    /* boxes in a row share top and bottom edges */
+}
+
+.span-2 {
+    grid-column: span 2;
+}
+
+.span-3 {
+    grid-column: span 3;
+}
+
+.span-4 {
+    grid-column: span 4;
+}
+
+.span-5 {
+    grid-column: span 5;
+}
+
+.span-6 {
+    grid-column: span 6;
+}
+
+.span-9 {
+    grid-column: span 9;
+}
+
+.span-12 {
+    grid-column: span 12;
+}
+
+
+/* ---------- header ---------- */
+
+.masthead {
+    padding: 72px 0 40px;
+    border-bottom: 1px solid var(--rule);
+}
+
+.kicker {
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--needs);
+    margin: 0 0 8px;
+    font-weight: 700;
+}
+
+h1 {
+    font-family: var(--font-head);
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    color: var(--deep-blue);
+    margin: 0 0 12px;
+}
+
+.subtitle {
+    font-family: var(--font-head);
+    font-size: 24px;
+    line-height: 1.3;
+    font-weight: 400;
+    margin: 0 0 16px;
+    max-width: 34ch;
+}
+
+.byline {
+    font-size: 14px;
+    color: var(--ink-soft);
+    margin: 0;
+}
+
+
+/* ---------- sections ---------- */
+
+.section {
+    padding: 56px 0 24px;
+    border-bottom: 1px solid var(--rule);
+}
+
+.section-title {
+    font-family: var(--font-head);
+    font-weight: 600;
+    font-size: 34px;
+    line-height: 1.15;
+    color: var(--deep-blue);
+    margin: 0;
+}
+
+.section-title .num {
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--paper);
+    background: var(--deep-blue);
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    border-radius: 50%;
+    margin-right: 10px;
+    vertical-align: 6px;
+}
+
+h3 {
+    font-family: var(--font-head);
+    font-size: 19px;
+    font-weight: 600;
+    margin: 0 0 8px;
+    color: var(--deep-blue);
+}
+
+
+/* ---------- text blocks ---------- */
+
+.text p {
+    margin: 0 0 1em;
+    max-width: 68ch;
+}
+
+.text p:last-child {
+    margin-bottom: 0;
+}
+
+.note {
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.45;
+}
+
+.placeholder {
+    color: var(--ink-soft);
+    font-style: italic;
+    border-left: 3px dashed var(--developing);
+    padding-left: 12px;
+}
+
+
+/* ---------- level explainer strip ---------- */
+
+.level-strip {
+    list-style: none;
+    margin: 0 0 12px;
+    padding: 0;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.level-strip li {
+    position: relative;
+    padding-left: 26px;
+    margin-bottom: 10px;
+}
+
+.level-strip .swatch {
+    position: absolute;
+    left: 0;
+    top: 3px;
+    width: 16px;
+    height: 16px;
+    border-radius: 2px;
+}
+
+
+/* ---------- charts ---------- */
+
+figure {
+    margin: 0;
+}
+
+.chart-cell {
+    min-width: 0;
+}
+
+.chart {
+    width: 100%;
+}
+
+.stack {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    min-width: 0;
+}
+
+
+/* vega-embed parameter bindings (C10 toggle) */
+
+.vega-bindings {
+    font-size: 14px;
+    margin-top: 6px;
+}
+
+.vega-bind {
+    display: inline-flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.vega-bind-name {
+    font-weight: 700;
+    color: var(--deep-blue);
+}
+
+.vega-bind label {
+    margin-right: 10px;
+}
+
+
+/* "Zoom to" state picker above the school map (C8) */
+.map-control { font-size: 15px; margin-bottom: 8px; }
+.map-control label { display: inline-flex; gap: 8px; align-items: center; font-weight: 700; color: var(--deep-blue); }
+.map-control select {
+  font: inherit;
+  font-weight: 400;
+  color: var(--ink);
+  background: #FFFFFF;
+  border: 1px solid #CFC8BA;
+  border-radius: 4px;
+  padding: 4px 8px;
+}
+
+/* the C10 toggle sits under the remoteness map (right-hand column of the C8 spec) */
+
+#c08 .vega-bindings {
+    text-align: right;
+}
+
+
+/* tooltip */
+
+#vg-tooltip-element {
+    font-family: var(--font-body);
+    font-size: 13px;
+    background: #FFFFFF;
+    border: 1px solid var(--rule);
+    color: var(--ink);
+    box-shadow: 0 2px 8px rgba(43, 42, 40, 0.12);
+}
+
+
+/* ---------- photos ---------- */
+
+.photo {
+    display: flex;
+    flex-direction: column;
+}
+
+.photo-placeholder {
+    flex: 1;
+    min-height: 220px;
+    background: repeating-linear-gradient(45deg, #EFE9DD 0 10px, #F5F1E8 10px 20px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--ink-soft);
+    font-size: 14px;
+    border-radius: 4px;
+}
+
+.text .photo {
+    margin-top: 24px;
+}
+
+figcaption {
+    font-size: 12px;
+    color: var(--ink-soft);
+    margin-top: 6px;
+}
+
+
+/* ---------- sticky selector ---------- */
+
+.selector-bar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(251, 248, 241, 0.96);
+    border-bottom: 1px solid var(--rule);
+    backdrop-filter: blur(4px);
+    padding: 10px 0;
+}
+
+.selector-inner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    font-size: 15px;
+}
+
+.selector-label {
+    font-family: var(--font-head);
+    font-weight: 600;
+    color: var(--deep-blue);
+}
+
+.selector-inner label {
+    display: inline-flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.selector-inner select {
+    font: inherit;
+    color: var(--ink);
+    background: #FFFFFF;
+    border: 1px solid #CFC8BA;
+    border-radius: 4px;
+    padding: 4px 8px;
+}
+
+.selector-hint {
+    font-size: 13px;
+    color: var(--ink-soft);
+    margin-left: auto;
+}
+
+
+/* ---------- takeaways + footer ---------- */
+
+.takeaways ul {
+    padding-left: 20px;
+    margin: 0;
+}
+
+.sources {
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--ink-soft);
+}
+
+.sources ul {
+    padding-left: 16px;
+    margin: 0 0 16px;
+}
+
+.sources li {
+    margin-bottom: 6px;
+}
+
+.sources p {
+    margin: 0 0 8px;
+}
+
+.sources a {
+    color: var(--deep-blue);
+}
+
+
+/* ---------- small screens: single column ---------- */
+
+@media (max-width: 900px) {
+    .grid>[class*="span-"] {
+        grid-column: 1 / -1;
+    }
+    h1 {
+        font-size: 40px;
+    }
+    .chart {
+        overflow-x: auto;
+    }
+}

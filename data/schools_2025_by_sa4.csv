@@ -1,0 +1,90 @@
+state,sa4,schools,enrolments,icsea_weighted,pct_indigenous_weighted,lat,lon,main_remoteness
+ACT,Australian Capital Territory,138,77842,1096,3.4,-35.298,149.096,Major cities
+ACT,Other Territories,1,60,794,77.0,-35.132,150.706,Inner regional
+NSW,Capital Region,131,30517,993,11.0,-35.498,149.382,Inner regional
+NSW,Central Coast,109,52810,1016,11.1,-33.364,151.405,Major cities
+NSW,Central West,151,34548,966,18.3,-33.32,148.878,Inner regional
+NSW,Coffs Harbour - Grafton,84,22439,980,15.2,-30.021,153.027,Inner regional
+NSW,Far West and Orana,109,18608,894,38.7,-31.527,147.194,Outer regional
+NSW,Hunter Valley exc Newcastle,134,46323,964,17.9,-32.627,151.438,Inner regional
+NSW,Illawarra,120,47260,1027,8.2,-34.458,150.866,Major cities
+NSW,Mid North Coast,118,31568,964,20.1,-31.539,152.642,Inner regional
+NSW,Murray,92,18573,990,10.8,-35.541,145.698,Inner regional
+NSW,New England and North West,154,29783,933,27.8,-30.37,150.856,Outer regional
+NSW,Newcastle and Lake Macquarie,167,59889,1031,11.3,-32.957,151.666,Major cities
+NSW,Richmond - Tweed,156,37514,1015,11.0,-28.615,153.357,Inner regional
+NSW,Riverina,129,26327,969,14.4,-34.862,147.129,Outer regional
+NSW,Southern Highlands and Shoalhaven,65,21553,1001,13.3,-34.779,150.517,Inner regional
+NSW,Sydney - Baulkham Hills and Hawkesbury,88,50055,1110,1.5,-33.651,150.934,Major cities
+NSW,Sydney - Blacktown,129,76900,1038,5.8,-33.741,150.871,Major cities
+NSW,Sydney - City and Inner South,79,31628,1122,3.8,-33.898,151.191,Major cities
+NSW,Sydney - Eastern Suburbs,71,36951,1133,2.4,-33.91,151.249,Major cities
+NSW,Sydney - Inner South West,171,80189,1040,1.2,-33.941,151.072,Major cities
+NSW,Sydney - Inner West,85,42679,1112,1.5,-33.877,151.124,Major cities
+NSW,Sydney - North Sydney and Hornsby,118,75171,1160,0.5,-33.759,151.163,Major cities
+NSW,Sydney - Northern Beaches,82,39053,1117,1.0,-33.737,151.261,Major cities
+NSW,Sydney - Outer South West,109,53103,1005,8.6,-34.066,150.781,Major cities
+NSW,Sydney - Outer West and Blue Mountains,129,54870,1012,9.2,-33.733,150.657,Major cities
+NSW,Sydney - Parramatta,134,75732,1051,1.1,-33.824,151.004,Major cities
+NSW,Sydney - Ryde,59,30844,1123,1.0,-33.793,151.102,Major cities
+NSW,Sydney - South West,140,95387,1001,2.6,-33.916,150.875,Major cities
+NSW,Sydney - Sutherland,82,37410,1078,2.7,-34.038,151.077,Major cities
+NT,Darwin,65,24567,985,20.7,-12.447,130.934,Outer regional
+NT,Northern Territory - Outback,129,15569,773,67.8,-17.696,133.306,Very remote
+QLD,Brisbane - East,56,35283,1043,5.7,-27.517,153.224,Major cities
+QLD,Brisbane - North,55,33965,1070,4.7,-27.365,153.036,Major cities
+QLD,Brisbane - South,102,70573,1082,3.2,-27.545,153.063,Major cities
+QLD,Brisbane - West,52,38248,1117,2.2,-27.487,152.955,Major cities
+QLD,Brisbane Inner City,71,52604,1144,1.9,-27.454,153.024,Major cities
+QLD,Cairns,109,48996,967,21.9,-17.181,145.734,Outer regional
+QLD,Central Queensland,140,48747,962,16.3,-23.725,150.251,Inner regional
+QLD,Darling Downs - Maranoa,129,20062,947,17.8,-27.67,150.901,Inner regional
+QLD,Gold Coast,116,103213,1047,4.1,-27.983,153.355,Major cities
+QLD,Ipswich,138,71330,992,9.5,-27.625,152.741,Major cities
+QLD,Logan - Beaudesert,94,68714,973,9.0,-27.738,153.099,Major cities
+QLD,Mackay - Isaac - Whitsunday,93,31284,969,13.4,-21.211,148.779,Outer regional
+QLD,Moreton Bay - North,69,45263,986,10.6,-27.124,152.958,Major cities
+QLD,Moreton Bay - South,45,34018,1031,6.0,-27.289,152.971,Major cities
+QLD,Queensland - Outback,96,12945,836,53.8,-20.508,143.108,Very remote
+QLD,Sunshine Coast,97,64534,1050,4.6,-26.649,153.012,Major cities
+QLD,Toowoomba,70,30536,1007,10.7,-27.561,151.98,Inner regional
+QLD,Townsville,112,43756,963,21.2,-19.324,146.693,Outer regional
+QLD,Wide Bay,163,45705,967,13.7,-25.6,152.293,Inner regional
+SA,Adelaide - Central and Hills,119,62137,1098,1.8,-34.944,138.698,Major cities
+SA,Adelaide - North,142,76300,989,6.4,-34.762,138.669,Major cities
+SA,Adelaide - South,120,58651,1051,3.6,-35.07,138.55,Major cities
+SA,Adelaide - West,69,33173,1034,5.1,-34.895,138.534,Major cities
+SA,Barossa - Yorke - Mid North,86,16231,976,8.3,-33.943,138.427,Outer regional
+SA,South Australia - Outback,68,13461,931,21.7,-31.992,135.78,Very remote
+SA,South Australia - South East,111,27372,972,8.0,-35.874,140.066,Outer regional
+TAS,Hobart,101,40228,1020,9.8,-42.862,147.32,Inner regional
+TAS,Launceston and North East,68,22716,985,8.8,-41.384,147.166,Inner regional
+TAS,South East,24,3519,932,21.2,-42.824,147.273,Outer regional
+TAS,West and North West,68,17641,948,17.4,-41.165,145.914,Outer regional
+VIC,Ballarat,95,28337,1028,4.5,-37.465,143.847,Inner regional
+VIC,Bendigo,82,26288,1022,4.8,-36.837,144.276,Inner regional
+VIC,Geelong,109,54442,1054,2.6,-38.17,144.339,Major cities
+VIC,Hume,125,30663,1001,6.0,-36.589,146.339,Inner regional
+VIC,Latrobe - Gippsland,177,46368,994,5.4,-38.166,146.566,Inner regional
+VIC,Melbourne - Inner,147,78819,1118,1.2,-37.798,144.971,Major cities
+VIC,Melbourne - Inner East,109,64632,1145,0.4,-37.815,145.096,Major cities
+VIC,Melbourne - Inner South,113,64334,1122,0.5,-37.936,145.05,Major cities
+VIC,Melbourne - North East,171,85930,1060,2.0,-37.668,145.077,Major cities
+VIC,Melbourne - North West,132,81667,1031,1.2,-37.624,144.855,Major cities
+VIC,Melbourne - Outer East,188,77539,1070,1.4,-37.821,145.312,Major cities
+VIC,Melbourne - South East,241,153574,1036,1.0,-38.005,145.27,Major cities
+VIC,Melbourne - West,232,163303,1037,1.4,-37.795,144.731,Major cities
+VIC,Mornington Peninsula,92,46231,1039,2.5,-38.219,145.103,Major cities
+VIC,North West,121,23694,971,9.1,-35.805,142.65,Outer regional
+VIC,Shepparton,82,22863,978,8.3,-36.266,145.27,Inner regional
+VIC,Warrnambool and South West,94,18930,1004,5.0,-38.16,142.504,Inner regional
+WA,Bunbury,101,34463,1001,6.7,-33.574,115.699,Inner regional
+WA,Mandurah,36,20090,990,7.4,-32.542,115.762,Major cities
+WA,Perth - Inner,57,36741,1144,1.7,-31.954,115.812,Major cities
+WA,Perth - North East,94,47938,1013,6.8,-31.863,115.995,Major cities
+WA,Perth - North West,200,107278,1051,3.3,-31.795,115.786,Major cities
+WA,Perth - South East,190,98051,1039,5.4,-32.058,115.96,Major cities
+WA,Perth - South West,147,83813,1045,4.8,-32.179,115.801,Major cities
+WA,Western Australia - Outback (North),80,18038,876,43.2,-19.296,122.324,Very remote
+WA,Western Australia - Outback (South),102,21588,932,23.1,-29.569,118.19,Outer regional
+WA,Western Australia - Wheat Belt,123,21314,969,11.9,-32.755,117.41,Outer regional

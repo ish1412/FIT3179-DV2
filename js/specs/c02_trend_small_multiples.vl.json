@@ -1,0 +1,138 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+        "text": "Slow gains in the early years, then a new ruler",
+        "subtitle": "Average score = the typical NAPLAN score of all Australian students in that year level (higher is better). One line per year level."
+    },
+    "params": [{ "name": "domain", "value": "Reading" }, { "name": "yearLevel", "value": 5 }],
+    "data": {
+        "url": "data/naplan_2008_2026_trend_combined.csv",
+        "format": { "type": "csv", "parse": { "year": "number", "year_level": "number", "mean_score": "number" } }
+    },
+    "transform": [
+        { "filter": "datum.state === 'AUS' && isValid(datum.mean_score)" },
+        { "calculate": "datum.year < 2020 ? 'old-a' : (datum.year < 2023 ? 'old-b' : 'new')", "as": "segment" },
+        { "calculate": "'Year ' + datum.year_level", "as": "yearLabel" },
+        {
+            "calculate": "indexof(['Reading', 'Writing', 'Spelling', 'Grammar and Punctuation', 'Numeracy'], datum.domain)",
+            "as": "domainOrder"
+        },
+        {
+            "calculate": "datum.domain === 'Grammar and Punctuation' ? 'Grammar & Punct.' : datum.domain",
+            "as": "domainLabel"
+        },
+        { "calculate": "2019.5", "as": "gapStart" },
+        { "calculate": "2020.5", "as": "gapEnd" },
+        { "calculate": "2022.5", "as": "breakYear" }
+    ],
+    "facet": {
+        "column": {
+            "field": "domainLabel",
+            "type": "nominal",
+            "sort": ["Reading", "Writing", "Spelling", "Grammar & Punct.", "Numeracy"],
+            "title": null,
+            "header": {
+                "labelFontSize": 13,
+                "labelFontWeight": "bold",
+                "labelAnchor": "start",
+                "labelColor": "#2B2A28",
+                "labelPadding": 24
+            }
+        }
+    },
+    "spacing": 16,
+    "bounds": "flush",
+    "spec": {
+        "width": 130,
+        "height": 220,
+        "layer": [
+            {
+                "transform": [{ "filter": "datum.year === 2023 && datum.year_level === 3" }],
+                "mark": { "type": "rect", "color": "#ECE6DA", "opacity": 0.9 },
+                "encoding": {
+                    "x": { "field": "gapStart", "type": "quantitative", "scale": { "domain": [2008, 2026] } },
+                    "x2": { "field": "gapEnd" }
+                }
+            },
+            {
+                "transform": [{ "filter": "datum.year === 2023 && datum.year_level === 3" }],
+                "mark": { "type": "rule", "strokeDash": [4, 3], "color": "#2B2A28", "strokeWidth": 1 },
+                "encoding": { "x": { "field": "breakYear", "type": "quantitative", "scale": { "domain": [2008, 2026] } } }
+            },
+            {
+                "transform": [{ "filter": "datum.year === 2023 && datum.year_level === 3 && datum.domain === 'Reading'" }],
+                "mark": {
+                    "type": "text",
+                    "align": "center",
+                    "baseline": "bottom",
+                    "dy": -5,
+                    "fontSize": 10,
+                    "fontWeight": "bold",
+                    "color": "#2B2A28",
+                    "text": "new test, new scale, not comparable"
+                },
+                "encoding": {
+                    "x": { "field": "breakYear", "type": "quantitative", "scale": { "domain": [2008, 2026] } },
+                    "y": { "value": 0 }
+                }
+            },
+            {
+                "transform": [{ "filter": "datum.year === 2023 && datum.year_level === 3 && datum.domain === 'Reading'" }],
+                "mark": {
+                    "type": "text",
+                    "angle": 270,
+                    "align": "right",
+                    "baseline": "middle",
+                    "fontSize": 9,
+                    "color": "#8A857B",
+                    "text": "no test in 2020"
+                },
+                "encoding": {
+                    "x": { "datum": 2020, "type": "quantitative", "scale": { "domain": [2008, 2026] } },
+                    "y": { "value": 6 }
+                }
+            },
+            {
+                "mark": { "type": "line", "strokeWidth": 2 },
+                "encoding": {
+                    "x": {
+                        "field": "year",
+                        "type": "quantitative",
+                        "title": null,
+                        "scale": { "domain": [2008, 2026] },
+                        "axis": { "format": "d", "values": [2008, 2014, 2020, 2026], "grid": false }
+                    },
+                    "y": { "field": "mean_score", "type": "quantitative", "title": "Average score", "scale": { "zero": false } },
+                    "color": {
+                        "field": "yearLabel",
+                        "type": "ordinal",
+                        "title": null,
+                        "scale": {
+                            "domain": ["Year 3", "Year 5", "Year 7", "Year 9"],
+                            "range": ["#9DB8D3", "#5F86AE", "#2F5D8A", "#1E3F60"]
+                        },
+                        "legend": { "orient": "top", "direction": "horizontal" }
+                    },
+                    "detail": { "field": "segment" },
+                    "opacity": { "condition": { "test": "datum.year_level === yearLevel", "value": 1 }, "value": 0.35 }
+                }
+            },
+            {
+                "mark": { "type": "point", "filled": true, "size": 14 },
+                "encoding": {
+                    "x": { "field": "year", "type": "quantitative", "scale": { "domain": [2008, 2026] } },
+                    "y": { "field": "mean_score", "type": "quantitative" },
+                    "color": { "field": "yearLabel", "type": "ordinal" },
+                    "opacity": { "condition": { "test": "datum.year_level === yearLevel", "value": 1 }, "value": 0.25 },
+                    "tooltip": [
+                        { "field": "domain", "title": "Domain" },
+                        { "field": "yearLabel", "title": "Year level" },
+                        { "field": "year", "title": "Year", "format": "d" },
+                        { "field": "mean_score", "title": "Average score", "format": ".1f" },
+                        { "field": "era", "title": "Test scale" }
+                    ]
+                }
+            }
+        ]
+    }
+}

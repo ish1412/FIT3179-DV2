@@ -1,0 +1,92 @@
+state,remoteness,sector,schools,enrolments,median_icsea
+ACT,Inner regional,Government,1,60,794
+ACT,Major cities,Catholic,29,15407,1089
+ACT,Major cities,Government,91,46187,1070
+ACT,Major cities,Independent,18,16248,1137
+NSW,Inner regional,Catholic,133,49653,1019
+NSW,Inner regional,Government,611,143667,950
+NSW,Inner regional,Independent,114,42498,1038
+NSW,Major cities,Catholic,351,174096,1082
+NSW,Major cities,Government,1249,591836,1023
+NSW,Major cities,Independent,301,203944,1095
+NSW,Outer regional,Catholic,52,8824,992
+NSW,Outer regional,Government,304,35097,914
+NSW,Outer regional,Independent,18,3856,984
+NSW,Remote,Catholic,8,707,946
+NSW,Remote,Government,35,2625,865
+NSW,Very remote,Catholic,3,152,770
+NSW,Very remote,Government,14,696,730
+NSW,Very remote,Independent,2,33,756
+NT,Outer regional,Catholic,10,3224,1013
+NT,Outer regional,Government,45,17174,949
+NT,Outer regional,Independent,10,4169,1016
+NT,Remote,Catholic,7,2041,660
+NT,Remote,Government,28,4637,807
+NT,Remote,Independent,6,1275,1013
+NT,Very remote,Catholic,1,78,724
+NT,Very remote,Government,77,7062,625
+NT,Very remote,Independent,10,476,658
+QLD,Inner regional,Catholic,71,33707,1014
+QLD,Inner regional,Government,346,103598,949
+QLD,Inner regional,Independent,53,27108,1024
+QLD,Major cities,Catholic,155,98827,1076
+QLD,Major cities,Government,481,371997,1014
+QLD,Major cities,Independent,146,118421,1078
+QLD,Outer regional,Catholic,63,29389,1002
+QLD,Outer regional,Government,291,85206,927
+QLD,Outer regional,Independent,35,14227,996
+QLD,Remote,Catholic,13,1885,896
+QLD,Remote,Government,74,7323,916
+QLD,Remote,Independent,2,223,836
+QLD,Very remote,Catholic,11,849,949
+QLD,Very remote,Government,64,6863,877
+QLD,Very remote,Independent,2,153,670
+SA,Inner regional,Catholic,2,742,1014
+SA,Inner regional,Government,75,16463,987
+SA,Inner regional,Independent,16,5778,1036
+SA,Major cities,Catholic,81,47821,1063
+SA,Major cities,Government,265,130929,1017
+SA,Major cities,Independent,78,47124,1080
+SA,Outer regional,Catholic,15,5163,1004
+SA,Outer regional,Government,121,21734,950
+SA,Outer regional,Independent,10,2784,1002
+SA,Remote,Catholic,3,1109,984
+SA,Remote,Government,23,4982,970
+SA,Remote,Independent,1,466,1013
+SA,Very remote,Government,24,2096,912
+SA,Very remote,Independent,1,134,793
+TAS,Inner regional,Catholic,23,12176,1020
+TAS,Inner regional,Government,91,35091,981
+TAS,Inner regional,Independent,25,9481,1070
+TAS,Outer regional,Catholic,13,3850,987
+TAS,Outer regional,Government,88,20408,928
+TAS,Outer regional,Independent,9,2178,985
+TAS,Remote,Catholic,2,106,936
+TAS,Remote,Government,7,539,935
+TAS,Very remote,Government,3,275,924
+VIC,Inner regional,Catholic,140,51663,1033
+VIC,Inner regional,Government,484,115013,982
+VIC,Inner regional,Independent,43,23118,1070
+VIC,Major cities,Catholic,321,159746,1078
+VIC,Major cities,Government,937,529334,1037
+VIC,Major cities,Independent,175,153497,1101
+VIC,Outer regional,Catholic,31,6525,1007
+VIC,Outer regional,Government,159,25833,968
+VIC,Outer regional,Independent,13,2523,1018
+VIC,Remote,Catholic,1,37,994
+VIC,Remote,Government,6,325,975
+WA,Inner regional,Catholic,16,6801,1030
+WA,Inner regional,Government,83,26890,965
+WA,Inner regional,Independent,17,5710,1038
+WA,Major cities,Catholic,100,55087,1066
+WA,Major cities,Government,497,257090,1017
+WA,Major cities,Independent,114,78861,1060
+WA,Outer regional,Catholic,19,5527,1002
+WA,Outer regional,Government,100,22848,945
+WA,Outer regional,Independent,12,4033,1028
+WA,Remote,Catholic,8,2008,964
+WA,Remote,Government,73,14140,953
+WA,Remote,Independent,3,411,858
+WA,Very remote,Catholic,12,870,676
+WA,Very remote,Government,60,8323,758
+WA,Very remote,Independent,16,715,672

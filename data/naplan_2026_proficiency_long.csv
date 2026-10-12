@@ -1,0 +1,801 @@
+year,year_level,domain,state,state_name,level,pct,level_order
+2026,3,Grammar and Punctuation,ACT,Australian Capital Territory,Exempt,1.8,0
+2026,3,Grammar and Punctuation,ACT,Australian Capital Territory,Needs additional support,12.4,1
+2026,3,Grammar and Punctuation,ACT,Australian Capital Territory,Developing,26.3,2
+2026,3,Grammar and Punctuation,ACT,Australian Capital Territory,Strong,47.6,3
+2026,3,Grammar and Punctuation,ACT,Australian Capital Territory,Exceeding,11.9,4
+2026,5,Grammar and Punctuation,ACT,Australian Capital Territory,Exempt,1.0,0
+2026,5,Grammar and Punctuation,ACT,Australian Capital Territory,Needs additional support,9.0,1
+2026,5,Grammar and Punctuation,ACT,Australian Capital Territory,Developing,20.8,2
+2026,5,Grammar and Punctuation,ACT,Australian Capital Territory,Strong,51.5,3
+2026,5,Grammar and Punctuation,ACT,Australian Capital Territory,Exceeding,17.6,4
+2026,7,Grammar and Punctuation,ACT,Australian Capital Territory,Exempt,1.7,0
+2026,7,Grammar and Punctuation,ACT,Australian Capital Territory,Needs additional support,11.1,1
+2026,7,Grammar and Punctuation,ACT,Australian Capital Territory,Developing,21.5,2
+2026,7,Grammar and Punctuation,ACT,Australian Capital Territory,Strong,47.9,3
+2026,7,Grammar and Punctuation,ACT,Australian Capital Territory,Exceeding,17.7,4
+2026,9,Grammar and Punctuation,ACT,Australian Capital Territory,Exempt,1.7,0
+2026,9,Grammar and Punctuation,ACT,Australian Capital Territory,Needs additional support,12.4,1
+2026,9,Grammar and Punctuation,ACT,Australian Capital Territory,Developing,25.9,2
+2026,9,Grammar and Punctuation,ACT,Australian Capital Territory,Strong,42.1,3
+2026,9,Grammar and Punctuation,ACT,Australian Capital Territory,Exceeding,17.9,4
+2026,3,Numeracy,ACT,Australian Capital Territory,Exempt,1.8,0
+2026,3,Numeracy,ACT,Australian Capital Territory,Needs additional support,8.3,1
+2026,3,Numeracy,ACT,Australian Capital Territory,Developing,21.8,2
+2026,3,Numeracy,ACT,Australian Capital Territory,Strong,55.1,3
+2026,3,Numeracy,ACT,Australian Capital Territory,Exceeding,13.1,4
+2026,5,Numeracy,ACT,Australian Capital Territory,Exempt,1.0,0
+2026,5,Numeracy,ACT,Australian Capital Territory,Needs additional support,5.0,1
+2026,5,Numeracy,ACT,Australian Capital Territory,Developing,17.3,2
+2026,5,Numeracy,ACT,Australian Capital Territory,Strong,63.2,3
+2026,5,Numeracy,ACT,Australian Capital Territory,Exceeding,13.5,4
+2026,7,Numeracy,ACT,Australian Capital Territory,Exempt,1.6,0
+2026,7,Numeracy,ACT,Australian Capital Territory,Needs additional support,6.2,1
+2026,7,Numeracy,ACT,Australian Capital Territory,Developing,16.3,2
+2026,7,Numeracy,ACT,Australian Capital Territory,Strong,60.1,3
+2026,7,Numeracy,ACT,Australian Capital Territory,Exceeding,15.8,4
+2026,9,Numeracy,ACT,Australian Capital Territory,Exempt,1.7,0
+2026,9,Numeracy,ACT,Australian Capital Territory,Needs additional support,8.9,1
+2026,9,Numeracy,ACT,Australian Capital Territory,Developing,18.2,2
+2026,9,Numeracy,ACT,Australian Capital Territory,Strong,57.5,3
+2026,9,Numeracy,ACT,Australian Capital Territory,Exceeding,13.8,4
+2026,3,Reading,ACT,Australian Capital Territory,Exempt,1.8,0
+2026,3,Reading,ACT,Australian Capital Territory,Needs additional support,8.1,1
+2026,3,Reading,ACT,Australian Capital Territory,Developing,17.5,2
+2026,3,Reading,ACT,Australian Capital Territory,Strong,47.2,3
+2026,3,Reading,ACT,Australian Capital Territory,Exceeding,25.4,4
+2026,5,Reading,ACT,Australian Capital Territory,Exempt,1.0,0
+2026,5,Reading,ACT,Australian Capital Territory,Needs additional support,5.1,1
+2026,5,Reading,ACT,Australian Capital Territory,Developing,16.1,2
+2026,5,Reading,ACT,Australian Capital Territory,Strong,56.3,3
+2026,5,Reading,ACT,Australian Capital Territory,Exceeding,21.5,4
+2026,7,Reading,ACT,Australian Capital Territory,Exempt,1.6,0
+2026,7,Reading,ACT,Australian Capital Territory,Needs additional support,7.1,1
+2026,7,Reading,ACT,Australian Capital Territory,Developing,16.9,2
+2026,7,Reading,ACT,Australian Capital Territory,Strong,48.6,3
+2026,7,Reading,ACT,Australian Capital Territory,Exceeding,25.7,4
+2026,9,Reading,ACT,Australian Capital Territory,Exempt,1.7,0
+2026,9,Reading,ACT,Australian Capital Territory,Needs additional support,8.6,1
+2026,9,Reading,ACT,Australian Capital Territory,Developing,19.2,2
+2026,9,Reading,ACT,Australian Capital Territory,Strong,48.2,3
+2026,9,Reading,ACT,Australian Capital Territory,Exceeding,22.4,4
+2026,3,Spelling,ACT,Australian Capital Territory,Exempt,1.8,0
+2026,3,Spelling,ACT,Australian Capital Territory,Needs additional support,8.8,1
+2026,3,Spelling,ACT,Australian Capital Territory,Developing,24.9,2
+2026,3,Spelling,ACT,Australian Capital Territory,Strong,47.5,3
+2026,3,Spelling,ACT,Australian Capital Territory,Exceeding,17.0,4
+2026,5,Spelling,ACT,Australian Capital Territory,Exempt,1.0,0
+2026,5,Spelling,ACT,Australian Capital Territory,Needs additional support,6.5,1
+2026,5,Spelling,ACT,Australian Capital Territory,Developing,19.1,2
+2026,5,Spelling,ACT,Australian Capital Territory,Strong,51.3,3
+2026,5,Spelling,ACT,Australian Capital Territory,Exceeding,22.1,4
+2026,7,Spelling,ACT,Australian Capital Territory,Exempt,1.7,0
+2026,7,Spelling,ACT,Australian Capital Territory,Needs additional support,5.8,1
+2026,7,Spelling,ACT,Australian Capital Territory,Developing,16.3,2
+2026,7,Spelling,ACT,Australian Capital Territory,Strong,49.6,3
+2026,7,Spelling,ACT,Australian Capital Territory,Exceeding,26.6,4
+2026,9,Spelling,ACT,Australian Capital Territory,Exempt,1.7,0
+2026,9,Spelling,ACT,Australian Capital Territory,Needs additional support,6.2,1
+2026,9,Spelling,ACT,Australian Capital Territory,Developing,16.4,2
+2026,9,Spelling,ACT,Australian Capital Territory,Strong,53.8,3
+2026,9,Spelling,ACT,Australian Capital Territory,Exceeding,21.9,4
+2026,3,Writing,ACT,Australian Capital Territory,Exempt,1.8,0
+2026,3,Writing,ACT,Australian Capital Territory,Needs additional support,4.7,1
+2026,3,Writing,ACT,Australian Capital Territory,Developing,17.4,2
+2026,3,Writing,ACT,Australian Capital Territory,Strong,69.2,3
+2026,3,Writing,ACT,Australian Capital Territory,Exceeding,6.9,4
+2026,5,Writing,ACT,Australian Capital Territory,Exempt,1.0,0
+2026,5,Writing,ACT,Australian Capital Territory,Needs additional support,8.9,1
+2026,5,Writing,ACT,Australian Capital Territory,Developing,24.2,2
+2026,5,Writing,ACT,Australian Capital Territory,Strong,56.8,3
+2026,5,Writing,ACT,Australian Capital Territory,Exceeding,9.1,4
+2026,7,Writing,ACT,Australian Capital Territory,Exempt,1.7,0
+2026,7,Writing,ACT,Australian Capital Territory,Needs additional support,10.0,1
+2026,7,Writing,ACT,Australian Capital Territory,Developing,23.0,2
+2026,7,Writing,ACT,Australian Capital Territory,Strong,48.8,3
+2026,7,Writing,ACT,Australian Capital Territory,Exceeding,16.5,4
+2026,9,Writing,ACT,Australian Capital Territory,Exempt,1.7,0
+2026,9,Writing,ACT,Australian Capital Territory,Needs additional support,9.8,1
+2026,9,Writing,ACT,Australian Capital Territory,Developing,25.1,2
+2026,9,Writing,ACT,Australian Capital Territory,Strong,41.8,3
+2026,9,Writing,ACT,Australian Capital Territory,Exceeding,21.7,4
+2026,3,Grammar and Punctuation,AUS,Australia,Exempt,2.1,0
+2026,3,Grammar and Punctuation,AUS,Australia,Needs additional support,16.3,1
+2026,3,Grammar and Punctuation,AUS,Australia,Developing,27.7,2
+2026,3,Grammar and Punctuation,AUS,Australia,Strong,42.9,3
+2026,3,Grammar and Punctuation,AUS,Australia,Exceeding,11.0,4
+2026,5,Grammar and Punctuation,AUS,Australia,Exempt,1.8,0
+2026,5,Grammar and Punctuation,AUS,Australia,Needs additional support,12.2,1
+2026,5,Grammar and Punctuation,AUS,Australia,Developing,23.0,2
+2026,5,Grammar and Punctuation,AUS,Australia,Strong,46.9,3
+2026,5,Grammar and Punctuation,AUS,Australia,Exceeding,16.1,4
+2026,7,Grammar and Punctuation,AUS,Australia,Exempt,1.7,0
+2026,7,Grammar and Punctuation,AUS,Australia,Needs additional support,15.4,1
+2026,7,Grammar and Punctuation,AUS,Australia,Developing,22.8,2
+2026,7,Grammar and Punctuation,AUS,Australia,Strong,42.6,3
+2026,7,Grammar and Punctuation,AUS,Australia,Exceeding,17.6,4
+2026,9,Grammar and Punctuation,AUS,Australia,Exempt,1.8,0
+2026,9,Grammar and Punctuation,AUS,Australia,Needs additional support,15.6,1
+2026,9,Grammar and Punctuation,AUS,Australia,Developing,28.6,2
+2026,9,Grammar and Punctuation,AUS,Australia,Strong,38.1,3
+2026,9,Grammar and Punctuation,AUS,Australia,Exceeding,15.9,4
+2026,3,Numeracy,AUS,Australia,Exempt,2.1,0
+2026,3,Numeracy,AUS,Australia,Needs additional support,11.0,1
+2026,3,Numeracy,AUS,Australia,Developing,24.9,2
+2026,3,Numeracy,AUS,Australia,Strong,51.1,3
+2026,3,Numeracy,AUS,Australia,Exceeding,11.0,4
+2026,5,Numeracy,AUS,Australia,Exempt,1.8,0
+2026,5,Numeracy,AUS,Australia,Needs additional support,7.6,1
+2026,5,Numeracy,AUS,Australia,Developing,19.9,2
+2026,5,Numeracy,AUS,Australia,Strong,57.4,3
+2026,5,Numeracy,AUS,Australia,Exceeding,13.2,4
+2026,7,Numeracy,AUS,Australia,Exempt,1.7,0
+2026,7,Numeracy,AUS,Australia,Needs additional support,9.0,1
+2026,7,Numeracy,AUS,Australia,Developing,19.4,2
+2026,7,Numeracy,AUS,Australia,Strong,53.8,3
+2026,7,Numeracy,AUS,Australia,Exceeding,16.1,4
+2026,9,Numeracy,AUS,Australia,Exempt,1.8,0
+2026,9,Numeracy,AUS,Australia,Needs additional support,11.0,1
+2026,9,Numeracy,AUS,Australia,Developing,22.0,2
+2026,9,Numeracy,AUS,Australia,Strong,52.0,3
+2026,9,Numeracy,AUS,Australia,Exceeding,13.3,4
+2026,3,Reading,AUS,Australia,Exempt,2.1,0
+2026,3,Reading,AUS,Australia,Needs additional support,11.3,1
+2026,3,Reading,AUS,Australia,Developing,21.0,2
+2026,3,Reading,AUS,Australia,Strong,46.2,3
+2026,3,Reading,AUS,Australia,Exceeding,19.4,4
+2026,5,Reading,AUS,Australia,Exempt,1.8,0
+2026,5,Reading,AUS,Australia,Needs additional support,7.7,1
+2026,5,Reading,AUS,Australia,Developing,19.5,2
+2026,5,Reading,AUS,Australia,Strong,53.4,3
+2026,5,Reading,AUS,Australia,Exceeding,17.6,4
+2026,7,Reading,AUS,Australia,Exempt,1.7,0
+2026,7,Reading,AUS,Australia,Needs additional support,10.7,1
+2026,7,Reading,AUS,Australia,Developing,20.9,2
+2026,7,Reading,AUS,Australia,Strong,46.2,3
+2026,7,Reading,AUS,Australia,Exceeding,20.6,4
+2026,9,Reading,AUS,Australia,Exempt,1.8,0
+2026,9,Reading,AUS,Australia,Needs additional support,11.1,1
+2026,9,Reading,AUS,Australia,Developing,25.1,2
+2026,9,Reading,AUS,Australia,Strong,45.7,3
+2026,9,Reading,AUS,Australia,Exceeding,16.3,4
+2026,3,Spelling,AUS,Australia,Exempt,2.1,0
+2026,3,Spelling,AUS,Australia,Needs additional support,11.2,1
+2026,3,Spelling,AUS,Australia,Developing,25.0,2
+2026,3,Spelling,AUS,Australia,Strong,44.6,3
+2026,3,Spelling,AUS,Australia,Exceeding,17.0,4
+2026,5,Spelling,AUS,Australia,Exempt,1.8,0
+2026,5,Spelling,AUS,Australia,Needs additional support,8.4,1
+2026,5,Spelling,AUS,Australia,Developing,19.9,2
+2026,5,Spelling,AUS,Australia,Strong,49.7,3
+2026,5,Spelling,AUS,Australia,Exceeding,20.1,4
+2026,7,Spelling,AUS,Australia,Exempt,1.7,0
+2026,7,Spelling,AUS,Australia,Needs additional support,7.7,1
+2026,7,Spelling,AUS,Australia,Developing,18.1,2
+2026,7,Spelling,AUS,Australia,Strong,48.4,3
+2026,7,Spelling,AUS,Australia,Exceeding,24.1,4
+2026,9,Spelling,AUS,Australia,Exempt,1.8,0
+2026,9,Spelling,AUS,Australia,Needs additional support,7.7,1
+2026,9,Spelling,AUS,Australia,Developing,19.2,2
+2026,9,Spelling,AUS,Australia,Strong,53.0,3
+2026,9,Spelling,AUS,Australia,Exceeding,18.3,4
+2026,3,Writing,AUS,Australia,Exempt,2.1,0
+2026,3,Writing,AUS,Australia,Needs additional support,6.7,1
+2026,3,Writing,AUS,Australia,Developing,17.3,2
+2026,3,Writing,AUS,Australia,Strong,65.9,3
+2026,3,Writing,AUS,Australia,Exceeding,8.0,4
+2026,5,Writing,AUS,Australia,Exempt,1.8,0
+2026,5,Writing,AUS,Australia,Needs additional support,10.3,1
+2026,5,Writing,AUS,Australia,Developing,22.3,2
+2026,5,Writing,AUS,Australia,Strong,53.9,3
+2026,5,Writing,AUS,Australia,Exceeding,11.7,4
+2026,7,Writing,AUS,Australia,Exempt,1.7,0
+2026,7,Writing,AUS,Australia,Needs additional support,12.5,1
+2026,7,Writing,AUS,Australia,Developing,23.4,2
+2026,7,Writing,AUS,Australia,Strong,44.9,3
+2026,7,Writing,AUS,Australia,Exceeding,17.5,4
+2026,9,Writing,AUS,Australia,Exempt,1.8,0
+2026,9,Writing,AUS,Australia,Needs additional support,12.8,1
+2026,9,Writing,AUS,Australia,Developing,25.6,2
+2026,9,Writing,AUS,Australia,Strong,38.2,3
+2026,9,Writing,AUS,Australia,Exceeding,21.6,4
+2026,3,Grammar and Punctuation,NSW,New South Wales,Exempt,1.8,0
+2026,3,Grammar and Punctuation,NSW,New South Wales,Needs additional support,14.3,1
+2026,3,Grammar and Punctuation,NSW,New South Wales,Developing,25.7,2
+2026,3,Grammar and Punctuation,NSW,New South Wales,Strong,44.4,3
+2026,3,Grammar and Punctuation,NSW,New South Wales,Exceeding,13.9,4
+2026,5,Grammar and Punctuation,NSW,New South Wales,Exempt,1.6,0
+2026,5,Grammar and Punctuation,NSW,New South Wales,Needs additional support,10.8,1
+2026,5,Grammar and Punctuation,NSW,New South Wales,Developing,21.0,2
+2026,5,Grammar and Punctuation,NSW,New South Wales,Strong,46.9,3
+2026,5,Grammar and Punctuation,NSW,New South Wales,Exceeding,19.7,4
+2026,7,Grammar and Punctuation,NSW,New South Wales,Exempt,1.6,0
+2026,7,Grammar and Punctuation,NSW,New South Wales,Needs additional support,13.5,1
+2026,7,Grammar and Punctuation,NSW,New South Wales,Developing,21.3,2
+2026,7,Grammar and Punctuation,NSW,New South Wales,Strong,42.7,3
+2026,7,Grammar and Punctuation,NSW,New South Wales,Exceeding,20.8,4
+2026,9,Grammar and Punctuation,NSW,New South Wales,Exempt,1.7,0
+2026,9,Grammar and Punctuation,NSW,New South Wales,Needs additional support,14.4,1
+2026,9,Grammar and Punctuation,NSW,New South Wales,Developing,27.6,2
+2026,9,Grammar and Punctuation,NSW,New South Wales,Strong,38.7,3
+2026,9,Grammar and Punctuation,NSW,New South Wales,Exceeding,17.5,4
+2026,3,Numeracy,NSW,New South Wales,Exempt,1.7,0
+2026,3,Numeracy,NSW,New South Wales,Needs additional support,10.0,1
+2026,3,Numeracy,NSW,New South Wales,Developing,23.4,2
+2026,3,Numeracy,NSW,New South Wales,Strong,51.8,3
+2026,3,Numeracy,NSW,New South Wales,Exceeding,13.1,4
+2026,5,Numeracy,NSW,New South Wales,Exempt,1.5,0
+2026,5,Numeracy,NSW,New South Wales,Needs additional support,7.0,1
+2026,5,Numeracy,NSW,New South Wales,Developing,18.4,2
+2026,5,Numeracy,NSW,New South Wales,Strong,56.7,3
+2026,5,Numeracy,NSW,New South Wales,Exceeding,16.4,4
+2026,7,Numeracy,NSW,New South Wales,Exempt,1.6,0
+2026,7,Numeracy,NSW,New South Wales,Needs additional support,7.7,1
+2026,7,Numeracy,NSW,New South Wales,Developing,17.8,2
+2026,7,Numeracy,NSW,New South Wales,Strong,53.0,3
+2026,7,Numeracy,NSW,New South Wales,Exceeding,19.8,4
+2026,9,Numeracy,NSW,New South Wales,Exempt,1.7,0
+2026,9,Numeracy,NSW,New South Wales,Needs additional support,9.9,1
+2026,9,Numeracy,NSW,New South Wales,Developing,20.9,2
+2026,9,Numeracy,NSW,New South Wales,Strong,51.3,3
+2026,9,Numeracy,NSW,New South Wales,Exceeding,16.2,4
+2026,3,Reading,NSW,New South Wales,Exempt,1.8,0
+2026,3,Reading,NSW,New South Wales,Needs additional support,9.8,1
+2026,3,Reading,NSW,New South Wales,Developing,19.8,2
+2026,3,Reading,NSW,New South Wales,Strong,46.8,3
+2026,3,Reading,NSW,New South Wales,Exceeding,21.8,4
+2026,5,Reading,NSW,New South Wales,Exempt,1.6,0
+2026,5,Reading,NSW,New South Wales,Needs additional support,7.1,1
+2026,5,Reading,NSW,New South Wales,Developing,18.7,2
+2026,5,Reading,NSW,New South Wales,Strong,53.0,3
+2026,5,Reading,NSW,New South Wales,Exceeding,19.6,4
+2026,7,Reading,NSW,New South Wales,Exempt,1.6,0
+2026,7,Reading,NSW,New South Wales,Needs additional support,9.6,1
+2026,7,Reading,NSW,New South Wales,Developing,19.6,2
+2026,7,Reading,NSW,New South Wales,Strong,45.6,3
+2026,7,Reading,NSW,New South Wales,Exceeding,23.5,4
+2026,9,Reading,NSW,New South Wales,Exempt,1.7,0
+2026,9,Reading,NSW,New South Wales,Needs additional support,10.8,1
+2026,9,Reading,NSW,New South Wales,Developing,24.5,2
+2026,9,Reading,NSW,New South Wales,Strong,45.0,3
+2026,9,Reading,NSW,New South Wales,Exceeding,17.9,4
+2026,3,Spelling,NSW,New South Wales,Exempt,1.8,0
+2026,3,Spelling,NSW,New South Wales,Needs additional support,9.2,1
+2026,3,Spelling,NSW,New South Wales,Developing,22.2,2
+2026,3,Spelling,NSW,New South Wales,Strong,45.7,3
+2026,3,Spelling,NSW,New South Wales,Exceeding,21.1,4
+2026,5,Spelling,NSW,New South Wales,Exempt,1.6,0
+2026,5,Spelling,NSW,New South Wales,Needs additional support,7.0,1
+2026,5,Spelling,NSW,New South Wales,Developing,17.6,2
+2026,5,Spelling,NSW,New South Wales,Strong,49.9,3
+2026,5,Spelling,NSW,New South Wales,Exceeding,23.8,4
+2026,7,Spelling,NSW,New South Wales,Exempt,1.6,0
+2026,7,Spelling,NSW,New South Wales,Needs additional support,6.3,1
+2026,7,Spelling,NSW,New South Wales,Developing,15.8,2
+2026,7,Spelling,NSW,New South Wales,Strong,48.1,3
+2026,7,Spelling,NSW,New South Wales,Exceeding,28.3,4
+2026,9,Spelling,NSW,New South Wales,Exempt,1.7,0
+2026,9,Spelling,NSW,New South Wales,Needs additional support,6.5,1
+2026,9,Spelling,NSW,New South Wales,Developing,17.5,2
+2026,9,Spelling,NSW,New South Wales,Strong,53.2,3
+2026,9,Spelling,NSW,New South Wales,Exceeding,21.1,4
+2026,3,Writing,NSW,New South Wales,Exempt,1.8,0
+2026,3,Writing,NSW,New South Wales,Needs additional support,5.2,1
+2026,3,Writing,NSW,New South Wales,Developing,15.8,2
+2026,3,Writing,NSW,New South Wales,Strong,66.4,3
+2026,3,Writing,NSW,New South Wales,Exceeding,10.7,4
+2026,5,Writing,NSW,New South Wales,Exempt,1.6,0
+2026,5,Writing,NSW,New South Wales,Needs additional support,9.4,1
+2026,5,Writing,NSW,New South Wales,Developing,21.7,2
+2026,5,Writing,NSW,New South Wales,Strong,54.2,3
+2026,5,Writing,NSW,New South Wales,Exceeding,13.2,4
+2026,7,Writing,NSW,New South Wales,Exempt,1.6,0
+2026,7,Writing,NSW,New South Wales,Needs additional support,11.0,1
+2026,7,Writing,NSW,New South Wales,Developing,22.0,2
+2026,7,Writing,NSW,New South Wales,Strong,46.1,3
+2026,7,Writing,NSW,New South Wales,Exceeding,19.2,4
+2026,9,Writing,NSW,New South Wales,Exempt,1.7,0
+2026,9,Writing,NSW,New South Wales,Needs additional support,11.5,1
+2026,9,Writing,NSW,New South Wales,Developing,25.8,2
+2026,9,Writing,NSW,New South Wales,Strong,38.9,3
+2026,9,Writing,NSW,New South Wales,Exceeding,22.1,4
+2026,3,Grammar and Punctuation,NT,Northern Territory,Exempt,3.7,0
+2026,3,Grammar and Punctuation,NT,Northern Territory,Needs additional support,43.9,1
+2026,3,Grammar and Punctuation,NT,Northern Territory,Developing,24.1,2
+2026,3,Grammar and Punctuation,NT,Northern Territory,Strong,24.7,3
+2026,3,Grammar and Punctuation,NT,Northern Territory,Exceeding,3.7,4
+2026,5,Grammar and Punctuation,NT,Northern Territory,Exempt,3.0,0
+2026,5,Grammar and Punctuation,NT,Northern Territory,Needs additional support,38.7,1
+2026,5,Grammar and Punctuation,NT,Northern Territory,Developing,21.4,2
+2026,5,Grammar and Punctuation,NT,Northern Territory,Strong,30.4,3
+2026,5,Grammar and Punctuation,NT,Northern Territory,Exceeding,6.4,4
+2026,7,Grammar and Punctuation,NT,Northern Territory,Exempt,3.2,0
+2026,7,Grammar and Punctuation,NT,Northern Territory,Needs additional support,42.2,1
+2026,7,Grammar and Punctuation,NT,Northern Territory,Developing,22.0,2
+2026,7,Grammar and Punctuation,NT,Northern Territory,Strong,26.7,3
+2026,7,Grammar and Punctuation,NT,Northern Territory,Exceeding,5.9,4
+2026,9,Grammar and Punctuation,NT,Northern Territory,Exempt,2.6,0
+2026,9,Grammar and Punctuation,NT,Northern Territory,Needs additional support,41.4,1
+2026,9,Grammar and Punctuation,NT,Northern Territory,Developing,25.5,2
+2026,9,Grammar and Punctuation,NT,Northern Territory,Strong,23.4,3
+2026,9,Grammar and Punctuation,NT,Northern Territory,Exceeding,7.1,4
+2026,3,Numeracy,NT,Northern Territory,Exempt,3.5,0
+2026,3,Numeracy,NT,Northern Territory,Needs additional support,37.7,1
+2026,3,Numeracy,NT,Northern Territory,Developing,24.6,2
+2026,3,Numeracy,NT,Northern Territory,Strong,31.0,3
+2026,3,Numeracy,NT,Northern Territory,Exceeding,3.2,4
+2026,5,Numeracy,NT,Northern Territory,Exempt,2.9,0
+2026,5,Numeracy,NT,Northern Territory,Needs additional support,32.5,1
+2026,5,Numeracy,NT,Northern Territory,Developing,22.1,2
+2026,5,Numeracy,NT,Northern Territory,Strong,38.5,3
+2026,5,Numeracy,NT,Northern Territory,Exceeding,4.0,4
+2026,7,Numeracy,NT,Northern Territory,Exempt,3.2,0
+2026,7,Numeracy,NT,Northern Territory,Needs additional support,32.2,1
+2026,7,Numeracy,NT,Northern Territory,Developing,22.4,2
+2026,7,Numeracy,NT,Northern Territory,Strong,37.6,3
+2026,7,Numeracy,NT,Northern Territory,Exceeding,4.6,4
+2026,9,Numeracy,NT,Northern Territory,Exempt,2.6,0
+2026,9,Numeracy,NT,Northern Territory,Needs additional support,34.6,1
+2026,9,Numeracy,NT,Northern Territory,Developing,23.5,2
+2026,9,Numeracy,NT,Northern Territory,Strong,34.8,3
+2026,9,Numeracy,NT,Northern Territory,Exceeding,4.4,4
+2026,3,Reading,NT,Northern Territory,Exempt,3.5,0
+2026,3,Reading,NT,Northern Territory,Needs additional support,36.6,1
+2026,3,Reading,NT,Northern Territory,Developing,21.6,2
+2026,3,Reading,NT,Northern Territory,Strong,29.9,3
+2026,3,Reading,NT,Northern Territory,Exceeding,8.4,4
+2026,5,Reading,NT,Northern Territory,Exempt,3.0,0
+2026,5,Reading,NT,Northern Territory,Needs additional support,31.4,1
+2026,5,Reading,NT,Northern Territory,Developing,21.4,2
+2026,5,Reading,NT,Northern Territory,Strong,36.7,3
+2026,5,Reading,NT,Northern Territory,Exceeding,7.4,4
+2026,7,Reading,NT,Northern Territory,Exempt,3.2,0
+2026,7,Reading,NT,Northern Territory,Needs additional support,33.4,1
+2026,7,Reading,NT,Northern Territory,Developing,22.3,2
+2026,7,Reading,NT,Northern Territory,Strong,32.5,3
+2026,7,Reading,NT,Northern Territory,Exceeding,8.7,4
+2026,9,Reading,NT,Northern Territory,Exempt,2.6,0
+2026,9,Reading,NT,Northern Territory,Needs additional support,33.2,1
+2026,9,Reading,NT,Northern Territory,Developing,25.4,2
+2026,9,Reading,NT,Northern Territory,Strong,30.6,3
+2026,9,Reading,NT,Northern Territory,Exceeding,8.2,4
+2026,3,Spelling,NT,Northern Territory,Exempt,3.7,0
+2026,3,Spelling,NT,Northern Territory,Needs additional support,38.3,1
+2026,3,Spelling,NT,Northern Territory,Developing,23.2,2
+2026,3,Spelling,NT,Northern Territory,Strong,27.1,3
+2026,3,Spelling,NT,Northern Territory,Exceeding,7.7,4
+2026,5,Spelling,NT,Northern Territory,Exempt,3.0,0
+2026,5,Spelling,NT,Northern Territory,Needs additional support,33.8,1
+2026,5,Spelling,NT,Northern Territory,Developing,19.6,2
+2026,5,Spelling,NT,Northern Territory,Strong,32.8,3
+2026,5,Spelling,NT,Northern Territory,Exceeding,10.8,4
+2026,7,Spelling,NT,Northern Territory,Exempt,3.2,0
+2026,7,Spelling,NT,Northern Territory,Needs additional support,30.2,1
+2026,7,Spelling,NT,Northern Territory,Developing,19.6,2
+2026,7,Spelling,NT,Northern Territory,Strong,34.4,3
+2026,7,Spelling,NT,Northern Territory,Exceeding,12.7,4
+2026,9,Spelling,NT,Northern Territory,Exempt,2.6,0
+2026,9,Spelling,NT,Northern Territory,Needs additional support,29.0,1
+2026,9,Spelling,NT,Northern Territory,Developing,19.8,2
+2026,9,Spelling,NT,Northern Territory,Strong,37.8,3
+2026,9,Spelling,NT,Northern Territory,Exceeding,10.9,4
+2026,3,Writing,NT,Northern Territory,Exempt,3.6,0
+2026,3,Writing,NT,Northern Territory,Needs additional support,31.5,1
+2026,3,Writing,NT,Northern Territory,Developing,20.3,2
+2026,3,Writing,NT,Northern Territory,Strong,41.9,3
+2026,3,Writing,NT,Northern Territory,Exceeding,2.7,4
+2026,5,Writing,NT,Northern Territory,Exempt,3.1,0
+2026,5,Writing,NT,Northern Territory,Needs additional support,37.7,1
+2026,5,Writing,NT,Northern Territory,Developing,22.1,2
+2026,5,Writing,NT,Northern Territory,Strong,33.3,3
+2026,5,Writing,NT,Northern Territory,Exceeding,3.8,4
+2026,7,Writing,NT,Northern Territory,Exempt,3.2,0
+2026,7,Writing,NT,Northern Territory,Needs additional support,36.9,1
+2026,7,Writing,NT,Northern Territory,Developing,23.1,2
+2026,7,Writing,NT,Northern Territory,Strong,29.3,3
+2026,7,Writing,NT,Northern Territory,Exceeding,7.6,4
+2026,9,Writing,NT,Northern Territory,Exempt,2.6,0
+2026,9,Writing,NT,Northern Territory,Needs additional support,37.3,1
+2026,9,Writing,NT,Northern Territory,Developing,24.3,2
+2026,9,Writing,NT,Northern Territory,Strong,24.6,3
+2026,9,Writing,NT,Northern Territory,Exceeding,11.3,4
+2026,3,Grammar and Punctuation,QLD,Queensland,Exempt,1.6,0
+2026,3,Grammar and Punctuation,QLD,Queensland,Needs additional support,21.0,1
+2026,3,Grammar and Punctuation,QLD,Queensland,Developing,30.2,2
+2026,3,Grammar and Punctuation,QLD,Queensland,Strong,39.6,3
+2026,3,Grammar and Punctuation,QLD,Queensland,Exceeding,7.6,4
+2026,5,Grammar and Punctuation,QLD,Queensland,Exempt,1.5,0
+2026,5,Grammar and Punctuation,QLD,Queensland,Needs additional support,15.2,1
+2026,5,Grammar and Punctuation,QLD,Queensland,Developing,26.0,2
+2026,5,Grammar and Punctuation,QLD,Queensland,Strong,45.5,3
+2026,5,Grammar and Punctuation,QLD,Queensland,Exceeding,11.8,4
+2026,7,Grammar and Punctuation,QLD,Queensland,Exempt,1.3,0
+2026,7,Grammar and Punctuation,QLD,Queensland,Needs additional support,18.9,1
+2026,7,Grammar and Punctuation,QLD,Queensland,Developing,24.6,2
+2026,7,Grammar and Punctuation,QLD,Queensland,Strong,40.5,3
+2026,7,Grammar and Punctuation,QLD,Queensland,Exceeding,14.7,4
+2026,9,Grammar and Punctuation,QLD,Queensland,Exempt,1.3,0
+2026,9,Grammar and Punctuation,QLD,Queensland,Needs additional support,19.5,1
+2026,9,Grammar and Punctuation,QLD,Queensland,Developing,29.6,2
+2026,9,Grammar and Punctuation,QLD,Queensland,Strong,35.6,3
+2026,9,Grammar and Punctuation,QLD,Queensland,Exceeding,13.9,4
+2026,3,Numeracy,QLD,Queensland,Exempt,1.6,0
+2026,3,Numeracy,QLD,Queensland,Needs additional support,14.3,1
+2026,3,Numeracy,QLD,Queensland,Developing,29.0,2
+2026,3,Numeracy,QLD,Queensland,Strong,48.3,3
+2026,3,Numeracy,QLD,Queensland,Exceeding,6.8,4
+2026,5,Numeracy,QLD,Queensland,Exempt,1.4,0
+2026,5,Numeracy,QLD,Queensland,Needs additional support,9.3,1
+2026,5,Numeracy,QLD,Queensland,Developing,23.1,2
+2026,5,Numeracy,QLD,Queensland,Strong,57.6,3
+2026,5,Numeracy,QLD,Queensland,Exceeding,8.6,4
+2026,7,Numeracy,QLD,Queensland,Exempt,1.2,0
+2026,7,Numeracy,QLD,Queensland,Needs additional support,11.6,1
+2026,7,Numeracy,QLD,Queensland,Developing,22.7,2
+2026,7,Numeracy,QLD,Queensland,Strong,52.7,3
+2026,7,Numeracy,QLD,Queensland,Exceeding,11.7,4
+2026,9,Numeracy,QLD,Queensland,Exempt,1.3,0
+2026,9,Numeracy,QLD,Queensland,Needs additional support,15.1,1
+2026,9,Numeracy,QLD,Queensland,Developing,25.0,2
+2026,9,Numeracy,QLD,Queensland,Strong,49.5,3
+2026,9,Numeracy,QLD,Queensland,Exceeding,9.0,4
+2026,3,Reading,QLD,Queensland,Exempt,1.7,0
+2026,3,Reading,QLD,Queensland,Needs additional support,15.2,1
+2026,3,Reading,QLD,Queensland,Developing,23.8,2
+2026,3,Reading,QLD,Queensland,Strong,44.3,3
+2026,3,Reading,QLD,Queensland,Exceeding,15.0,4
+2026,5,Reading,QLD,Queensland,Exempt,1.5,0
+2026,5,Reading,QLD,Queensland,Needs additional support,9.4,1
+2026,5,Reading,QLD,Queensland,Developing,21.8,2
+2026,5,Reading,QLD,Queensland,Strong,53.1,3
+2026,5,Reading,QLD,Queensland,Exceeding,14.3,4
+2026,7,Reading,QLD,Queensland,Exempt,1.3,0
+2026,7,Reading,QLD,Queensland,Needs additional support,13.7,1
+2026,7,Reading,QLD,Queensland,Developing,24.1,2
+2026,7,Reading,QLD,Queensland,Strong,44.6,3
+2026,7,Reading,QLD,Queensland,Exceeding,16.4,4
+2026,9,Reading,QLD,Queensland,Exempt,1.3,0
+2026,9,Reading,QLD,Queensland,Needs additional support,15.1,1
+2026,9,Reading,QLD,Queensland,Developing,28.2,2
+2026,9,Reading,QLD,Queensland,Strong,42.6,3
+2026,9,Reading,QLD,Queensland,Exceeding,12.8,4
+2026,3,Spelling,QLD,Queensland,Exempt,1.6,0
+2026,3,Spelling,QLD,Queensland,Needs additional support,15.8,1
+2026,3,Spelling,QLD,Queensland,Developing,28.9,2
+2026,3,Spelling,QLD,Queensland,Strong,41.9,3
+2026,3,Spelling,QLD,Queensland,Exceeding,11.8,4
+2026,5,Spelling,QLD,Queensland,Exempt,1.5,0
+2026,5,Spelling,QLD,Queensland,Needs additional support,11.2,1
+2026,5,Spelling,QLD,Queensland,Developing,23.3,2
+2026,5,Spelling,QLD,Queensland,Strong,48.7,3
+2026,5,Spelling,QLD,Queensland,Exceeding,15.4,4
+2026,7,Spelling,QLD,Queensland,Exempt,1.3,0
+2026,7,Spelling,QLD,Queensland,Needs additional support,9.8,1
+2026,7,Spelling,QLD,Queensland,Developing,21.4,2
+2026,7,Spelling,QLD,Queensland,Strong,48.9,3
+2026,7,Spelling,QLD,Queensland,Exceeding,18.7,4
+2026,9,Spelling,QLD,Queensland,Exempt,1.3,0
+2026,9,Spelling,QLD,Queensland,Needs additional support,9.5,1
+2026,9,Spelling,QLD,Queensland,Developing,22.1,2
+2026,9,Spelling,QLD,Queensland,Strong,52.5,3
+2026,9,Spelling,QLD,Queensland,Exceeding,14.6,4
+2026,3,Writing,QLD,Queensland,Exempt,1.7,0
+2026,3,Writing,QLD,Queensland,Needs additional support,10.4,1
+2026,3,Writing,QLD,Queensland,Developing,21.4,2
+2026,3,Writing,QLD,Queensland,Strong,59.6,3
+2026,3,Writing,QLD,Queensland,Exceeding,6.9,4
+2026,5,Writing,QLD,Queensland,Exempt,1.5,0
+2026,5,Writing,QLD,Queensland,Needs additional support,14.4,1
+2026,5,Writing,QLD,Queensland,Developing,24.8,2
+2026,5,Writing,QLD,Queensland,Strong,48.7,3
+2026,5,Writing,QLD,Queensland,Exceeding,10.6,4
+2026,7,Writing,QLD,Queensland,Exempt,1.2,0
+2026,7,Writing,QLD,Queensland,Needs additional support,19.3,1
+2026,7,Writing,QLD,Queensland,Developing,27.3,2
+2026,7,Writing,QLD,Queensland,Strong,39.2,3
+2026,7,Writing,QLD,Queensland,Exceeding,12.9,4
+2026,9,Writing,QLD,Queensland,Exempt,1.3,0
+2026,9,Writing,QLD,Queensland,Needs additional support,19.3,1
+2026,9,Writing,QLD,Queensland,Developing,28.2,2
+2026,9,Writing,QLD,Queensland,Strong,33.1,3
+2026,9,Writing,QLD,Queensland,Exceeding,18.2,4
+2026,3,Grammar and Punctuation,SA,South Australia,Exempt,3.0,0
+2026,3,Grammar and Punctuation,SA,South Australia,Needs additional support,18.1,1
+2026,3,Grammar and Punctuation,SA,South Australia,Developing,32.1,2
+2026,3,Grammar and Punctuation,SA,South Australia,Strong,40.4,3
+2026,3,Grammar and Punctuation,SA,South Australia,Exceeding,6.4,4
+2026,5,Grammar and Punctuation,SA,South Australia,Exempt,2.7,0
+2026,5,Grammar and Punctuation,SA,South Australia,Needs additional support,13.4,1
+2026,5,Grammar and Punctuation,SA,South Australia,Developing,26.7,2
+2026,5,Grammar and Punctuation,SA,South Australia,Strong,46.7,3
+2026,5,Grammar and Punctuation,SA,South Australia,Exceeding,10.5,4
+2026,7,Grammar and Punctuation,SA,South Australia,Exempt,2.0,0
+2026,7,Grammar and Punctuation,SA,South Australia,Needs additional support,17.3,1
+2026,7,Grammar and Punctuation,SA,South Australia,Developing,25.4,2
+2026,7,Grammar and Punctuation,SA,South Australia,Strong,42.2,3
+2026,7,Grammar and Punctuation,SA,South Australia,Exceeding,13.1,4
+2026,9,Grammar and Punctuation,SA,South Australia,Exempt,2.6,0
+2026,9,Grammar and Punctuation,SA,South Australia,Needs additional support,18.1,1
+2026,9,Grammar and Punctuation,SA,South Australia,Developing,31.0,2
+2026,9,Grammar and Punctuation,SA,South Australia,Strong,36.1,3
+2026,9,Grammar and Punctuation,SA,South Australia,Exceeding,12.1,4
+2026,3,Numeracy,SA,South Australia,Exempt,2.9,0
+2026,3,Numeracy,SA,South Australia,Needs additional support,12.2,1
+2026,3,Numeracy,SA,South Australia,Developing,28.1,2
+2026,3,Numeracy,SA,South Australia,Strong,49.8,3
+2026,3,Numeracy,SA,South Australia,Exceeding,7.0,4
+2026,5,Numeracy,SA,South Australia,Exempt,2.6,0
+2026,5,Numeracy,SA,South Australia,Needs additional support,8.3,1
+2026,5,Numeracy,SA,South Australia,Developing,23.1,2
+2026,5,Numeracy,SA,South Australia,Strong,57.0,3
+2026,5,Numeracy,SA,South Australia,Exceeding,8.9,4
+2026,7,Numeracy,SA,South Australia,Exempt,2.0,0
+2026,7,Numeracy,SA,South Australia,Needs additional support,10.6,1
+2026,7,Numeracy,SA,South Australia,Developing,22.9,2
+2026,7,Numeracy,SA,South Australia,Strong,53.7,3
+2026,7,Numeracy,SA,South Australia,Exceeding,10.9,4
+2026,9,Numeracy,SA,South Australia,Exempt,2.6,0
+2026,9,Numeracy,SA,South Australia,Needs additional support,13.3,1
+2026,9,Numeracy,SA,South Australia,Developing,25.5,2
+2026,9,Numeracy,SA,South Australia,Strong,50.0,3
+2026,9,Numeracy,SA,South Australia,Exceeding,8.5,4
+2026,3,Reading,SA,South Australia,Exempt,3.0,0
+2026,3,Reading,SA,South Australia,Needs additional support,12.5,1
+2026,3,Reading,SA,South Australia,Developing,24.0,2
+2026,3,Reading,SA,South Australia,Strong,45.7,3
+2026,3,Reading,SA,South Australia,Exceeding,14.9,4
+2026,5,Reading,SA,South Australia,Exempt,2.7,0
+2026,5,Reading,SA,South Australia,Needs additional support,8.2,1
+2026,5,Reading,SA,South Australia,Developing,22.0,2
+2026,5,Reading,SA,South Australia,Strong,53.5,3
+2026,5,Reading,SA,South Australia,Exceeding,13.5,4
+2026,7,Reading,SA,South Australia,Exempt,2.0,0
+2026,7,Reading,SA,South Australia,Needs additional support,12.0,1
+2026,7,Reading,SA,South Australia,Developing,23.6,2
+2026,7,Reading,SA,South Australia,Strong,46.4,3
+2026,7,Reading,SA,South Australia,Exceeding,16.0,4
+2026,9,Reading,SA,South Australia,Exempt,2.6,0
+2026,9,Reading,SA,South Australia,Needs additional support,13.4,1
+2026,9,Reading,SA,South Australia,Developing,28.1,2
+2026,9,Reading,SA,South Australia,Strong,43.3,3
+2026,9,Reading,SA,South Australia,Exceeding,12.5,4
+2026,3,Spelling,SA,South Australia,Exempt,3.0,0
+2026,3,Spelling,SA,South Australia,Needs additional support,11.0,1
+2026,3,Spelling,SA,South Australia,Developing,27.4,2
+2026,3,Spelling,SA,South Australia,Strong,45.0,3
+2026,3,Spelling,SA,South Australia,Exceeding,13.5,4
+2026,5,Spelling,SA,South Australia,Exempt,2.7,0
+2026,5,Spelling,SA,South Australia,Needs additional support,7.9,1
+2026,5,Spelling,SA,South Australia,Developing,21.2,2
+2026,5,Spelling,SA,South Australia,Strong,51.1,3
+2026,5,Spelling,SA,South Australia,Exceeding,17.2,4
+2026,7,Spelling,SA,South Australia,Exempt,2.0,0
+2026,7,Spelling,SA,South Australia,Needs additional support,7.7,1
+2026,7,Spelling,SA,South Australia,Developing,19.5,2
+2026,7,Spelling,SA,South Australia,Strong,50.0,3
+2026,7,Spelling,SA,South Australia,Exceeding,20.9,4
+2026,9,Spelling,SA,South Australia,Exempt,2.6,0
+2026,9,Spelling,SA,South Australia,Needs additional support,8.2,1
+2026,9,Spelling,SA,South Australia,Developing,21.8,2
+2026,9,Spelling,SA,South Australia,Strong,53.0,3
+2026,9,Spelling,SA,South Australia,Exceeding,14.4,4
+2026,3,Writing,SA,South Australia,Exempt,3.0,0
+2026,3,Writing,SA,South Australia,Needs additional support,6.4,1
+2026,3,Writing,SA,South Australia,Developing,19.8,2
+2026,3,Writing,SA,South Australia,Strong,66.0,3
+2026,3,Writing,SA,South Australia,Exceeding,4.9,4
+2026,5,Writing,SA,South Australia,Exempt,2.7,0
+2026,5,Writing,SA,South Australia,Needs additional support,11.2,1
+2026,5,Writing,SA,South Australia,Developing,26.2,2
+2026,5,Writing,SA,South Australia,Strong,51.0,3
+2026,5,Writing,SA,South Australia,Exceeding,8.9,4
+2026,7,Writing,SA,South Australia,Exempt,2.0,0
+2026,7,Writing,SA,South Australia,Needs additional support,13.7,1
+2026,7,Writing,SA,South Australia,Developing,26.0,2
+2026,7,Writing,SA,South Australia,Strong,43.5,3
+2026,7,Writing,SA,South Australia,Exceeding,14.8,4
+2026,9,Writing,SA,South Australia,Exempt,2.6,0
+2026,9,Writing,SA,South Australia,Needs additional support,14.5,1
+2026,9,Writing,SA,South Australia,Developing,26.9,2
+2026,9,Writing,SA,South Australia,Strong,36.2,3
+2026,9,Writing,SA,South Australia,Exceeding,19.8,4
+2026,3,Grammar and Punctuation,VIC,Victoria,Exempt,2.8,0
+2026,3,Grammar and Punctuation,VIC,Victoria,Needs additional support,11.7,1
+2026,3,Grammar and Punctuation,VIC,Victoria,Developing,26.4,2
+2026,3,Grammar and Punctuation,VIC,Victoria,Strong,46.2,3
+2026,3,Grammar and Punctuation,VIC,Victoria,Exceeding,12.8,4
+2026,5,Grammar and Punctuation,VIC,Victoria,Exempt,2.4,0
+2026,5,Grammar and Punctuation,VIC,Victoria,Needs additional support,9.0,1
+2026,5,Grammar and Punctuation,VIC,Victoria,Developing,21.5,2
+2026,5,Grammar and Punctuation,VIC,Victoria,Strong,48.7,3
+2026,5,Grammar and Punctuation,VIC,Victoria,Exceeding,18.4,4
+2026,7,Grammar and Punctuation,VIC,Victoria,Exempt,2.0,0
+2026,7,Grammar and Punctuation,VIC,Victoria,Needs additional support,12.7,1
+2026,7,Grammar and Punctuation,VIC,Victoria,Developing,22.0,2
+2026,7,Grammar and Punctuation,VIC,Victoria,Strong,44.5,3
+2026,7,Grammar and Punctuation,VIC,Victoria,Exceeding,18.7,4
+2026,9,Grammar and Punctuation,VIC,Victoria,Exempt,2.2,0
+2026,9,Grammar and Punctuation,VIC,Victoria,Needs additional support,13.0,1
+2026,9,Grammar and Punctuation,VIC,Victoria,Developing,28.5,2
+2026,9,Grammar and Punctuation,VIC,Victoria,Strong,39.2,3
+2026,9,Grammar and Punctuation,VIC,Victoria,Exceeding,17.2,4
+2026,3,Numeracy,VIC,Victoria,Exempt,2.7,0
+2026,3,Numeracy,VIC,Victoria,Needs additional support,7.2,1
+2026,3,Numeracy,VIC,Victoria,Developing,21.6,2
+2026,3,Numeracy,VIC,Victoria,Strong,54.3,3
+2026,3,Numeracy,VIC,Victoria,Exceeding,14.3,4
+2026,5,Numeracy,VIC,Victoria,Exempt,2.4,0
+2026,5,Numeracy,VIC,Victoria,Needs additional support,5.2,1
+2026,5,Numeracy,VIC,Victoria,Developing,17.5,2
+2026,5,Numeracy,VIC,Victoria,Strong,59.2,3
+2026,5,Numeracy,VIC,Victoria,Exceeding,15.8,4
+2026,7,Numeracy,VIC,Victoria,Exempt,2.0,0
+2026,7,Numeracy,VIC,Victoria,Needs additional support,6.6,1
+2026,7,Numeracy,VIC,Victoria,Developing,17.3,2
+2026,7,Numeracy,VIC,Victoria,Strong,55.7,3
+2026,7,Numeracy,VIC,Victoria,Exceeding,18.4,4
+2026,9,Numeracy,VIC,Victoria,Exempt,2.2,0
+2026,9,Numeracy,VIC,Victoria,Needs additional support,8.3,1
+2026,9,Numeracy,VIC,Victoria,Developing,20.7,2
+2026,9,Numeracy,VIC,Victoria,Strong,53.6,3
+2026,9,Numeracy,VIC,Victoria,Exceeding,15.2,4
+2026,3,Reading,VIC,Victoria,Exempt,2.8,0
+2026,3,Reading,VIC,Victoria,Needs additional support,7.2,1
+2026,3,Reading,VIC,Victoria,Developing,18.5,2
+2026,3,Reading,VIC,Victoria,Strong,48.4,3
+2026,3,Reading,VIC,Victoria,Exceeding,23.1,4
+2026,5,Reading,VIC,Victoria,Exempt,2.4,0
+2026,5,Reading,VIC,Victoria,Needs additional support,5.0,1
+2026,5,Reading,VIC,Victoria,Developing,17.3,2
+2026,5,Reading,VIC,Victoria,Strong,55.0,3
+2026,5,Reading,VIC,Victoria,Exceeding,20.3,4
+2026,7,Reading,VIC,Victoria,Exempt,2.0,0
+2026,7,Reading,VIC,Victoria,Needs additional support,7.8,1
+2026,7,Reading,VIC,Victoria,Developing,18.8,2
+2026,7,Reading,VIC,Victoria,Strong,48.3,3
+2026,7,Reading,VIC,Victoria,Exceeding,23.1,4
+2026,9,Reading,VIC,Victoria,Exempt,2.2,0
+2026,9,Reading,VIC,Victoria,Needs additional support,7.9,1
+2026,9,Reading,VIC,Victoria,Developing,23.5,2
+2026,9,Reading,VIC,Victoria,Strong,48.0,3
+2026,9,Reading,VIC,Victoria,Exceeding,18.4,4
+2026,3,Spelling,VIC,Victoria,Exempt,2.8,0
+2026,3,Spelling,VIC,Victoria,Needs additional support,7.7,1
+2026,3,Spelling,VIC,Victoria,Developing,23.3,2
+2026,3,Spelling,VIC,Victoria,Strong,46.9,3
+2026,3,Spelling,VIC,Victoria,Exceeding,19.3,4
+2026,5,Spelling,VIC,Victoria,Exempt,2.4,0
+2026,5,Spelling,VIC,Victoria,Needs additional support,6.4,1
+2026,5,Spelling,VIC,Victoria,Developing,19.1,2
+2026,5,Spelling,VIC,Victoria,Strong,50.7,3
+2026,5,Spelling,VIC,Victoria,Exceeding,21.5,4
+2026,7,Spelling,VIC,Victoria,Exempt,2.0,0
+2026,7,Spelling,VIC,Victoria,Needs additional support,6.7,1
+2026,7,Spelling,VIC,Victoria,Developing,17.8,2
+2026,7,Spelling,VIC,Victoria,Strong,48.4,3
+2026,7,Spelling,VIC,Victoria,Exceeding,25.0,4
+2026,9,Spelling,VIC,Victoria,Exempt,2.2,0
+2026,9,Spelling,VIC,Victoria,Needs additional support,6.8,1
+2026,9,Spelling,VIC,Victoria,Developing,18.5,2
+2026,9,Spelling,VIC,Victoria,Strong,53.2,3
+2026,9,Spelling,VIC,Victoria,Exceeding,19.3,4
+2026,3,Writing,VIC,Victoria,Exempt,2.8,0
+2026,3,Writing,VIC,Victoria,Needs additional support,3.6,1
+2026,3,Writing,VIC,Victoria,Developing,13.8,2
+2026,3,Writing,VIC,Victoria,Strong,70.5,3
+2026,3,Writing,VIC,Victoria,Exceeding,9.3,4
+2026,5,Writing,VIC,Victoria,Exempt,2.4,0
+2026,5,Writing,VIC,Victoria,Needs additional support,6.0,1
+2026,5,Writing,VIC,Victoria,Developing,18.5,2
+2026,5,Writing,VIC,Victoria,Strong,59.0,3
+2026,5,Writing,VIC,Victoria,Exceeding,14.1,4
+2026,7,Writing,VIC,Victoria,Exempt,2.0,0
+2026,7,Writing,VIC,Victoria,Needs additional support,7.7,1
+2026,7,Writing,VIC,Victoria,Developing,20.4,2
+2026,7,Writing,VIC,Victoria,Strong,48.3,3
+2026,7,Writing,VIC,Victoria,Exceeding,21.7,4
+2026,9,Writing,VIC,Victoria,Exempt,2.2,0
+2026,9,Writing,VIC,Victoria,Needs additional support,8.8,1
+2026,9,Writing,VIC,Victoria,Developing,22.6,2
+2026,9,Writing,VIC,Victoria,Strong,41.0,3
+2026,9,Writing,VIC,Victoria,Exceeding,25.4,4
+2026,3,Grammar and Punctuation,WA,Western Australia,Exempt,1.9,0
+2026,3,Grammar and Punctuation,WA,Western Australia,Needs additional support,19.5,1
+2026,3,Grammar and Punctuation,WA,Western Australia,Developing,28.9,2
+2026,3,Grammar and Punctuation,WA,Western Australia,Strong,40.8,3
+2026,3,Grammar and Punctuation,WA,Western Australia,Exceeding,8.9,4
+2026,5,Grammar and Punctuation,WA,Western Australia,Exempt,1.5,0
+2026,5,Grammar and Punctuation,WA,Western Australia,Needs additional support,13.9,1
+2026,5,Grammar and Punctuation,WA,Western Australia,Developing,23.5,2
+2026,5,Grammar and Punctuation,WA,Western Australia,Strong,46.7,3
+2026,5,Grammar and Punctuation,WA,Western Australia,Exceeding,14.4,4
+2026,7,Grammar and Punctuation,WA,Western Australia,Exempt,1.2,0
+2026,7,Grammar and Punctuation,WA,Western Australia,Needs additional support,16.1,1
+2026,7,Grammar and Punctuation,WA,Western Australia,Developing,22.9,2
+2026,7,Grammar and Punctuation,WA,Western Australia,Strong,43.3,3
+2026,7,Grammar and Punctuation,WA,Western Australia,Exceeding,16.4,4
+2026,9,Grammar and Punctuation,WA,Western Australia,Exempt,1.3,0
+2026,9,Grammar and Punctuation,WA,Western Australia,Needs additional support,12.6,1
+2026,9,Grammar and Punctuation,WA,Western Australia,Developing,28.3,2
+2026,9,Grammar and Punctuation,WA,Western Australia,Strong,41.7,3
+2026,9,Grammar and Punctuation,WA,Western Australia,Exceeding,16.0,4
+2026,3,Numeracy,WA,Western Australia,Exempt,1.8,0
+2026,3,Numeracy,WA,Western Australia,Needs additional support,13.2,1
+2026,3,Numeracy,WA,Western Australia,Developing,26.7,2
+2026,3,Numeracy,WA,Western Australia,Strong,49.8,3
+2026,3,Numeracy,WA,Western Australia,Exceeding,8.5,4
+2026,5,Numeracy,WA,Western Australia,Exempt,1.5,0
+2026,5,Numeracy,WA,Western Australia,Needs additional support,9.1,1
+2026,5,Numeracy,WA,Western Australia,Developing,20.6,2
+2026,5,Numeracy,WA,Western Australia,Strong,56.8,3
+2026,5,Numeracy,WA,Western Australia,Exceeding,12.0,4
+2026,7,Numeracy,WA,Western Australia,Exempt,1.2,0
+2026,7,Numeracy,WA,Western Australia,Needs additional support,9.6,1
+2026,7,Numeracy,WA,Western Australia,Developing,19.6,2
+2026,7,Numeracy,WA,Western Australia,Strong,54.9,3
+2026,7,Numeracy,WA,Western Australia,Exceeding,14.6,4
+2026,9,Numeracy,WA,Western Australia,Exempt,1.3,0
+2026,9,Numeracy,WA,Western Australia,Needs additional support,8.0,1
+2026,9,Numeracy,WA,Western Australia,Developing,19.5,2
+2026,9,Numeracy,WA,Western Australia,Strong,57.8,3
+2026,9,Numeracy,WA,Western Australia,Exceeding,13.5,4
+2026,3,Reading,WA,Western Australia,Exempt,1.9,0
+2026,3,Reading,WA,Western Australia,Needs additional support,14.0,1
+2026,3,Reading,WA,Western Australia,Developing,22.7,2
+2026,3,Reading,WA,Western Australia,Strong,45.5,3
+2026,3,Reading,WA,Western Australia,Exceeding,16.0,4
+2026,5,Reading,WA,Western Australia,Exempt,1.5,0
+2026,5,Reading,WA,Western Australia,Needs additional support,9.6,1
+2026,5,Reading,WA,Western Australia,Developing,20.8,2
+2026,5,Reading,WA,Western Australia,Strong,52.9,3
+2026,5,Reading,WA,Western Australia,Exceeding,15.1,4
+2026,7,Reading,WA,Western Australia,Exempt,1.2,0
+2026,7,Reading,WA,Western Australia,Needs additional support,11.5,1
+2026,7,Reading,WA,Western Australia,Developing,21.1,2
+2026,7,Reading,WA,Western Australia,Strong,47.5,3
+2026,7,Reading,WA,Western Australia,Exceeding,18.7,4
+2026,9,Reading,WA,Western Australia,Exempt,1.3,0
+2026,9,Reading,WA,Western Australia,Needs additional support,7.5,1
+2026,9,Reading,WA,Western Australia,Developing,23.1,2
+2026,9,Reading,WA,Western Australia,Strong,51.2,3
+2026,9,Reading,WA,Western Australia,Exceeding,17.0,4
+2026,3,Spelling,WA,Western Australia,Exempt,1.9,0
+2026,3,Spelling,WA,Western Australia,Needs additional support,13.7,1
+2026,3,Spelling,WA,Western Australia,Developing,27.2,2
+2026,3,Spelling,WA,Western Australia,Strong,43.2,3
+2026,3,Spelling,WA,Western Australia,Exceeding,14.1,4
+2026,5,Spelling,WA,Western Australia,Exempt,1.5,0
+2026,5,Spelling,WA,Western Australia,Needs additional support,9.1,1
+2026,5,Spelling,WA,Western Australia,Developing,20.1,2
+2026,5,Spelling,WA,Western Australia,Strong,49.8,3
+2026,5,Spelling,WA,Western Australia,Exceeding,19.5,4
+2026,7,Spelling,WA,Western Australia,Exempt,1.2,0
+2026,7,Spelling,WA,Western Australia,Needs additional support,7.6,1
+2026,7,Spelling,WA,Western Australia,Developing,17.3,2
+2026,7,Spelling,WA,Western Australia,Strong,49.2,3
+2026,7,Spelling,WA,Western Australia,Exceeding,24.7,4
+2026,9,Spelling,WA,Western Australia,Exempt,1.3,0
+2026,9,Spelling,WA,Western Australia,Needs additional support,6.6,1
+2026,9,Spelling,WA,Western Australia,Developing,17.9,2
+2026,9,Spelling,WA,Western Australia,Strong,55.4,3
+2026,9,Spelling,WA,Western Australia,Exceeding,18.8,4
+2026,3,Writing,WA,Western Australia,Exempt,1.9,0
+2026,3,Writing,WA,Western Australia,Needs additional support,8.6,1
+2026,3,Writing,WA,Western Australia,Developing,19.1,2
+2026,3,Writing,WA,Western Australia,Strong,67.4,3
+2026,3,Writing,WA,Western Australia,Exceeding,3.0,4
+2026,5,Writing,WA,Western Australia,Exempt,1.5,0
+2026,5,Writing,WA,Western Australia,Needs additional support,11.2,1
+2026,5,Writing,WA,Western Australia,Developing,24.5,2
+2026,5,Writing,WA,Western Australia,Strong,54.7,3
+2026,5,Writing,WA,Western Australia,Exceeding,8.1,4
+2026,7,Writing,WA,Western Australia,Exempt,1.3,0
+2026,7,Writing,WA,Western Australia,Needs additional support,11.8,1
+2026,7,Writing,WA,Western Australia,Developing,24.6,2
+2026,7,Writing,WA,Western Australia,Strong,46.8,3
+2026,7,Writing,WA,Western Australia,Exceeding,15.6,4
+2026,9,Writing,WA,Western Australia,Exempt,1.3,0
+2026,9,Writing,WA,Western Australia,Needs additional support,9.3,1
+2026,9,Writing,WA,Western Australia,Developing,25.9,2
+2026,9,Writing,WA,Western Australia,Strong,42.3,3
+2026,9,Writing,WA,Western Australia,Exceeding,21.3,4

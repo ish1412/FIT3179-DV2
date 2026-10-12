@@ -1,0 +1,120 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+        "text": {
+            "expr": "'Everyone grows, but the gap travels with them · ' + (domain === 'All' ? 'average of 5 subjects' : (domain === 'Grammar and Punctuation' ? 'Grammar & Punctuation' : domain))"
+        },
+        "subtitle": [
+            "Average score two years apart, 2024 -> 2026, for the same cohort (Australia)",
+            "Same cohort, not exactly the same students. Number = points gained"
+        ]
+    },
+    "width": 420,
+    "height": 240,
+    "params": [{"name": "domain", "value": "Reading"}, {"name": "yearLevel", "value": 5}],
+    "data": {
+        "url": "data/naplan_cohort_gain_2023_2026.csv",
+        "format": {
+            "type": "csv",
+            "parse": {
+                "base_year": "number",
+                "year_level": "number",
+                "base_year_level": "number",
+                "base_score": "number",
+                "score": "number",
+                "gain": "number"
+            }
+        }
+    },
+    "transform": [
+        {
+            "filter": "datum.state === 'AUS' && datum.base_year === 2024 && (domain === 'All' || datum.domain === domain) && (datum.attribute === 'All' || datum.attribute === 'Indigeneity')"
+        },
+        {
+            "aggregate": [
+                {"op": "mean", "field": "base_score", "as": "base_score"},
+                {"op": "mean", "field": "score", "as": "score"},
+                {"op": "mean", "field": "gain", "as": "gain"}
+            ],
+            "groupby": ["attribute", "subgroup", "base_year_level", "year_level", "cohort"]
+        },
+        {"calculate": "datum.subgroup === 'All' ? 'All students' : datum.subgroup", "as": "group"},
+        {"calculate": "'Yr ' + datum.base_year_level + ' -> Yr ' + datum.year_level", "as": "cohortLabel"}
+    ],
+    "encoding": {
+        "y": {
+            "field": "cohortLabel",
+            "type": "nominal",
+            "title": null,
+            "sort": ["Yr 3 -> Yr 5", "Yr 5 -> Yr 7", "Yr 7 -> Yr 9"],
+            "axis": {
+                "domain": false,
+                "ticks": false,
+                "labelPadding": 8,
+                "labelFontWeight": "bold",
+                "labelFontSize": 12
+            }
+        },
+        "yOffset": {
+            "field": "group",
+            "type": "nominal",
+            "sort": ["Indigenous", "All students", "Non-Indigenous"],
+            "scale": {"paddingInner": 0.25}
+        },
+        "color": {
+            "field": "group",
+            "type": "nominal",
+            "title": null,
+            "scale": {
+                "domain": ["Indigenous", "All students", "Non-Indigenous"],
+                "range": ["#C8652B", "#2B2A28", "#2F5D8A"]
+            },
+            "legend": {"orient": "top", "direction": "horizontal"}
+        }
+    },
+    "layer": [
+        {
+            "mark": {"type": "rule", "strokeWidth": 2},
+            "encoding": {
+                "x": {
+                    "field": "base_score",
+                    "type": "quantitative",
+                    "title": "Average NAPLAN score",
+                    "scale": {"zero": false}
+                },
+                "x2": {"field": "score"},
+                "opacity": {
+                    "condition": {
+                        "test": "datum.base_year_level === yearLevel || datum.year_level === yearLevel",
+                        "value": 1
+                    },
+                    "value": 0.6
+                }
+            }
+        },
+        {
+            "mark": {"type": "circle", "size": 40},
+            "encoding": {"x": {"field": "base_score", "type": "quantitative"}}
+        },
+        {
+            "mark": {"type": "point", "shape": "triangle-right", "filled": true, "size": 90},
+            "encoding": {
+                "x": {"field": "score", "type": "quantitative"},
+                "tooltip": [
+                    {"field": "cohort", "title": "Cohort"},
+                    {"field": "group", "title": "Students"},
+                    {"field": "base_score", "title": "Starting score", "format": ".1f"},
+                    {"field": "score", "title": "Score two years later", "format": ".1f"},
+                    {"field": "gain", "title": "Points gained", "format": "+.1f"}
+                ]
+            }
+        },
+        {
+            "mark": {"type": "text", "align": "left", "dx": 9, "fontSize": 10},
+            "encoding": {
+                "x": {"field": "score", "type": "quantitative"},
+                "text": {"field": "gain", "type": "quantitative", "format": "+.0f"}
+            }
+        }
+    ]
+}

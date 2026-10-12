@@ -1,0 +1,95 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+        "text": {
+            "expr": "['Rankings barely move', (domain === 'All' ? 'Average of 5 subjects' : (domain === 'Grammar and Punctuation' ? 'Grammar & Punctuation' : domain))]"
+        },
+        "subtitle": ["State rank on % at Strong or above", "1 = highest. Click a state on the map"]
+    },
+    "width": 150,
+    "height": 170,
+    "params": [
+        {"name": "domain", "value": "Reading"},
+        {"name": "yearLevel", "value": 5},
+        {"name": "highlight", "value": ""}
+    ],
+    "data": {
+        "url": "data/naplan_2023_2026_states.csv",
+        "format": {"type": "csv", "parse": {"year": "number", "year_level": "number", "pct_strong_or_above": "number"}}
+    },
+    "transform": [
+        {
+            "filter": "datum.state !== 'AUS' && (domain === 'All' || datum.domain === domain) && datum.year_level === yearLevel"
+        },
+        {
+            "aggregate": [{"op": "mean", "field": "pct_strong_or_above", "as": "pct_strong_or_above"}],
+            "groupby": ["state", "state_name", "year"]
+        },
+        {
+            "window": [{"op": "rank", "as": "rank"}],
+            "groupby": ["year"],
+            "sort": [{"field": "pct_strong_or_above", "order": "descending"}]
+        },
+        {"joinaggregate": [{"op": "max", "field": "year", "as": "lastYear"}], "groupby": ["state"]},
+        {"calculate": "highlight === '' || datum.state === highlight", "as": "isOn"}
+    ],
+    "encoding": {
+        "x": {
+            "field": "year",
+            "type": "ordinal",
+            "title": null,
+            "axis": {"labelAngle": 0, "domain": false, "ticks": false}
+        },
+        "y": {"field": "rank", "type": "ordinal", "title": null, "axis": null},
+        "detail": {"field": "state"},
+        "opacity": {"condition": {"test": "datum.isOn", "value": 1}, "value": 0.2}
+    },
+    "layer": [
+        {
+            "mark": {"type": "line", "strokeWidth": 2},
+            "encoding": {
+                "color": {
+                    "condition": {"test": "highlight !== '' && datum.state === highlight", "value": "#1E3F60"},
+                    "value": "#8A857B"
+                }
+            }
+        },
+        {
+            "mark": {"type": "circle", "size": 70},
+            "encoding": {
+                "color": {
+                    "condition": {"test": "highlight !== '' && datum.state === highlight", "value": "#1E3F60"},
+                    "value": "#8A857B"
+                },
+                "tooltip": [
+                    {"field": "state_name", "title": "State"},
+                    {"field": "year", "title": "Year"},
+                    {"field": "rank", "title": "Rank"},
+                    {"field": "pct_strong_or_above", "title": "% Strong or above", "format": ".1f"}
+                ]
+            }
+        },
+        {
+            "transform": [{"filter": "datum.year === 2023"}],
+            "mark": {"type": "text", "align": "right", "dx": -8, "fontSize": 10, "color": "#2B2A28"},
+            "encoding": {"text": {"field": "state"}}
+        },
+        {
+            "transform": [{"filter": "datum.year === datum.lastYear"}],
+            "mark": {"type": "text", "align": "left", "dx": 8, "fontSize": 10, "color": "#2B2A28"},
+            "encoding": {"text": {"field": "state"}}
+        },
+        {
+            "data": {"values": [{"note": "TAS stops at 2025: 2026 not published"}]},
+            "mark": {
+                "type": "text",
+                "align": "left",
+                "baseline": "top",
+                "fontSize": 9,
+                "fontStyle": "italic",
+                "color": "#6B675F"
+            },
+            "encoding": {"x": {"value": 0}, "y": {"value": 196}, "text": {"field": "note"}, "opacity": {"value": 1}}
+        }
+    ]
+}

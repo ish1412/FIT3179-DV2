@@ -1,0 +1,701 @@
+year,year_level,domain,state,state_name,mean_score,mean_score_ci,pct_needs_support,pct_developing,pct_strong,pct_exceeding,pct_exempt,pct_strong_or_above,participation_pct,enrolled
+2023,3,Grammar and Punctuation,ACT,Australian Capital Territory,411.6,5.9,11.9,31.6,48.0,7.3,1.3,55.3,93.9,6095
+2024,3,Grammar and Punctuation,ACT,Australian Capital Territory,420.6,6.5,12.3,26.8,48.0,11.7,1.2,59.7,93.9,5922
+2025,3,Grammar and Punctuation,ACT,Australian Capital Territory,414.8,6.6,13.9,27.5,46.0,10.9,1.7,56.9,94.8,6066
+2026,3,Grammar and Punctuation,ACT,Australian Capital Territory,421.0,6.5,12.4,26.3,47.6,11.9,1.8,59.5,94.9,5644
+2023,5,Grammar and Punctuation,ACT,Australian Capital Territory,499.7,6.1,8.1,23.8,54.5,12.2,1.4,66.7,94.5,6048
+2024,5,Grammar and Punctuation,ACT,Australian Capital Territory,504.2,5.3,6.4,22.7,57.4,12.2,1.4,69.6,94.5,5984
+2025,5,Grammar and Punctuation,ACT,Australian Capital Territory,504.3,6.0,8.5,22.1,52.7,15.2,1.5,67.9,95.1,6162
+2026,5,Grammar and Punctuation,ACT,Australian Capital Territory,507.6,6.2,9.0,20.8,51.5,17.6,1.0,69.1,94.2,6071
+2023,7,Grammar and Punctuation,ACT,Australian Capital Territory,542.9,8.9,8.6,22.4,54.6,13.0,1.4,67.6,93.7,6136
+2024,7,Grammar and Punctuation,ACT,Australian Capital Territory,544.5,9.2,10.1,21.8,51.0,16.1,1.1,67.0,94.1,6067
+2025,7,Grammar and Punctuation,ACT,Australian Capital Territory,544.8,10.0,11.3,21.2,47.9,18.0,1.6,65.9,93.6,6279
+2026,7,Grammar and Punctuation,ACT,Australian Capital Territory,544.4,10.0,11.1,21.5,47.9,17.7,1.7,65.7,93.2,6256
+2023,9,Grammar and Punctuation,ACT,Australian Capital Territory,565.1,10.5,11.1,26.4,45.6,15.4,1.5,61.0,89.6,5877
+2024,9,Grammar and Punctuation,ACT,Australian Capital Territory,566.7,10.6,11.5,25.9,43.7,17.4,1.4,61.1,88.7,6101
+2025,9,Grammar and Punctuation,ACT,Australian Capital Territory,567.4,11.3,11.5,25.5,43.4,17.7,1.9,61.1,89.9,6131
+2026,9,Grammar and Punctuation,ACT,Australian Capital Territory,565.5,11.6,12.4,25.9,42.1,17.9,1.7,60.0,89.8,6098
+2023,3,Numeracy,ACT,Australian Capital Territory,411.9,5.6,8.4,22.5,55.2,12.7,1.2,67.8,94.0,6095
+2024,3,Numeracy,ACT,Australian Capital Territory,412.0,4.9,7.1,23.0,57.9,10.9,1.2,68.7,94.5,5922
+2025,3,Numeracy,ACT,Australian Capital Territory,411.9,5.0,7.0,23.3,56.5,11.6,1.6,68.1,94.7,6064
+2026,3,Numeracy,ACT,Australian Capital Territory,413.4,5.3,8.3,21.8,55.1,13.1,1.8,68.2,95.2,5644
+2023,5,Numeracy,ACT,Australian Capital Territory,494.0,6.0,6.7,19.3,61.1,11.6,1.2,72.7,94.5,6048
+2024,5,Numeracy,ACT,Australian Capital Territory,497.4,5.6,5.0,18.9,62.9,11.8,1.3,74.8,94.2,5984
+2025,5,Numeracy,ACT,Australian Capital Territory,499.1,5.7,5.2,18.6,61.7,13.1,1.4,74.8,95.0,6161
+2026,5,Numeracy,ACT,Australian Capital Territory,501.2,5.4,5.0,17.3,63.2,13.5,1.0,76.7,94.3,6071
+2023,7,Numeracy,ACT,Australian Capital Territory,541.9,10.1,7.7,20.5,58.8,11.7,1.4,70.5,93.7,6136
+2024,7,Numeracy,ACT,Australian Capital Territory,546.1,9.0,6.9,19.5,59.0,13.5,1.1,72.4,94.2,6067
+2025,7,Numeracy,ACT,Australian Capital Territory,550.5,10.2,7.4,18.3,57.0,15.7,1.6,72.7,93.5,6279
+2026,7,Numeracy,ACT,Australian Capital Territory,555.7,10.6,6.2,16.3,60.1,15.8,1.6,75.9,93.3,6256
+2023,9,Numeracy,ACT,Australian Capital Territory,571.8,10.7,9.2,22.0,57.8,9.6,1.5,67.3,89.5,5877
+2024,9,Numeracy,ACT,Australian Capital Territory,570.4,10.2,8.6,21.8,60.3,8.0,1.3,68.3,88.4,6101
+2025,9,Numeracy,ACT,Australian Capital Territory,577.1,11.5,8.8,20.1,58.1,11.1,1.8,69.2,89.7,6131
+2026,9,Numeracy,ACT,Australian Capital Territory,582.6,11.7,8.9,18.2,57.5,13.8,1.7,71.2,89.9,6098
+2023,3,Reading,ACT,Australian Capital Territory,415.9,6.8,7.9,19.8,47.7,23.3,1.2,71.0,94.5,6095
+2024,3,Reading,ACT,Australian Capital Territory,415.0,6.7,9.0,18.5,47.7,23.5,1.2,71.2,94.6,5922
+2025,3,Reading,ACT,Australian Capital Territory,412.2,6.1,8.6,20.3,47.3,22.2,1.6,69.5,95.1,6066
+2026,3,Reading,ACT,Australian Capital Territory,420.0,6.7,8.1,17.5,47.2,25.4,1.8,72.6,95.4,5645
+2023,5,Reading,ACT,Australian Capital Territory,508.5,6.1,4.7,14.6,53.3,26.2,1.3,79.5,94.9,6048
+2024,5,Reading,ACT,Australian Capital Territory,505.2,5.8,5.4,15.4,52.5,25.4,1.4,77.8,95.2,5984
+2025,5,Reading,ACT,Australian Capital Territory,504.7,5.4,4.9,14.6,55.7,23.5,1.4,79.2,95.5,6163
+2026,5,Reading,ACT,Australian Capital Territory,500.3,5.3,5.1,16.1,56.3,21.5,1.0,77.8,94.8,6072
+2023,7,Reading,ACT,Australian Capital Territory,548.3,10.0,7.4,17.2,49.9,24.2,1.4,74.1,94.7,6136
+2024,7,Reading,ACT,Australian Capital Territory,549.2,9.0,7.7,16.9,48.7,25.6,1.2,74.2,94.9,6067
+2025,7,Reading,ACT,Australian Capital Territory,551.4,9.3,6.9,16.7,49.4,25.5,1.5,74.9,94.4,6279
+2026,7,Reading,ACT,Australian Capital Territory,550.6,9.6,7.1,16.9,48.6,25.7,1.6,74.3,93.9,6256
+2023,9,Reading,ACT,Australian Capital Territory,577.3,10.4,9.2,20.1,46.7,22.5,1.5,69.2,91.0,5877
+2024,9,Reading,ACT,Australian Capital Territory,579.5,9.9,8.8,19.4,47.1,23.4,1.3,70.5,89.6,6102
+2025,9,Reading,ACT,Australian Capital Territory,579.4,9.9,8.3,19.3,48.2,22.5,1.8,70.7,90.5,6131
+2026,9,Reading,ACT,Australian Capital Territory,578.5,9.8,8.6,19.2,48.2,22.4,1.7,70.6,90.4,6098
+2023,3,Spelling,ACT,Australian Capital Territory,403.4,5.8,11.0,27.3,43.7,16.8,1.3,60.5,93.9,6095
+2024,3,Spelling,ACT,Australian Capital Territory,403.2,5.5,9.8,27.9,46.0,15.1,1.2,61.1,93.9,5922
+2025,3,Spelling,ACT,Australian Capital Territory,405.3,5.4,9.5,27.1,45.8,15.9,1.7,61.7,94.8,6066
+2026,3,Spelling,ACT,Australian Capital Territory,411.0,5.0,8.8,24.9,47.5,17.0,1.8,64.5,94.9,5644
+2023,5,Spelling,ACT,Australian Capital Territory,492.1,4.9,7.3,20.5,50.0,20.8,1.4,70.9,94.5,6048
+2024,5,Spelling,ACT,Australian Capital Territory,491.3,4.9,7.3,20.9,49.6,20.8,1.4,70.4,94.5,5984
+2025,5,Spelling,ACT,Australian Capital Territory,491.8,4.3,7.2,20.9,49.2,21.3,1.5,70.5,95.1,6162
+2026,5,Spelling,ACT,Australian Capital Territory,495.6,4.4,6.5,19.1,51.3,22.1,1.0,73.3,94.2,6071
+2023,7,Spelling,ACT,Australian Capital Territory,541.1,7.0,7.1,18.3,50.2,23.0,1.4,73.2,93.7,6136
+2024,7,Spelling,ACT,Australian Capital Territory,544.3,7.1,6.6,17.3,50.5,24.5,1.1,75.0,94.1,6067
+2025,7,Spelling,ACT,Australian Capital Territory,545.0,6.6,6.4,17.7,49.1,25.2,1.6,74.3,93.6,6279
+2026,7,Spelling,ACT,Australian Capital Territory,549.0,6.6,5.8,16.3,49.6,26.6,1.7,76.2,93.2,6256
+2023,9,Spelling,ACT,Australian Capital Territory,572.6,6.6,6.9,17.7,54.3,19.6,1.5,73.9,89.6,5877
+2024,9,Spelling,ACT,Australian Capital Territory,574.0,5.6,5.8,16.4,58.0,18.4,1.4,76.4,88.7,6101
+2025,9,Spelling,ACT,Australian Capital Territory,572.7,6.6,5.6,19.0,54.4,19.2,1.9,73.5,89.9,6131
+2026,9,Spelling,ACT,Australian Capital Territory,576.6,6.9,6.2,16.4,53.8,21.9,1.7,75.6,89.8,6098
+2023,3,Writing,ACT,Australian Capital Territory,413.5,5.1,5.9,16.3,69.0,7.6,1.3,76.5,92.8,6095
+2024,3,Writing,ACT,Australian Capital Territory,418.2,4.7,3.3,15.4,73.4,6.5,1.3,80.0,93.2,5922
+2025,3,Writing,ACT,Australian Capital Territory,417.5,4.8,3.5,16.0,72.2,6.6,1.7,78.8,94.1,6067
+2026,3,Writing,ACT,Australian Capital Territory,413.5,4.9,4.7,17.4,69.2,6.9,1.8,76.1,94.6,5645
+2023,5,Writing,ACT,Australian Capital Territory,483.2,5.2,8.0,23.9,56.9,9.9,1.3,66.8,94.8,6049
+2024,5,Writing,ACT,Australian Capital Territory,486.3,4.6,5.8,23.0,61.2,8.7,1.4,69.8,94.7,5984
+2025,5,Writing,ACT,Australian Capital Territory,478.4,4.5,7.8,25.4,58.3,7.0,1.5,65.3,95.4,6163
+2026,5,Writing,ACT,Australian Capital Territory,480.5,5.3,8.9,24.2,56.8,9.1,1.0,66.0,94.8,6072
+2023,7,Writing,ACT,Australian Capital Territory,535.7,8.3,9.3,25.1,50.1,14.1,1.4,64.3,94.9,6136
+2024,7,Writing,ACT,Australian Capital Territory,547.4,7.7,7.5,21.3,52.3,17.7,1.2,70.0,94.8,6067
+2025,7,Writing,ACT,Australian Capital Territory,537.6,8.0,9.7,24.3,49.2,15.3,1.6,64.5,94.7,6280
+2026,7,Writing,ACT,Australian Capital Territory,540.0,8.9,10.0,23.0,48.8,16.5,1.7,65.3,94.3,6256
+2023,9,Writing,ACT,Australian Capital Territory,569.3,9.2,10.3,27.7,43.8,16.7,1.5,60.5,91.1,5878
+2024,9,Writing,ACT,Australian Capital Territory,578.0,8.6,9.2,25.8,43.9,19.8,1.3,63.7,90.0,6100
+2025,9,Writing,ACT,Australian Capital Territory,574.6,9.9,9.6,26.7,42.8,19.0,1.8,61.8,91.0,6132
+2026,9,Writing,ACT,Australian Capital Territory,579.7,9.9,9.8,25.1,41.8,21.7,1.7,63.5,90.7,6098
+2023,3,Grammar and Punctuation,AUS,Australia,410.8,1.2,13.3,30.5,45.7,8.6,1.9,54.3,94.7,322122
+2024,3,Grammar and Punctuation,AUS,Australia,408.8,1.3,16.1,28.1,43.0,10.9,1.9,53.9,94.8,324666
+2025,3,Grammar and Punctuation,AUS,Australia,408.4,1.4,16.9,27.0,42.3,11.7,2.0,54.1,95.0,324397
+2026,3,Grammar and Punctuation,AUS,Australia,408.3,1.3,16.3,27.7,42.9,11.0,2.1,53.9,94.0,319482
+2023,5,Grammar and Punctuation,AUS,Australia,496.7,1.2,10.1,24.3,50.8,13.1,1.6,63.9,95.3,328544
+2024,5,Grammar and Punctuation,AUS,Australia,498.4,1.2,10.4,23.2,50.5,14.2,1.8,64.7,95.2,328474
+2025,5,Grammar and Punctuation,AUS,Australia,497.2,1.3,12.1,23.0,47.2,15.9,1.8,63.2,95.4,329450
+2026,5,Grammar and Punctuation,AUS,Australia,497.1,1.3,12.2,23.0,46.9,16.1,1.8,63.0,94.4,330806
+2023,7,Grammar and Punctuation,AUS,Australia,538.9,1.8,10.6,23.9,50.2,13.8,1.5,64.0,93.7,322515
+2024,7,Grammar and Punctuation,AUS,Australia,536.7,2.0,13.2,23.8,45.5,16.0,1.5,61.5,93.7,326426
+2025,7,Grammar and Punctuation,AUS,Australia,538.9,2.1,13.4,22.6,45.1,17.3,1.6,62.4,94.2,334287
+2026,7,Grammar and Punctuation,AUS,Australia,535.2,2.1,15.4,22.8,42.6,17.6,1.7,60.1,93.3,333157
+2023,9,Grammar and Punctuation,AUS,Australia,556.7,2.1,12.9,29.4,42.4,13.5,1.8,55.9,88.7,321029
+2024,9,Grammar and Punctuation,AUS,Australia,555.3,2.2,14.6,28.7,39.5,15.3,1.8,54.9,88.9,326300
+2025,9,Grammar and Punctuation,AUS,Australia,559.0,2.3,13.7,28.1,40.2,16.2,1.7,56.4,89.8,327158
+2026,9,Grammar and Punctuation,AUS,Australia,554.2,2.3,15.6,28.6,38.1,15.9,1.8,54.0,88.9,331224
+2023,3,Numeracy,AUS,Australia,407.3,1.1,10.0,23.5,52.4,12.3,1.8,64.7,94.7,322110
+2024,3,Numeracy,AUS,Australia,403.8,1.0,9.7,25.0,53.3,10.2,1.9,63.5,94.7,324659
+2025,3,Numeracy,AUS,Australia,405.3,1.0,9.4,24.6,53.4,10.7,2.0,64.0,95.0,324376
+2026,3,Numeracy,AUS,Australia,402.6,1.0,11.0,24.9,51.1,11.0,2.1,62.1,93.9,319474
+2023,5,Numeracy,AUS,Australia,487.6,1.2,9.3,21.4,55.8,12.0,1.6,67.7,95.2,328529
+2024,5,Numeracy,AUS,Australia,489.1,1.2,8.6,21.9,55.3,12.5,1.7,67.8,95.1,328459
+2025,5,Numeracy,AUS,Australia,491.8,1.2,7.8,21.5,55.8,13.2,1.7,68.9,95.2,329439
+2026,5,Numeracy,AUS,Australia,493.7,1.1,7.6,19.9,57.4,13.2,1.8,70.7,94.3,330802
+2023,7,Numeracy,AUS,Australia,538.4,2.1,9.3,22.0,54.5,12.6,1.5,67.2,93.5,322508
+2024,7,Numeracy,AUS,Australia,539.8,2.1,9.4,21.9,53.7,13.5,1.5,67.2,93.4,326425
+2025,7,Numeracy,AUS,Australia,544.9,2.2,9.5,20.4,52.8,15.8,1.6,68.5,94.0,334286
+2026,7,Numeracy,AUS,Australia,547.9,2.2,9.0,19.4,53.8,16.1,1.7,69.9,93.1,333147
+2023,9,Numeracy,AUS,Australia,567.7,2.2,10.2,24.1,54.0,9.9,1.8,63.9,88.4,321029
+2024,9,Numeracy,AUS,Australia,565.3,2.2,10.4,24.4,54.5,8.9,1.8,63.4,88.6,326297
+2025,9,Numeracy,AUS,Australia,572.6,2.3,10.2,22.5,53.7,11.9,1.7,65.6,89.6,327153
+2026,9,Numeracy,AUS,Australia,573.9,2.4,11.0,22.0,52.0,13.3,1.8,65.3,88.7,331213
+2023,3,Reading,AUS,Australia,404.6,1.1,9.1,22.2,48.5,18.3,1.9,66.8,95.3,322144
+2024,3,Reading,AUS,Australia,404.1,1.2,11.3,20.5,46.2,20.1,1.9,66.3,95.4,324674
+2025,3,Reading,AUS,Australia,402.2,1.2,10.8,21.5,47.0,18.7,2.0,65.7,95.5,324404
+2026,3,Reading,AUS,Australia,402.5,1.2,11.3,21.0,46.2,19.4,2.1,65.6,94.5,319497
+2023,5,Reading,AUS,Australia,495.9,1.1,7.0,17.2,52.9,21.3,1.6,74.2,95.9,328564
+2024,5,Reading,AUS,Australia,492.1,1.1,8.7,18.2,49.8,21.5,1.7,71.4,95.9,328482
+2025,5,Reading,AUS,Australia,491.8,1.0,7.5,17.8,53.4,19.5,1.8,72.9,95.9,329454
+2026,5,Reading,AUS,Australia,487.5,1.0,7.7,19.5,53.4,17.6,1.8,70.9,94.9,330819
+2023,7,Reading,AUS,Australia,536.3,1.8,9.0,21.0,49.3,19.2,1.5,68.4,94.5,322526
+2024,7,Reading,AUS,Australia,535.0,1.8,10.2,21.0,47.4,19.9,1.5,67.3,94.5,326431
+2025,7,Reading,AUS,Australia,538.4,1.8,8.9,20.5,48.6,20.4,1.6,69.0,94.9,334292
+2026,7,Reading,AUS,Australia,535.1,1.9,10.7,20.9,46.2,20.6,1.7,66.8,94.0,333162
+2023,9,Reading,AUS,Australia,564.4,1.8,10.6,24.7,45.9,16.9,1.8,62.8,89.6,321034
+2024,9,Reading,AUS,Australia,565.0,1.9,11.1,24.1,45.0,18.0,1.8,63.0,89.9,326308
+2025,9,Reading,AUS,Australia,567.7,1.8,9.8,23.4,47.3,17.8,1.7,65.1,90.7,327166
+2026,9,Reading,AUS,Australia,562.2,1.8,11.1,25.1,45.7,16.3,1.8,62.0,89.8,331233
+2023,3,Spelling,AUS,Australia,403.7,1.2,11.1,26.2,44.1,16.7,1.9,60.8,94.7,322122
+2024,3,Spelling,AUS,Australia,401.4,1.1,11.2,26.3,45.3,15.3,1.9,60.6,94.8,324666
+2025,3,Spelling,AUS,Australia,405.1,1.1,10.8,25.3,45.2,16.7,2.0,61.9,95.0,324397
+2026,3,Spelling,AUS,Australia,404.8,1.1,11.2,25.0,44.6,17.0,2.1,61.6,94.0,319482
+2023,5,Spelling,AUS,Australia,488.7,1.0,8.7,20.7,48.4,20.6,1.6,69.0,95.3,328544
+2024,5,Spelling,AUS,Australia,486.5,1.0,9.5,21.1,47.3,20.4,1.8,67.7,95.2,328474
+2025,5,Spelling,AUS,Australia,487.4,1.0,8.8,20.7,48.5,20.2,1.8,68.7,95.4,329450
+2026,5,Spelling,AUS,Australia,488.8,1.0,8.4,19.9,49.7,20.1,1.8,69.8,94.4,330806
+2023,7,Spelling,AUS,Australia,539.4,1.4,7.5,18.2,50.9,21.8,1.5,72.8,93.7,322515
+2024,7,Spelling,AUS,Australia,540.0,1.4,7.9,18.3,49.2,23.1,1.5,72.3,93.7,326426
+2025,7,Spelling,AUS,Australia,541.6,1.4,7.6,18.5,48.3,24.1,1.6,72.4,94.2,334287
+2026,7,Spelling,AUS,Australia,541.6,1.4,7.7,18.1,48.4,24.1,1.7,72.5,93.3,333157
+2023,9,Spelling,AUS,Australia,567.7,1.4,7.9,19.4,52.9,18.0,1.8,70.9,88.7,321029
+2024,9,Spelling,AUS,Australia,566.9,1.2,6.9,19.3,56.2,15.8,1.8,72.0,88.9,326300
+2025,9,Spelling,AUS,Australia,569.0,1.3,7.0,19.4,53.8,18.1,1.7,71.9,89.8,327158
+2026,9,Spelling,AUS,Australia,568.5,1.3,7.7,19.2,53.0,18.3,1.8,71.3,88.9,331224
+2023,3,Writing,AUS,Australia,416.3,1.0,6.1,16.0,66.9,9.1,1.8,76.0,94.5,322152
+2024,3,Writing,AUS,Australia,415.9,1.0,5.6,15.6,68.5,8.3,2.0,76.8,94.6,324652
+2025,3,Writing,AUS,Australia,413.9,1.0,5.7,16.0,69.1,7.3,1.9,76.4,94.6,324241
+2026,3,Writing,AUS,Australia,412.0,1.0,6.7,17.3,65.9,8.0,2.1,73.9,93.7,319519
+2023,5,Writing,AUS,Australia,482.9,1.1,9.6,22.6,54.7,11.5,1.6,66.2,95.5,328570
+2024,5,Writing,AUS,Australia,484.8,1.1,8.7,22.2,55.9,11.4,1.8,67.3,95.6,328489
+2025,5,Writing,AUS,Australia,479.6,1.1,9.4,23.8,55.1,9.9,1.8,65.0,95.7,329456
+2026,5,Writing,AUS,Australia,481.8,1.1,10.3,22.3,53.9,11.7,1.8,65.6,94.8,330829
+2023,7,Writing,AUS,Australia,533.7,1.7,10.9,25.1,47.7,14.8,1.5,62.5,94.7,322526
+2024,7,Writing,AUS,Australia,540.2,1.8,10.4,22.7,47.6,17.7,1.5,65.3,94.7,326441
+2025,7,Writing,AUS,Australia,538.3,1.8,11.0,23.6,46.2,17.6,1.5,63.9,95.1,334293
+2026,7,Writing,AUS,Australia,535.2,1.9,12.5,23.4,44.9,17.5,1.7,62.4,94.3,333169
+2023,9,Writing,AUS,Australia,566.6,1.9,12.1,28.1,40.5,17.6,1.8,58.0,90.0,321040
+2024,9,Writing,AUS,Australia,573.9,2.0,11.6,25.7,39.9,21.1,1.8,61.0,90.3,326308
+2025,9,Writing,AUS,Australia,575.0,2.0,11.5,25.5,39.6,21.7,1.7,61.3,91.1,327177
+2026,9,Writing,AUS,Australia,572.0,2.1,12.8,25.6,38.2,21.6,1.8,59.9,90.3,331243
+2023,3,Grammar and Punctuation,NSW,New South Wales,421.4,2.2,11.4,27.9,47.7,11.4,1.7,59.0,96.6,99235
+2024,3,Grammar and Punctuation,NSW,New South Wales,418.8,2.4,14.7,25.9,43.7,14.0,1.7,57.7,96.5,99027
+2025,3,Grammar and Punctuation,NSW,New South Wales,419.0,2.5,14.9,25.4,43.1,14.6,1.9,57.8,96.8,99333
+2026,3,Grammar and Punctuation,NSW,New South Wales,419.6,2.3,14.3,25.7,44.4,13.9,1.8,58.3,96.4,97455
+2023,5,Grammar and Punctuation,NSW,New South Wales,503.3,2.2,9.5,22.8,50.3,16.0,1.4,66.3,97.1,102131
+2024,5,Grammar and Punctuation,NSW,New South Wales,506.5,2.2,9.3,21.4,50.5,17.2,1.5,67.7,97.0,100974
+2025,5,Grammar and Punctuation,NSW,New South Wales,506.7,2.4,10.8,21.1,47.2,19.4,1.6,66.5,97.1,100435
+2026,5,Grammar and Punctuation,NSW,New South Wales,506.8,2.3,10.8,21.0,46.9,19.7,1.6,66.6,96.8,99888
+2023,7,Grammar and Punctuation,NSW,New South Wales,545.0,3.3,9.7,22.6,50.1,16.1,1.5,66.2,96.0,99534
+2024,7,Grammar and Punctuation,NSW,New South Wales,545.9,3.7,11.6,22.0,45.7,19.2,1.5,64.9,96.0,100863
+2025,7,Grammar and Punctuation,NSW,New South Wales,548.2,3.8,11.8,21.1,45.1,20.5,1.5,65.6,96.3,102544
+2026,7,Grammar and Punctuation,NSW,New South Wales,545.0,4.0,13.5,21.3,42.7,20.8,1.6,63.5,95.6,101139
+2023,9,Grammar and Punctuation,NSW,New South Wales,561.2,3.7,12.0,28.8,42.8,14.8,1.7,57.5,92.3,98748
+2024,9,Grammar and Punctuation,NSW,New South Wales,560.2,4.0,13.6,28.0,39.7,16.8,1.8,56.5,92.4,99821
+2025,9,Grammar and Punctuation,NSW,New South Wales,565.9,4.0,12.4,27.1,40.6,18.3,1.7,58.8,92.8,100091
+2026,9,Grammar and Punctuation,NSW,New South Wales,560.1,4.1,14.4,27.6,38.7,17.5,1.7,56.2,92.1,101631
+2023,3,Numeracy,NSW,New South Wales,415.9,1.9,8.6,21.6,52.9,15.4,1.6,68.2,96.4,99235
+2024,3,Numeracy,NSW,New South Wales,410.1,1.8,8.7,23.4,53.9,12.4,1.6,66.3,96.4,99027
+2025,3,Numeracy,NSW,New South Wales,410.8,1.8,8.6,23.2,53.6,12.8,1.8,66.3,96.7,99333
+2026,3,Numeracy,NSW,New South Wales,408.8,1.8,10.0,23.4,51.8,13.1,1.7,64.9,96.3,97455
+2023,5,Numeracy,NSW,New South Wales,496.8,2.4,8.3,19.5,55.3,15.6,1.3,70.9,96.9,102131
+2024,5,Numeracy,NSW,New South Wales,496.7,2.3,7.9,20.4,54.6,15.7,1.5,70.3,96.9,100974
+2025,5,Numeracy,NSW,New South Wales,499.1,2.4,7.2,20.3,54.5,16.5,1.5,71.0,97.0,100435
+2026,5,Numeracy,NSW,New South Wales,501.2,2.2,7.0,18.4,56.7,16.4,1.5,73.1,96.7,99888
+2023,7,Numeracy,NSW,New South Wales,547.7,3.9,8.2,20.3,54.3,15.8,1.5,70.1,95.6,99534
+2024,7,Numeracy,NSW,New South Wales,550.0,4.0,7.9,20.2,53.4,17.0,1.5,70.3,95.7,100863
+2025,7,Numeracy,NSW,New South Wales,555.2,4.2,8.2,18.9,52.0,19.5,1.5,71.4,96.0,102544
+2026,7,Numeracy,NSW,New South Wales,558.2,4.2,7.7,17.8,53.0,19.8,1.6,72.8,95.4,101139
+2023,9,Numeracy,NSW,New South Wales,575.4,4.2,9.2,23.0,53.5,12.7,1.7,66.1,91.6,98748
+2024,9,Numeracy,NSW,New South Wales,572.9,4.0,9.2,23.2,54.4,11.4,1.8,65.8,92.1,99821
+2025,9,Numeracy,NSW,New South Wales,581.0,4.3,9.0,21.5,53.2,14.7,1.7,67.9,92.4,100091
+2026,9,Numeracy,NSW,New South Wales,582.4,4.5,9.9,20.9,51.3,16.2,1.7,67.6,91.7,101631
+2023,3,Reading,NSW,New South Wales,411.1,2.0,7.7,20.9,49.6,20.1,1.7,69.8,97.0,99235
+2024,3,Reading,NSW,New South Wales,410.5,2.1,10.1,19.4,46.7,22.1,1.7,68.8,96.9,99027
+2025,3,Reading,NSW,New South Wales,408.1,2.0,9.5,20.5,47.7,20.4,1.9,68.1,97.1,99333
+2026,3,Reading,NSW,New South Wales,409.7,2.0,9.8,19.8,46.8,21.8,1.8,68.6,96.7,97455
+2023,5,Reading,NSW,New South Wales,500.5,2.0,6.6,16.6,51.7,23.7,1.4,75.4,97.5,102131
+2024,5,Reading,NSW,New South Wales,496.4,2.1,8.3,17.6,49.0,23.6,1.5,72.6,97.4,100974
+2025,5,Reading,NSW,New South Wales,496.8,1.9,6.8,17.0,53.0,21.7,1.6,74.6,97.4,100435
+2026,5,Reading,NSW,New South Wales,492.1,1.9,7.1,18.7,53.0,19.6,1.6,72.6,97.2,99888
+2023,7,Reading,NSW,New South Wales,542.2,3.3,8.1,19.9,49.0,21.5,1.5,70.6,96.5,99534
+2024,7,Reading,NSW,New South Wales,540.6,3.4,9.4,20.0,46.9,22.2,1.5,69.1,96.5,100863
+2025,7,Reading,NSW,New South Wales,545.1,3.3,7.8,19.5,48.1,23.1,1.5,71.2,96.7,102544
+2026,7,Reading,NSW,New South Wales,542.1,3.5,9.6,19.6,45.6,23.5,1.6,69.1,96.1,101139
+2023,9,Reading,NSW,New South Wales,566.6,3.3,10.4,24.4,45.5,18.0,1.7,63.5,92.8,98748
+2024,9,Reading,NSW,New South Wales,569.1,3.4,10.3,23.6,44.8,19.5,1.8,64.3,93.2,99821
+2025,9,Reading,NSW,New South Wales,571.4,3.2,9.2,22.8,47.0,19.4,1.7,66.3,93.4,100091
+2026,9,Reading,NSW,New South Wales,565.2,3.3,10.8,24.5,45.0,17.9,1.7,63.0,92.7,101631
+2023,3,Spelling,NSW,New South Wales,416.2,2.1,9.2,23.0,45.4,20.7,1.7,66.2,96.6,99235
+2024,3,Spelling,NSW,New South Wales,411.8,2.0,9.8,23.4,46.4,18.7,1.7,65.1,96.5,99027
+2025,3,Spelling,NSW,New South Wales,416.7,2.0,8.9,22.5,46.4,20.3,1.9,66.7,96.8,99333
+2026,3,Spelling,NSW,New South Wales,417.2,1.9,9.2,22.2,45.7,21.1,1.8,66.8,96.4,97455
+2023,5,Spelling,NSW,New South Wales,497.6,2.0,7.5,18.6,48.1,24.5,1.4,72.5,97.1,102131
+2024,5,Spelling,NSW,New South Wales,495.6,1.9,8.2,18.9,47.3,24.1,1.5,71.4,97.0,100974
+2025,5,Spelling,NSW,New South Wales,496.4,1.9,7.5,18.5,48.6,23.8,1.6,72.4,97.1,100435
+2026,5,Spelling,NSW,New South Wales,498.0,1.7,7.0,17.6,49.9,23.8,1.6,73.7,96.8,99888
+2023,7,Spelling,NSW,New South Wales,548.9,2.7,6.1,15.9,50.7,25.8,1.5,76.5,96.0,99534
+2024,7,Spelling,NSW,New South Wales,549.5,2.6,6.3,16.1,49.0,27.1,1.5,76.1,96.0,100863
+2025,7,Spelling,NSW,New South Wales,551.3,2.7,6.1,16.2,47.9,28.3,1.5,76.2,96.3,102544
+2026,7,Spelling,NSW,New South Wales,551.2,2.7,6.3,15.8,48.1,28.3,1.6,76.3,95.6,101139
+2023,9,Spelling,NSW,New South Wales,572.9,2.5,7.0,18.0,53.0,20.2,1.7,73.3,92.3,98748
+2024,9,Spelling,NSW,New South Wales,573.4,2.3,5.8,17.5,56.1,18.7,1.8,74.9,92.4,99821
+2025,9,Spelling,NSW,New South Wales,576.1,2.4,5.7,17.5,53.9,21.1,1.7,75.1,92.8,100091
+2026,9,Spelling,NSW,New South Wales,574.9,2.4,6.5,17.5,53.2,21.1,1.7,74.3,92.1,101631
+2023,3,Writing,NSW,New South Wales,426.3,1.7,4.6,14.0,67.9,11.8,1.7,79.7,96.1,99235
+2024,3,Writing,NSW,New South Wales,426.7,1.7,4.0,13.2,70.2,10.9,1.7,81.1,95.9,99027
+2025,3,Writing,NSW,New South Wales,424.4,1.6,4.0,13.6,70.8,9.7,1.9,80.5,96.1,99333
+2026,3,Writing,NSW,New South Wales,421.2,1.7,5.2,15.8,66.4,10.7,1.8,77.1,95.9,97455
+2023,5,Writing,NSW,New South Wales,491.0,2.0,8.3,20.6,55.8,14.0,1.4,69.7,97.0,102131
+2024,5,Writing,NSW,New South Wales,493.2,1.9,7.1,20.4,57.4,13.6,1.5,71.0,96.9,100974
+2025,5,Writing,NSW,New South Wales,486.7,1.9,7.7,22.4,57.0,11.3,1.6,68.3,97.2,100435
+2026,5,Writing,NSW,New South Wales,486.9,2.0,9.4,21.7,54.2,13.2,1.6,67.4,97.0,99888
+2023,7,Writing,NSW,New South Wales,541.4,3.0,9.1,23.3,49.6,16.5,1.5,66.1,96.7,99534
+2024,7,Writing,NSW,New South Wales,547.9,3.0,8.3,21.3,49.6,19.3,1.5,68.9,96.6,100863
+2025,7,Writing,NSW,New South Wales,544.5,3.1,9.2,22.3,48.3,18.7,1.5,66.9,96.9,102544
+2026,7,Writing,NSW,New South Wales,541.9,3.3,11.0,22.0,46.1,19.2,1.6,65.4,96.5,101139
+2023,9,Writing,NSW,New South Wales,570.2,3.3,10.8,28.3,41.2,18.0,1.7,59.2,93.2,98748
+2024,9,Writing,NSW,New South Wales,580.5,3.2,9.4,25.3,41.4,22.1,1.8,63.5,93.3,99821
+2025,9,Writing,NSW,New South Wales,578.3,3.3,9.9,26.0,41.0,21.4,1.7,62.5,93.7,100091
+2026,9,Writing,NSW,New South Wales,575.8,3.5,11.5,25.8,38.9,22.1,1.7,61.1,93.2,101631
+2023,3,Grammar and Punctuation,NT,Northern Territory,327.6,17.0,40.3,28.2,25.6,2.3,3.6,27.8,80.4,3398
+2024,3,Grammar and Punctuation,NT,Northern Territory,320.3,19.1,42.6,23.7,24.9,4.2,4.6,29.1,81.3,3445
+2025,3,Grammar and Punctuation,NT,Northern Territory,306.5,19.6,46.4,22.7,23.3,4.3,3.3,27.6,84.0,3371
+2026,3,Grammar and Punctuation,NT,Northern Territory,319.4,17.6,43.9,24.1,24.7,3.7,3.7,28.4,77.7,3274
+2023,5,Grammar and Punctuation,NT,Northern Territory,424.2,17.1,34.7,23.1,33.9,4.8,3.5,38.7,82.5,3361
+2024,5,Grammar and Punctuation,NT,Northern Territory,416.4,18.3,36.9,22.7,32.5,4.6,3.2,37.1,84.6,3417
+2025,5,Grammar and Punctuation,NT,Northern Territory,402.6,20.1,40.6,21.2,29.7,5.7,2.8,35.4,82.8,3439
+2026,5,Grammar and Punctuation,NT,Northern Territory,410.5,20.3,38.7,21.4,30.4,6.4,3.0,36.8,77.2,3413
+2023,7,Grammar and Punctuation,NT,Northern Territory,463.0,24.3,38.5,20.9,31.1,6.2,3.3,37.3,78.2,3265
+2024,7,Grammar and Punctuation,NT,Northern Territory,448.9,28.6,41.1,21.0,28.8,6.2,2.9,35.0,78.4,3294
+2025,7,Grammar and Punctuation,NT,Northern Territory,450.0,27.7,40.9,20.3,28.4,7.4,2.9,35.8,82.0,3260
+2026,7,Grammar and Punctuation,NT,Northern Territory,443.8,26.3,42.2,22.0,26.7,5.9,3.2,32.6,78.8,3266
+2023,9,Grammar and Punctuation,NT,Northern Territory,479.5,23.8,39.9,25.8,24.8,5.1,4.3,30.0,73.4,3078
+2024,9,Grammar and Punctuation,NT,Northern Territory,463.0,28.0,43.8,23.1,22.5,6.7,3.9,29.2,70.7,3117
+2025,9,Grammar and Punctuation,NT,Northern Territory,461.0,30.5,43.7,23.0,23.3,6.8,3.2,30.1,73.1,3232
+2026,9,Grammar and Punctuation,NT,Northern Territory,470.8,28.2,41.4,25.5,23.4,7.1,2.6,30.5,70.0,3193
+2023,3,Numeracy,NT,Northern Territory,337.1,13.8,35.7,25.1,32.3,3.4,3.4,35.8,80.4,3398
+2024,3,Numeracy,NT,Northern Territory,339.8,14.2,34.2,24.6,33.2,3.6,4.4,36.9,81.5,3445
+2025,3,Numeracy,NT,Northern Territory,336.6,13.3,36.3,25.2,32.2,3.1,3.2,35.3,84.6,3371
+2026,3,Numeracy,NT,Northern Territory,332.9,13.6,37.7,24.6,31.0,3.2,3.5,34.2,78.6,3274
+2023,5,Numeracy,NT,Northern Territory,416.1,14.9,34.8,22.2,36.4,3.3,3.3,39.7,81.7,3361
+2024,5,Numeracy,NT,Northern Territory,419.2,14.6,32.9,24.3,36.4,3.1,3.2,39.5,84.4,3417
+2025,5,Numeracy,NT,Northern Territory,417.5,14.5,34.7,23.0,36.2,3.4,2.7,39.7,83.5,3439
+2026,5,Numeracy,NT,Northern Territory,424.8,14.8,32.5,22.1,38.5,4.0,2.9,42.5,77.2,3413
+2023,7,Numeracy,NT,Northern Territory,461.6,23.3,36.9,21.0,34.1,4.6,3.3,38.8,78.8,3265
+2024,7,Numeracy,NT,Northern Territory,466.0,23.6,35.0,22.0,35.9,4.2,2.9,40.1,77.5,3294
+2025,7,Numeracy,NT,Northern Territory,466.0,24.0,35.9,21.3,34.2,5.7,2.9,39.9,81.8,3260
+2026,7,Numeracy,NT,Northern Territory,472.6,21.6,32.2,22.4,37.6,4.6,3.2,42.3,78.1,3266
+2023,9,Numeracy,NT,Northern Territory,499.4,20.5,34.9,24.9,33.1,2.8,4.3,35.9,73.1,3078
+2024,9,Numeracy,NT,Northern Territory,493.6,20.9,36.9,24.1,32.4,2.8,3.8,35.2,69.0,3117
+2025,9,Numeracy,NT,Northern Territory,491.0,23.4,38.2,22.5,32.5,3.6,3.2,36.1,74.0,3232
+2026,9,Numeracy,NT,Northern Territory,502.1,22.5,34.6,23.5,34.8,4.4,2.6,39.3,68.8,3193
+2023,3,Reading,NT,Northern Territory,329.6,15.8,32.8,24.6,32.0,6.9,3.7,38.9,82.3,3398
+2024,3,Reading,NT,Northern Territory,330.3,16.2,35.2,20.6,30.1,9.6,4.6,39.7,83.3,3445
+2025,3,Reading,NT,Northern Territory,322.5,15.1,38.2,21.5,29.5,7.5,3.4,37.0,85.5,3371
+2026,3,Reading,NT,Northern Territory,325.5,15.5,36.6,21.6,29.9,8.4,3.5,38.3,79.1,3274
+2023,5,Reading,NT,Northern Territory,427.2,15.5,30.4,19.5,37.8,8.8,3.5,46.6,83.2,3361
+2024,5,Reading,NT,Northern Territory,419.9,16.2,33.1,19.6,35.6,8.5,3.2,44.1,85.7,3417
+2025,5,Reading,NT,Northern Territory,418.2,15.3,33.7,19.7,36.4,7.4,2.8,43.8,84.4,3439
+2026,5,Reading,NT,Northern Territory,421.4,15.3,31.4,21.4,36.7,7.4,3.0,44.1,78.2,3413
+2023,7,Reading,NT,Northern Territory,466.6,22.3,35.3,19.7,32.6,9.1,3.3,41.7,80.7,3265
+2024,7,Reading,NT,Northern Territory,467.5,24.2,34.6,19.5,33.2,9.8,2.9,43.0,80.0,3294
+2025,7,Reading,NT,Northern Territory,466.6,22.9,34.7,20.2,33.1,9.2,2.9,42.2,83.7,3260
+2026,7,Reading,NT,Northern Territory,466.3,21.4,33.4,22.3,32.5,8.7,3.2,41.1,79.5,3266
+2023,9,Reading,NT,Northern Territory,501.2,20.7,34.7,24.3,28.7,7.9,4.3,36.7,75.1,3078
+2024,9,Reading,NT,Northern Territory,493.6,23.1,36.9,22.6,27.9,8.7,3.9,36.6,70.9,3117
+2025,9,Reading,NT,Northern Territory,498.7,22.4,36.0,22.2,30.0,8.6,3.2,38.6,75.5,3232
+2026,9,Reading,NT,Northern Territory,503.4,20.8,33.2,25.4,30.6,8.2,2.6,38.8,71.6,3193
+2023,3,Spelling,NT,Northern Territory,315.2,18.8,38.6,23.6,27.4,6.8,3.6,34.2,80.4,3398
+2024,3,Spelling,NT,Northern Territory,318.6,18.3,36.3,24.1,27.7,7.2,4.6,34.9,81.3,3445
+2025,3,Spelling,NT,Northern Territory,308.8,19.4,40.2,22.8,26.3,7.4,3.3,33.7,84.0,3371
+2026,3,Spelling,NT,Northern Territory,317.2,18.7,38.3,23.2,27.1,7.7,3.7,34.8,77.7,3274
+2023,5,Spelling,NT,Northern Territory,415.6,17.7,32.0,21.5,32.5,10.5,3.5,43.0,82.5,3361
+2024,5,Spelling,NT,Northern Territory,408.8,19.4,33.8,20.4,32.4,10.2,3.2,42.5,84.6,3417
+2025,5,Spelling,NT,Northern Territory,401.8,19.0,36.1,19.6,31.4,10.1,2.8,41.5,82.8,3439
+2026,5,Spelling,NT,Northern Territory,410.8,19.5,33.8,19.6,32.8,10.8,3.0,43.6,77.2,3413
+2023,7,Spelling,NT,Northern Territory,464.5,24.9,33.8,17.8,33.2,11.9,3.3,45.0,78.2,3265
+2024,7,Spelling,NT,Northern Territory,469.2,24.3,32.9,18.1,33.8,12.2,2.9,46.1,78.4,3294
+2025,7,Spelling,NT,Northern Territory,469.7,24.2,31.9,18.7,33.6,12.9,2.9,46.5,82.0,3260
+2026,7,Spelling,NT,Northern Territory,475.1,21.1,30.2,19.6,34.4,12.7,3.2,47.1,78.8,3266
+2023,9,Spelling,NT,Northern Territory,508.1,20.5,31.4,20.3,34.6,9.3,4.3,44.0,73.4,3078
+2024,9,Spelling,NT,Northern Territory,508.9,19.0,31.4,20.4,35.7,8.7,3.9,44.4,70.7,3117
+2025,9,Spelling,NT,Northern Territory,504.1,21.7,32.8,19.2,34.8,9.9,3.2,44.7,73.1,3232
+2026,9,Spelling,NT,Northern Territory,517.9,19.0,29.0,19.8,37.8,10.9,2.6,48.7,70.0,3193
+2023,3,Writing,NT,Northern Territory,335.3,17.8,32.0,18.3,42.8,3.2,3.7,46.0,80.5,3398
+2024,3,Writing,NT,Northern Territory,340.2,17.0,29.8,17.5,45.4,2.8,4.6,48.2,82.2,3445
+2025,3,Writing,NT,Northern Territory,327.5,18.4,33.4,18.2,41.7,3.4,3.4,45.1,85.5,3371
+2026,3,Writing,NT,Northern Territory,334.2,17.3,31.5,20.3,41.9,2.7,3.6,44.6,78.3,3274
+2023,5,Writing,NT,Northern Territory,402.6,18.5,35.1,21.2,36.1,4.0,3.5,40.1,83.7,3361
+2024,5,Writing,NT,Northern Territory,408.1,20.1,32.4,22.2,37.7,4.5,3.2,42.2,85.8,3417
+2025,5,Writing,NT,Northern Territory,395.5,19.8,36.7,21.6,34.9,4.0,2.8,38.9,84.8,3439
+2026,5,Writing,NT,Northern Territory,395.3,20.0,37.7,22.1,33.3,3.8,3.1,37.2,79.2,3413
+2023,7,Writing,NT,Northern Territory,446.9,27.8,38.5,22.0,29.1,7.1,3.3,36.2,81.3,3265
+2024,7,Writing,NT,Northern Territory,460.2,28.9,35.3,21.1,32.1,8.6,2.9,40.7,81.2,3294
+2025,7,Writing,NT,Northern Territory,455.6,29.2,35.6,21.4,31.4,8.6,2.9,40.0,84.8,3260
+2026,7,Writing,NT,Northern Territory,454.4,26.2,36.9,23.1,29.3,7.6,3.2,36.8,80.2,3266
+2023,9,Writing,NT,Northern Territory,484.0,27.8,37.8,24.2,24.7,9.0,4.3,33.7,75.7,3078
+2024,9,Writing,NT,Northern Territory,483.2,29.3,38.4,22.5,25.5,9.8,3.9,35.2,72.8,3117
+2025,9,Writing,NT,Northern Territory,482.1,32.5,37.9,21.1,26.5,11.3,3.2,37.8,76.9,3232
+2026,9,Writing,NT,Northern Territory,490.4,28.8,37.3,24.3,24.6,11.3,2.6,35.9,72.3,3193
+2023,3,Grammar and Punctuation,QLD,Queensland,399.4,2.8,16.4,33.0,43.1,6.4,1.1,49.5,92.3,68203
+2024,3,Grammar and Punctuation,QLD,Queensland,397.8,3.2,19.0,29.7,41.4,8.5,1.3,49.9,92.4,68799
+2025,3,Grammar and Punctuation,QLD,Queensland,393.7,3.4,20.9,28.7,40.3,8.8,1.3,49.1,92.4,67913
+2026,3,Grammar and Punctuation,QLD,Queensland,390.6,3.2,21.0,30.2,39.6,7.6,1.6,47.2,92.6,66952
+2023,5,Grammar and Punctuation,QLD,Queensland,489.9,2.7,12.3,25.9,48.8,12.0,1.0,60.8,92.7,70032
+2024,5,Grammar and Punctuation,QLD,Queensland,492.5,2.8,12.1,24.2,49.8,12.7,1.2,62.5,92.5,70490
+2025,5,Grammar and Punctuation,QLD,Queensland,485.4,3.1,15.1,25.3,45.5,12.9,1.2,58.4,92.6,70352
+2026,5,Grammar and Punctuation,QLD,Queensland,482.6,2.9,15.2,26.0,45.5,11.8,1.5,57.3,92.9,70649
+2023,7,Grammar and Punctuation,QLD,Queensland,533.7,4.1,12.5,25.0,48.6,12.9,1.1,61.4,88.9,70582
+2024,7,Grammar and Punctuation,QLD,Queensland,527.2,4.7,16.2,25.4,43.2,13.9,1.2,57.2,88.6,70650
+2025,7,Grammar and Punctuation,QLD,Queensland,528.8,4.7,16.2,24.5,43.6,14.6,1.2,58.2,89.8,71944
+2026,7,Grammar and Punctuation,QLD,Queensland,523.1,4.9,18.9,24.6,40.5,14.7,1.3,55.2,89.9,72061
+2023,9,Grammar and Punctuation,QLD,Queensland,548.2,4.8,16.2,30.1,39.8,12.6,1.2,52.4,80.2,70315
+2024,9,Grammar and Punctuation,QLD,Queensland,549.1,5.1,17.3,28.8,37.7,15.0,1.2,52.7,80.7,72394
+2025,9,Grammar and Punctuation,QLD,Queensland,547.7,5.2,17.3,29.4,38.0,14.0,1.3,52.1,82.9,71508
+2026,9,Grammar and Punctuation,QLD,Queensland,542.4,5.4,19.5,29.6,35.6,13.9,1.3,49.5,82.8,71554
+2023,3,Numeracy,QLD,Queensland,394.2,2.4,12.9,27.1,50.6,8.3,1.1,58.9,92.1,68196
+2024,3,Numeracy,QLD,Queensland,392.9,2.3,11.8,28.2,51.9,6.8,1.3,58.7,92.0,68797
+2025,3,Numeracy,QLD,Queensland,393.1,2.3,11.8,28.2,51.8,6.9,1.2,58.7,92.1,67910
+2026,3,Numeracy,QLD,Queensland,387.6,2.4,14.3,29.0,48.3,6.8,1.6,55.1,92.3,66944
+2023,5,Numeracy,QLD,Queensland,477.7,2.6,10.8,23.7,56.1,8.4,1.0,64.5,92.4,70023
+2024,5,Numeracy,QLD,Queensland,478.9,2.6,10.1,24.5,55.1,9.1,1.2,64.2,92.1,70478
+2025,5,Numeracy,QLD,Queensland,479.2,2.6,9.5,25.0,55.5,8.8,1.2,64.3,92.2,70348
+2026,5,Numeracy,QLD,Queensland,480.8,2.5,9.3,23.1,57.6,8.6,1.4,66.2,92.7,70647
+2023,7,Numeracy,QLD,Queensland,528.6,4.6,11.1,24.2,53.9,9.7,1.1,63.6,88.8,70581
+2024,7,Numeracy,QLD,Queensland,528.6,4.8,11.8,24.0,52.4,10.5,1.2,62.9,88.1,70649
+2025,7,Numeracy,QLD,Queensland,530.2,4.9,12.2,23.4,51.8,11.4,1.2,63.2,89.4,71944
+2026,7,Numeracy,QLD,Queensland,532.8,4.8,11.6,22.7,52.7,11.7,1.2,64.4,89.6,72056
+2023,9,Numeracy,QLD,Queensland,554.0,4.9,13.6,26.5,51.6,7.0,1.2,58.6,80.0,70315
+2024,9,Numeracy,QLD,Queensland,551.8,4.7,13.7,27.0,52.2,5.9,1.2,58.1,80.0,72389
+2025,9,Numeracy,QLD,Queensland,556.3,5.0,13.8,25.5,51.5,8.0,1.3,59.5,82.3,71504
+2026,9,Numeracy,QLD,Queensland,555.8,5.3,15.1,25.0,49.5,9.0,1.3,58.5,82.6,71546
+2023,3,Reading,QLD,Queensland,391.8,2.7,12.0,25.4,46.5,15.0,1.1,61.5,93.0,68213
+2024,3,Reading,QLD,Queensland,391.7,2.9,14.1,22.7,45.1,16.6,1.3,61.8,93.2,68805
+2025,3,Reading,QLD,Queensland,389.2,2.9,13.9,24.2,45.2,15.4,1.3,60.6,93.1,67914
+2026,3,Reading,QLD,Queensland,386.0,2.9,15.2,23.8,44.3,15.0,1.7,59.3,93.2,66957
+2023,5,Reading,QLD,Queensland,486.6,2.5,8.6,19.6,52.9,17.8,1.0,70.7,93.5,70039
+2024,5,Reading,QLD,Queensland,482.7,2.7,10.6,20.4,49.5,18.2,1.2,67.8,93.4,70496
+2025,5,Reading,QLD,Queensland,481.7,2.5,9.7,20.5,52.4,16.2,1.2,68.6,93.2,70354
+2026,5,Reading,QLD,Queensland,478.6,2.4,9.4,21.8,53.1,14.3,1.5,67.4,93.6,70659
+2023,7,Reading,QLD,Queensland,525.9,4.0,11.2,23.8,48.2,15.7,1.1,63.9,89.8,70585
+2024,7,Reading,QLD,Queensland,523.1,4.4,13.2,23.8,45.5,16.3,1.2,61.8,89.6,70653
+2025,7,Reading,QLD,Queensland,526.3,4.2,11.4,23.8,47.5,16.1,1.2,63.6,90.5,71947
+2026,7,Reading,QLD,Queensland,522.0,4.3,13.7,24.1,44.6,16.4,1.3,61.0,90.8,72062
+2023,9,Reading,QLD,Queensland,553.6,4.1,13.9,27.1,43.5,14.3,1.2,57.7,81.3,70319
+2024,9,Reading,QLD,Queensland,550.8,4.3,15.1,27.1,42.2,14.4,1.2,56.6,81.8,72396
+2025,9,Reading,QLD,Queensland,555.0,4.1,13.2,26.4,44.9,14.2,1.3,59.1,83.7,71513
+2026,9,Reading,QLD,Queensland,548.2,4.2,15.1,28.2,42.6,12.8,1.3,55.3,83.7,71561
+2023,3,Spelling,QLD,Queensland,388.8,2.6,14.6,29.6,42.0,12.7,1.1,54.7,92.3,68203
+2024,3,Spelling,QLD,Queensland,387.8,2.5,14.4,29.3,43.3,11.7,1.3,55.0,92.4,68799
+2025,3,Spelling,QLD,Queensland,389.5,2.6,14.4,28.5,43.3,12.5,1.3,55.8,92.4,67913
+2026,3,Spelling,QLD,Queensland,385.2,2.6,15.8,28.9,41.9,11.8,1.6,53.7,92.6,66952
+2023,5,Spelling,QLD,Queensland,477.2,2.2,10.9,23.5,48.2,16.3,1.0,64.6,92.7,70032
+2024,5,Spelling,QLD,Queensland,474.7,2.3,11.8,23.9,46.8,16.2,1.2,63.1,92.5,70490
+2025,5,Spelling,QLD,Queensland,474.6,2.2,11.4,24.0,47.6,15.8,1.2,63.4,92.6,70352
+2026,5,Spelling,QLD,Queensland,475.2,2.1,11.2,23.3,48.7,15.4,1.5,64.1,92.9,70649
+2023,7,Spelling,QLD,Queensland,531.0,3.0,8.7,20.5,51.9,17.8,1.1,69.7,88.9,70582
+2024,7,Spelling,QLD,Queensland,530.2,3.1,9.4,21.0,49.6,18.7,1.2,68.3,88.6,70650
+2025,7,Spelling,QLD,Queensland,530.7,3.1,9.4,21.4,48.7,19.3,1.2,68.1,89.8,71944
+2026,7,Spelling,QLD,Queensland,529.1,3.0,9.8,21.4,48.9,18.7,1.3,67.5,89.9,72061
+2023,9,Spelling,QLD,Queensland,562.1,2.9,8.9,21.0,53.0,15.8,1.2,68.8,80.2,70315
+2024,9,Spelling,QLD,Queensland,560.2,2.5,8.0,21.7,56.1,13.0,1.2,69.1,80.7,72394
+2025,9,Spelling,QLD,Queensland,560.6,2.7,8.4,22.0,54.0,14.3,1.3,68.3,82.9,71508
+2026,9,Spelling,QLD,Queensland,559.4,2.8,9.5,22.1,52.5,14.6,1.3,67.1,82.8,71554
+2023,3,Writing,QLD,Queensland,404.7,2.4,8.7,20.2,62.1,7.9,1.1,70.0,92.4,68212
+2024,3,Writing,QLD,Queensland,402.4,2.4,8.7,20.1,62.9,6.9,1.4,69.8,92.6,68771
+2025,3,Writing,QLD,Queensland,398.3,2.4,9.0,21.1,63.0,5.6,1.3,68.6,92.6,67924
+2026,3,Writing,QLD,Queensland,397.7,2.6,10.4,21.4,59.6,6.9,1.7,66.5,92.5,66956
+2023,5,Writing,QLD,Queensland,465.9,2.4,14.3,27.6,48.4,8.6,1.0,57.0,93.2,70043
+2024,5,Writing,QLD,Queensland,470.2,2.6,13.4,26.3,49.5,9.6,1.2,59.1,93.3,70501
+2025,5,Writing,QLD,Queensland,463.5,2.6,14.8,28.5,47.4,8.1,1.2,55.5,93.2,70358
+2026,5,Writing,QLD,Queensland,470.6,2.8,14.4,24.8,48.7,10.6,1.5,59.3,93.4,70669
+2023,7,Writing,QLD,Queensland,519.2,3.9,15.6,28.4,42.6,12.2,1.1,54.8,90.5,70587
+2024,7,Writing,QLD,Queensland,524.4,4.5,16.4,25.6,41.1,15.7,1.2,56.7,90.3,70657
+2025,7,Writing,QLD,Queensland,521.7,4.4,16.8,26.4,40.7,14.8,1.2,55.6,91.1,71950
+2026,7,Writing,QLD,Queensland,513.2,4.5,19.3,27.3,39.2,12.9,1.2,52.2,91.3,72066
+2023,9,Writing,QLD,Queensland,554.3,4.6,17.1,30.0,35.0,16.7,1.2,51.7,82.2,70322
+2024,9,Writing,QLD,Queensland,557.7,4.9,17.8,27.9,33.6,19.4,1.2,53.0,82.8,72398
+2025,9,Writing,QLD,Queensland,560.4,5.0,17.3,27.2,33.9,20.3,1.3,54.2,84.6,71518
+2026,9,Writing,QLD,Queensland,552.7,5.0,19.3,28.2,33.1,18.2,1.3,51.2,84.5,71567
+2023,3,Grammar and Punctuation,SA,South Australia,400.0,3.5,13.6,34.7,43.7,4.9,3.0,48.7,94.7,21108
+2024,3,Grammar and Punctuation,SA,South Australia,399.1,3.7,16.5,31.2,42.1,7.0,3.2,49.2,94.8,21198
+2025,3,Grammar and Punctuation,SA,South Australia,397.0,4.1,17.9,30.1,41.3,7.8,3.0,49.0,94.4,21037
+2026,3,Grammar and Punctuation,SA,South Australia,393.2,4.0,18.1,32.1,40.4,6.4,3.0,46.8,93.8,20746
+2023,5,Grammar and Punctuation,SA,South Australia,487.1,3.6,10.7,27.4,50.2,9.0,2.7,59.2,95.5,21640
+2024,5,Grammar and Punctuation,SA,South Australia,487.7,3.6,11.3,26.6,49.7,9.8,2.6,59.5,95.1,21709
+2025,5,Grammar and Punctuation,SA,South Australia,485.5,3.8,13.1,26.4,47.1,10.9,2.6,57.9,95.0,21557
+2026,5,Grammar and Punctuation,SA,South Australia,484.0,3.8,13.4,26.7,46.7,10.5,2.7,57.2,94.7,21633
+2023,7,Grammar and Punctuation,SA,South Australia,530.9,5.8,11.3,26.8,49.7,10.2,2.1,59.8,94.1,21123
+2024,7,Grammar and Punctuation,SA,South Australia,526.9,6.8,14.4,26.8,44.6,12.3,1.9,56.9,93.8,21843
+2025,7,Grammar and Punctuation,SA,South Australia,528.0,6.7,15.0,25.1,45.0,12.6,2.2,57.6,94.0,22091
+2026,7,Grammar and Punctuation,SA,South Australia,523.9,7.0,17.3,25.4,42.2,13.1,2.0,55.4,93.4,22065
+2023,9,Grammar and Punctuation,SA,South Australia,544.5,6.6,15.0,32.2,39.6,9.7,3.5,49.3,89.4,21841
+2024,9,Grammar and Punctuation,SA,South Australia,546.5,7.3,15.8,30.6,38.7,11.9,3.0,50.7,89.4,21863
+2025,9,Grammar and Punctuation,SA,South Australia,546.9,7.0,15.8,30.9,38.9,12.1,2.3,51.0,89.5,21567
+2026,9,Grammar and Punctuation,SA,South Australia,541.5,7.8,18.1,31.0,36.1,12.1,2.6,48.2,88.5,22435
+2023,3,Numeracy,SA,South Australia,395.7,3.1,11.3,26.7,51.4,7.7,2.9,59.1,94.6,21108
+2024,3,Numeracy,SA,South Australia,395.9,2.8,9.9,27.5,52.7,6.7,3.1,59.5,94.8,21198
+2025,3,Numeracy,SA,South Australia,396.9,2.9,9.8,27.3,53.2,6.8,2.9,60.0,94.5,21037
+2026,3,Numeracy,SA,South Australia,392.0,3.1,12.2,28.1,49.8,7.0,2.9,56.8,93.9,20746
+2023,5,Numeracy,SA,South Australia,474.6,3.6,10.6,24.9,54.3,7.5,2.7,61.8,95.3,21640
+2024,5,Numeracy,SA,South Australia,477.4,3.4,9.4,25.3,55.0,7.7,2.6,62.8,95.0,21709
+2025,5,Numeracy,SA,South Australia,480.3,3.5,8.7,24.0,56.3,8.4,2.6,64.7,94.9,21557
+2026,5,Numeracy,SA,South Australia,482.4,3.4,8.3,23.1,57.0,8.9,2.6,65.9,94.5,21633
+2023,7,Numeracy,SA,South Australia,526.5,6.6,10.0,25.3,54.5,8.1,2.1,62.6,93.6,21123
+2024,7,Numeracy,SA,South Australia,527.8,7.1,10.6,25.1,52.9,9.6,1.9,62.5,93.6,21843
+2025,7,Numeracy,SA,South Australia,531.4,7.1,10.4,23.5,53.5,10.4,2.2,63.9,93.6,22091
+2026,7,Numeracy,SA,South Australia,533.3,7.1,10.6,22.9,53.7,10.9,2.0,64.6,93.2,22065
+2023,9,Numeracy,SA,South Australia,555.0,6.8,10.9,27.5,52.4,5.7,3.5,58.1,88.9,21841
+2024,9,Numeracy,SA,South Australia,551.7,6.8,12.0,27.9,52.2,5.1,2.9,57.2,89.0,21863
+2025,9,Numeracy,SA,South Australia,557.7,6.9,11.6,26.4,52.7,7.0,2.3,59.7,88.9,21567
+2026,9,Numeracy,SA,South Australia,557.2,7.8,13.3,25.5,50.0,8.5,2.6,58.6,88.4,22435
+2023,3,Reading,SA,South Australia,398.6,3.4,8.8,23.8,49.7,14.7,3.0,64.4,95.2,21108
+2024,3,Reading,SA,South Australia,394.7,3.6,11.6,23.0,46.4,15.8,3.1,62.3,95.3,21198
+2025,3,Reading,SA,South Australia,393.6,3.6,11.4,23.8,46.9,15.0,2.9,61.9,94.8,21037
+2026,3,Reading,SA,South Australia,391.1,3.7,12.5,24.0,45.7,14.9,3.0,60.5,94.5,20746
+2023,5,Reading,SA,South Australia,489.0,3.3,7.1,18.7,54.4,17.0,2.7,71.5,96.0,21640
+2024,5,Reading,SA,South Australia,481.1,3.5,9.3,21.4,50.6,16.1,2.6,66.6,95.7,21709
+2025,5,Reading,SA,South Australia,484.3,3.2,7.7,20.1,54.4,15.1,2.6,69.6,95.6,21557
+2026,5,Reading,SA,South Australia,479.4,3.1,8.2,22.0,53.5,13.5,2.7,67.0,95.4,21633
+2023,7,Reading,SA,South Australia,530.2,5.9,9.1,23.0,50.2,15.7,2.0,65.9,94.8,21123
+2024,7,Reading,SA,South Australia,526.4,6.4,11.2,23.6,46.9,16.4,1.9,63.3,94.8,21843
+2025,7,Reading,SA,South Australia,527.9,6.0,10.0,23.3,49.1,15.5,2.2,64.6,94.6,22091
+2026,7,Reading,SA,South Australia,524.8,6.3,12.0,23.6,46.4,16.0,2.0,62.4,94.3,22065
+2023,9,Reading,SA,South Australia,558.0,6.1,11.2,26.3,45.3,13.7,3.5,59.0,90.4,21841
+2024,9,Reading,SA,South Australia,552.8,6.1,13.1,27.1,43.7,13.2,2.9,56.9,90.4,21863
+2025,9,Reading,SA,South Australia,556.4,5.7,11.7,26.7,46.0,13.3,2.3,59.3,90.3,21567
+2026,9,Reading,SA,South Australia,550.8,6.3,13.4,28.1,43.3,12.5,2.6,55.8,89.4,22435
+2023,3,Spelling,SA,South Australia,403.3,3.2,9.4,27.0,46.4,14.2,3.0,60.5,94.7,21108
+2024,3,Spelling,SA,South Australia,400.0,3.0,10.1,27.0,46.7,13.0,3.2,59.7,94.8,21198
+2025,3,Spelling,SA,South Australia,401.9,3.2,9.9,26.8,46.5,13.9,3.0,60.4,94.4,21037
+2026,3,Spelling,SA,South Australia,398.6,3.2,11.0,27.4,45.0,13.5,3.0,58.6,93.8,20746
+2023,5,Spelling,SA,South Australia,484.6,3.1,8.3,22.2,49.1,17.7,2.7,66.8,95.5,21640
+2024,5,Spelling,SA,South Australia,482.4,3.0,9.0,22.6,48.7,17.1,2.6,65.8,95.1,21709
+2025,5,Spelling,SA,South Australia,484.7,2.9,8.0,21.8,50.0,17.6,2.6,67.5,95.0,21557
+2026,5,Spelling,SA,South Australia,485.3,2.8,7.9,21.2,51.1,17.2,2.7,68.3,94.7,21633
+2023,7,Spelling,SA,South Australia,532.7,4.7,8.1,19.9,51.7,18.1,2.1,69.9,94.1,21123
+2024,7,Spelling,SA,South Australia,533.9,4.8,8.4,20.0,50.1,19.7,1.9,69.8,93.8,21843
+2025,7,Spelling,SA,South Australia,536.5,4.6,7.7,19.9,49.4,20.8,2.2,70.2,94.0,22091
+2026,7,Spelling,SA,South Australia,537.0,4.5,7.7,19.5,50.0,20.9,2.0,70.9,93.4,22065
+2023,9,Spelling,SA,South Australia,562.0,4.4,8.3,21.0,52.3,14.9,3.5,67.2,89.4,21841
+2024,9,Spelling,SA,South Australia,559.3,4.0,7.8,21.5,55.8,12.0,3.0,67.7,89.4,21863
+2025,9,Spelling,SA,South Australia,561.2,3.9,7.7,21.8,54.5,13.7,2.3,68.2,89.5,21567
+2026,9,Spelling,SA,South Australia,561.3,4.2,8.2,21.8,53.0,14.4,2.6,67.4,88.5,22435
+2023,3,Writing,SA,South Australia,406.7,3.0,6.2,17.8,68.0,4.9,3.0,72.9,94.0,21108
+2024,3,Writing,SA,South Australia,411.5,2.8,4.6,16.9,70.1,5.3,3.1,75.4,94.2,21198
+2025,3,Writing,SA,South Australia,407.6,2.9,5.0,18.2,69.2,4.6,2.9,73.8,93.9,21037
+2026,3,Writing,SA,South Australia,404.2,3.3,6.4,19.8,66.0,4.9,3.0,70.8,93.5,20746
+2023,5,Writing,SA,South Australia,468.9,3.3,10.9,28.0,51.4,7.1,2.7,58.4,95.4,21640
+2024,5,Writing,SA,South Australia,477.3,3.3,9.2,25.7,53.1,9.3,2.6,62.4,95.3,21709
+2025,5,Writing,SA,South Australia,471.4,3.3,10.4,27.6,51.5,7.9,2.6,59.4,95.4,21557
+2026,5,Writing,SA,South Australia,472.7,3.5,11.2,26.2,51.0,8.9,2.7,59.9,94.8,21633
+2023,7,Writing,SA,South Australia,522.3,6.1,13.5,28.6,44.1,11.7,2.0,55.9,94.9,21123
+2024,7,Writing,SA,South Australia,531.1,6.2,12.0,26.1,45.0,15.1,1.9,60.1,94.7,21843
+2025,7,Writing,SA,South Australia,533.2,6.5,12.5,25.3,43.7,16.5,2.1,60.1,95.0,22091
+2026,7,Writing,SA,South Australia,527.9,6.6,13.7,26.0,43.5,14.8,2.0,58.3,94.2,22065
+2023,9,Writing,SA,South Australia,558.0,6.9,14.6,28.4,38.1,15.4,3.5,53.6,90.6,21841
+2024,9,Writing,SA,South Australia,564.6,7.0,13.7,26.8,38.2,18.5,2.9,56.7,90.4,21863
+2025,9,Writing,SA,South Australia,570.1,7.2,13.1,25.7,38.2,20.7,2.3,58.9,90.4,21567
+2026,9,Writing,SA,South Australia,564.9,7.4,14.5,26.9,36.2,19.8,2.6,56.0,89.5,22435
+2023,3,Grammar and Punctuation,TAS,Tasmania,389.4,5.5,18.0,35.0,40.5,4.0,2.5,44.5,96.6,6375
+2024,3,Grammar and Punctuation,TAS,Tasmania,382.6,6.3,22.5,31.8,37.1,5.8,2.8,42.9,95.9,6134
+2025,3,Grammar and Punctuation,TAS,Tasmania,384.0,6.4,22.9,29.5,37.7,6.9,3.0,44.6,96.0,6419
+2023,5,Grammar and Punctuation,TAS,Tasmania,477.6,5.2,13.9,28.9,47.8,7.2,2.3,55.0,95.8,6343
+2024,5,Grammar and Punctuation,TAS,Tasmania,474.7,5.5,15.1,28.6,46.8,6.9,2.6,53.7,96.4,6427
+2025,5,Grammar and Punctuation,TAS,Tasmania,476.7,6.1,16.0,26.4,45.8,9.2,2.6,55.0,96.2,6414
+2023,7,Grammar and Punctuation,TAS,Tasmania,520.7,7.8,15.2,27.7,46.9,8.3,1.8,55.3,93.8,6460
+2024,7,Grammar and Punctuation,TAS,Tasmania,518.8,9.1,16.7,26.9,43.7,9.9,2.8,53.6,94.1,6547
+2025,7,Grammar and Punctuation,TAS,Tasmania,517.2,9.2,18.7,25.6,42.1,10.8,2.7,53.0,94.3,6342
+2023,9,Grammar and Punctuation,TAS,Tasmania,533.2,9.1,19.1,33.2,37.9,7.7,2.2,45.5,87.4,6820
+2024,9,Grammar and Punctuation,TAS,Tasmania,535.6,10.9,19.8,31.1,35.8,10.7,2.6,46.5,88.7,6676
+2025,9,Grammar and Punctuation,TAS,Tasmania,536.5,9.3,18.9,31.7,37.3,9.6,2.4,46.9,88.9,6456
+2023,3,Numeracy,TAS,Tasmania,394.3,4.6,12.3,27.2,50.3,7.9,2.3,58.2,96.0,6375
+2024,3,Numeracy,TAS,Tasmania,392.7,4.6,11.5,27.9,51.4,6.7,2.4,58.1,96.2,6133
+2025,3,Numeracy,TAS,Tasmania,396.4,4.4,10.7,27.0,52.3,7.2,2.8,59.5,96.0,6417
+2023,5,Numeracy,TAS,Tasmania,467.1,5.2,13.3,25.3,53.5,5.7,2.2,59.2,95.5,6343
+2024,5,Numeracy,TAS,Tasmania,467.5,5.1,12.4,27.3,51.7,6.2,2.5,57.9,96.2,6427
+2025,5,Numeracy,TAS,Tasmania,472.7,4.9,10.4,26.5,53.8,6.9,2.4,60.7,96.2,6414
+2023,7,Numeracy,TAS,Tasmania,514.4,8.2,14.3,26.8,50.7,6.4,1.8,57.1,93.9,6461
+2024,7,Numeracy,TAS,Tasmania,515.6,8.8,13.7,26.9,50.0,6.7,2.8,56.6,94.2,6547
+2025,7,Numeracy,TAS,Tasmania,518.7,9.6,13.9,25.6,50.2,7.7,2.6,57.9,94.1,6341
+2023,9,Numeracy,TAS,Tasmania,545.1,8.3,14.0,29.8,49.7,4.3,2.2,54.0,87.8,6818
+2024,9,Numeracy,TAS,Tasmania,544.9,9.1,14.0,28.9,50.5,4.1,2.5,54.6,88.6,6676
+2025,9,Numeracy,TAS,Tasmania,549.5,8.5,14.5,26.8,50.2,6.1,2.4,56.3,88.7,6454
+2023,3,Reading,TAS,Tasmania,396.6,5.7,11.8,23.4,45.5,16.8,2.5,62.3,97.2,6378
+2024,3,Reading,TAS,Tasmania,392.5,6.1,15.0,21.2,43.4,17.6,2.7,61.0,96.5,6134
+2025,3,Reading,TAS,Tasmania,393.2,5.7,14.2,22.3,42.8,17.7,3.0,60.5,96.6,6420
+2023,5,Reading,TAS,Tasmania,482.9,5.3,9.9,20.2,50.4,17.2,2.3,67.6,96.5,6346
+2024,5,Reading,TAS,Tasmania,476.4,5.9,12.5,21.2,47.2,16.6,2.6,63.8,97.0,6427
+2025,5,Reading,TAS,Tasmania,481.5,5.6,10.4,19.5,50.6,16.9,2.6,67.4,97.0,6414
+2023,7,Reading,TAS,Tasmania,521.4,8.7,13.3,23.7,46.2,15.1,1.8,61.2,95.1,6461
+2024,7,Reading,TAS,Tasmania,525.9,9.1,12.6,22.0,45.7,17.0,2.8,62.6,95.2,6549
+2025,7,Reading,TAS,Tasmania,522.0,9.2,13.1,23.4,45.4,15.4,2.7,60.8,95.6,6343
+2023,9,Reading,TAS,Tasmania,550.9,8.7,15.2,26.8,41.9,13.9,2.2,55.8,89.6,6820
+2024,9,Reading,TAS,Tasmania,553.5,9.8,14.5,25.8,41.9,15.2,2.6,57.1,89.8,6677
+2025,9,Reading,TAS,Tasmania,553.5,8.5,14.4,25.2,43.8,14.1,2.4,58.0,90.4,6456
+2023,3,Spelling,TAS,Tasmania,383.6,5.3,15.6,30.0,40.4,11.5,2.5,51.9,96.6,6375
+2024,3,Spelling,TAS,Tasmania,382.7,5.1,15.5,30.5,40.6,10.6,2.8,51.2,95.9,6134
+2025,3,Spelling,TAS,Tasmania,385.6,5.0,14.8,29.6,41.3,11.3,3.0,52.6,96.0,6419
+2023,5,Spelling,TAS,Tasmania,468.0,4.4,12.9,25.6,45.3,13.8,2.3,59.1,95.8,6343
+2024,5,Spelling,TAS,Tasmania,463.8,4.8,14.9,25.3,43.5,13.7,2.6,57.2,96.4,6427
+2025,5,Spelling,TAS,Tasmania,470.2,4.5,11.6,25.1,47.2,13.5,2.6,60.7,96.2,6414
+2023,7,Spelling,TAS,Tasmania,518.1,6.4,12.7,22.7,47.9,14.9,1.8,62.8,93.8,6460
+2024,7,Spelling,TAS,Tasmania,521.6,6.6,11.8,22.3,46.9,16.3,2.8,63.2,94.1,6547
+2025,7,Spelling,TAS,Tasmania,522.3,6.1,11.5,23.0,46.2,16.6,2.7,62.8,94.3,6342
+2023,9,Spelling,TAS,Tasmania,549.9,5.7,12.5,23.5,50.1,11.7,2.2,61.8,87.4,6820
+2024,9,Spelling,TAS,Tasmania,552.5,6.0,10.5,23.1,52.6,11.2,2.6,63.8,88.7,6676
+2025,9,Spelling,TAS,Tasmania,551.5,5.7,11.1,24.1,50.4,12.0,2.4,62.4,88.9,6456
+2023,3,Writing,TAS,Tasmania,398.5,5.2,10.0,19.3,62.8,5.4,2.5,68.2,95.6,6379
+2024,3,Writing,TAS,Tasmania,398.9,4.8,8.0,19.8,65.2,4.2,2.8,69.4,95.6,6134
+2025,3,Writing,TAS,Tasmania,399.2,4.9,8.6,19.2,64.8,4.4,3.0,69.1,95.4,6420
+2023,5,Writing,TAS,Tasmania,463.8,4.6,13.6,27.8,49.4,6.9,2.3,56.3,96.0,6346
+2024,5,Writing,TAS,Tasmania,470.4,4.6,10.7,26.1,53.9,6.7,2.5,60.7,96.4,6427
+2025,5,Writing,TAS,Tasmania,465.3,5.0,11.7,27.4,52.4,5.9,2.6,58.3,96.6,6414
+2023,7,Writing,TAS,Tasmania,515.0,8.8,15.6,29.3,43.0,10.2,1.8,53.2,94.3,6460
+2024,7,Writing,TAS,Tasmania,524.0,8.6,13.1,26.8,44.6,12.7,2.8,57.3,95.1,6549
+2025,7,Writing,TAS,Tasmania,520.6,9.0,14.3,27.9,42.9,12.3,2.7,55.1,95.3,6343
+2023,9,Writing,TAS,Tasmania,547.0,10.3,17.7,29.5,36.7,13.9,2.2,50.6,89.9,6820
+2024,9,Writing,TAS,Tasmania,555.0,10.9,15.4,28.2,38.1,15.6,2.6,53.7,90.5,6677
+2025,9,Writing,TAS,Tasmania,554.3,10.9,16.3,27.7,37.4,16.2,2.4,53.6,90.7,6456
+2023,3,Grammar and Punctuation,VIC,Victoria,419.2,2.1,10.4,29.7,47.8,9.7,2.4,57.5,94.9,82011
+2024,3,Grammar and Punctuation,VIC,Victoria,417.4,2.3,12.8,28.1,45.0,11.5,2.5,56.6,95.1,82955
+2025,3,Grammar and Punctuation,VIC,Victoria,422.5,2.4,12.5,26.2,45.3,13.5,2.6,58.8,95.3,83245
+2026,3,Grammar and Punctuation,VIC,Victoria,423.1,2.2,11.7,26.4,46.2,12.8,2.8,59.1,95.1,82628
+2023,5,Grammar and Punctuation,VIC,Victoria,503.0,2.0,7.1,23.4,54.2,13.0,2.2,67.2,95.6,82863
+2024,5,Grammar and Punctuation,VIC,Victoria,504.1,2.1,8.0,22.8,52.1,14.7,2.3,66.8,95.6,82815
+2025,5,Grammar and Punctuation,VIC,Victoria,507.1,2.2,8.9,21.9,49.4,17.5,2.3,66.9,95.8,84187
+2026,5,Grammar and Punctuation,VIC,Victoria,508.3,2.1,9.0,21.5,48.7,18.4,2.4,67.1,95.4,84675
+2023,7,Grammar and Punctuation,VIC,Victoria,543.3,3.1,8.1,24.0,52.5,13.7,1.8,66.1,95.1,79801
+2024,7,Grammar and Punctuation,VIC,Victoria,541.1,3.4,11.0,23.9,47.2,16.2,1.8,63.4,95.2,81192
+2025,7,Grammar and Punctuation,VIC,Victoria,546.2,3.6,10.8,21.9,47.0,18.5,1.8,65.5,95.5,84804
+2026,7,Grammar and Punctuation,VIC,Victoria,542.8,3.6,12.7,22.0,44.5,18.7,2.0,63.3,95.1,84489
+2023,9,Grammar and Punctuation,VIC,Victoria,563.6,3.9,9.9,29.6,44.3,14.1,2.1,58.4,90.5,79422
+2024,9,Grammar and Punctuation,VIC,Victoria,558.4,4.3,12.8,29.5,40.4,15.1,2.2,55.5,91.2,80740
+2025,9,Grammar and Punctuation,VIC,Victoria,566.2,4.3,11.3,27.9,41.4,17.3,2.1,58.7,91.8,81738
+2026,9,Grammar and Punctuation,VIC,Victoria,561.9,4.5,13.0,28.5,39.2,17.2,2.2,56.3,91.5,82955
+2023,3,Numeracy,VIC,Victoria,417.7,1.9,7.1,21.2,54.6,14.7,2.3,69.3,95.1,82009
+2024,3,Numeracy,VIC,Victoria,413.4,1.8,7.1,22.9,55.1,12.5,2.4,67.7,95.2,82955
+2025,3,Numeracy,VIC,Victoria,418.1,1.8,6.3,21.4,55.8,14.0,2.5,69.8,95.5,83240
+2026,3,Numeracy,VIC,Victoria,416.9,1.8,7.2,21.6,54.3,14.3,2.7,68.6,95.0,82628
+2023,5,Numeracy,VIC,Victoria,494.3,2.1,7.1,20.4,57.1,13.2,2.2,70.3,95.6,82858
+2024,5,Numeracy,VIC,Victoria,497.3,2.1,6.3,20.3,56.8,14.3,2.3,71.1,95.7,82815
+2025,5,Numeracy,VIC,Victoria,502.7,2.1,5.3,19.0,57.6,15.9,2.3,73.4,95.9,84187
+2026,5,Numeracy,VIC,Victoria,504.4,2.0,5.2,17.5,59.2,15.8,2.4,75.0,95.5,84675
+2023,7,Numeracy,VIC,Victoria,544.0,3.7,7.3,21.5,55.8,13.6,1.8,69.4,94.9,79797
+2024,7,Numeracy,VIC,Victoria,545.5,3.7,7.3,21.3,55.2,14.5,1.7,69.7,95.2,81192
+2025,7,Numeracy,VIC,Victoria,555.0,3.9,7.0,18.5,54.7,18.0,1.8,72.7,95.6,84803
+2026,7,Numeracy,VIC,Victoria,558.2,3.8,6.6,17.3,55.7,18.4,2.0,74.1,95.2,84489
+2023,9,Numeracy,VIC,Victoria,574.0,4.2,7.9,23.3,56.0,10.6,2.1,66.6,90.6,79424
+2024,9,Numeracy,VIC,Victoria,571.1,4.2,8.5,23.9,55.4,10.0,2.2,65.4,91.1,80740
+2025,9,Numeracy,VIC,Victoria,581.6,4.4,7.9,21.1,55.1,13.8,2.1,68.9,91.9,81738
+2026,9,Numeracy,VIC,Victoria,583.6,4.6,8.3,20.7,53.6,15.2,2.2,68.8,91.5,82955
+2023,3,Reading,VIC,Victoria,416.0,2.0,6.3,20.0,50.0,21.2,2.4,71.2,95.5,82019
+2024,3,Reading,VIC,Victoria,417.7,2.0,7.7,18.6,47.7,23.5,2.5,71.2,95.6,82955
+2025,3,Reading,VIC,Victoria,417.0,2.0,6.9,19.1,49.0,22.4,2.6,71.4,95.8,83251
+2026,3,Reading,VIC,Victoria,418.1,1.9,7.2,18.5,48.4,23.1,2.8,71.5,95.6,82629
+2023,5,Reading,VIC,Victoria,507.1,1.8,4.3,14.6,54.5,24.4,2.2,78.9,96.1,82869
+2024,5,Reading,VIC,Victoria,504.8,1.9,5.6,15.6,51.3,25.2,2.3,76.4,96.2,82815
+2025,5,Reading,VIC,Victoria,502.7,1.8,4.6,15.5,55.2,22.4,2.3,77.6,96.3,84188
+2026,5,Reading,VIC,Victoria,497.6,1.7,5.0,17.3,55.0,20.3,2.4,75.3,96.0,84675
+2023,7,Reading,VIC,Victoria,544.6,3.0,6.3,19.6,51.1,21.2,1.8,72.3,95.8,79804
+2024,7,Reading,VIC,Victoria,545.3,3.1,7.1,19.1,49.7,22.3,1.7,72.0,95.8,81192
+2025,7,Reading,VIC,Victoria,549.0,3.1,6.2,18.0,50.6,23.4,1.8,74.0,96.2,84803
+2026,7,Reading,VIC,Victoria,545.2,3.1,7.8,18.8,48.3,23.1,2.0,71.4,95.9,84489
+2023,9,Reading,VIC,Victoria,571.7,3.3,7.8,23.8,47.9,18.3,2.1,66.2,91.6,79421
+2024,9,Reading,VIC,Victoria,573.2,3.5,8.5,22.8,46.5,19.9,2.2,66.5,92.2,80740
+2025,9,Reading,VIC,Victoria,576.5,3.3,7.2,21.7,49.0,20.1,2.1,69.1,92.7,81739
+2026,9,Reading,VIC,Victoria,571.7,3.3,7.9,23.5,48.0,18.4,2.2,66.4,92.6,82955
+2023,3,Spelling,VIC,Victoria,409.9,1.9,9.0,26.0,44.9,17.7,2.4,62.6,94.9,82011
+2024,3,Spelling,VIC,Victoria,407.9,1.7,8.8,26.0,46.7,16.1,2.5,62.7,95.1,82955
+2025,3,Spelling,VIC,Victoria,414.9,1.8,7.7,24.3,46.8,18.5,2.6,65.4,95.3,83245
+2026,3,Spelling,VIC,Victoria,417.2,1.7,7.7,23.3,46.9,19.3,2.8,66.2,95.1,82628
+2023,5,Spelling,VIC,Victoria,494.1,1.8,6.9,20.0,49.2,21.7,2.2,70.9,95.6,82863
+2024,5,Spelling,VIC,Victoria,491.6,1.8,7.8,20.7,47.9,21.3,2.3,69.2,95.6,82815
+2025,5,Spelling,VIC,Victoria,493.7,1.7,6.9,19.9,49.4,21.5,2.3,70.9,95.8,84187
+2026,5,Spelling,VIC,Victoria,495.3,1.5,6.4,19.1,50.7,21.5,2.4,72.1,95.4,84675
+2023,7,Spelling,VIC,Victoria,540.8,2.4,6.6,18.5,51.2,21.8,1.8,73.0,95.1,79801
+2024,7,Spelling,VIC,Victoria,541.3,2.4,7.1,18.4,49.6,23.1,1.8,72.7,95.2,81192
+2025,7,Spelling,VIC,Victoria,544.2,2.5,6.7,18.2,48.4,24.8,1.8,73.2,95.5,84804
+2026,7,Spelling,VIC,Victoria,544.8,2.4,6.7,17.8,48.4,25.0,2.0,73.4,95.1,84489
+2023,9,Spelling,VIC,Victoria,570.1,2.6,6.9,19.2,53.2,18.5,2.1,71.7,90.5,79422
+2024,9,Spelling,VIC,Victoria,568.5,2.5,6.2,19.1,56.5,16.1,2.2,72.6,91.2,80740
+2025,9,Spelling,VIC,Victoria,571.8,2.5,6.1,19.0,53.8,19.0,2.1,72.8,91.8,81738
+2026,9,Spelling,VIC,Victoria,571.6,2.5,6.8,18.5,53.2,19.3,2.2,72.5,91.5,82955
+2023,3,Writing,VIC,Victoria,424.4,1.7,3.9,13.7,70.6,9.5,2.3,80.1,94.6,82021
+2024,3,Writing,VIC,Victoria,422.9,1.5,3.5,13.8,71.8,8.3,2.5,80.2,94.7,82947
+2025,3,Writing,VIC,Victoria,423.7,1.6,3.3,13.4,72.9,8.2,2.2,81.1,94.7,83256
+2026,3,Writing,VIC,Victoria,424.8,1.6,3.6,13.8,70.5,9.3,2.8,79.8,94.7,82628
+2023,5,Writing,VIC,Victoria,498.3,1.7,5.1,18.3,60.4,14.0,2.2,74.3,95.8,82869
+2024,5,Writing,VIC,Victoria,496.1,1.7,5.1,19.1,60.8,12.6,2.3,73.4,95.9,82815
+2025,5,Writing,VIC,Victoria,494.0,1.7,5.3,19.7,60.6,12.2,2.3,72.7,96.1,84186
+2026,5,Writing,VIC,Victoria,496.8,1.8,6.0,18.5,59.0,14.1,2.4,73.1,95.9,84675
+2023,7,Writing,VIC,Victoria,546.9,2.8,6.5,23.1,51.4,17.2,1.8,68.6,95.8,79807
+2024,7,Writing,VIC,Victoria,552.3,2.8,6.4,20.5,51.7,19.6,1.7,71.3,96.1,81192
+2025,7,Writing,VIC,Victoria,552.3,3.0,6.9,21.1,49.3,20.8,1.8,70.2,96.4,84802
+2026,7,Writing,VIC,Victoria,552.7,3.1,7.7,20.4,48.3,21.7,2.0,69.9,96.3,84489
+2023,9,Writing,VIC,Victoria,578.7,3.3,8.1,25.9,44.5,19.3,2.1,63.9,91.7,79423
+2024,9,Writing,VIC,Victoria,584.7,3.4,7.9,23.9,43.6,22.5,2.2,66.1,92.4,80740
+2025,9,Writing,VIC,Victoria,587.1,3.5,7.9,23.4,42.7,24.0,2.1,66.7,93.1,81738
+2026,9,Writing,VIC,Victoria,586.8,3.7,8.8,22.6,41.0,25.4,2.2,66.4,93.1,82955
+2023,3,Grammar and Punctuation,WA,Western Australia,401.7,3.1,15.9,31.9,43.7,6.9,1.6,50.6,95.2,35697
+2024,3,Grammar and Punctuation,WA,Western Australia,399.3,3.5,18.8,28.8,41.7,9.1,1.6,50.8,95.5,37186
+2025,3,Grammar and Punctuation,WA,Western Australia,394.5,3.6,20.7,28.3,39.8,9.4,1.7,49.3,95.4,37013
+2026,3,Grammar and Punctuation,WA,Western Australia,396.4,3.4,19.5,28.9,40.8,8.9,1.9,49.7,95.3,36757
+2023,5,Grammar and Punctuation,WA,Western Australia,491.5,3.1,11.5,25.3,50.0,12.0,1.2,62.0,96.2,36126
+2024,5,Grammar and Punctuation,WA,Western Australia,492.1,3.1,12.0,24.0,50.0,12.6,1.4,62.6,96.1,36658
+2025,5,Grammar and Punctuation,WA,Western Australia,489.6,3.3,14.0,23.6,46.9,14.0,1.5,60.9,96.2,36904
+2026,5,Grammar and Punctuation,WA,Western Australia,490.6,3.3,13.9,23.5,46.7,14.4,1.5,61.1,95.9,38270
+2023,7,Grammar and Punctuation,WA,Western Australia,536.6,5.6,11.8,23.3,50.3,13.4,1.2,63.7,95.3,35614
+2024,7,Grammar and Punctuation,WA,Western Australia,535.2,5.9,13.4,23.4,46.7,15.3,1.2,62.0,95.2,35970
+2025,7,Grammar and Punctuation,WA,Western Australia,532.9,6.4,14.7,23.3,45.3,15.5,1.2,60.8,95.5,37023
+2026,7,Grammar and Punctuation,WA,Western Australia,531.3,6.4,16.1,22.9,43.3,16.4,1.2,59.7,95.3,37417
+2023,9,Grammar and Punctuation,WA,Western Australia,563.0,6.0,10.9,27.9,45.6,14.3,1.2,59.9,92.2,34928
+2024,9,Grammar and Punctuation,WA,Western Australia,562.3,6.4,11.8,28.1,42.9,16.0,1.2,58.9,92.1,35588
+2025,9,Grammar and Punctuation,WA,Western Australia,564.5,6.5,11.7,27.3,43.0,16.8,1.2,59.8,92.8,36435
+2026,9,Grammar and Punctuation,WA,Western Australia,560.5,6.3,12.6,28.3,41.7,16.0,1.3,57.7,92.7,36776
+2023,3,Numeracy,WA,Western Australia,399.4,2.6,12.0,24.7,51.9,9.8,1.6,61.7,95.0,35694
+2024,3,Numeracy,WA,Western Australia,396.3,2.5,11.6,26.5,52.1,8.2,1.6,60.3,95.3,37182
+2025,3,Numeracy,WA,Western Australia,395.8,2.4,11.6,26.9,51.7,8.0,1.7,59.8,95.4,37004
+2026,3,Numeracy,WA,Western Australia,393.4,2.5,13.2,26.7,49.8,8.5,1.8,58.3,95.3,36757
+2023,5,Numeracy,WA,Western Australia,482.1,3.0,10.6,22.3,55.5,10.4,1.2,65.9,96.0,36125
+2024,5,Numeracy,WA,Western Australia,484.8,2.9,9.7,22.1,55.6,11.2,1.4,66.8,95.8,36655
+2025,5,Numeracy,WA,Western Australia,486.5,2.9,9.0,21.9,56.3,11.3,1.5,67.6,96.1,36898
+2026,5,Numeracy,WA,Western Australia,488.5,2.9,9.1,20.6,56.8,12.0,1.5,68.8,95.8,38268
+2023,7,Numeracy,WA,Western Australia,537.1,6.3,9.9,21.3,55.5,12.1,1.2,67.6,95.1,35611
+2024,7,Numeracy,WA,Western Australia,537.6,6.1,9.6,21.5,55.5,12.1,1.2,67.7,94.8,35970
+2025,7,Numeracy,WA,Western Australia,540.5,6.7,10.4,20.7,53.4,14.4,1.1,67.8,95.6,37024
+2026,7,Numeracy,WA,Western Australia,544.1,6.4,9.6,19.6,54.9,14.6,1.2,69.5,95.0,37413
+2023,9,Numeracy,WA,Western Australia,576.4,6.2,8.2,21.1,58.6,10.9,1.2,69.4,92.0,34928
+2024,9,Numeracy,WA,Western Australia,575.6,5.9,7.3,21.4,60.8,9.3,1.2,70.1,92.3,35590
+2025,9,Numeracy,WA,Western Australia,580.8,6.5,7.9,20.0,58.3,12.5,1.2,70.8,92.9,36436
+2026,9,Numeracy,WA,Western Australia,582.6,6.4,8.0,19.5,57.8,13.5,1.3,71.3,92.5,36773
+2023,3,Reading,WA,Western Australia,395.0,3.0,11.3,24.1,47.5,15.5,1.6,63.0,95.7,35698
+2024,3,Reading,WA,Western Australia,391.7,3.1,14.2,22.1,45.5,16.5,1.6,62.1,96.0,37188
+2025,3,Reading,WA,Western Australia,388.7,2.9,13.9,23.7,45.8,14.9,1.7,60.7,95.9,37012
+2026,3,Reading,WA,Western Australia,390.5,3.0,14.0,22.7,45.5,16.0,1.9,61.5,95.8,36765
+2023,5,Reading,WA,Western Australia,486.6,2.8,8.6,19.0,53.6,17.6,1.2,71.2,96.6,36130
+2024,5,Reading,WA,Western Australia,483.8,3.0,10.5,19.2,50.2,18.6,1.4,68.8,96.6,36660
+2025,5,Reading,WA,Western Australia,484.0,2.6,9.2,19.2,53.2,16.8,1.5,70.0,96.7,36904
+2026,5,Reading,WA,Western Australia,479.8,2.6,9.6,20.8,52.9,15.1,1.5,68.0,96.4,38272
+2023,7,Reading,WA,Western Australia,532.1,5.6,10.4,21.0,49.4,18.0,1.2,67.4,96.2,35618
+2024,7,Reading,WA,Western Australia,530.5,5.4,11.0,21.3,48.6,17.9,1.2,66.4,96.0,35970
+2025,7,Reading,WA,Western Australia,532.2,5.6,10.1,21.4,49.2,18.1,1.1,67.3,96.4,37025
+2026,7,Reading,WA,Western Australia,530.7,5.6,11.5,21.1,47.5,18.7,1.2,66.1,95.9,37420
+2023,9,Reading,WA,Western Australia,573.4,5.2,7.8,22.3,50.3,18.4,1.2,68.7,93.3,34930
+2024,9,Reading,WA,Western Australia,576.9,5.2,7.1,21.4,50.5,19.9,1.2,70.4,93.3,35592
+2025,9,Reading,WA,Western Australia,576.1,5.0,6.9,21.2,51.7,19.0,1.2,70.6,93.8,36437
+2026,9,Reading,WA,Western Australia,571.2,4.8,7.5,23.1,51.2,17.0,1.3,68.1,93.7,36778
+2023,3,Spelling,WA,Western Australia,395.8,3.0,12.5,28.0,43.6,14.2,1.6,57.8,95.2,35697
+2024,3,Spelling,WA,Western Australia,395.3,2.9,12.4,27.6,44.6,13.7,1.6,58.3,95.5,37186
+2025,3,Spelling,WA,Western Australia,394.1,2.9,13.1,27.8,43.4,14.0,1.7,57.4,95.4,37013
+2026,3,Spelling,WA,Western Australia,393.6,2.9,13.7,27.2,43.2,14.1,1.9,57.3,95.3,36757
+2023,5,Spelling,WA,Western Australia,485.8,2.7,9.4,21.0,48.6,19.7,1.2,68.4,96.2,36126
+2024,5,Spelling,WA,Western Australia,485.3,2.7,9.8,21.0,47.6,20.2,1.4,67.7,96.1,36658
+2025,5,Spelling,WA,Western Australia,485.0,2.5,9.3,20.8,49.0,19.4,1.5,68.4,96.2,36904
+2026,5,Spelling,WA,Western Australia,486.3,2.5,9.1,20.1,49.8,19.5,1.5,69.3,95.9,38270
+2023,7,Spelling,WA,Western Australia,540.4,4.5,7.8,17.4,50.9,22.8,1.2,73.7,95.3,35614
+2024,7,Spelling,WA,Western Australia,542.1,4.2,7.8,17.4,49.1,24.4,1.2,73.5,95.2,35970
+2025,7,Spelling,WA,Western Australia,542.3,4.4,7.5,18.0,48.8,24.5,1.2,73.3,95.5,37023
+2026,7,Spelling,WA,Western Australia,543.1,4.2,7.6,17.3,49.2,24.7,1.2,73.9,95.3,37417
+2023,9,Spelling,WA,Western Australia,569.9,4.1,7.4,18.6,53.9,18.9,1.2,72.8,92.2,34928
+2024,9,Spelling,WA,Western Australia,570.1,3.7,6.0,18.1,58.1,16.6,1.2,74.7,92.1,35588
+2025,9,Spelling,WA,Western Australia,572.1,3.9,6.3,18.4,54.8,19.2,1.2,74.0,92.8,36435
+2026,9,Spelling,WA,Western Australia,571.7,3.7,6.6,17.9,55.4,18.8,1.3,74.2,92.7,36776
+2023,3,Writing,WA,Western Australia,408.8,2.7,7.7,16.5,66.9,7.3,1.6,74.2,95.0,35704
+2024,3,Writing,WA,Western Australia,408.7,2.6,7.3,16.4,67.8,7.0,1.6,74.7,95.9,37208
+2025,3,Writing,WA,Western Australia,405.9,2.4,7.1,16.9,69.6,4.7,1.7,74.3,95.7,36833
+2026,3,Writing,WA,Western Australia,399.1,2.5,8.6,19.1,67.4,3.0,1.9,70.4,94.8,36789
+2023,5,Writing,WA,Western Australia,476.5,2.8,10.5,24.0,55.1,9.1,1.2,64.3,96.5,36131
+2024,5,Writing,WA,Western Australia,478.2,2.8,9.7,23.8,55.9,9.2,1.4,65.0,96.5,36662
+2025,5,Writing,WA,Western Australia,473.2,2.5,10.1,24.8,56.3,7.4,1.5,63.7,96.6,36904
+2026,5,Writing,WA,Western Australia,472.1,2.7,11.2,24.5,54.7,8.1,1.5,62.8,96.2,38273
+2023,7,Writing,WA,Western Australia,529.4,5.3,11.7,25.4,48.5,13.2,1.2,61.7,96.5,35614
+2024,7,Writing,WA,Western Australia,537.4,5.1,10.4,23.8,48.0,16.5,1.2,64.5,96.0,35976
+2025,7,Writing,WA,Western Australia,534.8,5.5,10.7,25.2,47.3,15.7,1.2,62.9,96.4,37023
+2026,7,Writing,WA,Western Australia,532.8,5.6,11.8,24.6,46.8,15.6,1.3,62.4,96.1,37424
+2023,9,Writing,WA,Western Australia,569.6,5.8,10.3,28.3,43.2,17.0,1.2,60.3,93.6,34930
+2024,9,Writing,WA,Western Australia,580.3,6.0,9.2,25.5,42.2,21.9,1.2,64.1,93.4,35592
+2025,9,Writing,WA,Western Australia,581.8,5.9,9.1,25.2,41.5,22.9,1.2,64.5,94.0,36443
+2026,9,Writing,WA,Western Australia,578.8,5.7,9.3,25.9,42.3,21.3,1.3,63.5,93.7,36782

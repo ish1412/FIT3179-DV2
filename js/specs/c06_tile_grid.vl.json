@@ -1,0 +1,112 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+        "text": {
+            "expr": "['Each state\\'s line, 2023-2026', (domain === 'All' ? 'Average of 5 subjects' : (domain === 'Grammar and Punctuation' ? 'Grammar & Punctuation' : domain))]"
+        },
+        "subtitle": ["% at Strong or above, latest value shown.", "Tiles sit roughly where the states do"]
+    },
+    "params": [{"name": "domain", "value": "Reading"}, {"name": "yearLevel", "value": 5}],
+    "data": {
+        "url": "data/naplan_2023_2026_states.csv",
+        "format": {"type": "csv", "parse": {"year": "number", "year_level": "number", "pct_strong_or_above": "number"}}
+    },
+    "transform": [
+        {
+            "filter": "datum.state !== 'AUS' && (domain === 'All' || datum.domain === domain) && datum.year_level === yearLevel"
+        },
+        {
+            "aggregate": [{"op": "mean", "field": "pct_strong_or_above", "as": "pct_strong_or_above"}],
+            "groupby": ["state", "state_name", "year"]
+        },
+        {
+            "calculate": "{'WA': 0, 'NT': 0, 'QLD': 0, 'SA': 1, 'NSW': 1, 'ACT': 2, 'VIC': 2, 'TAS': 3}[datum.state]",
+            "as": "gridRow"
+        },
+        {
+            "calculate": "{'WA': 0, 'NT': 1, 'QLD': 2, 'SA': 1, 'NSW': 2, 'ACT': 3, 'VIC': 2, 'TAS': 2}[datum.state]",
+            "as": "gridCol"
+        },
+        {"joinaggregate": [{"op": "max", "field": "year", "as": "lastYear"}], "groupby": ["state"]},
+        {
+            "calculate": "datum.state + ' ' + format(datum.pct_strong_or_above, '.0f') + (datum.state === 'TAS' ? ' (2025)' : '')",
+            "as": "label"
+        }
+    ],
+    "facet": {
+        "row": {"field": "gridRow", "type": "ordinal", "header": null, "title": null},
+        "column": {"field": "gridCol", "type": "ordinal", "header": null, "title": null}
+    },
+    "spacing": 4,
+    "spec": {
+        "width": 54,
+        "height": 46,
+        "view": {"stroke": null},
+        "layer": [
+            {
+                "transform": [
+                    {"filter": "datum.year === 2023"},
+                    {"calculate": "2022.6", "as": "tileStart"},
+                    {"calculate": "2026.4", "as": "tileEnd"}
+                ],
+                "mark": {"type": "rect", "color": "#F2EEE6", "cornerRadius": 3},
+                "encoding": {
+                    "x": {
+                        "field": "tileStart",
+                        "type": "quantitative",
+                        "axis": null,
+                        "scale": {"domain": [2022.6, 2026.4]}
+                    },
+                    "x2": {"field": "tileEnd"},
+                    "y": {"value": 0},
+                    "y2": {"value": 46}
+                }
+            },
+            {
+                "mark": {"type": "line", "color": "#1E3F60", "strokeWidth": 1.6},
+                "encoding": {
+                    "x": {
+                        "field": "year",
+                        "type": "quantitative",
+                        "axis": null,
+                        "scale": {"domain": [2022.6, 2026.4]}
+                    },
+                    "y": {
+                        "field": "pct_strong_or_above",
+                        "type": "quantitative",
+                        "axis": null,
+                        "scale": {"zero": false, "padding": 6}
+                    }
+                }
+            },
+            {
+                "mark": {"type": "point", "filled": true, "size": 18, "color": "#1E3F60"},
+                "encoding": {
+                    "x": {
+                        "field": "year",
+                        "type": "quantitative",
+                        "axis": null,
+                        "scale": {"domain": [2022.6, 2026.4]}
+                    },
+                    "y": {
+                        "field": "pct_strong_or_above",
+                        "type": "quantitative",
+                        "axis": null,
+                        "scale": {"zero": false, "padding": 6}
+                    },
+                    "opacity": {"condition": {"test": "datum.year === datum.lastYear", "value": 1}, "value": 0},
+                    "tooltip": [
+                        {"field": "state_name", "title": "State"},
+                        {"field": "year", "title": "Year", "format": "d"},
+                        {"field": "pct_strong_or_above", "title": "% Strong or above", "format": ".1f"}
+                    ]
+                }
+            },
+            {
+                "transform": [{"filter": "datum.year === datum.lastYear"}],
+                "mark": {"type": "text", "align": "left", "baseline": "top", "fontSize": 9, "color": "#2B2A28"},
+                "encoding": {"x": {"value": 3}, "y": {"value": 2}, "text": {"field": "label"}}
+            }
+        ]
+    }
+}

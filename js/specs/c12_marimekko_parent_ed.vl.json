@@ -1,0 +1,151 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+        "text": {
+            "expr": "['Parents\\' schooling, children\\'s results', (domain === 'All' ? 'Average of 5 subjects' : (domain === 'Grammar and Punctuation' ? 'Grammar & Punctuation' : domain))]"
+        },
+        "subtitle": [
+            "Proficiency by highest parental education, 2026 (Australia)",
+            "Row height = share of students in that group"
+        ]
+    },
+    "width": 200,
+    "height": 260,
+    "params": [{"name": "domain", "value": "Reading"}, {"name": "yearLevel", "value": 5}],
+    "data": {
+        "url": "data/naplan_2023_2026_subgroups_aus.csv",
+        "format": {
+            "type": "csv",
+            "parse": {
+                "year": "number",
+                "year_level": "number",
+                "enrolled": "number",
+                "pct_strong_or_above": "number",
+                "pct_needs_support": "number",
+                "pct_developing": "number",
+                "pct_strong": "number",
+                "pct_exceeding": "number"
+            }
+        }
+    },
+    "transform": [
+        {
+            "filter": "datum.year === 2026 && datum.attribute === 'Parental education' && (domain === 'All' || datum.domain === domain) && datum.year_level === yearLevel"
+        },
+        {
+            "aggregate": [
+                {"op": "mean", "field": "pct_needs_support", "as": "pct_needs_support"},
+                {"op": "mean", "field": "pct_developing", "as": "pct_developing"},
+                {"op": "mean", "field": "pct_strong", "as": "pct_strong"},
+                {"op": "mean", "field": "pct_exceeding", "as": "pct_exceeding"},
+                {"op": "mean", "field": "pct_strong_or_above", "as": "pct_strong_or_above"},
+                {"op": "mean", "field": "enrolled", "as": "enrolled"}
+            ],
+            "groupby": ["subgroup"]
+        },
+        {"calculate": "replace(datum.subgroup, 'Parental education: ', '')", "as": "edu"},
+        {
+            "calculate": "indexof(['bachelor', 'diploma', 'certificate', 'Year 12', 'Year 11', 'not stated'], datum.edu)",
+            "as": "eduOrder"
+        },
+        {
+            "calculate": "{'bachelor': 'Bachelor or above', 'diploma': 'Diploma', 'certificate': 'Trade certificate', 'Year 12': 'Year 12', 'Year 11': 'Year 11 or below', 'not stated': 'Not stated'}[datum.edu]",
+            "as": "eduLabel"
+        },
+        {
+            "window": [{"op": "sum", "field": "enrolled", "as": "cumEnrolled"}],
+            "sort": [{"field": "eduOrder"}],
+            "frame": [null, 0]
+        },
+        {"joinaggregate": [{"op": "sum", "field": "enrolled", "as": "totalEnrolled"}]},
+        {"calculate": "(datum.cumEnrolled - datum.enrolled) / datum.totalEnrolled", "as": "y0"},
+        {"calculate": "datum.cumEnrolled / datum.totalEnrolled", "as": "y1"},
+        {"calculate": "(datum.y0 + datum.y1) / 2", "as": "yMid"},
+        {"calculate": "datum.enrolled / datum.totalEnrolled", "as": "shareOfStudents"},
+        {
+            "fold": ["pct_needs_support", "pct_developing", "pct_strong", "pct_exceeding"],
+            "as": ["levelKey", "pct"]
+        },
+        {
+            "calculate": "{'pct_needs_support': 'Needs additional support', 'pct_developing': 'Developing', 'pct_strong': 'Strong', 'pct_exceeding': 'Exceeding'}[datum.levelKey]",
+            "as": "level"
+        },
+        {
+            "calculate": "indexof(['pct_needs_support', 'pct_developing', 'pct_strong', 'pct_exceeding'], datum.levelKey)",
+            "as": "levelOrder"
+        },
+        {"joinaggregate": [{"op": "sum", "field": "pct", "as": "pctTotal"}], "groupby": ["edu"]},
+        {"calculate": "datum.pct / datum.pctTotal", "as": "share"},
+        {
+            "window": [{"op": "sum", "field": "share", "as": "cumShare"}],
+            "groupby": ["edu"],
+            "sort": [{"field": "levelOrder"}],
+            "frame": [null, 0]
+        },
+        {"calculate": "datum.cumShare - datum.share", "as": "x0"},
+        {"calculate": "datum.cumShare", "as": "x1"}
+    ],
+    "layer": [
+        {
+            "mark": {"type": "rect", "stroke": "#FBF8F1", "strokeWidth": 1},
+            "encoding": {
+                "x": {
+                    "field": "x0",
+                    "type": "quantitative",
+                    "title": "Share of students in each level",
+                    "axis": {"format": ".0%", "values": [0, 0.5, 1]},
+                    "scale": {"domain": [0, 1]}
+                },
+                "x2": {"field": "x1"},
+                "y": {
+                    "field": "y0",
+                    "type": "quantitative",
+                    "axis": null,
+                    "scale": {"domain": [0, 1], "reverse": true}
+                },
+                "y2": {"field": "y1"},
+                "color": {
+                    "field": "level",
+                    "type": "nominal",
+                    "title": null,
+                    "scale": {
+                        "domain": ["Needs additional support", "Developing", "Strong", "Exceeding"],
+                        "range": ["#C8652B", "#E8B48F", "#9DB8D3", "#2F5D8A"]
+                    },
+                    "legend": null
+                },
+                "tooltip": [
+                    {"field": "eduLabel", "title": "Parent education"},
+                    {"field": "shareOfStudents", "title": "Share of all students", "format": ".0%"},
+                    {"field": "level", "title": "Level"},
+                    {"field": "pct", "title": "% of group", "format": ".1f"}
+                ]
+            }
+        },
+        {
+            "transform": [{"filter": "datum.levelOrder === 0"}],
+            "mark": {"type": "text", "align": "right", "dx": -6, "fontSize": 10, "color": "#2B2A28"},
+            "encoding": {
+                "x": {"datum": 0, "type": "quantitative"},
+                "y": {"field": "yMid", "type": "quantitative"},
+                "text": {"field": "eduLabel"}
+            }
+        },
+        {
+            "transform": [{"filter": "datum.levelOrder === 3"}],
+            "mark": {
+                "type": "text",
+                "align": "left",
+                "dx": 5,
+                "fontSize": 10,
+                "fontWeight": "bold",
+                "color": "#1E3F60"
+            },
+            "encoding": {
+                "x": {"datum": 1, "type": "quantitative"},
+                "y": {"field": "yMid", "type": "quantitative"},
+                "text": {"field": "pct_strong_or_above", "type": "quantitative", "format": ".0f"}
+            }
+        }
+    ]
+}

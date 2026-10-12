@@ -1,0 +1,145 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+        "text": {
+            "expr": "'Same test, different states · ' + (domain === 'All' ? 'average of 5 subjects' : (domain === 'Grammar and Punctuation' ? 'Grammar & Punctuation' : domain))"
+        },
+        "subtitle": "% of students at Strong or above, 2026. Click a state to trace it in the rank chart"
+    },
+    "width": 500,
+    "height": 430,
+    "params": [{"name": "domain", "value": "Reading"}, {"name": "yearLevel", "value": 5}],
+    "projection": {"type": "conicEqualArea", "parallels": [-18, -36], "rotate": [-132, 0]},
+    "layer": [
+        {
+            "data": {"url": "data/aus_states.geojson", "format": {"type": "json", "property": "features"}},
+            "mark": {"type": "geoshape", "fill": "#DEDAD2", "stroke": "#FBF8F1", "strokeWidth": 1}
+        },
+        {
+            "data": {
+                "url": "data/naplan_2023_2026_states.csv",
+                "format": {
+                    "type": "csv",
+                    "parse": {
+                        "year": "number",
+                        "year_level": "number",
+                        "pct_strong_or_above": "number",
+                        "mean_score": "number"
+                    }
+                }
+            },
+            "transform": [
+                {
+                    "filter": "datum.year === 2026 && datum.state !== 'AUS' && (domain === 'All' || datum.domain === domain) && datum.year_level === yearLevel"
+                },
+                {
+                    "aggregate": [
+                        {"op": "mean", "field": "pct_strong_or_above", "as": "pct_strong_or_above"},
+                        {"op": "mean", "field": "mean_score", "as": "mean_score"}
+                    ],
+                    "groupby": ["state", "state_name"]
+                },
+                {
+                    "lookup": "state",
+                    "from": {
+                        "data": {"url": "data/aus_states.geojson", "format": {"type": "json", "property": "features"}},
+                        "key": "properties.state_abbr"
+                    },
+                    "as": "geo"
+                }
+            ],
+            "params": [
+                {
+                    "name": "pickState",
+                    "select": {"type": "point", "fields": ["state"], "on": "click", "clear": "dblclick"}
+                }
+            ],
+            "mark": {"type": "geoshape", "stroke": "#FBF8F1", "strokeWidth": 1, "cursor": "pointer"},
+            "encoding": {
+                "shape": {"field": "geo", "type": "geojson"},
+                "color": {
+                    "field": "pct_strong_or_above",
+                    "type": "quantitative",
+                    "title": "% Strong or above",
+                    "scale": {"range": ["#D6E2EE", "#1E3F60"], "zero": false, "interpolate": "lab"},
+                    "legend": {"orient": "bottom-left", "direction": "horizontal", "gradientLength": 150}
+                },
+                "strokeWidth": {"condition": {"param": "pickState", "empty": false, "value": 3}, "value": 1},
+                "stroke": {"condition": {"param": "pickState", "empty": false, "value": "#2B2A28"}, "value": "#FBF8F1"},
+                "tooltip": [
+                    {"field": "state_name", "title": "State"},
+                    {"field": "pct_strong_or_above", "title": "% Strong or above", "format": ".1f"},
+                    {"field": "mean_score", "title": "Average score", "format": ".1f"}
+                ]
+            }
+        },
+        {
+            "data": {
+                "url": "data/naplan_2023_2026_states.csv",
+                "format": {
+                    "type": "csv",
+                    "parse": {"year": "number", "year_level": "number", "pct_strong_or_above": "number"}
+                }
+            },
+            "transform": [
+                {
+                    "filter": "datum.year === 2026 && datum.state !== 'AUS' && (domain === 'All' || datum.domain === domain) && datum.year_level === yearLevel"
+                },
+                {
+                    "aggregate": [{"op": "mean", "field": "pct_strong_or_above", "as": "pct_strong_or_above"}],
+                    "groupby": ["state", "state_name"]
+                },
+                {
+                    "joinaggregate": [
+                        {"op": "min", "field": "pct_strong_or_above", "as": "lo"},
+                        {"op": "max", "field": "pct_strong_or_above", "as": "hi"}
+                    ]
+                },
+                {
+                    "lookup": "state",
+                    "from": {
+                        "data": {"url": "data/aus_states.geojson", "format": {"type": "json", "property": "features"}},
+                        "key": "properties.state_abbr"
+                    },
+                    "as": "geo"
+                },
+                {"calculate": "geoCentroid(null, datum.geo)", "as": "centroid"},
+                {"calculate": "datum.centroid[0] + (datum.state === 'ACT' ? 2.2 : 0)", "as": "lon"},
+                {"calculate": "datum.centroid[1]", "as": "lat"},
+                {
+                    "calculate": "datum.state + ' ' + format(datum.pct_strong_or_above, '.0f') + '%'",
+                    "as": "label"
+                }
+            ],
+            "mark": {"type": "text", "fontSize": 11, "fontWeight": "bold"},
+            "encoding": {
+                "longitude": {"field": "lon", "type": "quantitative"},
+                "latitude": {"field": "lat", "type": "quantitative"},
+                "text": {"field": "label"},
+                "color": {
+                    "condition": {
+                        "test": "datum.state !== 'ACT' && datum.pct_strong_or_above > (datum.lo + datum.hi) / 2",
+                        "value": "#FFFFFF"
+                    },
+                    "value": "#2B2A28"
+                }
+            }
+        },
+        {
+            "data": {"values": [{"lon": 146.6, "lat": -44.6, "label": "TAS: 2026 results not published"}]},
+            "mark": {
+                "type": "text",
+                "fontSize": 10,
+                "fontStyle": "italic",
+                "color": "#6B675F",
+                "align": "center",
+                "baseline": "top"
+            },
+            "encoding": {
+                "longitude": {"field": "lon", "type": "quantitative"},
+                "latitude": {"field": "lat", "type": "quantitative"},
+                "text": {"field": "label"}
+            }
+        }
+    ]
+}

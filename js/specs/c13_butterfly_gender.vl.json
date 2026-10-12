@@ -1,0 +1,115 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+        "text": "Girls lead in words, boys in numbers",
+        "subtitle": [
+            "% at Strong or above, 2026 (Australia, selected year)",
+            "Right-hand number = boys minus girls (pts)"
+        ]
+    },
+    "width": 200,
+    "height": 190,
+    "params": [{ "name": "domain", "value": "Reading" }, { "name": "yearLevel", "value": 5 }],
+    "data": {
+        "url": "data/naplan_2023_2026_subgroups_aus.csv",
+        "format": {
+            "type": "csv",
+            "parse": { "year": "number", "year_level": "number", "pct_strong_or_above": "number" }
+        }
+    },
+    "transform": [{
+            "filter": "datum.year === 2026 && datum.attribute === 'Gender' && datum.year_level === yearLevel"
+        },
+        { "calculate": "datum.subgroup === 'Female' ? 'Girls' : 'Boys'", "as": "gender" },
+        {
+            "calculate": "datum.gender === 'Girls' ? -datum.pct_strong_or_above : datum.pct_strong_or_above",
+            "as": "signed"
+        },
+        {
+            "calculate": "datum.domain === 'Grammar and Punctuation' ? 'Grammar & Punct.' : datum.domain",
+            "as": "domainLabel"
+        },
+        {
+            "calculate": "indexof(['Reading', 'Writing', 'Spelling', 'Grammar and Punctuation', 'Numeracy'], datum.domain)",
+            "as": "domainOrder"
+        },
+        {
+            "joinaggregate": [{ "op": "sum", "field": "signed", "as": "boysMinusGirls" }],
+            "groupby": ["domain"]
+        }
+    ],
+    "encoding": {
+        "y": {
+            "field": "domainLabel",
+            "type": "nominal",
+            "title": null,
+            "sort": ["Reading", "Writing", "Spelling", "Grammar & Punct.", "Numeracy"],
+            "axis": { "domain": false, "ticks": false, "labelPadding": 6 }
+        }
+    },
+    "layer": [{
+            "mark": { "type": "bar", "height": { "band": 0.7 } },
+            "encoding": {
+                "x": {
+                    "field": "signed",
+                    "type": "quantitative",
+                    "title": "<- Girls   |   Boys ->",
+                    "scale": { "domain": [-100, 100] },
+                    "axis": { "labelExpr": "abs(datum.value)", "values": [-100, -50, 0, 50, 100] }
+                },
+                "color": {
+                    "field": "gender",
+                    "type": "nominal",
+                    "title": null,
+                    "scale": { "domain": ["Girls", "Boys"], "range": ["#1E3F60", "#9C9484"] },
+                    "legend": null
+                },
+                "opacity": { "condition": { "test": "datum.domain === domain", "value": 1 }, "value": 0.65 },
+                "tooltip": [
+                    { "field": "domain", "title": "Domain" },
+                    { "field": "gender", "title": "Students" },
+                    { "field": "pct_strong_or_above", "title": "% Strong or above", "format": ".1f" },
+                    { "field": "boysMinusGirls", "title": "Boys minus girls (pts)", "format": "+.1f" }
+                ]
+            }
+        },
+        {
+            "transform": [{ "filter": "datum.gender === 'Girls'" }],
+            "mark": {
+                "type": "text",
+                "align": "left",
+                "dx": 4,
+                "fontSize": 10,
+                "color": "#FFFFFF",
+                "fontWeight": "bold"
+            },
+            "encoding": {
+                "x": { "field": "signed", "type": "quantitative" },
+                "text": { "field": "pct_strong_or_above", "type": "quantitative", "format": ".0f" }
+            }
+        },
+        {
+            "transform": [{ "filter": "datum.gender === 'Boys'" }],
+            "mark": {
+                "type": "text",
+                "align": "right",
+                "dx": -4,
+                "fontSize": 10,
+                "color": "#FFFFFF",
+                "fontWeight": "bold"
+            },
+            "encoding": {
+                "x": { "field": "signed", "type": "quantitative" },
+                "text": { "field": "pct_strong_or_above", "type": "quantitative", "format": ".0f" }
+            }
+        },
+        {
+            "transform": [{ "filter": "datum.gender === 'Boys'" }],
+            "mark": { "type": "text", "align": "left", "dx": 4, "fontSize": 10, "color": "#6B675F" },
+            "encoding": {
+                "x": { "datum": 100, "type": "quantitative" },
+                "text": { "field": "boysMinusGirls", "type": "quantitative", "format": "+.0f" }
+            }
+        }
+    ]
+}
