@@ -22,7 +22,7 @@
 
 <body data-layout="two-column">
 
-    <!-- Two-column layout (main page; three-column version is three_col.html). Same charts (js/specs) and same main.js. -->
+    <!-- Two-column layout. Charts are the Vega-Lite specs in js/specs, loaded by js/main.js. -->
 
     <header class="masthead">
         <div class="grid">
@@ -30,7 +30,7 @@
                 <p class="kicker">NAPLAN 2008–2026</p>
                 <h1>Same Test, Different Starting Lines</h1>
                 <p class="subtitle">What NAPLAN 2023–2026 tells us about who gets left behind</p>
-                <p class="byline">Ishan · FIT3179 · Oct 2026</p>
+                <p class="byline">Ishan Panchal · FIT3179 · Oct 2026</p>
             </div>
         </div>
     </header>
@@ -83,7 +83,6 @@
                             <li><span class="swatch" style="background:#E8B48F"></span><strong>Developing</strong><br>Working towards the expected standard.</li>
                             <li><span class="swatch" style="background:#C8652B"></span><strong>Needs additional support</strong><br>Not yet at the expected standard. Likely to need extra help.</li>
                         </ul>
-                        <p class="note">"Strong or Exceeding" (ACARA calls it "Strong or above") is the headline measure of meeting expectations.</p>
                     </div>
                 </div>
 
@@ -130,12 +129,12 @@
 
                 <!-- intro in two columns: reading the map (above the cartogram) | results (above the line chart) -->
                 <div class="half text">
-                    <p>Where a child goes to school matters. The map below is a cartogram: each state is stretched or shrunk so its area matches how many students it has in a year level (k = thousand). Student numbers hardly change between subjects or year levels, so the map stays the same when you change the filters. Each state keeps the same colour as its line in the chart beside it.</p>
+                    <p>Where a child goes to school matters. NSW, Victoria and Queensland hold 77% of Australia's students. That's expected: they are the most populous states, home to the biggest cities of Sydney, Melbourne and Brisbane. The Northern Territory has only about 3,000 students in each year level. Student numbers hardly change between subjects or year levels.</p>
                     <p class="try-it"><span class="try-label">Try it</span> Click a state on the map to follow it in the line and ranking charts. Click empty space to clear.</p>
                 </div>
                 <div class="half text">
-                    <p>In 2026 (Year 5, average of subjects), Victoria and the ACT (73%) and NSW (71%) had the largest shares of students at <span class="lvl-text lvl-strong">Strong</span> or <span class="lvl-text lvl-exceeding">Exceeding</span>. The Northern Territory had 41%: 27 percentage points below the national figure of 68%, and about 30 behind the leaders.</p>
-                    <p>Tasmania has no 2026 result. After a teacher boycott in public schools, only 60% of its students sat the test (94% in 2025), too few for ACARA to report fairly. Its size on the map uses its 2025 student numbers.</p>
+                    <p>In 2026 (Year 5, average of subjects), Victoria and the ACT (both 73%) and NSW (71%) had the largest shares of students at <span class="lvl-text lvl-strong">Strong</span> or <span class="lvl-text lvl-exceeding">Exceeding</span>. The Northern Territory had 41%: 27 percentage points below the national figure of 68%, and about 30 behind the leaders.</p>
+                    <p>Tasmania has no 2026 result. After a teacher boycott in public schools, only 60% of its students sat the test (94% in 2025), too few for ACARA to report fairly.</p>
                 </div>
 
                 <!-- row 1: map | state lines -->
@@ -148,9 +147,9 @@
 
                 <!-- row 2: text under the map | rankings chart, tops aligned -->
                 <div class="half text">
-                    <p>The order barely changes. Since 2023 the ACT and Victoria have swapped first and second place, while NSW has stayed third, WA fourth, SA fifth and Queensland sixth.</p>
-                    <p>The Northern Territory has been <strong>last every year</strong>. It only rises to seventh in 2026 because Tasmania has no 2026 result. No state's share has moved by more than 2 percentage points in four years.</p>
-                    <p>So the gap between first and last has not closed. In Year 5 the top state was 31 percentage points ahead of the Northern Territory in 2023, and still 32 ahead in 2026. Every year level tells the same story: a gap of about 30 percentage points, year after year.</p>
+                    <p>The top spot depends on the subject. The ACT or Victoria leads in most views, but NSW comes first in Spelling in Years 3 to 7, Victoria in Writing from Year 5 on, and WA in Year 9 Numeracy. Try the filters to see who leads.</p>
+                    <p>The bottom spot never changes. The Northern Territory is last in every subject, every year level and every year since 2023. It only rises to seventh in 2026 because Tasmania has no result.</p>
+                    <p>So the gap between first and last has not closed. Whatever the subject or year level, the top state is 27 to 36 percentage points ahead of the Northern Territory.</p>
                 </div>
                 <figure class="half chart-cell">
                     <div id="c07" class="chart"></div>
@@ -165,10 +164,10 @@
 
                 <div class="half text">
                     <p>To see why place matters, look at schools rather than states. Every school has an <strong>ICSEA</strong> score (Index of Community Socio-Educational Advantage). It is built mostly from the education and jobs of students' parents, plus the school's remoteness and its share of Indigenous students.</p>
-                    <p>1000 is the Australian average: above it means more advantaged, below it less. The map below shows all 9,619 schools, coloured by ICSEA and sized by enrolments. Drag across a row of the histograms to show only those schools on the map, or zoom to a state.</p>
+                    <p>1000 is the Australian average: above it means more advantaged, below it less. The map below shows all 9,619 schools. Drag across a row of the histograms to show only those schools on the map, or zoom to a state.</p>
                 </div>
                 <figure class="half photo">
-                    <!-- school photo (img/school.jpg, compressed from school.png); the striped placeholder shows if it is missing -->
+                    <!-- school photo; the striped placeholder shows if it is missing -->
                     <img class="photo-img" src="img/school.jpg" alt="A group of school students in uniform standing outside their school"
                          onerror="this.remove()">
                     <div class="photo-placeholder">Photo</div>
@@ -202,7 +201,7 @@
                 </div>
                 <div class="half text">
                     <p>Results follow the same path. Nationally (Year 5, average of subjects), 72% of major-city students reach <span class="lvl-text lvl-strong">Strong</span> or <span class="lvl-text lvl-exceeding">Exceeding</span>, falling to 55% in outer regional areas, 44% in remote areas and 24% in very remote ones.</p>
-                    <p>The drop is steepest in the Northern Territory: 57% in the outer regional area that includes Darwin, 31% in remote areas and just 8% in very remote ones. Zoom into a state to compare its own zones; grey zones have too few students for ACARA to publish a result.</p>
+                    <p>The drop is steepest in the Northern Territory: 57% in the outer regional area that includes Darwin, 31% in remote areas and just 8% in very remote ones. Grey zones have too few students for ACARA to publish a result.</p>
                 </div>
             </div>
         </section>
@@ -223,10 +222,10 @@
                     <div id="c13" class="chart"></div>
                 </figure>
                 <div class="half text">
-                    <p>Three gaps, side by side (Year 5, 2026):</p>
-                    <p><strong>Indigeneity.</strong> Indigenous students are behind everywhere, and the gap widens with distance: 24–30 percentage points in cities and regional areas, 46 in very remote areas, where only 8% of Indigenous students reach <span class="lvl-text lvl-strong">Strong</span>. This overlaps with section 4: Indigenous students make up 4% of enrolments in major-city schools but 67% in very remote ones.</p>
-                    <p><strong>Parents' schooling.</strong> 81% of children whose parents hold a bachelor degree reach <span class="lvl-text lvl-strong">Strong</span>, compared with 37% when parents left school in Year 11 or earlier.</p>
-                    <p><strong>Gender.</strong> The smallest gap, and it runs both ways. In every year level since 2023, girls lead in reading, writing, spelling and grammar, and boys lead in numeracy. The girls' lead is biggest in writing, growing from about 10 to 16 percentage points by Year 9. One likely reason: in 2018, 53% of Australian 15-year-old boys didn't read for enjoyment, compared with 36% of girls (ACER).</p>
+                    <p>Three gaps, side by side (Year 5 figures for 2026, except where noted):</p>
+                    <p><strong>Indigeneity</strong> — Indigenous students are behind everywhere, and the gap widens with distance: 24–30 percentage points in cities and regional areas, 46 in very remote areas, where only 8% of Indigenous students reach <span class="lvl-text lvl-strong">Strong</span> or <span class="lvl-text lvl-exceeding">Exceeding</span>. This overlaps with section 4: Indigenous students make up 4% of enrolments in major-city schools but 67% in very remote ones.</p>
+                    <p><strong>Parents' schooling</strong> — 81% of children whose parents hold a bachelor degree reach <span class="lvl-text lvl-strong">Strong</span> or <span class="lvl-text lvl-exceeding">Exceeding</span>, compared with 37% when parents left school in Year 11 or earlier.</p>
+                    <p><strong>Gender</strong> — the smallest gap, and it runs both ways. In every year level since 2023, girls lead in reading, writing, spelling and grammar, and boys lead <strong>only in numeracy</strong>. The girls' lead is biggest in writing, growing from about 10 to 16 percentage points by Year 9. One likely reason: in 2018, 53% of Australian 15-year-old boys didn't read for enjoyment, compared with 36% of girls (ACER).</p>
                 </div>
             </div>
         </section>
@@ -247,7 +246,7 @@
                     <h3>What we learnt</h3>
                     <ul>
                         <li>About one in three students is not yet at <span class="lvl-text lvl-strong">Strong</span>, and that share has barely moved since 2023.</li>
-                        <li>Who comes out on top: students in the ACT and Victoria, in major cities, non-Indigenous students, and children of parents with a university degree. 81% of those children reach <span class="lvl-text lvl-strong">Strong</span> or <span class="lvl-text lvl-exceeding">Exceeding</span> (Year 5).</li>
+                        <li>Who comes out on top: students in the ACT, Victoria and the major cities, non-Indigenous students, and children of parents with a university degree. 81% of those children reach <span class="lvl-text lvl-strong">Strong</span> or <span class="lvl-text lvl-exceeding">Exceeding</span> (Year 5).</li>
                         <li>The biggest gaps come from circumstance, not gender: remoteness, Indigeneity and parents' schooling each mean gaps of roughly 30 to 50 percentage points; gender means 3 to 10 (Year 5).</li>
                         <li>The gaps are already there in Year 3 and don't close by Year 9. Students who start behind grow at the same pace as everyone else, not faster.</li>
                     </ul>
@@ -287,7 +286,7 @@
                     </div>
                     <div>
                         <h3>About</h3>
-                        <p>By Ishan · FIT3179 Data Visualisation 2 · Monash University · October 2026.</p>
+                        <p>By Ishan Panchal · FIT3179 Data Visualisation 2 · Monash University · October 2026.</p>
                     </div>
                 </footer>
             </div>

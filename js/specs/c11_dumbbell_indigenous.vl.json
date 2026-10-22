@@ -138,7 +138,7 @@
                         "test": "datum.isFocus",
                         "value": 1
                     },
-                    "value": 0.3
+                    "value": 0.72
                 },
                 "strokeWidth": {
                     "condition": {
@@ -215,7 +215,7 @@
                         "test": "datum.isFocus",
                         "value": 1
                     },
-                    "value": 0.3
+                    "value": 0.72
                 },
                 "size": {
                     "condition": {
@@ -255,7 +255,7 @@
                         "test": "datum.isFocus",
                         "value": 1
                     },
-                    "value": 0.45
+                    "value": 0.85
                 },
                 "fontWeight": {
                     "condition": {
@@ -307,11 +307,58 @@
                     "filter": "datum.isFocus && datum.group === 'Indigenous'"
                 },
                 {
-                    "calculate": "datum.remoteness === 'Very remote' ? ['Biggest gap: ' + format(datum.gap, '.0f'), 'percentage points.', 'Only ' + format(datum.pct_strong_or_above, '.0f') + '% of Indigenous', 'students here reach', 'Strong. 2 in 3 very', 'remote students are', 'Indigenous.'] : ['Biggest gap: ' + format(datum.gap, '.0f'), 'percentage points.', 'Only ' + format(datum.pct_strong_or_above, '.0f') + '% of Indigenous', 'students here reach', 'Strong.']",
+                    "calculate": "datum.remoteness === 'Very remote' ? ['Only ' + format(datum.pct_strong_or_above, '.0f') + '% of Indigenous', 'students here reach', 'Strong. 2 in 3 very', 'remote students are', 'Indigenous.'] : ['Only ' + format(datum.pct_strong_or_above, '.0f') + '% of Indigenous', 'students here reach', 'Strong.']",
                     "as": "lines"
                 }
             ],
             "layer": [
+                {
+                    "mark": {
+                        "type": "rule",
+                        "color": "#2B2A28",
+                        "strokeWidth": 1.2
+                    },
+                    "encoding": {
+                        "x": {
+                            "datum": 72
+                        },
+                        "y2": {
+                            "value": {
+                                "expr": "height * 0.62 + 84"
+                            }
+                        }
+                    }
+                },
+                {
+                    "mark": {
+                        "type": "rule",
+                        "color": "#2B2A28",
+                        "strokeWidth": 1.2
+                    },
+                    "encoding": {
+                        "x": {
+                            "datum": 72
+                        },
+                        "x2": {
+                            "datum": 61.5
+                        }
+                    }
+                },
+                {
+                    "mark": {
+                        "type": "point",
+                        "shape": "triangle-left",
+                        "filled": true,
+                        "size": 55,
+                        "color": "#2B2A28",
+                        "opacity": 1
+                    },
+                    "encoding": {
+                        "x": {
+                            "datum": 61
+                        }
+                    }
+                },
                 {
                     "mark": {
                         "type": "rect",
@@ -329,12 +376,12 @@
                         },
                         "y": {
                             "value": {
-                                "expr": "height * 0.56"
+                                "expr": "height * 0.62"
                             }
                         },
                         "y2": {
                             "value": {
-                                "expr": "height * 0.56 + 112"
+                                "expr": "height * 0.62 + 84"
                             }
                         }
                     }
@@ -355,7 +402,7 @@
                         },
                         "y": {
                             "value": {
-                                "expr": "height * 0.56 + 8"
+                                "expr": "height * 0.62 + 8"
                             }
                         },
                         "text": {

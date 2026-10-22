@@ -27,7 +27,10 @@
     },
     "hconcat": [
         {
-            "title": "Thousands of schools, very different starting lines",
+            "title": {
+                "text": "Thousands of schools, very different starting lines",
+                "fontSize": 26
+            },
             "width": 470,
             "height": 430,
             "projection": {
@@ -227,81 +230,6 @@
                             }
                         }
                     ]
-                },
-                {
-                    "data": {
-                        "url": "data/schools_2025.csv",
-                        "format": {
-                            "type": "csv",
-                            "parse": {
-                                "icsea": "number",
-                                "lat": "number"
-                            }
-                        }
-                    },
-                    "transform": [
-                        {
-                            "filter": "isValid(datum.icsea) && isValid(datum.lat)"
-                        },
-                        {
-                            "filter": "(focusState === 'All' || (datum.state === focusState && !(focusState === 'ACT' && +datum.lon > 149.5)))"
-                        },
-                        {
-                            "filter": "!length(data('brush_store')) || (vlSelectionTest('brush_store', datum) && indexof(data('brush_store')[0].unit, '_facet_row_' + datum.remoteness + ' (') >= 0)"
-                        },
-                        {
-                            "joinaggregate": [
-                                {
-                                    "op": "count",
-                                    "as": "n"
-                                },
-                                {
-                                    "op": "min",
-                                    "field": "icsea",
-                                    "as": "lo"
-                                },
-                                {
-                                    "op": "max",
-                                    "field": "icsea",
-                                    "as": "hi"
-                                }
-                            ]
-                        },
-                        {
-                            "window": [
-                                {
-                                    "op": "row_number",
-                                    "as": "rank"
-                                }
-                            ]
-                        },
-                        {
-                            "filter": "datum.rank === 1"
-                        },
-                        {
-                            "calculate": "format(datum.n, ',') + ' schools shown' + (focusState === 'All' ? '' : ' in ' + focusState) + ' · ICSEA ' + datum.lo + '-' + datum.hi",
-                            "as": "label"
-                        }
-                    ],
-                    "mark": {
-                        "type": "text",
-                        "align": "left",
-                        "baseline": "top",
-                        "fontSize": 12,
-                        "fontWeight": "bold",
-                        "color": "#1E3F60"
-                    },
-                    "encoding": {
-                        "x": {
-                            "value": 0
-                        },
-                        "y": {
-                            "value": 0
-                        },
-                        "text": {
-                            "field": "label"
-                        }
-                    }
                 }
             ]
         },

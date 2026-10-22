@@ -253,7 +253,7 @@
                         },
                         "y2": {
                             "value": {
-                                "expr": "height + 4"
+                                "expr": "height * 0.955 + 6"
                             }
                         }
                     }
@@ -273,7 +273,7 @@
                         },
                         "y": {
                             "value": {
-                                "expr": "height + 3"
+                                "expr": "height * 0.955 + 5"
                             }
                         }
                     }
