@@ -472,11 +472,7 @@
                     "title": {
                         "text": {
                             "expr": "'The further out, the fewer at Strong · ' + (domain === 'All' ? 'average of subjects' : (domain === 'Grammar and Punctuation' ? 'Grammar & Punctuation' : domain))"
-                        },
-                        "subtitle": "Click a state (or use Zoom to) to zoom in · double-click to zoom out",
-                        "subtitleColor": "#6B675F",
-                        "subtitleFontSize": 13,
-                        "subtitlePadding": 6
+                        }
                     },
                     "width": 215,
                     "height": 190,

@@ -270,6 +270,7 @@ figure {
 /* "Zoom to" state picker above the school map (C8) */
 .map-control {
     font-family: var(--font-ui); font-size: 15px; margin-bottom: 8px; }
+.map-hint { color: var(--ink-soft); margin-left: 10px; }
 .map-control label { display: inline-flex; gap: 8px; align-items: center; font-weight: 700; color: var(--deep-blue); }
 .map-control select {
   font: inherit;
