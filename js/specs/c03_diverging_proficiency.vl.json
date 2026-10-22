@@ -1,95 +1,234 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": {
-        "text": "Where every test splits, 2026",
-        "subtitle": [
-            "Australia. Bars are centred on the line between Developing and Strong.",
-            "The number at the end of each bar is the % at Strong or above."
-        ]
-    },
+    "title": "Where every test splits, 2026",
     "width": 290,
     "height": 330,
-    "params": [{ "name": "domain", "value": "Reading" }, { "name": "yearLevel", "value": 5 }],
+    "params": [
+        {
+            "name": "domain",
+            "value": "Reading"
+        },
+        {
+            "name": "yearLevel",
+            "value": 5
+        }
+    ],
     "data": {
         "url": "data/naplan_2026_proficiency_long.csv",
-        "format": { "type": "csv", "parse": { "year_level": "number", "pct": "number", "level_order": "number" } }
+        "format": {
+            "type": "csv",
+            "parse": {
+                "year_level": "number",
+                "pct": "number",
+                "level_order": "number"
+            }
+        }
     },
     "transform": [
-        { "filter": "datum.state === 'AUS' && datum.level !== 'Exempt'" },
+        {
+            "filter": "datum.state === 'AUS' && datum.level !== 'Exempt'"
+        },
         {
             "calculate": "indexof(['Reading', 'Writing', 'Spelling', 'Grammar and Punctuation', 'Numeracy'], datum.domain)",
             "as": "domainOrder"
         },
-        { "calculate": "datum.domainOrder * 10 + datum.year_level", "as": "rowOrder" },
+        {
+            "calculate": "datum.domainOrder * 10 + datum.year_level",
+            "as": "rowOrder"
+        },
         {
             "calculate": "(datum.domain === 'Grammar and Punctuation' ? 'Grammar' : datum.domain) + ' · Yr ' + datum.year_level",
             "as": "rowLabel"
         },
-        { "calculate": "datum.level_order <= 2 ? 'neg' : 'pos'", "as": "side" },
+        {
+            "calculate": "datum.level_order <= 2 ? 'neg' : 'pos'",
+            "as": "side"
+        },
         {
             "calculate": "datum.side === 'neg' ? -datum.level_order : datum.level_order",
             "as": "stackOrder"
         },
         {
-            "window": [{ "op": "sum", "field": "pct", "as": "cum" }],
-            "groupby": ["domain", "year_level", "side"],
-            "sort": [{ "field": "stackOrder" }],
-            "frame": [null, 0]
+            "window": [
+                {
+                    "op": "sum",
+                    "field": "pct",
+                    "as": "cum"
+                }
+            ],
+            "groupby": [
+                "domain",
+                "year_level",
+                "side"
+            ],
+            "sort": [
+                {
+                    "field": "stackOrder"
+                }
+            ],
+            "frame": [
+                null,
+                0
+            ]
         },
-        { "calculate": "datum.side === 'neg' ? -datum.cum : datum.cum - datum.pct", "as": "x0" },
-        { "calculate": "datum.side === 'neg' ? -(datum.cum - datum.pct) : datum.cum", "as": "x1" },
-        { "calculate": "datum.domain === domain && datum.year_level === yearLevel", "as": "isSelected" }
+        {
+            "calculate": "datum.side === 'neg' ? -datum.cum : datum.cum - datum.pct",
+            "as": "x0"
+        },
+        {
+            "calculate": "datum.side === 'neg' ? -(datum.cum - datum.pct) : datum.cum",
+            "as": "x1"
+        },
+        {
+            "calculate": "(domain === 'All' || datum.domain === domain) && datum.year_level === yearLevel",
+            "as": "isSelected"
+        }
     ],
     "encoding": {
         "y": {
             "field": "rowLabel",
             "type": "nominal",
-            "sort": { "field": "rowOrder" },
+            "sort": {
+                "field": "rowOrder"
+            },
             "title": null,
-            "axis": { "ticks": false, "domain": false, "labelPadding": 6 }
+            "axis": {
+                "ticks": false,
+                "domain": false,
+                "labelPadding": 6
+            }
         }
     },
-    "layer": [{
-            "mark": { "type": "bar", "height": { "band": 0.75 } },
+    "layer": [
+        {
+            "mark": {
+                "type": "bar",
+                "height": {
+                    "band": 0.75
+                }
+            },
             "encoding": {
                 "x": {
                     "field": "x0",
                     "type": "quantitative",
-                    "scale": { "domain": [-50, 90] },
-                    "title": "<- not yet at Strong   |   Strong or above ->",
-                    "axis": { "labelExpr": "abs(datum.value) + '%'", "values": [-40, -20, 0, 20, 40, 60, 80] }
+                    "scale": {
+                        "domain": [
+                            -50,
+                            90
+                        ]
+                    },
+                    "title": "<- not yet at Strong   |   Strong or Exceeding ->",
+                    "axis": {
+                        "labelExpr": "abs(datum.value) + '%'",
+                        "values": [
+                            -40,
+                            -20,
+                            0,
+                            20,
+                            40,
+                            60,
+                            80
+                        ]
+                    }
                 },
-                "x2": { "field": "x1" },
+                "x2": {
+                    "field": "x1"
+                },
                 "color": {
                     "field": "level",
                     "type": "nominal",
                     "title": null,
                     "scale": {
-                        "domain": ["Needs additional support", "Developing", "Strong", "Exceeding"],
-                        "range": ["#C8652B", "#E8B48F", "#9DB8D3", "#2F5D8A"]
+                        "domain": [
+                            "Needs additional support",
+                            "Developing",
+                            "Strong",
+                            "Exceeding"
+                        ],
+                        "range": [
+                            "#C8652B",
+                            "#E8B48F",
+                            "#9DB8D3",
+                            "#2F5D8A"
+                        ]
                     },
-                    "legend": { "orient": "top", "columns": 2, "symbolType": "square" }
+                    "legend": {
+                        "orient": "top",
+                        "columns": 4,
+                        "symbolType": "square",
+                        "columnPadding": 12,
+                        "labelExpr": "datum.label === 'Needs additional support' ? 'Needs support' : datum.label"
+                    }
                 },
-                "opacity": { "condition": { "test": "datum.isSelected", "value": 1 }, "value": 0.7 },
+                "opacity": {
+                    "condition": {
+                        "test": "datum.isSelected",
+                        "value": 1
+                    },
+                    "value": 0.7
+                },
                 "tooltip": [
-                    { "field": "domain", "title": "Domain" },
-                    { "field": "year_level", "title": "Year level" },
-                    { "field": "level", "title": "Level" },
-                    { "field": "pct", "title": "% of students", "format": ".1f" }
+                    {
+                        "field": "domain",
+                        "title": "Domain"
+                    },
+                    {
+                        "field": "year_level",
+                        "title": "Year level"
+                    },
+                    {
+                        "field": "level",
+                        "title": "Level"
+                    },
+                    {
+                        "field": "pct",
+                        "title": "% of students",
+                        "format": ".1f"
+                    }
                 ]
             }
         },
         {
-            "mark": { "type": "rule", "color": "#2B2A28", "strokeWidth": 1 },
-            "encoding": { "x": { "datum": 0 } }
+            "mark": {
+                "type": "rule",
+                "color": "#2B2A28",
+                "strokeWidth": 1
+            },
+            "encoding": {
+                "x": {
+                    "datum": 0
+                }
+            }
         },
         {
-            "transform": [{ "filter": "datum.level === 'Exceeding'" }],
-            "mark": { "type": "text", "align": "left", "dx": 4, "fontSize": 10 },
+            "transform": [
+                {
+                    "filter": "datum.level === 'Exceeding'"
+                }
+            ],
+            "mark": {
+                "type": "text",
+                "align": "left",
+                "dx": 4,
+                "fontSize": 10
+            },
             "encoding": {
-                "x": { "field": "x1", "type": "quantitative" },
-                "text": { "field": "x1", "type": "quantitative", "format": ".0f" },
-                "color": { "condition": { "test": "datum.isSelected", "value": "#1E3F60" }, "value": "#6B675F" }
+                "x": {
+                    "field": "x1",
+                    "type": "quantitative"
+                },
+                "text": {
+                    "field": "x1",
+                    "type": "quantitative",
+                    "format": ".0f"
+                },
+                "color": {
+                    "condition": {
+                        "test": "datum.isSelected",
+                        "value": "#1E3F60"
+                    },
+                    "value": "#6B675F"
+                }
             }
         }
     ]

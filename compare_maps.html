@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Third Map Options</title>
+    <link rel="stylesheet" href="css/style.css?v=5">
+    <link rel="stylesheet" href="css/two-column.css?v=4">
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.30.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.21.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.26.0"></script>
+    <style>
+        .option-note { font-size: 15px; line-height: 1.5; }
+        .option-note h3 { margin-top: 0; }
+        .option-note ul { padding-left: 18px; margin: 6px 0 0; }
+        .tag { display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--needs); margin-bottom: 4px; }
+    </style>
+</head>
+
+<!-- Scratch page for choosing the third map idiom. Not part of the submission. -->
+<body>
+    <header class="masthead">
+        <div class="grid">
+            <div class="full">
+                <p class="kicker">Scratch page · not for submission</p>
+                <h1>Third map options</h1>
+                <p class="subtitle">Four candidate map idioms, all built in Vega-Lite with the site's data</p>
+            </div>
+        </div>
+    </header>
+
+    <div class="selector-bar">
+        <div class="grid">
+            <div class="full selector-inner">
+                <span class="selector-label">Show charts for</span>
+                <label>Domain
+                    <select id="sel-domain">
+                        <option value="All">Average of subjects</option>
+                        <option>Reading</option>
+                        <option>Writing</option>
+                        <option>Spelling</option>
+                        <option value="Grammar and Punctuation">Grammar &amp; Punctuation</option>
+                        <option>Numeracy</option>
+                    </select>
+                </label>
+                <label>Year level
+                    <select id="sel-year">
+                        <option value="3">Year 3</option>
+                        <option value="5" selected>Year 5</option>
+                        <option value="7">Year 7</option>
+                        <option value="9">Year 9</option>
+                    </select>
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <section class="section">
+            <div class="grid">
+                <figure class="half chart-cell"><div id="m1" class="chart"></div></figure>
+                <figure class="half chart-cell"><div id="m2" class="chart"></div></figure>
+
+                <div class="half text option-note">
+                    <span class="tag">Option A · would replace the section 3 choropleth</span>
+                    <h3>Tile grid cartogram</h3>
+                    <p>Every state gets the same-sized square, so the ACT is as visible as WA and the eye compares colour, not land area.</p>
+                    <ul>
+                        <li>Fixes the current map's problems: tiny ACT with an overlapping label, and huge, sparsely populated WA/NT dominating.</li>
+                        <li>Keeps click-to-highlight, so it can still drive the line and ranking charts.</li>
+                        <li>Loses real shapes; with only 8 states the grid is quite sparse.</li>
+                    </ul>
+                </div>
+                <div class="half text option-note">
+                    <span class="tag">Option B · would replace the section 3 choropleth</span>
+                    <h3>Dorling cartogram</h3>
+                    <p>One circle per state, sized by how many students it has. The filled inner circle is the students at Strong or above, so you read "how many out of how many" directly.</p>
+                    <ul>
+                        <li>Shows what the choropleth hides: NSW, VIC and QLD hold most of the students, and the NT is tiny.</li>
+                        <li>The NT's small filled circle inside its outer ring makes the 41% gap visible at a glance.</li>
+                        <li>Circles are placed by hand to keep rough geography; a marker could confuse it with a proportional symbol map, so the write-up should call it a Dorling cartogram.</li>
+                    </ul>
+                </div>
+
+                <figure class="half chart-cell"><div id="m6" class="chart"></div></figure>
+                <div class="half text option-note">
+                    <span class="tag">Option F · would replace the section 3 map</span>
+                    <h3>Contiguous area cartogram</h3>
+                    <p>The real state outlines, stretched so each state's area matches its number of students; colour shows the share at Strong or Exceeding. States stay joined along their real borders.</p>
+                    <ul>
+                        <li>The classic cartogram most readers recognise, and the most clearly distinct from the other two maps.</li>
+                        <li>Built with the Dougenik, Chrisman &amp; Niemeyer (1985) algorithm in Python; Vega-Lite draws and colours it.</li>
+                        <li>Shapes get strange by design: the NT shrinks to a sliver, NSW and VIC swell.</li>
+                    </ul>
+                </div>
+
+                <figure class="half chart-cell"><div id="m5" class="chart"></div></figure>
+                <div class="half text option-note">
+                    <span class="tag">Option E · would replace the section 3 choropleth</span>
+                    <h3>Gridded contiguous cartogram</h3>
+                    <p>Each square is 1,000 students in a year level, so each state's size is its number of students (a raw count), while colour shows the share at Strong or above (a rate). States still touch their real neighbours, and Tasmania stays an island.</p>
+                    <ul>
+                        <li>Size uses counts and colour uses rates, which is the standard split for cartograms and choropleths.</li>
+                        <li>Clearly a third idiom (a cartogram), not a proportional symbol map; the square grid makes the area easy to count.</li>
+                        <li>Click a state to pick it out (double-click to clear); this can drive the line and ranking charts on the main page.</li>
+                        <li>Shapes are distorted by design: the NT shrinks to 3 squares and NSW wraps around the ACT.</li>
+                    </ul>
+                </div>
+
+                <figure class="half chart-cell"><div id="m3" class="chart"></div></figure>
+                <figure class="half chart-cell"><div id="m4" class="chart"></div></figure>
+
+                <div class="half text option-note">
+                    <span class="tag">Option C · new map, or replace the remoteness choropleth</span>
+                    <h3>Hexbin map</h3>
+                    <p>Schools are grouped into hexagons about 100 km across; colour is the average ICSEA of the schools inside.</p>
+                    <ul>
+                        <li>Equal-sized cells avoid the big-area bias of choropleths, and the binning happens entirely in Vega-Lite.</li>
+                        <li>Shows the red interior and blue coastal cities clearly.</li>
+                        <li>Overlaps with the school dot map above it, which already shows ICSEA.</li>
+                    </ul>
+                </div>
+                <div class="half text option-note">
+                    <span class="tag">Option D · would replace the remoteness choropleth</span>
+                    <h3>Dot density map</h3>
+                    <p>Each dot is about 500 students at their school; orange dots are the share below Strong in that state and remoteness zone.</p>
+                    <ul>
+                        <li>Shows where the students below Strong actually are: most are in the cities, even though rates are worst in the bush.</li>
+                        <li>Colours follow the subject and year-level dropdowns.</li>
+                        <li>Dots pile up in Sydney and Melbourne, and the colouring is by zone, not by individual school.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // same chart look as main.js (CONFIG), copied so this scratch page stands alone
+        const FONT = "Arial, Helvetica, sans-serif", INK = "#2B2A28", SOFT = "#6B675F";
+        const CONFIG = {
+            background: "#FBF8F1", font: FONT, padding: 4, view: { stroke: null },
+            title: { font: FONT, fontSize: 17, fontWeight: "bold", color: INK, anchor: "start", offset: 10, subtitleFont: FONT, subtitleFontSize: 12, subtitleColor: SOFT, subtitlePadding: 4 },
+            legend: { labelFont: FONT, titleFont: FONT, labelFontSize: 11, titleFontSize: 12, titleFontWeight: "normal", labelColor: INK, titleColor: INK },
+            text: { font: FONT, color: INK }
+        };
+
+        const SPECS = {
+            m1: "js/specs/alt_tile_grid.vl.json",
+            m2: "js/specs/c05_dorling.vl.json",
+            m3: "js/specs/alt_hexbin.vl.json",
+            m4: "js/specs/alt_dot_density.vl.json",
+            m5: "js/specs/alt_grid_cartogram.vl.json",
+            m6: "js/specs/c05_contiguous_cartogram.vl.json"
+        };
+        const views = {};
+
+        function pushParams() {
+            const domain = document.getElementById("sel-domain").value;
+            const year = Number(document.getElementById("sel-year").value);
+            Object.values(views).forEach((v) => {
+                try { v.signal("domain", domain).signal("yearLevel", year).runAsync(); } catch (e) { /* map without these params */ }
+            });
+        }
+
+        Promise.all(Object.entries(SPECS).map(([id, url]) =>
+            vegaEmbed("#" + id, url, { actions: false, config: CONFIG }).then((r) => { views[id] = r.view; })
+        )).then(() => {
+            window.charts = views;
+            pushParams();
+        });
+        document.getElementById("sel-domain").addEventListener("change", pushParams);
+        document.getElementById("sel-year").addEventListener("change", pushParams);
+    </script>
+</body>
+
+</html>

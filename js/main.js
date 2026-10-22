@@ -1,22 +1,21 @@
 // Same Test, Different Starting Lines: chart loader
 // Embeds every Vega-Lite spec and wires up the shared Domain / Year level selector
-// and the C5 → C7 state highlight.
+// and the C5 → C6/C7 state highlight.
 
-// One spec per chart. When the Domain dropdown is set to "Average of subjects", the
-// single-subject charts show the simple average of the five subjects (each spec
-// handles this itself). C2 is the exception: it swaps between one big panel for
-// the selected subject ("one") and five small panels for "Average of subjects" ("all").
+// One spec per chart. When the Domain dropdown is set to "Average of subjects", each
+// chart shows the simple average of the five subjects (each spec handles this itself).
+// A chart can also list an "all" spec to swap in for "Average of subjects".
 const SPECS = {
   c01: { one: "js/specs/c01_waffle.vl.json" },
-  c02: { one: "js/specs/c02_trend_focus.vl.json", all: "js/specs/c02_trend_small_multiples.vl.json" },
+  c02: { one: "js/specs/c02_trend_focus.vl.json" },
   c03: { one: "js/specs/c03_diverging_proficiency.vl.json" },
   c04: { one: "js/specs/c04_change_heatmap.vl.json" },
-  c05: { one: "js/specs/c05_state_choropleth.vl.json" },
-  c06: { one: "js/specs/c06_tile_grid.vl.json" },
+  c05: { one: "js/specs/c05_contiguous_cartogram.vl.json" },
+  c06: { one: "js/specs/c06_state_lines.vl.json" },
   c07: { one: "js/specs/c07_bump_rank.vl.json" },
-  c08: { one: "js/specs/c08_c09_c10_postcode.vl.json" }, // C8 school map + C9 violin + C10 remoteness map
+  c08: { one: "js/specs/c08_c09_c10_postcode.vl.json" }, // C8 school map + C9 ICSEA histograms + C10 remoteness map
   c11: { one: "js/specs/c11_dumbbell_indigenous.vl.json" },
-  c12: { one: "js/specs/c12_marimekko_parent_ed.vl.json" },
+  c12: { one: "js/specs/c12_lollipop_parent_ed.vl.json" },
   c13: { one: "js/specs/c13_butterfly_gender.vl.json" },
   c14: { one: "js/specs/c14_cohort.vl.json" }
 };
@@ -82,12 +81,14 @@ const LAYOUT = document.body.dataset.layout || "grid";
 
 const findLayer = (layers, test) => layers.find(test) || {};
 
-// Keys are chart ids; "c02_all" resizes C2's five-panel "Average of subjects" version.
+// Keys are chart ids; "<id>_all" resizes a chart's "all" spec (if it has one).
 const LAYOUT_PATCHES = {
   "two-column": {
-    // C2: one big panel for the selected subject, or five panels for "Average of subjects"
-    c02: (s) => { s.width = 980; s.height = 360; },
-    c02_all: (s) => { s.spec.width = 185; s.spec.height = 270; },
+    // C1 waffle: has the whole column to itself
+    c01: (s) => { s.width = 310; s.height = 310; },
+
+    // C2: one big panel (leave room on the right for the "Year 9" line labels)
+    c02: (s) => { s.width = 920; s.height = 360; },
 
     // C3 diverging bars: fill the column
     c03: (s) => { s.width = "container"; s.height = 440; },
@@ -100,28 +101,20 @@ const LAYOUT_PATCHES = {
       s.layer[1].mark.fontSize = 14;
     },
 
-    // C6 tile grid: bigger tiles (C7 sits underneath in the HTML)
-    c06: (s) => {
-      const w = 118, h = 80;
-      s.spec.width = w;
-      s.spec.height = h;
-      findLayer(s.spec.layer, (l) => l.mark.type === "rect").encoding.y2.value = h;
-      findLayer(s.spec.layer, (l) => l.mark.type === "text").mark.fontSize = 12;
-      // leave room above the line for the "WA 68" label
-      s.spec.layer.filter((l) => l.encoding && l.encoding.y && l.encoding.y.scale).forEach((l) => { l.encoding.y.scale.padding = 4; l.encoding.y.scale.range = [h - 6, 24]; });
-    },
+    // C6 state lines: fill the column (beside the C5 map)
+    c06: (s) => { s.width = "container"; s.height = 300; },
 
-    // C7 bump chart: fill the column under the tiles
+    // C7 bump chart: fill the column (beside the text under the map)
     c07: (s) => {
       s.width = "container";
       s.height = 230;
       findLayer(s.layer, (l) => l.data && l.data.values).encoding.y.value = 230 + 26;
     },
 
-    // C8 school map full width on top; C9 violin + C10 remoteness map side by side below
+    // C8 school map full width on top; C9 histograms + C10 remoteness map side by side below
     c08: (s) => {
       const [schoolMap, rightCol] = s.hconcat;
-      const [violin, remoteMap] = rightCol.vconcat;
+      const [histograms, remoteMap] = rightCol.vconcat;
 
       schoolMap.width = 1000;
       schoolMap.height = 820;
@@ -129,21 +122,28 @@ const LAYOUT_PATCHES = {
       dots.encoding.size.scale.range = [20, 1000];
       dots.mark.opacity = 0.6;
 
-      violin.spec.width = 420;
-      violin.spec.height = 46;
+      histograms.spec.width = 380;
+      histograms.spec.height = 54;
 
-      remoteMap.width = 500;
+      remoteMap.width = 430;
       remoteMap.height = 440;
-      findLayer(remoteMap.layer, (l) => l.encoding).encoding.color.legend.gradientLength = 260;
+      findLayer(remoteMap.layer, (l) => l.encoding).encoding.color.legend.gradientLength = 220;
 
       delete s.hconcat;
-      s.vconcat = [schoolMap, { hconcat: [violin, remoteMap], spacing: 60, resolve: rightCol.resolve }];
+      s.vconcat = [schoolMap, { hconcat: [histograms, remoteMap], spacing: 60, resolve: rightCol.resolve }];
       s.spacing = 48;
     },
 
     // C11 dumbbell, C12 Marimekko, C14 cohort arrows: fill the column
-    c11: (s) => { s.width = "container"; s.height = 280; findLayer(s.layer, (l) => l.data && l.data.values).encoding.x = { value: { expr: "width" } }; },
+    c11: (s) => { s.width = "container"; s.height = 345; findLayer(s.layer, (l) => l.data && l.data.values).encoding.x = { value: { expr: "width" } }; },
     c12: (s) => { s.width = "container"; s.height = 360; },
+
+    // C13 gender bars: fill the column, bigger bars and labels
+    c13: (s) => {
+      s.width = "container";
+      s.height = 360;
+      s.layer.filter((l) => l.mark.type === "text").forEach((l) => { l.mark.fontSize = 13; });
+    },
     c14: (s) => { s.width = "container"; s.height = 330; }
   }
 };
@@ -213,21 +213,43 @@ async function onSelectorChange() {
 // Links between charts have to be re-attached whenever a chart is redrawn
 function relinkCharts() {
   linkMapToBump();
+  linkSchoolMapZoom();
   onStateChange();
 }
 
-// C5 click → highlight the same state in C7
+// C5 click → highlight the same state in C6 (state lines) and C7 (ranks)
 function linkMapToBump() {
   const map = views.c05;
-  const bump = views.c07;
-  if (!map || !bump) return;
+  if (!map) return;
   map.addSignalListener("pickState", (name, value) => {
     const picked = value && value.state ? [].concat(value.state)[0] : "";
-    bump.signal("highlight", picked || "").runAsync();
+    [views.c06, views.c07].forEach((v) => { if (v) v.signal("highlight", picked || "").runAsync(); });
   });
 }
 
-// "Zoom to" picker → focus the school map (C8) and violin (C9) on one state
+// C8 click on a state (or a school in it), or C10 click on a region → zoom to that state; double-click → back to Australia
+function linkSchoolMapZoom() {
+  const map = views.c08;
+  if (!map) return;
+  const picker = document.getElementById("sel-state");
+  const stateOf = (value) => (value && value.state ? [].concat(value.state)[0] : "");
+  // one click updates all three selections (the one clicked is set, the others cleared),
+  // so read them together; a click on empty space or a double-click clears them all: zoom out
+  const onPick = () => {
+    const picked = stateOf(map.signal("clickState")) || stateOf(map.signal("clickSchool")) || stateOf(map.signal("clickRemote"));
+    if (picker.value === (picked || "All")) return;
+    picker.value = picked || "All";
+    onStateChange();
+  };
+  // wait until all the selections have updated before reading them
+  let pending = null;
+  const schedule = () => { clearTimeout(pending); pending = setTimeout(onPick, 0); };
+  map.addSignalListener("clickState", schedule);
+  map.addSignalListener("clickSchool", schedule);
+  map.addSignalListener("clickRemote", schedule);
+}
+
+// "Zoom to" picker → focus the school map (C8), histograms (C9) and remoteness map (C10) on one state
 function onStateChange() {
   const value = document.getElementById("sel-state").value;
   if (views.c08) views.c08.signal("focusState", value).runAsync();
@@ -237,12 +259,17 @@ async function init() {
   // wait for web fonts so Vega measures text with the right typeface
   if (document.fonts && document.fonts.ready) await document.fonts.ready;
 
+  // start from whatever the dropdowns show (the browser can restore them on reload)
+  state.domain = document.getElementById("sel-domain").value;
+  state.yearLevel = Number(document.getElementById("sel-year").value);
+
   await Promise.all(
     Object.keys(SPECS).map((id) => embedChart(id).catch((err) => console.error(`Chart ${id} failed:`, err)))
   );
 
   window.charts = views; // handy for debugging in the browser console
   linkMapToBump();
+  linkSchoolMapZoom();
   document.getElementById("sel-domain").addEventListener("change", onSelectorChange);
   document.getElementById("sel-year").addEventListener("change", onSelectorChange);
   document.getElementById("sel-state").addEventListener("change", onStateChange);

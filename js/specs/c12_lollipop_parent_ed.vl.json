@@ -1,0 +1,238 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+        "text": {
+            "expr": "'Parents\\' schooling, children\\'s results · ' + (domain === 'All' ? 'average of subjects' : (domain === 'Grammar and Punctuation' ? 'Grammar & Punctuation' : domain))"
+        }
+    },
+    "width": 260,
+    "height": 220,
+    "params": [
+        {
+            "name": "domain",
+            "value": "Reading"
+        },
+        {
+            "name": "yearLevel",
+            "value": 5
+        }
+    ],
+    "data": {
+        "url": "data/naplan_2023_2026_subgroups_aus.csv",
+        "format": {
+            "type": "csv",
+            "parse": {
+                "year": "number",
+                "year_level": "number",
+                "enrolled": "number",
+                "pct_strong_or_above": "number"
+            }
+        }
+    },
+    "transform": [
+        {
+            "filter": "datum.year === 2026 && datum.attribute === 'Parental education' && (domain === 'All' || datum.domain === domain) && datum.year_level === yearLevel"
+        },
+        {
+            "aggregate": [
+                {
+                    "op": "mean",
+                    "field": "pct_strong_or_above",
+                    "as": "pct_strong_or_above"
+                },
+                {
+                    "op": "mean",
+                    "field": "enrolled",
+                    "as": "enrolled"
+                }
+            ],
+            "groupby": [
+                "subgroup"
+            ]
+        },
+        {
+            "calculate": "replace(datum.subgroup, 'Parental education: ', '')",
+            "as": "edu"
+        },
+        {
+            "calculate": "indexof(['bachelor', 'diploma', 'certificate', 'Year 12', 'Year 11', 'not stated'], datum.edu)",
+            "as": "eduOrder"
+        },
+        {
+            "calculate": "{'bachelor': 'Bachelor or above', 'diploma': 'Diploma', 'certificate': 'Trade certificate', 'Year 12': 'Year 12', 'Year 11': 'Year 11 or below', 'not stated': 'Not stated'}[datum.edu]",
+            "as": "eduLabel"
+        },
+        {
+            "joinaggregate": [
+                {
+                    "op": "sum",
+                    "field": "enrolled",
+                    "as": "totalEnrolled"
+                }
+            ]
+        },
+        {
+            "calculate": "datum.enrolled / datum.totalEnrolled",
+            "as": "shareOfStudents"
+        },
+        {
+            "calculate": "{\"bachelor\": \"M0,-0.75 L1,-0.3 L0,0.15 L-1,-0.3 Z M-0.55,-0.05 L0,0.2 L0.55,-0.05 L0.55,0.45 Q0,0.75 -0.55,0.45 Z M0.82,-0.22 L0.92,-0.22 L0.92,0.55 L0.82,0.55 Z\", \"diploma\": \"M-0.95,-0.45 L0.95,-0.45 L0.95,0.25 L-0.95,0.25 Z M-0.2,0.25 L-0.38,0.9 L0,0.68 L0.38,0.9 L0.2,0.25 Z\", \"certificate\": \"M-0.9,-0.85 L0.5,-0.85 L0.5,-0.35 L-0.9,-0.35 Z M0.5,-0.75 L0.85,-0.6 L0.5,-0.45 Z M-0.32,-0.35 L0,-0.35 L0,0.95 L-0.32,0.95 Z\", \"Year 12\": \"M-0.05,-0.45 Q-0.5,-0.75 -1,-0.55 L-1,0.6 Q-0.5,0.42 -0.05,0.7 Z M0.05,-0.45 Q0.5,-0.75 1,-0.55 L1,0.6 Q0.5,0.42 0.05,0.7 Z\", \"Year 11\": \"M-0.4,-0.95 L0.05,-0.95 L0.05,0.45 L-0.175,0.95 L-0.4,0.45 Z M0.15,-0.95 L0.4,-0.95 L0.4,0.6 L0.15,0.6 Z\", \"not stated\": \"M-0.55,-0.35 Q-0.55,-0.95 0,-0.95 Q0.6,-0.95 0.6,-0.4 Q0.6,-0.05 0.15,0.1 L0.15,0.4 L-0.17,0.4 L-0.17,-0.12 Q0.28,-0.22 0.28,-0.42 Q0.28,-0.65 0,-0.65 Q-0.25,-0.65 -0.25,-0.35 Z M-0.19,0.58 L0.17,0.58 L0.17,0.92 L-0.19,0.92 Z\"}[datum.edu]",
+            "as": "icon"
+        }
+    ],
+    "layer": [
+        {
+            "encoding": {
+                "y": {
+                    "field": "eduLabel",
+                    "type": "nominal",
+                    "title": null,
+                    "sort": {
+                        "field": "eduOrder"
+                    },
+                    "axis": {
+                        "domain": false,
+                        "ticks": false,
+                        "labelPadding": 6
+                    }
+                }
+            },
+            "layer": [
+                {
+                    "mark": {
+                        "type": "rule",
+                        "color": "#BDB6A8",
+                        "strokeWidth": 2
+                    },
+                    "encoding": {
+                        "x": {
+                            "field": "zero",
+                            "type": "quantitative"
+                        },
+                        "x2": {
+                            "field": "pct_strong_or_above"
+                        }
+                    },
+                    "transform": [
+                        {
+                            "calculate": "0",
+                            "as": "zero"
+                        }
+                    ]
+                },
+                {
+                    "mark": {
+                        "type": "point",
+                        "filled": true,
+                        "size": 1100,
+                        "color": "#2F5D8A",
+                        "opacity": 1,
+                        "strokeWidth": 0
+                    },
+                    "encoding": {
+                        "x": {
+                            "field": "pct_strong_or_above",
+                            "type": "quantitative",
+                            "title": "% at Strong or Exceeding",
+                            "scale": {
+                                "domain": [
+                                    0,
+                                    100
+                                ]
+                            }
+                        },
+                        "tooltip": [
+                            {
+                                "field": "eduLabel",
+                                "title": "Parent education"
+                            },
+                            {
+                                "field": "pct_strong_or_above",
+                                "title": "% Strong or Exceeding",
+                                "format": ".1f"
+                            },
+                            {
+                                "field": "shareOfStudents",
+                                "title": "Share of all students",
+                                "format": ".0%"
+                            }
+                        ],
+                        "shape": {
+                            "field": "icon",
+                            "type": "nominal",
+                            "scale": null
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "data": {
+                "url": "data/naplan_2023_2026_states.csv",
+                "format": {
+                    "type": "csv",
+                    "parse": {
+                        "year": "number",
+                        "year_level": "number",
+                        "pct_strong_or_above": "number"
+                    }
+                }
+            },
+            "transform": [
+                {
+                    "filter": "datum.state === 'AUS' && datum.year === 2026 && (domain === 'All' || datum.domain === domain) && datum.year_level === yearLevel"
+                },
+                {
+                    "aggregate": [
+                        {
+                            "op": "mean",
+                            "field": "pct_strong_or_above",
+                            "as": "pct_strong_or_above"
+                        }
+                    ]
+                }
+            ],
+            "layer": [
+                {
+                    "mark": {
+                        "type": "rule",
+                        "color": "#2B2A28",
+                        "strokeDash": [
+                            3,
+                            2
+                        ],
+                        "strokeWidth": 1
+                    },
+                    "encoding": {
+                        "x": {
+                            "field": "pct_strong_or_above",
+                            "type": "quantitative"
+                        }
+                    }
+                },
+                {
+                    "mark": {
+                        "type": "text",
+                        "align": "center",
+                        "baseline": "bottom",
+                        "dy": -4,
+                        "fontSize": 10,
+                        "color": "#6B675F"
+                    },
+                    "encoding": {
+                        "x": {
+                            "field": "pct_strong_or_above",
+                            "type": "quantitative"
+                        },
+                        "y": {
+                            "value": 0
+                        },
+                        "text": {
+                            "value": "all students"
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}

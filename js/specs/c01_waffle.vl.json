@@ -1,86 +1,155 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "title": {
-        "text": "About 1 in 3 not yet at Strong",
-        "subtitle": ["100 Australian students, 2026", "Each square is one student in 100"]
+        "text": "About 1 in 3 not yet at Strong"
     },
     "width": 200,
     "height": 200,
-    "params": [{"name": "domain", "value": "Reading"}, {"name": "yearLevel", "value": 5}],
+    "params": [
+        {
+            "name": "domain",
+            "value": "Reading"
+        },
+        {
+            "name": "yearLevel",
+            "value": 5
+        }
+    ],
     "data": {
         "url": "data/naplan_2026_proficiency_long.csv",
-        "format": {"type": "csv", "parse": {"year_level": "number", "pct": "number", "level_order": "number"}}
+        "format": {
+            "type": "csv",
+            "parse": {
+                "year_level": "number",
+                "pct": "number",
+                "level_order": "number"
+            }
+        }
     },
     "transform": [
         {
             "filter": "datum.state === 'AUS' && (domain === 'All' || datum.domain === domain) && datum.year_level === yearLevel && datum.level !== 'Exempt'"
         },
-        {"aggregate": [{"op": "mean", "field": "pct", "as": "pct"}], "groupby": ["level", "level_order"]},
-        {"joinaggregate": [{"op": "sum", "field": "pct", "as": "total"}]},
-        {"calculate": "datum.pct / datum.total * 100", "as": "share"}
+        {
+            "aggregate": [
+                {
+                    "op": "mean",
+                    "field": "pct",
+                    "as": "pct"
+                }
+            ],
+            "groupby": [
+                "level",
+                "level_order"
+            ]
+        },
+        {
+            "joinaggregate": [
+                {
+                    "op": "sum",
+                    "field": "pct",
+                    "as": "total"
+                }
+            ]
+        },
+        {
+            "calculate": "datum.pct / datum.total * 100",
+            "as": "share"
+        }
     ],
     "layer": [
         {
             "transform": [
                 {
-                    "window": [{"op": "sum", "field": "share", "as": "cum"}],
-                    "sort": [{"field": "level_order"}],
-                    "frame": [null, 0]
+                    "window": [
+                        {
+                            "op": "sum",
+                            "field": "share",
+                            "as": "cum"
+                        }
+                    ],
+                    "sort": [
+                        {
+                            "field": "level_order",
+                            "order": "descending"
+                        }
+                    ],
+                    "frame": [
+                        null,
+                        0
+                    ]
                 },
-                {"calculate": "sequence(round(datum.cum - datum.share), round(datum.cum))", "as": "idx"},
-                {"flatten": ["idx"]},
-                {"calculate": "datum.idx % 10", "as": "col"},
-                {"calculate": "floor(datum.idx / 10)", "as": "row"}
+                {
+                    "calculate": "sequence(round(datum.cum - datum.share), round(datum.cum))",
+                    "as": "idx"
+                },
+                {
+                    "flatten": [
+                        "idx"
+                    ]
+                },
+                {
+                    "calculate": "datum.idx % 10",
+                    "as": "col"
+                },
+                {
+                    "calculate": "floor(datum.idx / 10)",
+                    "as": "row"
+                }
             ],
-            "mark": {"type": "rect", "cornerRadius": 2},
+            "mark": {
+                "type": "rect",
+                "cornerRadius": 2
+            },
             "encoding": {
-                "x": {"field": "col", "type": "ordinal", "axis": null, "scale": {"paddingInner": 0.18}},
-                "y": {"field": "row", "type": "ordinal", "axis": null, "scale": {"paddingInner": 0.18}},
+                "x": {
+                    "field": "col",
+                    "type": "ordinal",
+                    "axis": null,
+                    "scale": {
+                        "paddingInner": 0.18
+                    }
+                },
+                "y": {
+                    "field": "row",
+                    "type": "ordinal",
+                    "axis": null,
+                    "scale": {
+                        "paddingInner": 0.18
+                    }
+                },
                 "color": {
                     "field": "level",
                     "type": "nominal",
                     "title": null,
                     "scale": {
-                        "domain": ["Needs additional support", "Developing", "Strong", "Exceeding"],
-                        "range": ["#C8652B", "#E8B48F", "#9DB8D3", "#2F5D8A"]
+                        "domain": [
+                            "Exceeding",
+                            "Strong",
+                            "Developing",
+                            "Needs additional support"
+                        ],
+                        "range": [
+                            "#2F5D8A",
+                            "#9DB8D3",
+                            "#E8B48F",
+                            "#C8652B"
+                        ]
                     },
-                    "legend": {
-                        "orient": "bottom",
-                        "columns": 2,
-                        "offset": 44,
-                        "symbolType": "square",
-                        "symbolSize": 70,
-                        "labelFontSize": 10,
-                        "columnPadding": 6,
-                        "labelLimit": 130,
-                        "labelExpr": "datum.label === 'Needs additional support' ? 'Needs support' : datum.label"
-                    }
+                    "legend": null
                 },
                 "tooltip": [
-                    {"field": "level", "title": "Level"},
-                    {"field": "pct", "title": "% of students", "format": ".1f"}
+                    {
+                        "field": "level",
+                        "title": "Level"
+                    },
+                    {
+                        "field": "pct",
+                        "title": "% of students",
+                        "format": ".1f"
+                    }
                 ]
             }
-        },
-        {
-            "transform": [
-                {"filter": "datum.level_order <= 2"},
-                {"aggregate": [{"op": "sum", "field": "share", "as": "notStrong"}]},
-                {
-                    "calculate": "round(datum.notStrong) + ' in 100 not yet at Strong|' + (domain === 'All' ? 'on average, all 5 subjects' : 'in ' + domain) + ', Year ' + yearLevel",
-                    "as": "label"
-                }
-            ],
-            "mark": {
-                "type": "text",
-                "align": "left",
-                "baseline": "top",
-                "fontWeight": "bold",
-                "lineBreak": "|",
-                "color": "#C8652B",
-                "fontSize": 12
-            },
-            "encoding": {"x": {"value": 0}, "y": {"value": 208}, "text": {"field": "label"}}
         }
     ]
 }

@@ -2,7 +2,7 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "title": {
         "text": {
-            "expr": "['Parents\\' schooling, children\\'s results', (domain === 'All' ? 'Average of 5 subjects' : (domain === 'Grammar and Punctuation' ? 'Grammar & Punctuation' : domain))]"
+            "expr": "['Parents\\' schooling, children\\'s results', (domain === 'All' ? 'Average of subjects' : (domain === 'Grammar and Punctuation' ? 'Grammar & Punctuation' : domain))]"
         },
         "subtitle": [
             "Proficiency by highest parental education, 2026 (Australia)",

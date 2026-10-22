@@ -1,0 +1,82 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+        "text": "Advantage, hexagon by hexagon",
+        "subtitle": ["Each hexagon (about 100 km across) = average ICSEA of its schools", "1000 = Australian average · blank = no schools"],
+        "subtitleColor": "#6B675F",
+        "subtitleFontSize": 12,
+        "subtitlePadding": 6
+    },
+    "width": 440,
+    "height": 430,
+    "params": [
+        {
+            "name": "hexW",
+            "value": 1,
+            "description": "hexagon width in grid units (1 unit = 1 degree of latitude)"
+        }
+    ],
+    "projection": {
+        "type": "conicEqualArea",
+        "parallels": [-18, -36],
+        "rotate": [-132, 0]
+    },
+    "layer": [
+        {
+            "data": {
+                "url": "data/aus_states.geojson",
+                "format": {"type": "json", "property": "features"}
+            },
+            "mark": {"type": "geoshape", "fill": "#ECE7DD", "stroke": "#FBF8F1", "strokeWidth": 1}
+        },
+        {
+            "data": {
+                "url": "data/schools_2025.csv",
+                "format": {"type": "csv", "parse": {"icsea": "number", "lat": "number", "lon": "number", "enrolments": "number"}}
+            },
+            "transform": [
+                {"filter": "isValid(datum.icsea)"},
+                {"calculate": "datum.lon * 0.891", "as": "gx"},
+                {"calculate": "datum.lat", "as": "gy"},
+                {"calculate": "round(datum.gy / (hexW * 0.866))", "as": "hexRow"},
+                {"calculate": "abs(datum.hexRow % 2) * hexW / 2", "as": "rowShift"},
+                {"calculate": "round((datum.gx - datum.rowShift) / hexW)", "as": "hexCol"},
+                {
+                    "aggregate": [
+                        {"op": "mean", "field": "icsea", "as": "icsea"},
+                        {"op": "count", "as": "schools"},
+                        {"op": "sum", "field": "enrolments", "as": "students"}
+                    ],
+                    "groupby": ["hexRow", "hexCol", "rowShift"]
+                },
+                {"calculate": "(datum.hexCol * hexW + datum.rowShift) / 0.891", "as": "lon"},
+                {"calculate": "datum.hexRow * hexW * 0.866", "as": "lat"}
+            ],
+            "mark": {
+                "type": "point",
+                "shape": "M0,-1.155L1,-0.577L1,0.577L0,1.155L-1,0.577L-1,-0.577Z",
+                "filled": true,
+                "opacity": 1,
+                "stroke": "#FBF8F1",
+                "strokeWidth": 0.6
+            },
+            "encoding": {
+                "longitude": {"field": "lon", "type": "quantitative"},
+                "latitude": {"field": "lat", "type": "quantitative"},
+                "size": {"value": 330},
+                "color": {
+                    "field": "icsea",
+                    "type": "quantitative",
+                    "title": "Average school ICSEA",
+                    "scale": {"domain": [800, 1000, 1200], "range": ["#B8322A", "#F2EEE6", "#2F5D8A"], "clamp": true, "interpolate": "lab"},
+                    "legend": {"orient": "bottom-left", "direction": "horizontal", "gradientLength": 150, "values": [800, 1000, 1200]}
+                },
+                "tooltip": [
+                    {"field": "icsea", "title": "Average ICSEA", "format": ".0f"},
+                    {"field": "schools", "title": "Schools"},
+                    {"field": "students", "title": "Students enrolled", "format": ",.0f"}
+                ]
+            }
+        }
+    ]
+}

@@ -16,10 +16,10 @@
 /* text that spans both columns keeps a readable line length */
 .full.text p { max-width: 68ch; }
 
-/* two narrow items side by side inside one column */
+/* two narrow items side by side inside one column (chart gets twice the photo's width) */
 .pair {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
   gap: 24px;
   align-items: stretch;
   min-width: 0;
@@ -32,10 +32,14 @@
   gap: 32px;
 }
 
-/* shrink-wrap the C8 + C9 + C10 group so its toggle lines up under the C10 map */
+/* shrink-wrap the C8 + C9 + C10 group to its own width */
 #c08.vega-embed { display: inline-block; width: auto; }
 
 @media (max-width: 900px) {
   .grid > .half, .grid > .full { grid-column: 1 / -1; }
   .pair, .footer-cols { grid-template-columns: 1fr; }
+
+  /* one column: keep the "Where you live" text straight under the map (C5), before C6 and C7 */
+  #where-you-live .grid > figure:has(#c06),
+  #where-you-live .grid > figure:has(#c07) { order: 1; }
 }

@@ -1,0 +1,141 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+        "text": {
+            "expr": "'How many reach Strong? 2026 · ' + (domain === 'All' ? 'average of subjects' : (domain === 'Grammar and Punctuation' ? 'Grammar & Punctuation' : domain))"
+        },
+        "subtitle": {
+            "expr": "'Outer circle = all Year ' + yearLevel + ' students in the state · filled circle = those at Strong or above'"
+        },
+        "subtitleColor": "#6B675F",
+        "subtitleFontSize": 12,
+        "subtitlePadding": 6
+    },
+    "width": 430,
+    "height": 450,
+    "params": [
+        {
+            "name": "domain",
+            "value": "All"
+        },
+        {
+            "name": "yearLevel",
+            "value": 5
+        }
+    ],
+    "encoding": {
+        "x": {
+            "field": "dx",
+            "type": "quantitative",
+            "scale": {"domain": [0, 430]},
+            "axis": null
+        },
+        "y": {
+            "field": "dy",
+            "type": "quantitative",
+            "scale": {"domain": [0, 450], "reverse": true},
+            "axis": null
+        }
+    },
+    "layer": [
+        {
+            "description": "TAS: no 2026 result, so a dashed circle sized by its 2025 students",
+            "data": {
+                "url": "data/naplan_2023_2026_states.csv",
+                "format": {
+                    "type": "csv",
+                    "parse": {"year": "number", "year_level": "number", "enrolled": "number"}
+                }
+            },
+            "transform": [
+                {"filter": "datum.year === 2025 && datum.state === 'TAS' && (domain === 'All' || datum.domain === domain) && datum.year_level === yearLevel"},
+                {"aggregate": [{"op": "mean", "field": "enrolled", "as": "students"}], "groupby": ["state"]},
+                {"lookup": "state", "from": {"data": {"url": "data/state_tiles.json"}, "key": "state", "fields": ["dx", "dy"]}},
+                {"calculate": "sqrt(datum.students / 110000) * 71", "as": "r"},
+                {"calculate": "datum.dy + datum.r + 11", "as": "labelY"}
+            ],
+            "layer": [
+                {
+                    "mark": {"type": "circle", "fill": null, "stroke": "#9C968B", "strokeDash": [3, 3], "strokeWidth": 1.2, "opacity": 1},
+                    "encoding": {
+                        "size": {"field": "students", "type": "quantitative", "scale": {"type": "linear", "domain": [0, 110000], "range": [0, 15837]}, "legend": null}
+                    }
+                },
+                {
+                    "mark": {"type": "text", "fontSize": 11, "color": "#6B675F"},
+                    "encoding": {
+                        "y": {"field": "labelY", "type": "quantitative"},
+                        "text": {"value": "TAS not published"}
+                    }
+                }
+            ]
+        },
+        {
+            "data": {
+                "url": "data/naplan_2023_2026_states.csv",
+                "format": {
+                    "type": "csv",
+                    "parse": {"year": "number", "year_level": "number", "pct_strong_or_above": "number", "enrolled": "number"}
+                }
+            },
+            "transform": [
+                {"filter": "datum.year === 2026 && datum.state !== 'AUS' && (domain === 'All' || datum.domain === domain) && datum.year_level === yearLevel"},
+                {
+                    "aggregate": [
+                        {"op": "mean", "field": "enrolled", "as": "students"},
+                        {"op": "mean", "field": "pct_strong_or_above", "as": "pct"}
+                    ],
+                    "groupby": ["state", "state_name"]
+                },
+                {"calculate": "datum.students * datum.pct / 100", "as": "strong"},
+                {"lookup": "state", "from": {"data": {"url": "data/state_tiles.json"}, "key": "state", "fields": ["dx", "dy"]}},
+                {"calculate": "sqrt(datum.students / 110000) * 71", "as": "r"},
+                {"calculate": "datum.r > 30", "as": "inside"},
+                {"calculate": "datum.inside ? datum.dy : datum.dy + datum.r + 11", "as": "labelY"},
+                {"calculate": "datum.state + ' ' + format(datum.pct, '.0f') + '%'", "as": "label"}
+            ],
+            "layer": [
+                {
+                    "params": [
+                        {
+                            "name": "pickState",
+                            "select": {"type": "point", "fields": ["state"], "on": "click", "clear": "dblclick"}
+                        }
+                    ],
+                    "mark": {"type": "circle", "fill": "#E8E2D5", "stroke": "#B9B2A4", "strokeWidth": 1, "opacity": 1, "cursor": "pointer"},
+                    "encoding": {
+                        "size": {"field": "students", "type": "quantitative", "scale": {"type": "linear", "domain": [0, 110000], "range": [0, 15837]}, "legend": null},
+                        "stroke": {"condition": {"param": "pickState", "empty": false, "value": "#C8652B"}, "value": "#B9B2A4"},
+                        "strokeWidth": {"condition": {"param": "pickState", "empty": false, "value": 3}, "value": 1},
+                        "tooltip": [
+                            {"field": "state_name", "title": "State"},
+                            {"field": "students", "title": "Students", "format": ",.0f"},
+                            {"field": "strong", "title": "At Strong or above", "format": ",.0f"},
+                            {"field": "pct", "title": "% Strong or above", "format": ".1f"}
+                        ]
+                    }
+                },
+                {
+                    "mark": {"type": "circle", "fill": "#2F5D8A", "opacity": 1, "cursor": "pointer"},
+                    "encoding": {
+                        "size": {"field": "strong", "type": "quantitative", "scale": {"type": "linear", "domain": [0, 110000], "range": [0, 15837]}, "legend": null},
+                        "tooltip": [
+                            {"field": "state_name", "title": "State"},
+                            {"field": "students", "title": "Students", "format": ",.0f"},
+                            {"field": "strong", "title": "At Strong or above", "format": ",.0f"},
+                            {"field": "pct", "title": "% Strong or above", "format": ".1f"}
+                        ]
+                    }
+                },
+                {
+                    "mark": {"type": "text", "fontSize": 12, "fontWeight": 700},
+                    "encoding": {
+                        "y": {"field": "labelY", "type": "quantitative"},
+                        "text": {"field": "label"},
+                        "color": {"condition": {"test": "datum.inside", "value": "#FFFFFF"}, "value": "#2B2A28"}
+                    }
+                }
+            ]
+        }
+    ]
+}

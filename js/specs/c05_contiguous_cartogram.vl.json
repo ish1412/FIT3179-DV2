@@ -1,0 +1,249 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "C5 contiguous area cartogram: each state's outline is resized so its area matches its number of students per year level (2026 average; TAS 2025). It does not follow the subject / year-level selector, because student numbers barely change between them. Each state keeps its own colour (the same as its line in C6 and C7). Shapes come from Data/clean_data/make_contiguous_cartogram.py (Dougenik, Chrisman & Niemeyer 1985), already in planar coordinates, so the projection is identity.",
+    "title": {
+        "text": "Where the students are, 2026"
+    },
+    "width": 440,
+    "height": 430,
+    "projection": {
+        "type": "identity",
+        "reflectY": true
+    },
+    "layer": [
+        {
+            "data": {
+                "url": "data/cartogram_contiguous.geojson",
+                "format": {
+                    "type": "json",
+                    "property": "features"
+                }
+            },
+            "transform": [
+                {
+                    "calculate": "datum.properties.state_abbr",
+                    "as": "state"
+                },
+                {
+                    "calculate": "datum.properties.state",
+                    "as": "state_name"
+                },
+                {
+                    "calculate": "datum.properties.students",
+                    "as": "students"
+                },
+                {
+                    "calculate": "datum.state === 'TAS' ? 'TAS 2026 not published: 2025 count used' : '2026'",
+                    "as": "countYear"
+                }
+            ],
+            "params": [
+                {
+                    "name": "pickState",
+                    "select": {
+                        "type": "point",
+                        "fields": [
+                            "state"
+                        ],
+                        "on": "click",
+                        "clear": "dblclick"
+                    }
+                }
+            ],
+            "mark": {
+                "type": "geoshape",
+                "cursor": "pointer"
+            },
+            "encoding": {
+                "color": {
+                    "field": "state",
+                    "type": "nominal",
+                    "legend": null,
+                    "scale": {
+                        "domain": [
+                            "NSW",
+                            "VIC",
+                            "QLD",
+                            "SA",
+                            "WA",
+                            "TAS",
+                            "NT",
+                            "ACT"
+                        ],
+                        "range": [
+                            "#3D8FD1",
+                            "#0B2A5B",
+                            "#7A1F3D",
+                            "#D2232A",
+                            "#C99700",
+                            "#00704A",
+                            "#B8571C",
+                            "#6BA539"
+                        ]
+                    }
+                },
+                "stroke": {
+                    "condition": {
+                        "param": "pickState",
+                        "empty": false,
+                        "value": "#2B2A28"
+                    },
+                    "value": "#FBF8F1"
+                },
+                "strokeWidth": {
+                    "condition": {
+                        "param": "pickState",
+                        "empty": false,
+                        "value": 3
+                    },
+                    "value": 1.2
+                },
+                "tooltip": [
+                    {
+                        "field": "state_name",
+                        "title": "State"
+                    },
+                    {
+                        "field": "students",
+                        "title": "Students per year level",
+                        "format": ",.0f"
+                    },
+                    {
+                        "field": "countYear",
+                        "title": "Year"
+                    }
+                ]
+            }
+        },
+        {
+            "description": "labels: state and number of students per year level (thousands)",
+            "data": {
+                "url": "data/cartogram_contiguous_labels.json"
+            },
+            "transform": [
+                {
+                    "calculate": "format(datum.students / 1000, '.0f') + 'k' + (datum.state === 'TAS' ? ' (2025)' : '')",
+                    "as": "count"
+                },
+                {
+                    "calculate": "datum.state === 'ACT' || datum.state === 'NT' || datum.state === 'TAS'",
+                    "as": "small"
+                }
+            ],
+            "encoding": {
+                "longitude": {
+                    "field": "x",
+                    "type": "quantitative"
+                },
+                "latitude": {
+                    "field": "y",
+                    "type": "quantitative"
+                },
+                "color": {
+                    "condition": {
+                        "test": "!datum.small && datum.state !== 'WA'",
+                        "value": "#FFFFFF"
+                    },
+                    "value": "#2B2A28"
+                }
+            },
+            "layer": [
+                {
+                    "transform": [
+                        {
+                            "filter": "!datum.small"
+                        }
+                    ],
+                    "layer": [
+                        {
+                            "mark": {
+                                "type": "text",
+                                "fontSize": 14,
+                                "fontWeight": 700,
+                                "dy": -8
+                            },
+                            "encoding": {
+                                "text": {
+                                    "field": "state"
+                                }
+                            }
+                        },
+                        {
+                            "mark": {
+                                "type": "text",
+                                "fontSize": 13,
+                                "dy": 9
+                            },
+                            "encoding": {
+                                "text": {
+                                    "field": "count"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "transform": [
+                        {
+                            "filter": "datum.small"
+                        },
+                        {
+                            "calculate": "datum.state + ' ' + datum.count",
+                            "as": "line"
+                        }
+                    ],
+                    "encoding": {
+                        "text": {
+                            "field": "line"
+                        }
+                    },
+                    "layer": [
+                        {
+                            "transform": [
+                                {
+                                    "filter": "datum.state === 'NT'"
+                                }
+                            ],
+                            "mark": {
+                                "type": "text",
+                                "fontSize": 11,
+                                "fontWeight": 700,
+                                "align": "right",
+                                "dx": -14,
+                                "dy": -24
+                            }
+                        },
+                        {
+                            "transform": [
+                                {
+                                    "filter": "datum.state === 'ACT'"
+                                }
+                            ],
+                            "mark": {
+                                "type": "text",
+                                "fontSize": 11,
+                                "fontWeight": 700,
+                                "align": "left",
+                                "dx": 42
+                            }
+                        },
+                        {
+                            "transform": [
+                                {
+                                    "filter": "datum.state === 'TAS'"
+                                }
+                            ],
+                            "mark": {
+                                "type": "text",
+                                "fontSize": 11,
+                                "fontWeight": 700,
+                                "align": "left",
+                                "dx": 40
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

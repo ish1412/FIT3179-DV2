@@ -1,0 +1,294 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+        "text": {
+            "expr": "'Each state\\'s line, 2023-2026 · ' + (domain === 'All' ? 'average of subjects' : (domain === 'Grammar and Punctuation' ? 'Grammar & Punctuation' : domain))"
+        }
+    },
+    "width": 300,
+    "height": 260,
+    "params": [
+        {
+            "name": "domain",
+            "value": "Reading"
+        },
+        {
+            "name": "yearLevel",
+            "value": 5
+        },
+        {
+            "name": "highlight",
+            "value": ""
+        }
+    ],
+    "data": {
+        "url": "data/naplan_2023_2026_states.csv",
+        "format": {
+            "type": "csv",
+            "parse": {
+                "year": "number",
+                "year_level": "number",
+                "pct_strong_or_above": "number"
+            }
+        }
+    },
+    "transform": [
+        {
+            "filter": "datum.state !== 'AUS' && (domain === 'All' || datum.domain === domain) && datum.year_level === yearLevel"
+        },
+        {
+            "aggregate": [
+                {
+                    "op": "mean",
+                    "field": "pct_strong_or_above",
+                    "as": "pct_strong_or_above"
+                }
+            ],
+            "groupby": [
+                "state",
+                "state_name",
+                "year"
+            ]
+        },
+        {
+            "joinaggregate": [
+                {
+                    "op": "max",
+                    "field": "year",
+                    "as": "lastYear"
+                }
+            ],
+            "groupby": [
+                "state"
+            ]
+        },
+        {
+            "calculate": "highlight !== '' && datum.state === highlight",
+            "as": "isPicked"
+        },
+        {
+            "calculate": "highlight === '' || datum.isPicked",
+            "as": "isOn"
+        },
+        {
+            "joinaggregate": [
+                {
+                    "op": "min",
+                    "field": "pct_strong_or_above",
+                    "as": "yMin"
+                },
+                {
+                    "op": "max",
+                    "field": "pct_strong_or_above",
+                    "as": "yMax"
+                }
+            ]
+        }
+    ],
+    "encoding": {
+        "x": {
+            "field": "year",
+            "type": "quantitative",
+            "title": null,
+            "scale": {
+                "domain": [
+                    2023,
+                    2026
+                ]
+            },
+            "axis": {
+                "format": "d",
+                "values": [
+                    2023,
+                    2024,
+                    2025,
+                    2026
+                ],
+                "grid": false
+            }
+        },
+        "y": {
+            "field": "pct_strong_or_above",
+            "type": "quantitative",
+            "title": "% Strong or Exceeding",
+            "scale": {
+                "zero": false,
+                "nice": true
+            }
+        },
+        "detail": {
+            "field": "state"
+        },
+        "color": {
+            "field": "state",
+            "type": "nominal",
+            "legend": null,
+            "scale": {
+                "domain": [
+                    "NSW",
+                    "VIC",
+                    "QLD",
+                    "SA",
+                    "WA",
+                    "TAS",
+                    "NT",
+                    "ACT"
+                ],
+                "range": [
+                    "#3D8FD1",
+                    "#0B2A5B",
+                    "#7A1F3D",
+                    "#D2232A",
+                    "#C99700",
+                    "#00704A",
+                    "#B8571C",
+                    "#6BA539"
+                ]
+            }
+        },
+        "opacity": {
+            "condition": {
+                "test": "datum.isOn",
+                "value": 1
+            },
+            "value": 0.15
+        }
+    },
+    "layer": [
+        {
+            "mark": {
+                "type": "line",
+                "strokeWidth": 2.2
+            }
+        },
+        {
+            "mark": {
+                "type": "circle",
+                "size": 36
+            },
+            "encoding": {
+                "tooltip": [
+                    {
+                        "field": "state_name",
+                        "title": "State"
+                    },
+                    {
+                        "field": "year",
+                        "title": "Year",
+                        "format": "d"
+                    },
+                    {
+                        "field": "pct_strong_or_above",
+                        "title": "% Strong or Exceeding",
+                        "format": ".1f"
+                    }
+                ]
+            }
+        },
+        {
+            "transform": [
+                {
+                    "filter": "datum.year === datum.lastYear"
+                },
+                {
+                    "calculate": "(datum.yMax - datum.yMin) * 0.05",
+                    "as": "step"
+                },
+                {
+                    "window": [
+                        {
+                            "op": "lag",
+                            "field": "pct_strong_or_above",
+                            "as": "prevPct"
+                        }
+                    ],
+                    "sort": [
+                        {
+                            "field": "pct_strong_or_above",
+                            "order": "descending"
+                        }
+                    ],
+                    "groupby": [
+                        "year"
+                    ]
+                },
+                {
+                    "calculate": "isValid(datum.prevPct) && datum.prevPct - datum.pct_strong_or_above < datum.step ? 0 : 1",
+                    "as": "newCluster"
+                },
+                {
+                    "window": [
+                        {
+                            "op": "sum",
+                            "field": "newCluster",
+                            "as": "cluster"
+                        }
+                    ],
+                    "sort": [
+                        {
+                            "field": "pct_strong_or_above",
+                            "order": "descending"
+                        }
+                    ],
+                    "groupby": [
+                        "year"
+                    ]
+                },
+                {
+                    "window": [
+                        {
+                            "op": "row_number",
+                            "as": "posInCluster"
+                        }
+                    ],
+                    "groupby": [
+                        "year",
+                        "cluster"
+                    ],
+                    "sort": [
+                        {
+                            "field": "pct_strong_or_above",
+                            "order": "descending"
+                        }
+                    ]
+                },
+                {
+                    "joinaggregate": [
+                        {
+                            "op": "count",
+                            "as": "clusterSize"
+                        },
+                        {
+                            "op": "mean",
+                            "field": "pct_strong_or_above",
+                            "as": "clusterMid"
+                        }
+                    ],
+                    "groupby": [
+                        "year",
+                        "cluster"
+                    ]
+                },
+                {
+                    "calculate": "datum.clusterMid - (datum.posInCluster - (datum.clusterSize + 1) / 2) * datum.step",
+                    "as": "labelY"
+                }
+            ],
+            "mark": {
+                "type": "text",
+                "align": "left",
+                "dx": 7,
+                "fontSize": 10
+            },
+            "encoding": {
+                "text": {
+                    "field": "state"
+                },
+                "y": {
+                    "field": "labelY",
+                    "type": "quantitative"
+                }
+            }
+        }
+    ]
+}

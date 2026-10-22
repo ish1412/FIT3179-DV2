@@ -1,71 +1,148 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "params": [
-        {"name": "domain", "value": "Reading"},
-        {"name": "yearLevel", "value": 5},
-        {"name": "focusState", "value": "All"},
         {
-            "name": "students",
-            "value": "All students",
-            "bind": {
-                "input": "radio",
-                "options": ["All students", "Indigenous"],
-                "labels": ["All students", "Indigenous students"],
-                "name": "Remoteness map shows: "
-            }
+            "name": "domain",
+            "value": "Reading"
+        },
+        {
+            "name": "yearLevel",
+            "value": 5
+        },
+        {
+            "name": "focusState",
+            "value": "All"
         }
     ],
     "spacing": 28,
     "resolve": {
-        "scale": {"color": "independent", "size": "independent"},
-        "legend": {"color": "independent", "size": "independent"}
+        "scale": {
+            "color": "independent",
+            "size": "independent"
+        },
+        "legend": {
+            "color": "independent",
+            "size": "independent"
+        }
     },
     "hconcat": [
         {
-            "title": {
-                "text": "Thousands of schools, very different starting lines",
-                "subtitle": [
-                    "Each dot is a school, sized by enrolments. Colour = ICSEA (1000 = Australian average).",
-                    "Use 'Zoom to' above the map to focus on one state"
-                ]
-            },
+            "title": "Thousands of schools, very different starting lines",
             "width": 470,
             "height": 430,
-            "projection": {"type": "conicEqualArea", "parallels": [-18, -36], "rotate": [-132, 0]},
+            "projection": {
+                "type": "conicEqualArea",
+                "parallels": [
+                    -18,
+                    -36
+                ],
+                "rotate": [
+                    -132,
+                    0
+                ]
+            },
             "layer": [
                 {
-                    "data": {"url": "data/aus_states.geojson", "format": {"type": "json", "property": "features"}},
-                    "transform": [{"filter": "focusState === 'All' || datum.properties.state_abbr === focusState"}],
-                    "mark": {"type": "geoshape", "fill": "#ECE7DD", "stroke": "#FFFFFF", "strokeWidth": 1}
+                    "data": {
+                        "url": "data/aus_states.geojson",
+                        "format": {
+                            "type": "json",
+                            "property": "features"
+                        }
+                    },
+                    "transform": [
+                        {
+                            "filter": "focusState === 'All' || datum.properties.state_abbr === focusState"
+                        },
+                        {
+                            "calculate": "datum.properties.state_abbr",
+                            "as": "state"
+                        }
+                    ],
+                    "mark": {
+                        "type": "geoshape",
+                        "fill": "#ECE7DD",
+                        "stroke": "#FFFFFF",
+                        "strokeWidth": 1,
+                        "cursor": "pointer"
+                    },
+                    "params": [
+                        {
+                            "name": "clickState",
+                            "select": {
+                                "type": "point",
+                                "fields": [
+                                    "state"
+                                ],
+                                "on": "click",
+                                "clear": "dblclick"
+                            }
+                        }
+                    ]
                 },
                 {
                     "data": {
                         "url": "data/schools_2025.csv",
                         "format": {
                             "type": "csv",
-                            "parse": {"lat": "number", "lon": "number", "icsea": "number", "enrolments": "number"}
+                            "parse": {
+                                "lat": "number",
+                                "lon": "number",
+                                "icsea": "number",
+                                "enrolments": "number"
+                            }
                         }
                     },
                     "transform": [
-                        {"filter": "isValid(datum.icsea) && isValid(datum.lat)"},
+                        {
+                            "filter": "isValid(datum.icsea) && isValid(datum.lat)"
+                        },
                         {
                             "filter": "(focusState === 'All' || (datum.state === focusState && !(focusState === 'ACT' && +datum.lon > 149.5)))"
                         },
-                        {"filter": {"param": "brush"}}
+                        {
+                            "filter": {
+                                "param": "brush"
+                            }
+                        }
                     ],
-                    "mark": {"type": "circle", "opacity": 0.75, "stroke": null},
+                    "mark": {
+                        "type": "circle",
+                        "opacity": 0.75,
+                        "stroke": null,
+                        "cursor": "pointer"
+                    },
                     "encoding": {
-                        "longitude": {"field": "lon", "type": "quantitative"},
-                        "latitude": {"field": "lat", "type": "quantitative"},
+                        "longitude": {
+                            "field": "lon",
+                            "type": "quantitative"
+                        },
+                        "latitude": {
+                            "field": "lat",
+                            "type": "quantitative"
+                        },
                         "size": {
                             "field": "enrolments",
                             "type": "quantitative",
                             "title": "Enrolments",
-                            "scale": {"range": [5, 240]},
+                            "scale": {
+                                "domain": [
+                                    0,
+                                    6300
+                                ],
+                                "range": [
+                                    5,
+                                    240
+                                ]
+                            },
                             "legend": {
                                 "orient": "bottom-left",
                                 "direction": "horizontal",
-                                "values": [100, 1000, 3000],
+                                "values": [
+                                    100,
+                                    1000,
+                                    3000
+                                ],
                                 "offset": 0,
                                 "padding": 8,
                                 "columnPadding": 22,
@@ -81,8 +158,16 @@
                             "type": "quantitative",
                             "title": "ICSEA",
                             "scale": {
-                                "domain": [800, 1000, 1200],
-                                "range": ["#C8652B", "#F2EEE6", "#2F5D8A"],
+                                "domain": [
+                                    800,
+                                    1000,
+                                    1200
+                                ],
+                                "range": [
+                                    "#B8322A",
+                                    "#F2EEE6",
+                                    "#2F5D8A"
+                                ],
                                 "clamp": true,
                                 "interpolate": "lab"
                             },
@@ -90,40 +175,113 @@
                                 "orient": "top-right",
                                 "direction": "horizontal",
                                 "gradientLength": 120,
-                                "values": [800, 1000, 1200]
+                                "values": [
+                                    800,
+                                    1000,
+                                    1200
+                                ]
                             }
                         },
-                        "order": {"field": "enrolments", "type": "quantitative", "sort": "descending"},
+                        "order": {
+                            "field": "enrolments",
+                            "type": "quantitative",
+                            "sort": "descending"
+                        },
                         "tooltip": [
-                            {"field": "name", "title": "School"},
-                            {"field": "sector", "title": "Sector"},
-                            {"field": "type", "title": "Type"},
-                            {"field": "remoteness", "title": "Remoteness"},
-                            {"field": "icsea", "title": "ICSEA", "format": "d"},
-                            {"field": "enrolments", "title": "Enrolments", "format": ","}
+                            {
+                                "field": "name",
+                                "title": "School"
+                            },
+                            {
+                                "field": "sector",
+                                "title": "Sector"
+                            },
+                            {
+                                "field": "type",
+                                "title": "Type"
+                            },
+                            {
+                                "field": "remoteness",
+                                "title": "Remoteness"
+                            },
+                            {
+                                "field": "icsea",
+                                "title": "ICSEA",
+                                "format": "d"
+                            },
+                            {
+                                "field": "enrolments",
+                                "title": "Enrolments",
+                                "format": ","
+                            }
                         ]
-                    }
+                    },
+                    "params": [
+                        {
+                            "name": "clickSchool",
+                            "select": {
+                                "type": "point",
+                                "fields": [
+                                    "state"
+                                ],
+                                "on": "click",
+                                "clear": "dblclick"
+                            }
+                        }
+                    ]
                 },
                 {
                     "data": {
                         "url": "data/schools_2025.csv",
-                        "format": {"type": "csv", "parse": {"icsea": "number", "lat": "number"}}
+                        "format": {
+                            "type": "csv",
+                            "parse": {
+                                "icsea": "number",
+                                "lat": "number"
+                            }
+                        }
                     },
                     "transform": [
-                        {"filter": "isValid(datum.icsea) && isValid(datum.lat)"},
+                        {
+                            "filter": "isValid(datum.icsea) && isValid(datum.lat)"
+                        },
                         {
                             "filter": "(focusState === 'All' || (datum.state === focusState && !(focusState === 'ACT' && +datum.lon > 149.5)))"
                         },
-                        {"filter": {"param": "brush"}},
+                        {
+                            "filter": {
+                                "param": "brush"
+                            }
+                        },
                         {
                             "joinaggregate": [
-                                {"op": "count", "as": "n"},
-                                {"op": "min", "field": "icsea", "as": "lo"},
-                                {"op": "max", "field": "icsea", "as": "hi"}
+                                {
+                                    "op": "count",
+                                    "as": "n"
+                                },
+                                {
+                                    "op": "min",
+                                    "field": "icsea",
+                                    "as": "lo"
+                                },
+                                {
+                                    "op": "max",
+                                    "field": "icsea",
+                                    "as": "hi"
+                                }
                             ]
                         },
-                        {"window": [{"op": "row_number", "as": "rank"}]},
-                        {"filter": "datum.rank === 1"},
+                        {
+                            "window": [
+                                {
+                                    "op": "row_number",
+                                    "as": "rank"
+                                }
+                            ]
+                        },
+                        {
+                            "filter": "datum.rank === 1"
+                        },
                         {
                             "calculate": "format(datum.n, ',') + ' schools shown' + (focusState === 'All' ? '' : ' in ' + focusState) + ' · ICSEA ' + datum.lo + '-' + datum.hi",
                             "as": "label"
@@ -137,75 +295,251 @@
                         "fontWeight": "bold",
                         "color": "#1E3F60"
                     },
-                    "encoding": {"x": {"value": 0}, "y": {"value": 0}, "text": {"field": "label"}}
+                    "encoding": {
+                        "x": {
+                            "value": 0
+                        },
+                        "y": {
+                            "value": 0
+                        },
+                        "text": {
+                            "field": "label"
+                        }
+                    }
                 }
             ]
         },
         {
             "spacing": 30,
-            "resolve": {"scale": {"color": "independent"}},
+            "resolve": {
+                "scale": {
+                    "color": "independent"
+                }
+            },
             "vconcat": [
                 {
                     "title": {
                         "text": "Remote schools skew disadvantaged",
-                        "subtitle": ["Spread of school ICSEA by remoteness.", "Drag across a row to filter the map"]
+                        "subtitle": "Drag across the bars to show only those schools on the map above",
+                        "subtitleColor": "#6B675F",
+                        "subtitleFontSize": 12,
+                        "subtitlePadding": 6
                     },
-                    "data": {"url": "data/schools_2025.csv", "format": {"type": "csv", "parse": {"icsea": "number"}}},
+                    "data": {
+                        "url": "data/schools_2025.csv",
+                        "format": {
+                            "type": "csv",
+                            "parse": {
+                                "icsea": "number"
+                            }
+                        }
+                    },
                     "transform": [
-                        {"filter": "isValid(datum.icsea)"},
+                        {
+                            "filter": "isValid(datum.icsea)"
+                        },
                         {
                             "filter": "(focusState === 'All' || (datum.state === focusState && !(focusState === 'ACT' && +datum.lon > 149.5)))"
                         },
                         {
-                            "density": "icsea",
-                            "groupby": ["remoteness"],
-                            "extent": [500, 1300],
-                            "as": ["icsea", "density"]
+                            "joinaggregate": [
+                                {
+                                    "op": "count",
+                                    "as": "rowSchools"
+                                }
+                            ],
+                            "groupby": [
+                                "remoteness"
+                            ]
+                        },
+                        {
+                            "calculate": "datum.remoteness + ' (' + format(datum.rowSchools, ',') + ')'",
+                            "as": "rowLabel"
+                        },
+                        {
+                            "calculate": "indexof([\"Major cities\", \"Inner regional\", \"Outer regional\", \"Remote\", \"Very remote\"], datum.remoteness)",
+                            "as": "rowOrder"
+                        },
+                        {
+                            "bin": {
+                                "extent": [
+                                    500,
+                                    1300
+                                ],
+                                "step": 25
+                            },
+                            "field": "icsea",
+                            "as": [
+                                "icsea",
+                                "icseaEnd"
+                            ]
+                        },
+                        {
+                            "aggregate": [
+                                {
+                                    "op": "count",
+                                    "as": "n"
+                                }
+                            ],
+                            "groupby": [
+                                "remoteness",
+                                "rowLabel",
+                                "rowOrder",
+                                "rowSchools",
+                                "icsea",
+                                "icseaEnd"
+                            ]
+                        },
+                        {
+                            "calculate": "datum.n / datum.rowSchools",
+                            "as": "share"
+                        },
+                        {
+                            "calculate": "(datum.icsea + datum.icseaEnd) / 2",
+                            "as": "binMid"
                         }
                     ],
                     "facet": {
                         "row": {
-                            "field": "remoteness",
+                            "field": "rowLabel",
                             "type": "nominal",
-                            "sort": ["Major cities", "Inner regional", "Outer regional", "Remote", "Very remote"],
                             "title": null,
+                            "sort": {
+                                "field": "rowOrder"
+                            },
                             "header": {
                                 "labelAngle": 0,
+                                "labelOrient": "left",
                                 "labelAlign": "left",
-                                "labelOrient": "top",
-                                "labelFontSize": 10,
-                                "labelPadding": 2
+                                "labelAnchor": "middle",
+                                "labelFontSize": 11,
+                                "labelPadding": 8
                             }
                         }
                     },
-                    "spacing": 2,
+                    "spacing": 6,
+                    "resolve": {
+                        "scale": {
+                            "y": "shared"
+                        }
+                    },
                     "spec": {
                         "width": 215,
-                        "height": 26,
+                        "height": 40,
                         "layer": [
                             {
-                                "params": [{"name": "brush", "select": {"type": "interval", "encodings": ["x"]}}],
-                                "mark": {"type": "area", "color": "#9DB8D3", "opacity": 0.9},
+                                "params": [
+                                    {
+                                        "name": "brush",
+                                        "select": {
+                                            "type": "interval",
+                                            "encodings": [
+                                                "x"
+                                            ],
+                                            "on": "[pointerdown, window:pointerup] > window:pointermove!{40}",
+                                            "translate": "[pointerdown, window:pointerup] > window:pointermove!{40}"
+                                        }
+                                    }
+                                ],
+                                "mark": {
+                                    "type": "bar",
+                                    "binSpacing": 1
+                                },
                                 "encoding": {
                                     "x": {
                                         "field": "icsea",
                                         "type": "quantitative",
-                                        "title": "School ICSEA",
-                                        "scale": {"domain": [500, 1300]},
-                                        "axis": {"values": [600, 800, 1000, 1200], "grid": false}
+                                        "bin": {
+                                            "binned": true,
+                                            "step": 25
+                                        },
+                                        "title": "School ICSEA (1000 = Australian average)",
+                                        "scale": {
+                                            "domain": [
+                                                500,
+                                                1300
+                                            ]
+                                        },
+                                        "axis": {
+                                            "values": [
+                                                600,
+                                                800,
+                                                1000,
+                                                1200
+                                            ],
+                                            "grid": false
+                                        }
+                                    },
+                                    "x2": {
+                                        "field": "icseaEnd"
                                     },
                                     "y": {
-                                        "field": "density",
+                                        "field": "share",
                                         "type": "quantitative",
-                                        "stack": "center",
+                                        "title": null,
                                         "axis": null
                                     },
-                                    "tooltip": [{"field": "remoteness", "title": "Remoteness"}]
+                                    "color": {
+                                        "field": "binMid",
+                                        "type": "quantitative",
+                                        "legend": null,
+                                        "scale": {
+                                            "domain": [
+                                                800,
+                                                1000,
+                                                1200
+                                            ],
+                                            "range": [
+                                                "#B8322A",
+                                                "#D9D2C5",
+                                                "#2F5D8A"
+                                            ],
+                                            "clamp": true,
+                                            "interpolate": "lab"
+                                        }
+                                    },
+                                    "tooltip": [
+                                        {
+                                            "field": "remoteness",
+                                            "title": "Remoteness"
+                                        },
+                                        {
+                                            "field": "icsea",
+                                            "title": "ICSEA from",
+                                            "format": "d"
+                                        },
+                                        {
+                                            "field": "icseaEnd",
+                                            "title": "ICSEA to",
+                                            "format": "d"
+                                        },
+                                        {
+                                            "field": "n",
+                                            "title": "Schools"
+                                        },
+                                        {
+                                            "field": "share",
+                                            "title": "Share of this row",
+                                            "format": ".1%"
+                                        }
+                                    ]
                                 }
                             },
                             {
-                                "mark": {"type": "rule", "color": "#2B2A28", "strokeDash": [3, 2], "strokeWidth": 1},
-                                "encoding": {"x": {"datum": 1000}}
+                                "mark": {
+                                    "type": "rule",
+                                    "color": "#2B2A28",
+                                    "strokeDash": [
+                                        3,
+                                        2
+                                    ],
+                                    "strokeWidth": 1
+                                },
+                                "encoding": {
+                                    "x": {
+                                        "datum": 1000
+                                    }
+                                }
                             }
                         ]
                     }
@@ -213,20 +547,46 @@
                 {
                     "title": {
                         "text": {
-                            "expr": "['The further out, the fewer at Strong', (domain === 'All' ? 'Average of 5 subjects' : (domain === 'Grammar and Punctuation' ? 'Grammar & Punctuation' : domain))]"
+                            "expr": "'The further out, the fewer at Strong · ' + (domain === 'All' ? 'average of subjects' : (domain === 'Grammar and Punctuation' ? 'Grammar & Punctuation' : domain))"
                         },
-                        "subtitle": ["% at Strong or above by remoteness area, 2026", "TAS 2026 not published (grey)"]
+                        "subtitle": "Click a state (or use Zoom to) to zoom in · double-click to zoom out",
+                        "subtitleColor": "#6B675F",
+                        "subtitleFontSize": 12,
+                        "subtitlePadding": 6
                     },
                     "width": 215,
                     "height": 190,
-                    "projection": {"type": "conicEqualArea", "parallels": [-18, -36], "rotate": [-132, 0]},
+                    "projection": {
+                        "type": "conicEqualArea",
+                        "parallels": [
+                            -18,
+                            -36
+                        ],
+                        "rotate": [
+                            -132,
+                            0
+                        ]
+                    },
                     "layer": [
                         {
                             "data": {
                                 "url": "data/aus_remoteness.geojson",
-                                "format": {"type": "json", "property": "features"}
+                                "format": {
+                                    "type": "json",
+                                    "property": "features"
+                                }
                             },
-                            "mark": {"type": "geoshape", "fill": "#DEDAD2", "stroke": "#FBF8F1", "strokeWidth": 0.4}
+                            "transform": [
+                                {
+                                    "filter": "focusState === 'All' || datum.properties.state_abbr === focusState"
+                                }
+                            ],
+                            "mark": {
+                                "type": "geoshape",
+                                "fill": "#DEDAD2",
+                                "stroke": "#FBF8F1",
+                                "strokeWidth": 0.4
+                            }
                         },
                         {
                             "data": {
@@ -243,7 +603,7 @@
                             },
                             "transform": [
                                 {
-                                    "filter": "datum.year === 2026 && datum.students === students && (domain === 'All' || datum.domain === domain) && datum.year_level === yearLevel && isValid(datum.pct_strong_or_above)"
+                                    "filter": "datum.year === 2026 && datum.students === 'All students' && (focusState === 'All' || datum.state === focusState) && (domain === 'All' || datum.domain === domain) && datum.year_level === yearLevel && isValid(datum.pct_strong_or_above)"
                                 },
                                 {
                                     "aggregate": [
@@ -252,9 +612,16 @@
                                             "field": "pct_strong_or_above",
                                             "as": "pct_strong_or_above"
                                         },
-                                        {"op": "mean", "field": "enrolled", "as": "enrolled"}
+                                        {
+                                            "op": "mean",
+                                            "field": "enrolled",
+                                            "as": "enrolled"
+                                        }
                                     ],
-                                    "groupby": ["state", "remoteness", "students"]
+                                    "groupby": [
+                                        "state",
+                                        "remoteness"
+                                    ]
                                 },
                                 {
                                     "calculate": "'' + {'NSW': 1, 'VIC': 2, 'QLD': 3, 'SA': 4, 'WA': 5, 'TAS': 6, 'NT': 7, 'ACT': 8}[datum.state] + {'Major cities': 0, 'Inner regional': 1, 'Outer regional': 2, 'Remote': 3, 'Very remote': 4}[datum.remoteness]",
@@ -265,41 +632,139 @@
                                     "from": {
                                         "data": {
                                             "url": "data/aus_remoteness.geojson",
-                                            "format": {"type": "json", "property": "features"}
+                                            "format": {
+                                                "type": "json",
+                                                "property": "features"
+                                            }
                                         },
                                         "key": "properties.ra_code"
                                     },
                                     "as": "geo"
                                 },
-                                {"filter": "isValid(datum.geo)"}
+                                {
+                                    "filter": "isValid(datum.geo)"
+                                }
                             ],
-                            "mark": {"type": "geoshape", "stroke": "#FBF8F1", "strokeWidth": 0.4},
+                            "params": [
+                                {
+                                    "name": "clickRemote",
+                                    "select": {
+                                        "type": "point",
+                                        "fields": [
+                                            "state"
+                                        ],
+                                        "on": "click",
+                                        "clear": "dblclick"
+                                    }
+                                }
+                            ],
+                            "mark": {
+                                "type": "geoshape",
+                                "stroke": "#FBF8F1",
+                                "strokeWidth": 0.4,
+                                "cursor": "pointer"
+                            },
                             "encoding": {
-                                "shape": {"field": "geo", "type": "geojson"},
+                                "shape": {
+                                    "field": "geo",
+                                    "type": "geojson"
+                                },
                                 "color": {
                                     "field": "pct_strong_or_above",
                                     "type": "quantitative",
-                                    "title": "% Strong or above",
-                                    "scale": {"domain": [0, 80], "range": ["#D6E2EE", "#1E3F60"], "interpolate": "lab"},
+                                    "title": "% Strong or Exceeding",
+                                    "scale": {
+                                        "domain": [
+                                            0,
+                                            80
+                                        ],
+                                        "range": [
+                                            "#D6E2EE",
+                                            "#1E3F60"
+                                        ],
+                                        "interpolate": "lab"
+                                    },
                                     "legend": {
-                                        "orient": "bottom",
-                                        "direction": "horizontal",
+                                        "orient": "right",
+                                        "direction": "vertical",
                                         "gradientLength": 180,
-                                        "values": [0, 20, 40, 60, 80]
+                                        "values": [
+                                            0,
+                                            20,
+                                            40,
+                                            60,
+                                            80
+                                        ]
                                     }
                                 },
                                 "tooltip": [
-                                    {"field": "state", "title": "State"},
-                                    {"field": "remoteness", "title": "Remoteness"},
-                                    {"field": "students", "title": "Students"},
+                                    {
+                                        "field": "state",
+                                        "title": "State"
+                                    },
+                                    {
+                                        "field": "remoteness",
+                                        "title": "Remoteness"
+                                    },
                                     {
                                         "field": "pct_strong_or_above",
-                                        "title": "% Strong or above",
+                                        "title": "% Strong or Exceeding",
                                         "format": ".1f"
                                     },
-                                    {"field": "enrolled", "title": "Students enrolled"}
+                                    {
+                                        "field": "enrolled",
+                                        "title": "Students enrolled"
+                                    }
                                 ]
                             }
+                        },
+                        {
+                            "description": "key for the grey zones, in the empty ocean below WA",
+                            "data": {
+                                "values": [
+                                    {}
+                                ]
+                            },
+                            "layer": [
+                                {
+                                    "mark": {
+                                        "type": "square",
+                                        "size": 130,
+                                        "filled": true,
+                                        "color": "#DEDAD2",
+                                        "opacity": 1
+                                    },
+                                    "encoding": {
+                                        "x": {
+                                            "value": 14
+                                        },
+                                        "y": {
+                                            "value": 428
+                                        }
+                                    }
+                                },
+                                {
+                                    "mark": {
+                                        "type": "text",
+                                        "align": "left",
+                                        "baseline": "middle",
+                                        "fontSize": 11,
+                                        "lineHeight": 13,
+                                        "color": "#2B2A28"
+                                    },
+                                    "encoding": {
+                                        "x": {
+                                            "value": 24
+                                        },
+                                        "y": {
+                                            "value": 428
+                                        },
+                                        "text": {
+                                            "value": "No published result (too few students, or Tasmania 2026)"
+                                        }
+                                    }
+                                }
+                            ]
                         }
                     ]
                 }

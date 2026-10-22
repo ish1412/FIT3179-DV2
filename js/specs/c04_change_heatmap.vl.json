@@ -1,31 +1,52 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": {
-        "text": "Three years on, little has shifted",
-        "subtitle": [
-            "Change in % at Strong or above, 2023 -> 2026 (Australia)",
-            "Percentage points. Largest changes labelled"
-        ]
-    },
+    "title": "Three years on, little has shifted",
     "width": 190,
     "height": 200,
     "data": {
         "url": "data/naplan_2023_2026_states.csv",
         "format": {
             "type": "csv",
-            "parse": { "year": "number", "year_level": "number", "pct_strong_or_above": "number" }
+            "parse": {
+                "year": "number",
+                "year_level": "number",
+                "pct_strong_or_above": "number"
+            }
         }
     },
-    "transform": [
-        { "filter": "datum.state === 'AUS' && (datum.year === 2023 || datum.year === 2026)" },
-        { "pivot": "year", "value": "pct_strong_or_above", "groupby": ["domain", "year_level"] },
-        { "calculate": "datum['2026'] - datum['2023']", "as": "change" },
-        { "calculate": "abs(datum.change)", "as": "absChange" },
-        {
-            "window": [{ "op": "row_number", "as": "sizeRank" }],
-            "sort": [{ "field": "absChange", "order": "descending" }]
+    "transform": [{
+            "filter": "datum.state === 'AUS' && (datum.year === 2023 || datum.year === 2026)"
         },
-        { "calculate": "'Year ' + datum.year_level", "as": "yearLabel" },
+        {
+            "pivot": "year",
+            "value": "pct_strong_or_above",
+            "groupby": [
+                "domain",
+                "year_level"
+            ]
+        },
+        {
+            "calculate": "datum['2026'] - datum['2023']",
+            "as": "change"
+        },
+        {
+            "calculate": "abs(datum.change)",
+            "as": "absChange"
+        },
+        {
+            "window": [{
+                "op": "row_number",
+                "as": "sizeRank"
+            }],
+            "sort": [{
+                "field": "absChange",
+                "order": "descending"
+            }]
+        },
+        {
+            "calculate": "'Year ' + datum.year_level",
+            "as": "yearLabel"
+        },
         {
             "calculate": "datum.domain === 'Grammar and Punctuation' ? 'Grammar & Punct.' : datum.domain",
             "as": "domainLabel"
@@ -40,46 +61,115 @@
             "field": "yearLabel",
             "type": "ordinal",
             "title": null,
-            "axis": { "orient": "top", "labelAngle": 0, "domain": false, "ticks": false }
+            "axis": {
+                "orient": "top",
+                "labelAngle": 0,
+                "domain": false,
+                "ticks": false
+            }
         },
         "y": {
             "field": "domainLabel",
             "type": "nominal",
-            "sort": ["Reading", "Writing", "Spelling", "Grammar & Punct.", "Numeracy"],
+            "sort": [
+                "Reading",
+                "Writing",
+                "Spelling",
+                "Grammar & Punct.",
+                "Numeracy"
+            ],
             "title": null,
-            "axis": { "domain": false, "ticks": false }
+            "axis": {
+                "domain": false,
+                "ticks": false
+            }
         }
     },
     "layer": [{
-            "mark": { "type": "rect", "stroke": "#FBF8F1", "strokeWidth": 2 },
+            "mark": {
+                "type": "rect",
+                "stroke": "#FBF8F1",
+                "strokeWidth": 2
+            },
             "encoding": {
                 "color": {
                     "field": "change",
                     "type": "quantitative",
                     "title": "Change (pts)",
-                    "scale": { "domain": [-4, 0, 4], "range": ["#C8652B", "#F2EEE6", "#2F5D8A"], "interpolate": "lab" },
+                    "scale": {
+                        "domain": [-4,
+                            0,
+                            4
+                        ],
+                        "range": [
+                            "#C8652B",
+                            "#F2EEE6",
+                            "#2F5D8A"
+                        ],
+                        "interpolate": "lab"
+                    },
                     "legend": {
                         "orient": "bottom",
                         "direction": "horizontal",
                         "gradientLength": 160,
-                        "values": [-4, -2, 0, 2, 4]
+                        "values": [-4, -2,
+                            0,
+                            2,
+                            4
+                        ]
                     }
                 },
-                "tooltip": [
-                    { "field": "domain", "title": "Domain" },
-                    { "field": "yearLabel", "title": "Year level" },
-                    { "field": "2023", "title": "2023 % Strong+", "type": "quantitative", "format": ".1f" },
-                    { "field": "2026", "title": "2026 % Strong+", "type": "quantitative", "format": ".1f" },
-                    { "field": "change", "title": "Change (pts)", "type": "quantitative", "format": "+.1f" }
+                "tooltip": [{
+                        "field": "domain",
+                        "title": "Domain"
+                    },
+                    {
+                        "field": "yearLabel",
+                        "title": "Year level"
+                    },
+                    {
+                        "field": "2023",
+                        "title": "2023 % Strong+",
+                        "type": "quantitative",
+                        "format": ".1f"
+                    },
+                    {
+                        "field": "2026",
+                        "title": "2026 % Strong+",
+                        "type": "quantitative",
+                        "format": ".1f"
+                    },
+                    {
+                        "field": "change",
+                        "title": "Change (pts)",
+                        "type": "quantitative",
+                        "format": "+.1f"
+                    }
                 ]
             }
         },
         {
-            "transform": [{ "filter": "datum.sizeRank <= 4" }],
-            "mark": { "type": "text", "fontSize": 11, "fontWeight": "bold" },
+            "transform": [{
+                "filter": "datum.sizeRank <= 4"
+            }],
+            "mark": {
+                "type": "text",
+                "fontSize": 11,
+                "fontWeight": "bold"
+            },
             "encoding": {
-                "text": { "field": "change", "type": "quantitative", "format": "+.1f" },
-                "color": { "condition": { "test": "datum.absChange >= 2.5", "value": "#FFFFFF" }, "value": "#2B2A28" }
+                "text": {
+                    "field": "change",
+                    "type": "quantitative",
+                    "format": "+.1f"
+                },
+                "color": {
+                    "condition": {
+                        "test": "datum.absChange >= 2.5",
+                        "value": "#FFFFFF"
+                    },
+                    "value": "#2B2A28"
+                }
             }
         }
     ]

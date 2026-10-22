@@ -1,0 +1,10 @@
+[
+    {"state": "NT", "col": 1, "row": 0, "dx": 150, "dy": 95},
+    {"state": "QLD", "col": 2, "row": 0, "dx": 265, "dy": 85},
+    {"state": "WA", "col": 0, "row": 1, "dx": 60, "dy": 170},
+    {"state": "SA", "col": 1, "row": 1, "dx": 175, "dy": 200},
+    {"state": "NSW", "col": 2, "row": 1, "dx": 305, "dy": 215},
+    {"state": "ACT", "col": 3, "row": 1, "dx": 395, "dy": 270},
+    {"state": "VIC", "col": 2, "row": 2, "dx": 230, "dy": 330},
+    {"state": "TAS", "col": 2, "row": 3, "dx": 250, "dy": 415}
+]

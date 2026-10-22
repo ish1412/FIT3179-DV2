@@ -214,6 +214,28 @@ h3 {
     border-radius: 2px;
 }
 
+/* level names in the page text, coloured like the charts.
+   Strong and Developing use darker shades of their chart colours so they stay readable on the paper background. */
+.lvl-text {
+    font-weight: 700;
+}
+
+.lvl-text.lvl-exceeding {
+    color: var(--exceeding);
+}
+
+.lvl-text.lvl-strong {
+    color: #5A82AA;
+}
+
+.lvl-text.lvl-developing {
+    color: #C07A48;
+}
+
+.lvl-text.lvl-needs {
+    color: var(--needs);
+}
+
 
 /* ---------- charts ---------- */
 
@@ -237,29 +259,6 @@ figure {
 }
 
 
-/* vega-embed parameter bindings (C10 toggle) */
-
-.vega-bindings {
-    font-size: 14px;
-    margin-top: 6px;
-}
-
-.vega-bind {
-    display: inline-flex;
-    gap: 8px;
-    align-items: center;
-}
-
-.vega-bind-name {
-    font-weight: 700;
-    color: var(--deep-blue);
-}
-
-.vega-bind label {
-    margin-right: 10px;
-}
-
-
 /* "Zoom to" state picker above the school map (C8) */
 .map-control { font-size: 15px; margin-bottom: 8px; }
 .map-control label { display: inline-flex; gap: 8px; align-items: center; font-weight: 700; color: var(--deep-blue); }
@@ -272,13 +271,6 @@ figure {
   border-radius: 4px;
   padding: 4px 8px;
 }
-
-/* the C10 toggle sits under the remoteness map (right-hand column of the C8 spec) */
-
-#c08 .vega-bindings {
-    text-align: right;
-}
-
 
 /* tooltip */
 
@@ -364,8 +356,8 @@ figcaption {
 }
 
 .selector-hint {
-    font-size: 13px;
-    color: var(--ink-soft);
+    font-size: 15px;
+    color: var(--ink);
     margin-left: auto;
 }
 

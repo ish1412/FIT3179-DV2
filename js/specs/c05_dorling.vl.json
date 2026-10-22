@@ -1,0 +1,218 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "C5 Dorling cartogram: one circle per state, sized by its number of students (a count); the inner circle is the students at Strong or Exceeding, coloured by the share (a rate). Circle positions are hand-placed in data/dorling_layout.json so neighbouring states touch.",
+    "title": {
+        "text": {
+            "expr": "'Same test, different states, 2026 · ' + (domain === 'All' ? 'average of subjects' : (domain === 'Grammar and Punctuation' ? 'Grammar & Punctuation' : domain))"
+        },
+        "subtitle": {
+            "expr": "['Outer circle = all Year ' + yearLevel + ' students in the state · inner circle = those at Strong or Exceeding', 'Click a state to highlight it in the line and ranking charts · click empty space to clear']"
+        },
+        "subtitleColor": "#6B675F",
+        "subtitleFontSize": 12,
+        "subtitlePadding": 6
+    },
+    "width": 420,
+    "height": 485,
+    "params": [
+        {
+            "name": "domain",
+            "value": "All"
+        },
+        {
+            "name": "yearLevel",
+            "value": 5
+        }
+    ],
+    "encoding": {
+        "x": {
+            "field": "x",
+            "type": "quantitative",
+            "scale": {"domain": [0, 420]},
+            "axis": null
+        },
+        "y": {
+            "field": "y",
+            "type": "quantitative",
+            "scale": {"domain": [0, 485], "reverse": true},
+            "axis": null
+        }
+    },
+    "layer": [
+        {
+            "description": "size key: nested circles for 10,000 and 50,000 students, bottom-aligned",
+            "data": {
+                "values": [
+                    {"students": 50000, "x": 55, "y": 407, "label": "50k", "labelY": 364},
+                    {"students": 10000, "x": 55, "y": 437.4, "label": "10k", "labelY": 425}
+                ]
+            },
+            "layer": [
+                {
+                    "mark": {"type": "circle", "fill": null, "stroke": "#9C968B", "strokeWidth": 1, "opacity": 1},
+                    "encoding": {
+                        "size": {"field": "students", "type": "quantitative", "scale": {"type": "linear", "domain": [0, 110000], "range": [0, 26667]}, "legend": null}
+                    }
+                },
+                {
+                    "mark": {"type": "text", "fontSize": 10, "color": "#6B675F"},
+                    "encoding": {
+                        "y": {"field": "labelY", "type": "quantitative"},
+                        "text": {"field": "label"}
+                    }
+                },
+                {
+                    "transform": [{"filter": "datum.students === 50000"}],
+                    "mark": {"type": "text", "fontSize": 11, "color": "#6B675F", "dy": 0},
+                    "encoding": {
+                        "y": {"value": 478},
+                        "text": {"value": "students"}
+                    }
+                }
+            ]
+        },
+        {
+            "description": "TAS: no 2026 result, so a dashed circle sized by its 2025 students",
+            "data": {
+                "url": "data/naplan_2023_2026_states.csv",
+                "format": {
+                    "type": "csv",
+                    "parse": {"year": "number", "year_level": "number", "enrolled": "number"}
+                }
+            },
+            "transform": [
+                {"filter": "datum.year === 2025 && datum.state === 'TAS' && (domain === 'All' || datum.domain === domain) && datum.year_level === yearLevel"},
+                {"aggregate": [{"op": "mean", "field": "enrolled", "as": "students"}], "groupby": ["state"]},
+                {"lookup": "state", "from": {"data": {"url": "data/dorling_layout.json"}, "key": "state", "fields": ["x", "y"]}},
+                {"calculate": "sqrt(datum.students / 110000) * 81.65", "as": "r"},
+                {"calculate": "datum.x + datum.r + 5", "as": "labelX"}
+            ],
+            "layer": [
+                {
+                    "mark": {"type": "circle", "fill": "#ECE7DD", "stroke": "#9C968B", "strokeDash": [3, 3], "strokeWidth": 1.2, "opacity": 1},
+                    "encoding": {
+                        "size": {"field": "students", "type": "quantitative", "scale": {"type": "linear", "domain": [0, 110000], "range": [0, 26667]}, "legend": null},
+                        "tooltip": [
+                            {"field": "state", "title": "State"},
+                            {"value": "2026 results not published by ACARA", "title": "Note"}
+                        ]
+                    }
+                },
+                {
+                    "mark": {"type": "text", "fontSize": 11, "align": "left", "color": "#6B675F"},
+                    "encoding": {
+                        "x": {"field": "labelX", "type": "quantitative"},
+                        "text": {"value": "TAS: not published"}
+                    }
+                }
+            ]
+        },
+        {
+            "data": {
+                "url": "data/naplan_2023_2026_states.csv",
+                "format": {
+                    "type": "csv",
+                    "parse": {"year": "number", "year_level": "number", "pct_strong_or_above": "number", "enrolled": "number"}
+                }
+            },
+            "transform": [
+                {"filter": "datum.year === 2026 && datum.state !== 'AUS' && (domain === 'All' || datum.domain === domain) && datum.year_level === yearLevel"},
+                {
+                    "aggregate": [
+                        {"op": "mean", "field": "enrolled", "as": "students"},
+                        {"op": "mean", "field": "pct_strong_or_above", "as": "pct_strong_or_above"}
+                    ],
+                    "groupby": ["state", "state_name"]
+                },
+                {"calculate": "datum.students * datum.pct_strong_or_above / 100", "as": "strong"},
+                {"lookup": "state", "from": {"data": {"url": "data/dorling_layout.json"}, "key": "state", "fields": ["x", "y", "label"]}},
+                {"calculate": "sqrt(datum.students / 110000) * 81.65", "as": "r"},
+                {"calculate": "datum.label === 'right' ? datum.x + datum.r + 5 : datum.x", "as": "labelX"},
+                {"calculate": "datum.label === 'above' ? datum.y - datum.r - 8 : datum.y", "as": "labelY"},
+                {"calculate": "format(datum.pct_strong_or_above, '.0f') + '%'", "as": "pctText"}
+            ],
+            "layer": [
+                {
+                    "description": "outer circle: all students",
+                    "params": [
+                        {
+                            "name": "pickState",
+                            "select": {"type": "point", "fields": ["state"], "on": "click", "clear": "dblclick"}
+                        }
+                    ],
+                    "mark": {"type": "circle", "fill": "#ECE7DD", "opacity": 1, "cursor": "pointer"},
+                    "encoding": {
+                        "size": {"field": "students", "type": "quantitative", "scale": {"type": "linear", "domain": [0, 110000], "range": [0, 26667]}, "legend": null},
+                        "stroke": {"condition": {"param": "pickState", "empty": false, "value": "#C8652B"}, "value": "#B9B2A4"},
+                        "strokeWidth": {"condition": {"param": "pickState", "empty": false, "value": 3}, "value": 1},
+                        "tooltip": [
+                            {"field": "state_name", "title": "State"},
+                            {"field": "students", "title": "Students", "format": ",.0f"},
+                            {"field": "strong", "title": "At Strong or Exceeding", "format": ",.0f"},
+                            {"field": "pct_strong_or_above", "title": "% Strong or Exceeding", "format": ".1f"}
+                        ]
+                    }
+                },
+                {
+                    "description": "inner circle: students at Strong or Exceeding, coloured by the share",
+                    "mark": {"type": "circle", "opacity": 1, "cursor": "pointer"},
+                    "encoding": {
+                        "size": {"field": "strong", "type": "quantitative", "scale": {"type": "linear", "domain": [0, 110000], "range": [0, 26667]}, "legend": null},
+                        "color": {
+                            "field": "pct_strong_or_above",
+                            "type": "quantitative",
+                            "title": "% Strong or Exceeding",
+                            "scale": {"domain": [0, 80], "range": ["#D6E2EE", "#1E3F60"], "interpolate": "lab"},
+                            "legend": {"orient": "none", "legendX": 290, "legendY": 372, "direction": "horizontal", "gradientLength": 120, "values": [0, 20, 40, 60, 80]}
+                        },
+                        "tooltip": [
+                            {"field": "state_name", "title": "State"},
+                            {"field": "students", "title": "Students", "format": ",.0f"},
+                            {"field": "strong", "title": "At Strong or Exceeding", "format": ",.0f"},
+                            {"field": "pct_strong_or_above", "title": "% Strong or Exceeding", "format": ".1f"}
+                        ]
+                    }
+                },
+                {
+                    "description": "labels inside the big circles: state on top, % below",
+                    "transform": [{"filter": "datum.label === 'in'"}],
+                    "encoding": {
+                        "color": {"condition": {"test": "datum.pct_strong_or_above > 40", "value": "#FFFFFF"}, "value": "#2B2A28"}
+                    },
+                    "layer": [
+                        {
+                            "mark": {"type": "text", "fontSize": 14, "fontWeight": 700, "dy": -8},
+                            "encoding": {"text": {"field": "state"}}
+                        },
+                        {
+                            "mark": {"type": "text", "fontSize": 13, "dy": 9},
+                            "encoding": {"text": {"field": "pctText"}}
+                        }
+                    ]
+                },
+                {
+                    "description": "labels beside (ACT) or above (NT) the small circles",
+                    "transform": [
+                        {"filter": "datum.label !== 'in'"},
+                        {"calculate": "datum.state + ' ' + datum.pctText", "as": "line"}
+                    ],
+                    "encoding": {
+                        "x": {"field": "labelX", "type": "quantitative"},
+                        "y": {"field": "labelY", "type": "quantitative"},
+                        "text": {"field": "line"}
+                    },
+                    "layer": [
+                        {
+                            "transform": [{"filter": "datum.label === 'right'"}],
+                            "mark": {"type": "text", "fontSize": 12, "fontWeight": 700, "color": "#2B2A28", "align": "left"}
+                        },
+                        {
+                            "transform": [{"filter": "datum.label === 'above'"}],
+                            "mark": {"type": "text", "fontSize": 12, "fontWeight": 700, "color": "#2B2A28", "align": "center"}
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

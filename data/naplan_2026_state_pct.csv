@@ -1,0 +1,169 @@
+key,pct
+ACT|3|All,68.18
+ACT|3|Grammar and Punctuation,59.5
+ACT|3|Numeracy,68.2
+ACT|3|Reading,72.6
+ACT|3|Spelling,64.5
+ACT|3|Writing,76.1
+ACT|5|All,72.58
+ACT|5|Grammar and Punctuation,69.1
+ACT|5|Numeracy,76.7
+ACT|5|Reading,77.8
+ACT|5|Spelling,73.3
+ACT|5|Writing,66.0
+ACT|7|All,71.48
+ACT|7|Grammar and Punctuation,65.7
+ACT|7|Numeracy,75.9
+ACT|7|Reading,74.3
+ACT|7|Spelling,76.2
+ACT|7|Writing,65.3
+ACT|9|All,68.18
+ACT|9|Grammar and Punctuation,60.0
+ACT|9|Numeracy,71.2
+ACT|9|Reading,70.6
+ACT|9|Spelling,75.6
+ACT|9|Writing,63.5
+NSW|3|All,67.14
+NSW|3|Grammar and Punctuation,58.3
+NSW|3|Numeracy,64.9
+NSW|3|Reading,68.6
+NSW|3|Spelling,66.8
+NSW|3|Writing,77.1
+NSW|5|All,70.68
+NSW|5|Grammar and Punctuation,66.6
+NSW|5|Numeracy,73.1
+NSW|5|Reading,72.6
+NSW|5|Spelling,73.7
+NSW|5|Writing,67.4
+NSW|7|All,69.42
+NSW|7|Grammar and Punctuation,63.5
+NSW|7|Numeracy,72.8
+NSW|7|Reading,69.1
+NSW|7|Spelling,76.3
+NSW|7|Writing,65.4
+NSW|9|All,64.44
+NSW|9|Grammar and Punctuation,56.2
+NSW|9|Numeracy,67.6
+NSW|9|Reading,63.0
+NSW|9|Spelling,74.3
+NSW|9|Writing,61.1
+NT|3|All,36.06
+NT|3|Grammar and Punctuation,28.4
+NT|3|Numeracy,34.2
+NT|3|Reading,38.3
+NT|3|Spelling,34.8
+NT|3|Writing,44.6
+NT|5|All,40.84
+NT|5|Grammar and Punctuation,36.8
+NT|5|Numeracy,42.5
+NT|5|Reading,44.1
+NT|5|Spelling,43.6
+NT|5|Writing,37.2
+NT|7|All,39.98
+NT|7|Grammar and Punctuation,32.6
+NT|7|Numeracy,42.3
+NT|7|Reading,41.1
+NT|7|Spelling,47.1
+NT|7|Writing,36.8
+NT|9|All,38.64
+NT|9|Grammar and Punctuation,30.5
+NT|9|Numeracy,39.3
+NT|9|Reading,38.8
+NT|9|Spelling,48.7
+NT|9|Writing,35.9
+QLD|3|All,56.36
+QLD|3|Grammar and Punctuation,47.2
+QLD|3|Numeracy,55.1
+QLD|3|Reading,59.3
+QLD|3|Spelling,53.7
+QLD|3|Writing,66.5
+QLD|5|All,62.86
+QLD|5|Grammar and Punctuation,57.3
+QLD|5|Numeracy,66.2
+QLD|5|Reading,67.4
+QLD|5|Spelling,64.1
+QLD|5|Writing,59.3
+QLD|7|All,60.06
+QLD|7|Grammar and Punctuation,55.2
+QLD|7|Numeracy,64.4
+QLD|7|Reading,61.0
+QLD|7|Spelling,67.5
+QLD|7|Writing,52.2
+QLD|9|All,56.32
+QLD|9|Grammar and Punctuation,49.5
+QLD|9|Numeracy,58.5
+QLD|9|Reading,55.3
+QLD|9|Spelling,67.1
+QLD|9|Writing,51.2
+SA|3|All,58.7
+SA|3|Grammar and Punctuation,46.8
+SA|3|Numeracy,56.8
+SA|3|Reading,60.5
+SA|3|Spelling,58.6
+SA|3|Writing,70.8
+SA|5|All,63.66
+SA|5|Grammar and Punctuation,57.2
+SA|5|Numeracy,65.9
+SA|5|Reading,67.0
+SA|5|Spelling,68.3
+SA|5|Writing,59.9
+SA|7|All,62.32
+SA|7|Grammar and Punctuation,55.4
+SA|7|Numeracy,64.6
+SA|7|Reading,62.4
+SA|7|Spelling,70.9
+SA|7|Writing,58.3
+SA|9|All,57.2
+SA|9|Grammar and Punctuation,48.2
+SA|9|Numeracy,58.6
+SA|9|Reading,55.8
+SA|9|Spelling,67.4
+SA|9|Writing,56.0
+VIC|3|All,69.04
+VIC|3|Grammar and Punctuation,59.1
+VIC|3|Numeracy,68.6
+VIC|3|Reading,71.5
+VIC|3|Spelling,66.2
+VIC|3|Writing,79.8
+VIC|5|All,72.52
+VIC|5|Grammar and Punctuation,67.1
+VIC|5|Numeracy,75.0
+VIC|5|Reading,75.3
+VIC|5|Spelling,72.1
+VIC|5|Writing,73.1
+VIC|7|All,70.42
+VIC|7|Grammar and Punctuation,63.3
+VIC|7|Numeracy,74.1
+VIC|7|Reading,71.4
+VIC|7|Spelling,73.4
+VIC|7|Writing,69.9
+VIC|9|All,66.08
+VIC|9|Grammar and Punctuation,56.3
+VIC|9|Numeracy,68.8
+VIC|9|Reading,66.4
+VIC|9|Spelling,72.5
+VIC|9|Writing,66.4
+WA|3|All,59.44
+WA|3|Grammar and Punctuation,49.7
+WA|3|Numeracy,58.3
+WA|3|Reading,61.5
+WA|3|Spelling,57.3
+WA|3|Writing,70.4
+WA|5|All,66.0
+WA|5|Grammar and Punctuation,61.1
+WA|5|Numeracy,68.8
+WA|5|Reading,68.0
+WA|5|Spelling,69.3
+WA|5|Writing,62.8
+WA|7|All,66.32
+WA|7|Grammar and Punctuation,59.7
+WA|7|Numeracy,69.5
+WA|7|Reading,66.1
+WA|7|Spelling,73.9
+WA|7|Writing,62.4
+WA|9|All,66.96
+WA|9|Grammar and Punctuation,57.7
+WA|9|Numeracy,71.3
+WA|9|Reading,68.1
+WA|9|Spelling,74.2
+WA|9|Writing,63.5
