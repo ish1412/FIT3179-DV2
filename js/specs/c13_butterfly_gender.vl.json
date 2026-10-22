@@ -116,8 +116,8 @@
                             "Boys"
                         ],
                         "range": [
-                            "#A8436B",
-                            "#5E6B2C"
+                            "#882255",
+                            "#D9B44A"
                         ]
                     },
                     "legend": null
@@ -188,7 +188,7 @@
                 "align": "right",
                 "dx": -4,
                 "fontSize": 10,
-                "color": "#FFFFFF",
+                "color": "#2B2A28",
                 "fontWeight": "bold"
             },
             "encoding": {

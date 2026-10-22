@@ -185,26 +185,64 @@
                         "format": ".1f"
                     }
                 ],
-                "stroke": {
-                    "condition": {
-                        "test": "datum.isSelected",
-                        "value": "#2B2A28"
-                    },
-                    "value": null
-                },
-                "strokeWidth": {
-                    "condition": {
-                        "test": "datum.isSelected",
-                        "value": 1.2
-                    },
-                    "value": 0
-                },
                 "opacity": {
                     "condition": {
                         "test": "datum.isSelected",
                         "value": 1
                     },
                     "value": 0.7
+                }
+            }
+        },
+        {
+            "description": "one outline around each selected row (whole bar), instead of outlining every segment",
+            "transform": [
+                {
+                    "filter": "datum.isSelected"
+                },
+                {
+                    "calculate": "min(datum.x0, datum['x1'])",
+                    "as": "lo"
+                },
+                {
+                    "calculate": "max(datum.x0, datum['x1'])",
+                    "as": "hi"
+                },
+                {
+                    "aggregate": [
+                        {
+                            "op": "min",
+                            "field": "lo",
+                            "as": "rowLo"
+                        },
+                        {
+                            "op": "max",
+                            "field": "hi",
+                            "as": "rowHi"
+                        }
+                    ],
+                    "groupby": [
+                        "rowLabel",
+                        "rowOrder"
+                    ]
+                }
+            ],
+            "mark": {
+                "type": "bar",
+                "height": {
+                    "band": 0.75
+                },
+                "fillOpacity": 0,
+                "stroke": "#2B2A28",
+                "strokeWidth": 1.4
+            },
+            "encoding": {
+                "x": {
+                    "field": "rowLo",
+                    "type": "quantitative"
+                },
+                "x2": {
+                    "field": "rowHi"
                 }
             }
         },
