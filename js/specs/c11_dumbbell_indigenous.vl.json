@@ -82,6 +82,19 @@
         {
             "calculate": "datum.hi - datum.lo",
             "as": "gap"
+        },
+        {
+            "joinaggregate": [
+                {
+                    "op": "max",
+                    "field": "gap",
+                    "as": "maxGap"
+                }
+            ]
+        },
+        {
+            "calculate": "datum.gap === datum.maxGap",
+            "as": "isFocus"
         }
     ],
     "encoding": {
@@ -119,6 +132,20 @@
                 },
                 "x2": {
                     "field": "hi"
+                },
+                "opacity": {
+                    "condition": {
+                        "test": "datum.isFocus",
+                        "value": 1
+                    },
+                    "value": 0.3
+                },
+                "strokeWidth": {
+                    "condition": {
+                        "test": "datum.isFocus",
+                        "value": 4
+                    },
+                    "value": 2.5
                 }
             }
         },
@@ -182,7 +209,21 @@
                         "title": "Gap (percentage points)",
                         "format": ".1f"
                     }
-                ]
+                ],
+                "opacity": {
+                    "condition": {
+                        "test": "datum.isFocus",
+                        "value": 1
+                    },
+                    "value": 0.3
+                },
+                "size": {
+                    "condition": {
+                        "test": "datum.isFocus",
+                        "value": 170
+                    },
+                    "value": 90
+                }
             }
         },
         {
@@ -208,6 +249,27 @@
                     "field": "gap",
                     "type": "quantitative",
                     "format": ".0f"
+                },
+                "opacity": {
+                    "condition": {
+                        "test": "datum.isFocus",
+                        "value": 1
+                    },
+                    "value": 0.45
+                },
+                "fontWeight": {
+                    "condition": {
+                        "test": "datum.isFocus",
+                        "value": "bold"
+                    },
+                    "value": "normal"
+                },
+                "fontSize": {
+                    "condition": {
+                        "test": "datum.isFocus",
+                        "value": 13
+                    },
+                    "value": 11
                 }
             }
         },
@@ -237,6 +299,71 @@
                     "field": "t"
                 }
             }
+        },
+        {
+            "description": "callout beside the biggest-gap row (worked out from the data); adds the 2-in-3 fact when that row is Very remote",
+            "transform": [
+                {
+                    "filter": "datum.isFocus && datum.group === 'Indigenous'"
+                },
+                {
+                    "calculate": "datum.remoteness === 'Very remote' ? ['Biggest gap: ' + format(datum.gap, '.0f'), 'percentage points.', 'Only ' + format(datum.pct_strong_or_above, '.0f') + '% of Indigenous', 'students here reach', 'Strong. 2 in 3 very', 'remote students are', 'Indigenous.'] : ['Biggest gap: ' + format(datum.gap, '.0f'), 'percentage points.', 'Only ' + format(datum.pct_strong_or_above, '.0f') + '% of Indigenous', 'students here reach', 'Strong.']",
+                    "as": "lines"
+                }
+            ],
+            "layer": [
+                {
+                    "mark": {
+                        "type": "rect",
+                        "fill": "#FFFFFF",
+                        "stroke": "#2B2A28",
+                        "strokeWidth": 1,
+                        "cornerRadius": 3
+                    },
+                    "encoding": {
+                        "x": {
+                            "datum": 65
+                        },
+                        "x2": {
+                            "datum": 100
+                        },
+                        "y": {
+                            "value": {
+                                "expr": "height * 0.56"
+                            }
+                        },
+                        "y2": {
+                            "value": {
+                                "expr": "height * 0.56 + 112"
+                            }
+                        }
+                    }
+                },
+                {
+                    "mark": {
+                        "type": "text",
+                        "align": "left",
+                        "baseline": "top",
+                        "fontSize": 10.5,
+                        "lineHeight": 13.5,
+                        "color": "#2B2A28",
+                        "dx": 6
+                    },
+                    "encoding": {
+                        "x": {
+                            "datum": 65
+                        },
+                        "y": {
+                            "value": {
+                                "expr": "height * 0.56 + 8"
+                            }
+                        },
+                        "text": {
+                            "field": "lines"
+                        }
+                    }
+                }
+            ]
         }
     ]
 }
