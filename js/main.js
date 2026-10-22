@@ -21,9 +21,9 @@ const SPECS = {
 };
 
 // Shared look for every chart
-// Same family as the page CSS (--font-body / --font-head)
-const FONT = "Arial, Helvetica, sans-serif";
-const HEAD = FONT;
+// Same family as the page CSS (--font-ui)
+const FONT = '"IBM Plex Sans", Arial, Helvetica, sans-serif';
+const HEAD = FONT; // chart titles in the same sans as the chart labels (bold), so everything inside a chart reads as one "data voice"
 const INK = "#2B2A28";
 const SOFT = "#6B675F";
 
@@ -34,13 +34,13 @@ const CONFIG = {
   view: { stroke: null },
   title: {
     font: HEAD,
-    fontSize: 17,
+    fontSize: 20,
     fontWeight: "bold",
     color: INK,
     anchor: "start",
     offset: 10,
     subtitleFont: FONT,
-    subtitleFontSize: 12,
+    subtitleFontSize: 13,
     subtitleColor: SOFT,
     subtitlePadding: 4
   },
@@ -97,12 +97,12 @@ const LAYOUT_PATCHES = {
     c04: (s) => {
       s.width = "container";
       s.height = 380;
-      s.layer[0].encoding.color.legend.gradientLength = 280;
+      s.layer[0].encoding.color.legend.gradientLength = { expr: "width" }; // legend as wide as the grid
       s.layer[1].mark.fontSize = 14;
     },
 
     // C6 state lines: fill the column (beside the C5 map)
-    c06: (s) => { s.width = "container"; s.height = 300; },
+    c06: (s) => { s.width = "container"; s.height = 410; },
 
     // C7 bump chart: fill the column (beside the text under the map)
     c07: (s) => {
@@ -123,7 +123,7 @@ const LAYOUT_PATCHES = {
       dots.mark.opacity = 0.6;
 
       histograms.spec.width = 380;
-      histograms.spec.height = 54;
+      histograms.spec.height = 78;
 
       remoteMap.width = 430;
       remoteMap.height = 440;
@@ -142,9 +142,9 @@ const LAYOUT_PATCHES = {
     c13: (s) => {
       s.width = "container";
       s.height = 360;
-      s.layer.filter((l) => l.mark.type === "text").forEach((l) => { l.mark.fontSize = 13; });
+      s.layer.filter((l) => l.mark && l.mark.type === "text").forEach((l) => { l.mark.fontSize = 13; });
     },
-    c14: (s) => { s.width = "container"; s.height = 330; }
+    c14: (s) => { s.width = "container"; s.height = 260; }
   }
 };
 

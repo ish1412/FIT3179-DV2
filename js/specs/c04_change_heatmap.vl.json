@@ -14,7 +14,8 @@
             }
         }
     },
-    "transform": [{
+    "transform": [
+        {
             "filter": "datum.state === 'AUS' && (datum.year === 2023 || datum.year === 2026)"
         },
         {
@@ -34,14 +35,18 @@
             "as": "absChange"
         },
         {
-            "window": [{
-                "op": "row_number",
-                "as": "sizeRank"
-            }],
-            "sort": [{
-                "field": "absChange",
-                "order": "descending"
-            }]
+            "window": [
+                {
+                    "op": "row_number",
+                    "as": "sizeRank"
+                }
+            ],
+            "sort": [
+                {
+                    "field": "absChange",
+                    "order": "descending"
+                }
+            ]
         },
         {
             "calculate": "'Year ' + datum.year_level",
@@ -85,7 +90,8 @@
             }
         }
     },
-    "layer": [{
+    "layer": [
+        {
             "mark": {
                 "type": "rect",
                 "stroke": "#FBF8F1",
@@ -95,9 +101,10 @@
                 "color": {
                     "field": "change",
                     "type": "quantitative",
-                    "title": "Change (pts)",
+                    "title": "Change (percentage points)",
                     "scale": {
-                        "domain": [-4,
+                        "domain": [
+                            -4,
                             0,
                             4
                         ],
@@ -112,14 +119,18 @@
                         "orient": "bottom",
                         "direction": "horizontal",
                         "gradientLength": 160,
-                        "values": [-4, -2,
+                        "values": [
+                            -4,
+                            -2,
                             0,
                             2,
                             4
-                        ]
+                        ],
+                        "offset": 78
                     }
                 },
-                "tooltip": [{
+                "tooltip": [
+                    {
                         "field": "domain",
                         "title": "Domain"
                     },
@@ -141,7 +152,7 @@
                     },
                     {
                         "field": "change",
-                        "title": "Change (pts)",
+                        "title": "Change (percentage points)",
                         "type": "quantitative",
                         "format": "+.1f"
                     }
@@ -149,9 +160,11 @@
             }
         },
         {
-            "transform": [{
-                "filter": "datum.sizeRank <= 4"
-            }],
+            "transform": [
+                {
+                    "filter": "datum.sizeRank <= 4"
+                }
+            ],
             "mark": {
                 "type": "text",
                 "fontSize": 11,
@@ -171,6 +184,275 @@
                     "value": "#2B2A28"
                 }
             }
+        },
+        {
+            "description": "callout: biggest rise (Year 5 Numeracy, bottom row): box under Years 3-5, arrow straight up into the cell",
+            "data": {
+                "values": [
+                    {}
+                ]
+            },
+            "layer": [
+                {
+                    "mark": {
+                        "type": "rule",
+                        "color": "#2B2A28",
+                        "strokeWidth": 1.2
+                    },
+                    "encoding": {
+                        "x": {
+                            "value": {
+                                "expr": "width * 0.375"
+                            }
+                        },
+                        "x2": {
+                            "value": {
+                                "expr": "width * 0.375"
+                            }
+                        },
+                        "y": {
+                            "value": {
+                                "expr": "height + 16"
+                            }
+                        },
+                        "y2": {
+                            "value": {
+                                "expr": "height + 7"
+                            }
+                        }
+                    }
+                },
+                {
+                    "mark": {
+                        "type": "point",
+                        "shape": "triangle-up",
+                        "filled": true,
+                        "size": 60,
+                        "color": "#2B2A28",
+                        "opacity": 1
+                    },
+                    "encoding": {
+                        "x": {
+                            "value": {
+                                "expr": "width * 0.375"
+                            }
+                        },
+                        "y": {
+                            "value": {
+                                "expr": "height + 5"
+                            }
+                        }
+                    }
+                },
+                {
+                    "mark": {
+                        "type": "rect",
+                        "fill": "#FFFFFF",
+                        "stroke": "#2B2A28",
+                        "strokeWidth": 1,
+                        "cornerRadius": 3
+                    },
+                    "encoding": {
+                        "x": {
+                            "value": {
+                                "expr": "0"
+                            }
+                        },
+                        "x2": {
+                            "value": {
+                                "expr": "width * 0.5 - 6"
+                            }
+                        },
+                        "y": {
+                            "value": {
+                                "expr": "height + 16"
+                            }
+                        },
+                        "y2": {
+                            "value": {
+                                "expr": "height + 64"
+                            }
+                        }
+                    }
+                },
+                {
+                    "mark": {
+                        "type": "text",
+                        "align": "left",
+                        "baseline": "top",
+                        "fontSize": 11,
+                        "lineHeight": 14,
+                        "color": "#2B2A28"
+                    },
+                    "encoding": {
+                        "x": {
+                            "value": {
+                                "expr": "0 + 8"
+                            }
+                        },
+                        "y": {
+                            "value": {
+                                "expr": "height + 16 + 7"
+                            }
+                        },
+                        "text": {
+                            "value": [
+                                "Biggest rise: +3.0",
+                                "its best since the 2023 reset (ACARA)"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "description": "callout: biggest fall (Year 7 Grammar, row 4): box under Years 7-9, arrow runs up the white gap between Year 7 and Year 9 then left into the cell",
+            "data": {
+                "values": [
+                    {}
+                ]
+            },
+            "layer": [
+                {
+                    "mark": {
+                        "type": "rule",
+                        "color": "#2B2A28",
+                        "strokeWidth": 1.2
+                    },
+                    "encoding": {
+                        "x": {
+                            "value": {
+                                "expr": "width * 0.75"
+                            }
+                        },
+                        "x2": {
+                            "value": {
+                                "expr": "width * 0.75"
+                            }
+                        },
+                        "y": {
+                            "value": {
+                                "expr": "height + 16"
+                            }
+                        },
+                        "y2": {
+                            "value": {
+                                "expr": "height * 0.7"
+                            }
+                        }
+                    }
+                },
+                {
+                    "mark": {
+                        "type": "rule",
+                        "color": "#2B2A28",
+                        "strokeWidth": 1.2
+                    },
+                    "encoding": {
+                        "x": {
+                            "value": {
+                                "expr": "width * 0.75"
+                            }
+                        },
+                        "x2": {
+                            "value": {
+                                "expr": "width * 0.75 - 8"
+                            }
+                        },
+                        "y": {
+                            "value": {
+                                "expr": "height * 0.7"
+                            }
+                        },
+                        "y2": {
+                            "value": {
+                                "expr": "height * 0.7"
+                            }
+                        }
+                    }
+                },
+                {
+                    "mark": {
+                        "type": "point",
+                        "shape": "triangle-left",
+                        "filled": true,
+                        "size": 60,
+                        "color": "#2B2A28",
+                        "opacity": 1
+                    },
+                    "encoding": {
+                        "x": {
+                            "value": {
+                                "expr": "width * 0.75 - 9"
+                            }
+                        },
+                        "y": {
+                            "value": {
+                                "expr": "height * 0.7"
+                            }
+                        }
+                    }
+                },
+                {
+                    "mark": {
+                        "type": "rect",
+                        "fill": "#FFFFFF",
+                        "stroke": "#2B2A28",
+                        "strokeWidth": 1,
+                        "cornerRadius": 3
+                    },
+                    "encoding": {
+                        "x": {
+                            "value": {
+                                "expr": "width * 0.5 + 6"
+                            }
+                        },
+                        "x2": {
+                            "value": {
+                                "expr": "width"
+                            }
+                        },
+                        "y": {
+                            "value": {
+                                "expr": "height + 16"
+                            }
+                        },
+                        "y2": {
+                            "value": {
+                                "expr": "height + 64"
+                            }
+                        }
+                    }
+                },
+                {
+                    "mark": {
+                        "type": "text",
+                        "align": "left",
+                        "baseline": "top",
+                        "fontSize": 11,
+                        "lineHeight": 14,
+                        "color": "#2B2A28"
+                    },
+                    "encoding": {
+                        "x": {
+                            "value": {
+                                "expr": "width * 0.5 + 6 + 8"
+                            }
+                        },
+                        "y": {
+                            "value": {
+                                "expr": "height + 16 + 7"
+                            }
+                        },
+                        "text": {
+                            "value": [
+                                "Biggest fall: −3.9",
+                                "its lowest since the 2023 reset"
+                            ]
+                        }
+                    }
+                }
+            ]
         }
     ]
 }

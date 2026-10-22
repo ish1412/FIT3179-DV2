@@ -1,7 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "params": [
-        {
+    "params": [{
             "name": "domain",
             "value": "Reading"
         },
@@ -25,24 +24,18 @@
             "size": "independent"
         }
     },
-    "hconcat": [
-        {
+    "hconcat": [{
             "title": "Thousands of schools, very different starting lines",
             "width": 470,
             "height": 430,
             "projection": {
                 "type": "conicEqualArea",
-                "parallels": [
-                    -18,
-                    -36
-                ],
-                "rotate": [
-                    -132,
+                "parallels": [-18, -36],
+                "rotate": [-132,
                     0
                 ]
             },
-            "layer": [
-                {
+            "layer": [{
                     "data": {
                         "url": "data/aus_states.geojson",
                         "format": {
@@ -50,8 +43,7 @@
                             "property": "features"
                         }
                     },
-                    "transform": [
-                        {
+                    "transform": [{
                             "filter": "focusState === 'All' || datum.properties.state_abbr === focusState"
                         },
                         {
@@ -66,19 +58,17 @@
                         "strokeWidth": 1,
                         "cursor": "pointer"
                     },
-                    "params": [
-                        {
-                            "name": "clickState",
-                            "select": {
-                                "type": "point",
-                                "fields": [
-                                    "state"
-                                ],
-                                "on": "click",
-                                "clear": "dblclick"
-                            }
+                    "params": [{
+                        "name": "clickState",
+                        "select": {
+                            "type": "point",
+                            "fields": [
+                                "state"
+                            ],
+                            "on": "click",
+                            "clear": "dblclick"
                         }
-                    ]
+                    }]
                 },
                 {
                     "data": {
@@ -93,17 +83,14 @@
                             }
                         }
                     },
-                    "transform": [
-                        {
+                    "transform": [{
                             "filter": "isValid(datum.icsea) && isValid(datum.lat)"
                         },
                         {
                             "filter": "(focusState === 'All' || (datum.state === focusState && !(focusState === 'ACT' && +datum.lon > 149.5)))"
                         },
                         {
-                            "filter": {
-                                "param": "brush"
-                            }
+                            "filter": "!length(data('brush_store')) || (vlSelectionTest('brush_store', datum) && indexof(data('brush_store')[0].unit, '_facet_row_' + datum.remoteness + ' (') >= 0)"
                         }
                     ],
                     "mark": {
@@ -187,8 +174,7 @@
                             "type": "quantitative",
                             "sort": "descending"
                         },
-                        "tooltip": [
-                            {
+                        "tooltip": [{
                                 "field": "name",
                                 "title": "School"
                             },
@@ -216,19 +202,17 @@
                             }
                         ]
                     },
-                    "params": [
-                        {
-                            "name": "clickSchool",
-                            "select": {
-                                "type": "point",
-                                "fields": [
-                                    "state"
-                                ],
-                                "on": "click",
-                                "clear": "dblclick"
-                            }
+                    "params": [{
+                        "name": "clickSchool",
+                        "select": {
+                            "type": "point",
+                            "fields": [
+                                "state"
+                            ],
+                            "on": "click",
+                            "clear": "dblclick"
                         }
-                    ]
+                    }]
                 },
                 {
                     "data": {
@@ -241,21 +225,17 @@
                             }
                         }
                     },
-                    "transform": [
-                        {
+                    "transform": [{
                             "filter": "isValid(datum.icsea) && isValid(datum.lat)"
                         },
                         {
                             "filter": "(focusState === 'All' || (datum.state === focusState && !(focusState === 'ACT' && +datum.lon > 149.5)))"
                         },
                         {
-                            "filter": {
-                                "param": "brush"
-                            }
+                            "filter": "!length(data('brush_store')) || (vlSelectionTest('brush_store', datum) && indexof(data('brush_store')[0].unit, '_facet_row_' + datum.remoteness + ' (') >= 0)"
                         },
                         {
-                            "joinaggregate": [
-                                {
+                            "joinaggregate": [{
                                     "op": "count",
                                     "as": "n"
                                 },
@@ -272,12 +252,10 @@
                             ]
                         },
                         {
-                            "window": [
-                                {
-                                    "op": "row_number",
-                                    "as": "rank"
-                                }
-                            ]
+                            "window": [{
+                                "op": "row_number",
+                                "as": "rank"
+                            }]
                         },
                         {
                             "filter": "datum.rank === 1"
@@ -316,13 +294,12 @@
                     "color": "independent"
                 }
             },
-            "vconcat": [
-                {
+            "vconcat": [{
                     "title": {
                         "text": "Remote schools skew disadvantaged",
                         "subtitle": "Drag across the bars to show only those schools on the map above",
                         "subtitleColor": "#6B675F",
-                        "subtitleFontSize": 12,
+                        "subtitleFontSize": 13,
                         "subtitlePadding": 6
                     },
                     "data": {
@@ -334,20 +311,17 @@
                             }
                         }
                     },
-                    "transform": [
-                        {
+                    "transform": [{
                             "filter": "isValid(datum.icsea)"
                         },
                         {
                             "filter": "(focusState === 'All' || (datum.state === focusState && !(focusState === 'ACT' && +datum.lon > 149.5)))"
                         },
                         {
-                            "joinaggregate": [
-                                {
-                                    "op": "count",
-                                    "as": "rowSchools"
-                                }
-                            ],
+                            "joinaggregate": [{
+                                "op": "count",
+                                "as": "rowSchools"
+                            }],
                             "groupby": [
                                 "remoteness"
                             ]
@@ -375,12 +349,10 @@
                             ]
                         },
                         {
-                            "aggregate": [
-                                {
-                                    "op": "count",
-                                    "as": "n"
-                                }
-                            ],
+                            "aggregate": [{
+                                "op": "count",
+                                "as": "n"
+                            }],
                             "groupby": [
                                 "remoteness",
                                 "rowLabel",
@@ -426,21 +398,18 @@
                     "spec": {
                         "width": 215,
                         "height": 40,
-                        "layer": [
-                            {
-                                "params": [
-                                    {
-                                        "name": "brush",
-                                        "select": {
-                                            "type": "interval",
-                                            "encodings": [
-                                                "x"
-                                            ],
-                                            "on": "[pointerdown, window:pointerup] > window:pointermove!{40}",
-                                            "translate": "[pointerdown, window:pointerup] > window:pointermove!{40}"
-                                        }
+                        "layer": [{
+                                "params": [{
+                                    "name": "brush",
+                                    "select": {
+                                        "type": "interval",
+                                        "encodings": [
+                                            "x"
+                                        ],
+                                        "on": "[pointerdown, window:pointerup] > window:pointermove!{40}",
+                                        "translate": "[pointerdown, window:pointerup] > window:pointermove!{40}"
                                     }
-                                ],
+                                }],
                                 "mark": {
                                     "type": "bar",
                                     "binSpacing": 1
@@ -498,8 +467,7 @@
                                             "interpolate": "lab"
                                         }
                                     },
-                                    "tooltip": [
-                                        {
+                                    "tooltip": [{
                                             "field": "remoteness",
                                             "title": "Remoteness"
                                         },
@@ -551,24 +519,19 @@
                         },
                         "subtitle": "Click a state (or use Zoom to) to zoom in · double-click to zoom out",
                         "subtitleColor": "#6B675F",
-                        "subtitleFontSize": 12,
+                        "subtitleFontSize": 13,
                         "subtitlePadding": 6
                     },
                     "width": 215,
                     "height": 190,
                     "projection": {
                         "type": "conicEqualArea",
-                        "parallels": [
-                            -18,
-                            -36
-                        ],
-                        "rotate": [
-                            -132,
+                        "parallels": [-18, -36],
+                        "rotate": [-132,
                             0
                         ]
                     },
-                    "layer": [
-                        {
+                    "layer": [{
                             "data": {
                                 "url": "data/aus_remoteness.geojson",
                                 "format": {
@@ -576,11 +539,9 @@
                                     "property": "features"
                                 }
                             },
-                            "transform": [
-                                {
-                                    "filter": "focusState === 'All' || datum.properties.state_abbr === focusState"
-                                }
-                            ],
+                            "transform": [{
+                                "filter": "focusState === 'All' || datum.properties.state_abbr === focusState"
+                            }],
                             "mark": {
                                 "type": "geoshape",
                                 "fill": "#DEDAD2",
@@ -601,13 +562,11 @@
                                     }
                                 }
                             },
-                            "transform": [
-                                {
+                            "transform": [{
                                     "filter": "datum.year === 2026 && datum.students === 'All students' && (focusState === 'All' || datum.state === focusState) && (domain === 'All' || datum.domain === domain) && datum.year_level === yearLevel && isValid(datum.pct_strong_or_above)"
                                 },
                                 {
-                                    "aggregate": [
-                                        {
+                                    "aggregate": [{
                                             "op": "mean",
                                             "field": "pct_strong_or_above",
                                             "as": "pct_strong_or_above"
@@ -645,19 +604,17 @@
                                     "filter": "isValid(datum.geo)"
                                 }
                             ],
-                            "params": [
-                                {
-                                    "name": "clickRemote",
-                                    "select": {
-                                        "type": "point",
-                                        "fields": [
-                                            "state"
-                                        ],
-                                        "on": "click",
-                                        "clear": "dblclick"
-                                    }
+                            "params": [{
+                                "name": "clickRemote",
+                                "select": {
+                                    "type": "point",
+                                    "fields": [
+                                        "state"
+                                    ],
+                                    "on": "click",
+                                    "clear": "dblclick"
                                 }
-                            ],
+                            }],
                             "mark": {
                                 "type": "geoshape",
                                 "stroke": "#FBF8F1",
@@ -697,8 +654,7 @@
                                         ]
                                     }
                                 },
-                                "tooltip": [
-                                    {
+                                "tooltip": [{
                                         "field": "state",
                                         "title": "State"
                                     },
@@ -719,14 +675,91 @@
                             }
                         },
                         {
-                            "description": "key for the grey zones, in the empty ocean below WA",
+                            "description": "note for the grey zones, whole-Australia view: text in the ocean south of WA, with a line to Tasmania",
                             "data": {
                                 "values": [
                                     {}
                                 ]
                             },
-                            "layer": [
+                            "transform": [{
+                                "filter": "focusState === 'All'"
+                            }],
+                            "layer": [{
+                                    "mark": {
+                                        "type": "text",
+                                        "align": "left",
+                                        "baseline": "middle",
+                                        "fontSize": 11,
+                                        "fontWeight": 700,
+                                        "color": "#2B2A28"
+                                    },
+                                    "encoding": {
+                                        "longitude": {
+                                            "datum": 117.0
+                                        },
+                                        "latitude": {
+                                            "datum": -37.2
+                                        },
+                                        "text": {
+                                            "value": "No published result"
+                                        }
+                                    }
+                                },
                                 {
+                                    "mark": {
+                                        "type": "text",
+                                        "align": "left",
+                                        "baseline": "top",
+                                        "fontSize": 10,
+                                        "color": "#6B675F",
+                                        "dy": 8
+                                    },
+                                    "encoding": {
+                                        "longitude": {
+                                            "datum": 117.0
+                                        },
+                                        "latitude": {
+                                            "datum": -37.2
+                                        },
+                                        "text": {
+                                            "value": "(too few students, or Tasmania 2026)"
+                                        }
+                                    }
+                                },
+                                {
+                                    "mark": {
+                                        "type": "rule",
+                                        "color": "#9C968B",
+                                        "strokeWidth": 1
+                                    },
+                                    "encoding": {
+                                        "longitude": {
+                                            "datum": 134.6
+                                        },
+                                        "latitude": {
+                                            "datum": -38.0
+                                        },
+                                        "longitude2": {
+                                            "datum": 145.2
+                                        },
+                                        "latitude2": {
+                                            "datum": -41.3
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "description": "key for the grey zones when zoomed to one state: bottom-left corner",
+                            "data": {
+                                "values": [
+                                    {}
+                                ]
+                            },
+                            "transform": [{
+                                "filter": "focusState !== 'All'"
+                            }],
+                            "layer": [{
                                     "mark": {
                                         "type": "square",
                                         "size": 130,
@@ -749,7 +782,6 @@
                                         "align": "left",
                                         "baseline": "middle",
                                         "fontSize": 11,
-                                        "lineHeight": 13,
                                         "color": "#2B2A28"
                                     },
                                     "encoding": {
@@ -760,7 +792,7 @@
                                             "value": 428
                                         },
                                         "text": {
-                                            "value": "No published result (too few students, or Tasmania 2026)"
+                                            "value": "No published result (too few students)"
                                         }
                                     }
                                 }

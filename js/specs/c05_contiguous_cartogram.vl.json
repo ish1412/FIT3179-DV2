@@ -244,6 +244,36 @@
                     ]
                 }
             ]
+        },
+        {
+            "description": "annotation: where most students are",
+            "data": {
+                "values": [
+                    {}
+                ]
+            },
+            "mark": {
+                "type": "text",
+                "align": "left",
+                "baseline": "bottom",
+                "fontSize": 12,
+                "lineHeight": 16,
+                "color": "#2B2A28"
+            },
+            "encoding": {
+                "x": {
+                    "value": 0
+                },
+                "y": {
+                    "value": 335
+                },
+                "text": {
+                    "value": [
+                        "NSW, VIC and QLD hold",
+                        "77% of the students"
+                    ]
+                }
+            }
         }
     ]
 }

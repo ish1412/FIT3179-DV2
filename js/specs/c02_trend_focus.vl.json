@@ -241,7 +241,7 @@
                 "color": {
                     "condition": {
                         "test": "datum.isSelected",
-                        "value": "#2F5D8A"
+                        "value": "#1E3F60"
                     },
                     "value": "#C9C3B7"
                 },
@@ -272,7 +272,7 @@
                 "color": {
                     "condition": {
                         "test": "datum.isSelected",
-                        "value": "#2F5D8A"
+                        "value": "#1E3F60"
                     },
                     "value": "#C9C3B7"
                 },
@@ -334,7 +334,7 @@
                 "color": {
                     "condition": {
                         "test": "datum.isSelected",
-                        "value": "#2F5D8A"
+                        "value": "#1E3F60"
                     },
                     "value": "#C9C3B7"
                 },
@@ -365,7 +365,7 @@
                 "color": {
                     "condition": {
                         "test": "datum.isSelected",
-                        "value": "#2F5D8A"
+                        "value": "#1E3F60"
                     },
                     "value": "#C9C3B7"
                 },

@@ -8,7 +8,11 @@
     <meta name="description" content="What NAPLAN 2023–2026 tells us about who gets left behind. A FIT3179 data visualisation (two-column layout).">
 
     <link rel="icon" href="data:,">
-    <link rel="stylesheet" href="css/style.css?v=5">
+    <!-- fonts: Fraunces (big titles), IBM Plex Sans (text and charts), IBM Plex Mono (small labels) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+    <link rel="stylesheet" href="css/style.css?v=19">
     <link rel="stylesheet" href="css/two-column.css?v=4">
 
     <script src="https://cdn.jsdelivr.net/npm/vega@5.30.0"></script>
@@ -33,35 +37,7 @@
 
     <main>
 
-        <!-- ============ 1 · ONE IN THREE ============ -->
-        <section id="one-in-three" class="section">
-            <div class="grid">
-                <h2 class="section-title full"><span class="num">1</span> One in three</h2>
-
-                <div class="half text">
-                    <p>Every year, almost every Australian student in Years 3, 5, 7 and 9 sits NAPLAN, the National Assessment Program – Literacy and Numeracy. It tests five subjects (reading, writing, spelling, grammar and punctuation, and numeracy) and places each student at one of four proficiency levels.</p>
-                    <p>The benchmark is <span class="lvl-text lvl-strong">Strong</span>: meeting what is expected at that year level. In 2026, averaged across subjects and year levels, about one in three students (34%) fell short of it. In Year 5 it was 31%, roughly 3 children in every 10.</p>
-                    <p>This page asks who those students are, where they live, and whether the gap closes as they move through school.</p>
-
-                    <div class="levels">
-                        <h3>The four levels</h3>
-                        <ul class="level-strip">
-                            <li><span class="swatch" style="background:#2F5D8A"></span><strong>Exceeding</strong><br>Well above what's expected at this year level.</li>
-                            <li><span class="swatch" style="background:#9DB8D3"></span><strong>Strong</strong><br>Meeting the expected standard: challenging but reasonable.</li>
-                            <li><span class="swatch" style="background:#E8B48F"></span><strong>Developing</strong><br>Working towards the expected standard.</li>
-                            <li><span class="swatch" style="background:#C8652B"></span><strong>Needs additional support</strong><br>Not yet at the expected standard. Likely to need extra help.</li>
-                        </ul>
-                        <p class="note">"Strong or Exceeding" (ACARA calls it "Strong or above") is the headline measure of meeting expectations.</p>
-                    </div>
-                </div>
-
-                <figure class="half chart-cell">
-                    <div id="c01" class="chart"></div>
-                </figure>
-            </div>
-        </section>
-
-        <!-- ============ SHARED SELECTOR (sticky for the rest of the page) ============ -->
+        <!-- ============ SHARED SELECTOR (sticky; sits above section 1 so readers see it before the first chart) ============ -->
         <div class="selector-bar" role="region" aria-label="Chart filters">
             <div class="grid">
                 <div class="full selector-inner">
@@ -89,6 +65,36 @@
             </div>
         </div>
 
+        <!-- ============ 1 · ONE IN THREE ============ -->
+        <section id="one-in-three" class="section">
+            <div class="grid">
+                <h2 class="section-title full"><span class="num">1</span> One in three</h2>
+
+                <div class="half text">
+                    <p>Every year, almost every Australian student in Years 3, 5, 7 and 9 sits NAPLAN, the National Assessment Program – Literacy and Numeracy. It tests five subjects (reading, writing, spelling, grammar and punctuation, and numeracy) and places each student at one of four proficiency levels.</p>
+                    <p>The benchmark is <span class="lvl-text lvl-strong">Strong</span>: meeting what is expected at that year level. In 2026, averaged across subjects and year levels, <strong>about one in three students (34%)</strong> fell short of it. In Year 5 it was 31%, roughly 3 children in every 10.</p>
+                    <p>This page asks who those students are, where they live, and whether the gap closes as they move through school.</p>
+
+                    <div class="levels">
+                        <h3>The four levels</h3>
+                        <ul class="level-strip">
+                            <li><span class="swatch" style="background:#2F5D8A"></span><strong>Exceeding</strong><br>Well above what's expected at this year level.</li>
+                            <li><span class="swatch" style="background:#9DB8D3"></span><strong>Strong</strong><br>Meeting the expected standard: challenging but reasonable.</li>
+                            <li><span class="swatch" style="background:#E8B48F"></span><strong>Developing</strong><br>Working towards the expected standard.</li>
+                            <li><span class="swatch" style="background:#C8652B"></span><strong>Needs additional support</strong><br>Not yet at the expected standard. Likely to need extra help.</li>
+                        </ul>
+                        <p class="note">"Strong or Exceeding" (ACARA calls it "Strong or above") is the headline measure of meeting expectations.</p>
+                    </div>
+                </div>
+
+                <figure class="half chart-cell">
+                    <div id="c01" class="chart"></div>
+                    <!-- NAPLAN banner under the waffle -->
+                    <img class="naplan-banner" src="img/naplan.jpg" alt="NAPLAN: National Assessment Program – Literacy and Numeracy" onerror="this.remove()">
+                </figure>
+            </div>
+        </section>
+
         <!-- ============ 2 · THE FLAT LINE ============ -->
         <section id="flat-line" class="section">
             <div class="grid">
@@ -100,12 +106,12 @@
                 </figure>
 
                 <div class="half text">
-                    <p>On the old scale (2008–2022), scores crept up, mostly in the early years. Year 3 Reading rose 37 points and Year 5 Reading 25 points, while Year 9 barely moved.</p>
+                    <p>On the old scale (2008–2022), scores crept up, mostly in the early years. Year 3 Reading rose <strong>37 score points</strong> (on NAPLAN's own scale) and Year 5 Reading <strong>25 score points</strong>, while Year 9 barely moved.</p>
                     <p>There was no test in 2020 because of COVID-19. In 2023 NAPLAN moved fully online with a new scale and new proficiency levels, so the line breaks there: scores on either side of the break can't be compared.</p>
                 </div>
                 <div class="half text">
-                    <p>Since the reset, results have hardly moved. Of the 20 subject and year-level combinations, 14 changed by less than 2 percentage points between 2023 and 2026. The biggest fall was Year 7 Grammar &amp; Punctuation (−3.9 points) and the biggest rise was Year 5 Numeracy (+3.0).</p>
-                    <p>Grammar &amp; Punctuation is the weakest subject: in Year 3 and Year 9, about 44% of students sit below <span class="lvl-text lvl-strong">Strong</span>.</p>
+                    <p>Since the reset, results have hardly moved. Of the 20 subject and year-level combinations, 14 changed by less than 2 percentage points (the difference between two percentages) between 2023 and 2026. The biggest fall was Year 7 Grammar &amp; Punctuation (−3.9 percentage points) and the biggest rise was Year 5 Numeracy (+3.0).</p>
+                    <p>Grammar &amp; Punctuation is the weakest subject: in Year 3 and Year 9, <strong>about 44%</strong> of students sit below <span class="lvl-text lvl-strong">Strong</span>.</p>
                 </div>
 
                 <figure class="half chart-cell">
@@ -122,9 +128,14 @@
             <div class="grid">
                 <h2 class="section-title full"><span class="num">3</span> Where you live</h2>
 
-                <div class="full text">
-                    <p>Where a child goes to school matters. The map below is a cartogram: each state is stretched or shrunk so its area matches how many students it has in a year level (k = thousand). Student numbers hardly change between subjects or year levels, so the map stays the same when you change the filters. Each state keeps the same colour as its line in the chart beside it. In 2026 (Year 5, average of subjects), Victoria and the ACT (73%) and NSW (71%) had the largest shares of students at <span class="lvl-text lvl-strong">Strong</span> or <span class="lvl-text lvl-exceeding">Exceeding</span>. The Northern Territory had 41%: 27 points below the national figure of 68%, and about 30 behind the leaders. ACARA did not publish Tasmania's 2026 results, so it is grey on the map.</p>
-                    <p>Click a state to follow it in the line and ranking charts.</p>
+                <!-- intro in two columns: reading the map (above the cartogram) | results (above the line chart) -->
+                <div class="half text">
+                    <p>Where a child goes to school matters. The map below is a cartogram: each state is stretched or shrunk so its area matches how many students it has in a year level (k = thousand). Student numbers hardly change between subjects or year levels, so the map stays the same when you change the filters. Each state keeps the same colour as its line in the chart beside it.</p>
+                    <p class="try-it"><span class="try-label">Try it</span> Click a state on the map to follow it in the line and ranking charts. Click empty space to clear.</p>
+                </div>
+                <div class="half text">
+                    <p>In 2026 (Year 5, average of subjects), Victoria and the ACT (73%) and NSW (71%) had the largest shares of students at <span class="lvl-text lvl-strong">Strong</span> or <span class="lvl-text lvl-exceeding">Exceeding</span>. The Northern Territory had 41%: 27 percentage points below the national figure of 68%, and about 30 behind the leaders.</p>
+                    <p>Tasmania has no 2026 result. After a teacher boycott in public schools, only 60% of its students sat the test (94% in 2025), too few for ACARA to report fairly. Its size on the map uses its 2025 student numbers.</p>
                 </div>
 
                 <!-- row 1: map | state lines -->
@@ -138,7 +149,8 @@
                 <!-- row 2: text under the map | rankings chart, tops aligned -->
                 <div class="half text">
                     <p>The order barely changes. Since 2023 the ACT and Victoria have swapped first and second place, while NSW has stayed third, WA fourth, SA fifth and Queensland sixth.</p>
-                    <p>The Northern Territory has been last every year. It only rises to seventh in 2026 because Tasmania has no 2026 result. No state's share has moved by more than 2 points in four years.</p>
+                    <p>The Northern Territory has been <strong>last every year</strong>. It only rises to seventh in 2026 because Tasmania has no 2026 result. No state's share has moved by more than 2 percentage points in four years.</p>
+                    <p>So the gap between first and last has not closed. In Year 5 the top state was 31 percentage points ahead of the Northern Territory in 2023, and still 32 ahead in 2026. Every year level tells the same story: a gap of about 30 percentage points, year after year.</p>
                 </div>
                 <figure class="half chart-cell">
                     <div id="c07" class="chart"></div>
@@ -153,12 +165,13 @@
 
                 <div class="half text">
                     <p>To see why place matters, look at schools rather than states. Every school has an <strong>ICSEA</strong> score (Index of Community Socio-Educational Advantage). It is built mostly from the education and jobs of students' parents, plus the school's remoteness and its share of Indigenous students.</p>
-                    <p>1000 is the Australian average: above it means more advantaged, below it less. The map below shows all 9,619 schools, coloured by ICSEA. Drag across the histograms to show only the schools in that range, or zoom to a state.</p>
+                    <p>1000 is the Australian average: above it means more advantaged, below it less. The map below shows all 9,619 schools, coloured by ICSEA and sized by enrolments. Drag across a row of the histograms to show only those schools on the map, or zoom to a state.</p>
                 </div>
                 <figure class="half photo">
-                    <!-- TODO Ishan: add a licensed photo (a regional or remote school). -->
+                    <!-- school photo (img/school.jpg, compressed from school.png); the striped placeholder shows if it is missing -->
+                    <img class="photo-img" src="img/school.jpg" alt="A group of school students in uniform standing outside their school"
+                         onerror="this.remove()">
                     <div class="photo-placeholder">Photo</div>
-                    <figcaption>Photo credit: TODO</figcaption>
                 </figure>
 
                 <!-- C8 + C9 + C10 are one Vega-Lite spec (the C9 brush filters C8), so it spans both columns -->
@@ -183,12 +196,13 @@
 
                 <!-- text under the histograms (C9) | text under the remoteness map (C10) -->
                 <div class="half text">
-                    <p>Advantage thins out with distance. The typical major-city school has an ICSEA of 1049; in very remote areas it is 707.</p>
+                    <p>Advantage thins out with distance. The typical major-city school has an ICSEA of <strong>1049</strong>; in very remote areas it is <strong>707</strong>.</p>
                     <p>28% of major-city schools are below the average of 1000, compared with 84% of remote schools and 97% of very remote ones.</p>
+                    <p>The two ends barely overlap. Only 13 of 5,349 major-city schools score below 800, but nearly two-thirds of very remote schools do. Remote and very remote schools are just 6% of Australia's schools, yet they make up 31% of the least-advantaged tenth.</p>
                 </div>
                 <div class="half text">
                     <p>Results follow the same path. Nationally (Year 5, average of subjects), 72% of major-city students reach <span class="lvl-text lvl-strong">Strong</span> or <span class="lvl-text lvl-exceeding">Exceeding</span>, falling to 55% in outer regional areas, 44% in remote areas and 24% in very remote ones.</p>
-                    <p>The drop is steepest in the Northern Territory: 57% in the outer regional area that includes Darwin, 31% in remote areas and just 8% in very remote ones. Zoom into a state to compare its own zones.</p>
+                    <p>The drop is steepest in the Northern Territory: 57% in the outer regional area that includes Darwin, 31% in remote areas and just 8% in very remote ones. Zoom into a state to compare its own zones; grey zones have too few students for ACARA to publish a result.</p>
                 </div>
             </div>
         </section>
@@ -210,9 +224,9 @@
                 </figure>
                 <div class="half text">
                     <p>Three gaps, side by side (Year 5, 2026):</p>
-                    <p><strong>Indigeneity.</strong> Indigenous students are behind everywhere, and the gap widens with distance: 24–30 points in cities and regional areas, 46 points in very remote areas, where only 8% of Indigenous students reach <span class="lvl-text lvl-strong">Strong</span>. This overlaps with section 4: Indigenous students make up 4% of enrolments in major-city schools but 67% in very remote ones.</p>
+                    <p><strong>Indigeneity.</strong> Indigenous students are behind everywhere, and the gap widens with distance: 24–30 percentage points in cities and regional areas, 46 in very remote areas, where only 8% of Indigenous students reach <span class="lvl-text lvl-strong">Strong</span>. This overlaps with section 4: Indigenous students make up 4% of enrolments in major-city schools but 67% in very remote ones.</p>
                     <p><strong>Parents' schooling.</strong> 81% of children whose parents hold a bachelor degree reach <span class="lvl-text lvl-strong">Strong</span>, compared with 37% when parents left school in Year 11 or earlier.</p>
-                    <p><strong>Gender.</strong> The smallest gap, and it runs both ways. Girls lead in reading, writing, spelling and grammar (by 10 points in writing); boys lead in numeracy by 6.</p>
+                    <p><strong>Gender.</strong> The smallest gap, and it runs both ways. In every year level since 2023, girls lead in reading, writing, spelling and grammar, and boys lead in numeracy. The girls' lead is biggest in writing, growing from about 10 to 16 percentage points by Year 9. One likely reason: in 2018, 53% of Australian 15-year-old boys didn't read for enjoyment, compared with 36% of girls (ACER).</p>
                 </div>
             </div>
         </section>
@@ -220,21 +234,42 @@
         <!-- ============ 6 · GROWING UP WITH THE GAP ============ -->
         <section id="growing-up" class="section">
             <div class="grid">
-                <h2 class="section-title full"><span class="num">6</span> Growing up with the gap</h2>
+                <h2 class="section-title full"><span class="num">6</span> How do we close the gap?</h2>
 
                 <figure class="half chart-cell">
                     <div id="c14" class="chart"></div>
+                    <!-- graduation photo under the cohort chart -->
+                    <img class="chart-photo" src="img/grad.jpeg" alt="Silhouettes of graduates throwing their caps in the air" onerror="this.remove()">
                 </figure>
 
                 <div class="half text takeaways">
-                    <p>Does school close the gap? The chart follows students between tests, two years apart. Indigenous and non-Indigenous students gain almost the same number of points at every step (85 vs 83 from Year 3 to Year 5, average of subjects), so the gap they start with stays put: about 78 points in Year 3 and still about 78 in Year 9. In 2026 the average Indigenous Year 9 student scored about the same as the average non-Indigenous Year 5 student (494 vs 495).</p>
-                    <h3>Takeaways</h3>
+                    <p>Does school close the gap? The chart follows students between tests, two years apart. Indigenous and non-Indigenous students gain almost the same number of score points at every step (85 vs 83 from Year 3 to Year 5, average of subjects), so the gap they start with stays put: about 78 score points in Year 3 and still about 78 in Year 9. In 2026 the average Indigenous Year 9 student scored about the same as the average non-Indigenous Year 5 student (494 vs 495).</p>
+                    <h3>What we learnt</h3>
                     <ul>
-                        <li>About one in three students is below <span class="lvl-text lvl-strong">Strong</span>, and that share has barely moved since 2023.</li>
-                        <li>The biggest gaps come from circumstance, not gender: remoteness, Indigeneity and parents' schooling each mean gaps of roughly 30 to 50 points; gender means 3 to 10 (Year 5).</li>
-                        <li>The gaps are already there in Year 3 and don't close by Year 9. Students who start behind make the same progress as everyone else, not more.</li>
-                        <li>Closing the gap means helping those students gain more than their peers, and starting early.</li>
+                        <li>About one in three students is not yet at <span class="lvl-text lvl-strong">Strong</span>, and that share has barely moved since 2023.</li>
+                        <li>Who comes out on top: students in the ACT and Victoria, in major cities, non-Indigenous students, and children of parents with a university degree. 81% of those children reach <span class="lvl-text lvl-strong">Strong</span> or <span class="lvl-text lvl-exceeding">Exceeding</span> (Year 5).</li>
+                        <li>The biggest gaps come from circumstance, not gender: remoteness, Indigeneity and parents' schooling each mean gaps of roughly 30 to 50 percentage points; gender means 3 to 10 (Year 5).</li>
+                        <li>The gaps are already there in Year 3 and don't close by Year 9. Students who start behind grow at the same pace as everyone else, not faster.</li>
                     </ul>
+                </div>
+
+                <!-- closing row: what could help, as three cards -->
+                <div class="full help-row">
+                    <h3>What could help</h3>
+                    <div class="help-cards">
+                        <div class="help-card">
+                            <p class="help-title">Start early.</p>
+                            <p>The gaps exist by Year 3, so the national Better and Fairer Schools Agreement (2025–2034) adds a Year 1 phonics check and an early numeracy check to find students who need help sooner.</p>
+                        </div>
+                        <div class="help-card">
+                            <p class="help-title">Help those behind grow faster.</p>
+                            <p>The same agreement funds evidence-based teaching and targeted support such as small-group tutoring, and better teaching reaches every classroom, not just the students furthest behind.</p>
+                        </div>
+                        <div class="help-card">
+                            <p class="help-title">Aim help where the gaps are.</p>
+                            <p>It names regional and remote students, Aboriginal students and students from low socio-economic backgrounds as priorities: the same groups this page shows furthest behind.</p>
+                        </div>
+                    </div>
                 </div>
 
                 <footer class="full sources footer-cols">
@@ -243,8 +278,11 @@
                         <ul>
                             <li>ACARA, <em>NAPLAN national results</em> (2008–2026). <a href="https://www.acara.edu.au/reporting/national-report-on-schooling-in-australia/naplan-national-results">acara.edu.au</a></li>
                             <li>ACARA, <em>School Profile 2025</em> and <em>School Location 2025</em>. <a href="https://www.acara.edu.au/contact-us/acara-data-access">acara.edu.au</a></li>
+                            <li>Pulse Tasmania, <em>Tasmania has no NAPLAN results after union's test boycott</em> (2026), for the reason Tasmania's 2026 results were not published. <a href="https://pulsetasmania.com.au/news/tasmania-has-no-naplan-results-after-unions-test-boycott/">pulsetasmania.com.au</a></li>
+                            <li>Department of Education WA, <em>Better and Fairer Schools Agreement</em> (2025–2034), for the reforms in "What could help". <a href="https://www.education.wa.edu.au/better-and-fairer-schools-agreement">education.wa.edu.au</a></li>
+                            <li>ACER (C. Underwood), <em>Australian boys' and girls' enjoyment of reading</em> (2021), PISA 2018 reading-for-enjoyment figures. <a href="https://www.acer.org/ae/news/article/australian-boys-and-girls-enjoyment-of-reading">acer.org</a></li>
                             <li>ABS, <em>Australian Statistical Geography Standard (ASGS) Edition 3</em>: State/Territory and Remoteness Areas 2021. <a href="https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs-edition-3">abs.gov.au</a></li>
-                            <!-- TODO Ishan: add photo credits here -->
+                            <li>NAPLAN logo banner: ACARA. <a href="https://www.nap.edu.au/">nap.edu.au</a></li>
                         </ul>
                     </div>
                     <div>
@@ -257,7 +295,7 @@
 
     </main>
 
-    <script src="js/main.js?v=20"></script>
+    <script src="js/main.js?v=37"></script>
 </body>
 
 </html>

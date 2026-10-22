@@ -204,7 +204,7 @@
                     },
                     {
                         "field": "gain",
-                        "title": "Points gained",
+                        "title": "Score points gained",
                         "format": "+.1f"
                     }
                 ]

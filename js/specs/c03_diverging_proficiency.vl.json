@@ -95,7 +95,13 @@
             "axis": {
                 "ticks": false,
                 "domain": false,
-                "labelPadding": 6
+                "labelPadding": 6,
+                "labelFontWeight": {
+                    "expr": "indexof(datum.value, ' · Yr ' + yearLevel) > 0 && (domain === 'All' || indexof(datum.value, domain === 'Grammar and Punctuation' ? 'Grammar' : domain) === 0) ? 'bold' : 'normal'"
+                },
+                "labelColor": {
+                    "expr": "indexof(datum.value, ' · Yr ' + yearLevel) > 0 && (domain === 'All' || indexof(datum.value, domain === 'Grammar and Punctuation' ? 'Grammar' : domain) === 0) ? '#2B2A28' : '#6B675F'"
+                }
             }
         }
     },
@@ -114,7 +120,7 @@
                     "scale": {
                         "domain": [
                             -50,
-                            90
+                            100
                         ]
                     },
                     "title": "<- not yet at Strong   |   Strong or Exceeding ->",
@@ -160,13 +166,6 @@
                         "labelExpr": "datum.label === 'Needs additional support' ? 'Needs support' : datum.label"
                     }
                 },
-                "opacity": {
-                    "condition": {
-                        "test": "datum.isSelected",
-                        "value": 1
-                    },
-                    "value": 0.7
-                },
                 "tooltip": [
                     {
                         "field": "domain",
@@ -185,7 +184,28 @@
                         "title": "% of students",
                         "format": ".1f"
                     }
-                ]
+                ],
+                "stroke": {
+                    "condition": {
+                        "test": "datum.isSelected",
+                        "value": "#2B2A28"
+                    },
+                    "value": null
+                },
+                "strokeWidth": {
+                    "condition": {
+                        "test": "datum.isSelected",
+                        "value": 1.2
+                    },
+                    "value": 0
+                },
+                "opacity": {
+                    "condition": {
+                        "test": "datum.isSelected",
+                        "value": 1
+                    },
+                    "value": 0.7
+                }
             }
         },
         {
@@ -228,6 +248,47 @@
                         "value": "#1E3F60"
                     },
                     "value": "#6B675F"
+                }
+            }
+        },
+        {
+            "description": "annotation: Grammar & Punctuation is the weakest subject in Years 3 and 9",
+            "transform": [
+                {
+                    "filter": "datum.domain === 'Grammar and Punctuation' && (datum.year_level === 3 || datum.year_level === 9) && datum.side === 'neg'"
+                },
+                {
+                    "aggregate": [
+                        {
+                            "op": "sum",
+                            "field": "pct",
+                            "as": "below"
+                        }
+                    ],
+                    "groupby": [
+                        "rowLabel",
+                        "rowOrder"
+                    ]
+                },
+                {
+                    "calculate": "'◀ ' + format(datum.below, '.0f') + '% below Strong'",
+                    "as": "note"
+                }
+            ],
+            "mark": {
+                "type": "text",
+                "align": "left",
+                "dx": 0,
+                "fontSize": 10,
+                "fontWeight": 700,
+                "color": "#C8652B"
+            },
+            "encoding": {
+                "x": {
+                    "datum": 62
+                },
+                "text": {
+                    "field": "note"
                 }
             }
         }

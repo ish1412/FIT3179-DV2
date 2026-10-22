@@ -1,7 +1,9 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "title": {
-        "text": "About 1 in 3 not yet at Strong"
+        "text": {
+            "expr": "'Year ' + yearLevel + ' · ' + (domain === 'All' ? 'average of subjects' : (domain === 'Grammar and Punctuation' ? 'Grammar & Punctuation' : domain)) + ', 2026'"
+        }
     },
     "width": 200,
     "height": 200,
@@ -149,6 +151,48 @@
                         "format": ".1f"
                     }
                 ]
+            }
+        },
+        {
+            "description": "headline under the grid, worked out from the data so it follows the selector",
+            "transform": [
+                {
+                    "filter": "datum.level === 'Developing' || datum.level === 'Needs additional support'"
+                },
+                {
+                    "aggregate": [
+                        {
+                            "op": "sum",
+                            "field": "share",
+                            "as": "below"
+                        }
+                    ]
+                },
+                {
+                    "calculate": "format(round(datum.below), 'd') + ' in every 100 students are not yet at Strong'",
+                    "as": "headline"
+                }
+            ],
+            "mark": {
+                "type": "text",
+                "align": "left",
+                "baseline": "top",
+                "fontSize": 15,
+                "fontWeight": 700,
+                "color": "#C8652B"
+            },
+            "encoding": {
+                "x": {
+                    "value": 0
+                },
+                "y": {
+                    "value": {
+                        "expr": "height + 12"
+                    }
+                },
+                "text": {
+                    "field": "headline"
+                }
             }
         }
     ]

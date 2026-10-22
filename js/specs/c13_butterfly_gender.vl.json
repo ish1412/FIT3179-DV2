@@ -116,8 +116,8 @@
                             "Boys"
                         ],
                         "range": [
-                            "#C8652B",
-                            "#2F5D8A"
+                            "#A8436B",
+                            "#5E6B2C"
                         ]
                     },
                     "legend": null
@@ -145,7 +145,7 @@
                     },
                     {
                         "field": "boysMinusGirls",
-                        "title": "Boys minus girls (pts)",
+                        "title": "Boys minus girls (percentage points)",
                         "format": "+.1f"
                     }
                 ]
@@ -227,6 +227,112 @@
                     "format": "+.0f"
                 }
             }
+        },
+        {
+            "description": "callout: boys lead in numeracy in every year level (2026)",
+            "data": {
+                "values": [
+                    {}
+                ]
+            },
+            "layer": [
+                {
+                    "mark": {
+                        "type": "rule",
+                        "color": "#2B2A28",
+                        "strokeWidth": 1.2
+                    },
+                    "encoding": {
+                        "x": {
+                            "datum": 60
+                        },
+                        "y": {
+                            "value": {
+                                "expr": "height + 46"
+                            }
+                        },
+                        "y2": {
+                            "value": {
+                                "expr": "height + 4"
+                            }
+                        }
+                    }
+                },
+                {
+                    "mark": {
+                        "type": "point",
+                        "shape": "triangle-up",
+                        "filled": true,
+                        "size": 55,
+                        "color": "#2B2A28",
+                        "opacity": 1
+                    },
+                    "encoding": {
+                        "x": {
+                            "datum": 60
+                        },
+                        "y": {
+                            "value": {
+                                "expr": "height + 3"
+                            }
+                        }
+                    }
+                },
+                {
+                    "mark": {
+                        "type": "rect",
+                        "fill": "#FFFFFF",
+                        "stroke": "#2B2A28",
+                        "strokeWidth": 1,
+                        "cornerRadius": 3
+                    },
+                    "encoding": {
+                        "x": {
+                            "datum": 15
+                        },
+                        "x2": {
+                            "datum": 100
+                        },
+                        "y": {
+                            "value": {
+                                "expr": "height + 46"
+                            }
+                        },
+                        "y2": {
+                            "value": {
+                                "expr": "height + 84"
+                            }
+                        }
+                    }
+                },
+                {
+                    "mark": {
+                        "type": "text",
+                        "align": "left",
+                        "baseline": "top",
+                        "fontSize": 11,
+                        "lineHeight": 14,
+                        "color": "#2B2A28",
+                        "dx": 7
+                    },
+                    "encoding": {
+                        "x": {
+                            "datum": 15
+                        },
+                        "y": {
+                            "value": {
+                                "expr": "height + 52"
+                            }
+                        },
+                        "text": {
+                            "value": [
+                                "Boys lead in numeracy",
+                                "in all year levels"
+                            ]
+                        }
+                    }
+                }
+            ]
         }
     ]
 }

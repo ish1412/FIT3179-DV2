@@ -179,7 +179,7 @@
                     },
                     {
                         "field": "gap",
-                        "title": "Gap (pts)",
+                        "title": "Gap (percentage points)",
                         "format": ".1f"
                     }
                 ]
@@ -215,7 +215,7 @@
             "data": {
                 "values": [
                     {
-                        "t": "number = gap in points"
+                        "t": "number = gap in percentage points"
                     }
                 ]
             },
