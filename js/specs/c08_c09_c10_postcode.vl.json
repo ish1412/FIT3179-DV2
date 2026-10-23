@@ -472,7 +472,10 @@
                     "title": {
                         "text": {
                             "expr": "'The further out, the fewer at Strong · ' + (domain === 'All' ? 'average of subjects' : (domain === 'Grammar and Punctuation' ? 'Grammar & Punctuation' : domain))"
-                        }
+                        },
+                        "subtitle": " ",
+                        "subtitleFontSize": 13,
+                        "subtitlePadding": 6
                     },
                     "width": 215,
                     "height": 190,
