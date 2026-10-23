@@ -1,6 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": "Three years on, little has shifted",
+    "title": "Three years on, little has shifted · 2023 to 2026",
     "width": 190,
     "height": 200,
     "data": {
@@ -101,7 +101,7 @@
                 "color": {
                     "field": "change",
                     "type": "quantitative",
-                    "title": "Change (percentage points)",
+                    "title": "Change from 2023 to 2026 (percentage points)",
                     "scale": {
                         "domain": [
                             -4,
@@ -126,7 +126,8 @@
                             2,
                             4
                         ],
-                        "offset": 78
+                        "offset": 78,
+                        "titleLimit": 500
                     }
                 },
                 "tooltip": [
@@ -152,7 +153,7 @@
                     },
                     {
                         "field": "change",
-                        "title": "Change (percentage points)",
+                        "title": "Change from 2023 to 2026 (percentage points)",
                         "type": "quantitative",
                         "format": "+.1f"
                     }
